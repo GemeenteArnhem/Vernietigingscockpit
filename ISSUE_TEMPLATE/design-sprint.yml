@@ -1,0 +1,47 @@
+name: Design sprint
+description: Ontwerpvraag of exploratief onderwerp voor UI, API of governance
+labels:
+  - design-sprint
+form:
+  - type: textarea
+    attributes:
+      label: Doel
+      description: Welk inzicht of besluit is nodig
+      placeholder: Beschrijf het probleem of de ontwerpvraag
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Context
+      description: Achtergrond, verwijzingen naar mockups, documenten of eerdere issues
+      placeholder: Link naar relevante documentatie of issues
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Betreft
+      options:
+        - label: UI
+        - label: API
+        - label: Governance
+        - label: Architectuur
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Te verkennen aspecten
+      description: Wat moet onderzocht of afgewogen worden
+      placeholder: Bijvoorbeeld varianten, risico’s, aannames
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Verwachte output
+      description: Wat moet vastliggen om dit issue te kunnen sluiten
+      placeholder: Besluit, ontwerpkeuze, afspraken, input voor MVP
+    validations:
+      required: true

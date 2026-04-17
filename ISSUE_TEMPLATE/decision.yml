@@ -1,0 +1,44 @@
+name: Decision
+description: Vastleggen van een expliciet besluit
+labels:
+  - decision
+form:
+  - type: textarea
+    attributes:
+      label: Besluit
+      description: Wat is het besluit dat genomen moet worden of is genomen
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Aanleiding
+      description: Waarom is dit besluit nodig
+      placeholder: Verwijs naar design sprint issues of externe context
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Overwegingen
+      description: Belangrijkste argumenten en afwegingen
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Gevolgen
+      description: Wat betekent dit voor scope, architectuur of planning
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Scope effect
+      options:
+        - label: Binnen MVP
+        - label: Buiten MVP (mvp-boundary)
+        - label: API standaard geraakt
+        - label: Alleen cockpit implementatie
+    validations:
+      required: false

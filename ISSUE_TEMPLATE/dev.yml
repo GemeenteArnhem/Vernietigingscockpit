@@ -1,0 +1,46 @@
+name: Dev issue
+description: Concreet ontwikkelwerk
+labels:
+  - dev
+form:
+  - type: textarea
+    attributes:
+      label: Omschrijving
+      description: Wat moet er gebouwd of aangepast worden
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Acceptatiecriteria
+      description: Wanneer is dit issue klaar
+      placeholder: Functioneel en testbaar
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Type werk
+      options:
+        - label: Frontend
+        - label: Backend
+        - label: API implementatie
+        - label: Bugfix
+        - label: Technische schuld
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Relatie met ontwerp of besluit
+      description: Verwijs naar relevante design of decision issues
+      placeholder: Bijvoorbeeld #12
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Technische opmerkingen
+      description: Eventuele implementatiedetails of aandachtspunten
+    validations:
+      required: false
