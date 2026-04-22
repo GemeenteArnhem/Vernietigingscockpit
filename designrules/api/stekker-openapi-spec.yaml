@@ -1,0 +1,210 @@
+openapi: 3.1.0
+info:
+  title: Vernietigingscockpit Stekker API
+  version: 1.0.0
+  description: >
+    Eenvoudige en gestandaardiseerde API voor stekkers.
+    De stekker levert een snapshot van vernietigingskandidaten en voert vernietiging uit per batch.
+    De cockpit is verantwoordelijk voor procesregie, batching, retries en audit.
+
+servers:
+  - url: https://api.stekker.example.com
+
+paths:
+
+  /kandidaten/genereer:
+    post:
+      summary: Genereer of refresh kandidaat-vernietigingslijst
+      operationId: genereerKandidaten
+      responses:
+        '202':
+          description: Generatie gestart
+
+  /kandidaten/status:
+    get:
+      summary: Haal status van kandidatenlijst op
+      operationId: getKandidatenStatus
+      responses:
+        '200':
+          description: Status van snapshot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KandidatenStatus'
+
+  /kandidaten:
+    get:
+      summary: Haal kandidaat-vernietigingslijst op (batchgewijs)
+      operationId: getKandidaten
+      parameters:
+        - name: fromDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: toDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            minimum: 0
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            maximum: 500
+      responses:
+        '200':
+          description: Batch kandidaten
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KandidatenResponse'
+
+  /vernietig:
+    post:
+      summary: Start vernietiging voor een batch
+      operationId: vernietigBatch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VernietigRequest'
+      responses:
+        '202':
+          description: Batch ontvangen en verwerking gestart
+
+  /vernietig/status:
+    get:
+      summary: Haal status van vernietigingsproces op
+      operationId: getVernietigStatus
+      responses:
+        '200':
+          description: Status van vernietiging
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VernietigStatus'
+
+components:
+
+  schemas:
+
+    ObjectRef:
+      type: object
+      required: [connectorId, objectId]
+      properties:
+        connectorId:
+          type: string
+        objectId:
+          type: string
+
+    KandidatenStatus:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [IDLE, RUNNING, READY, FAILED]
+        selectionTimestamp:
+          type: string
+          format: date-time
+        totalObjects:
+          type: integer
+
+    KandidatenResponse:
+      type: object
+      required: [selectionTimestamp, batchNumber, kandidaten]
+      properties:
+        selectionTimestamp:
+          type: string
+          format: date-time
+        batchNumber:
+          type: integer
+        totalBatches:
+          type: integer
+        kandidaten:
+          type: array
+          items:
+            $ref: '#/components/schemas/Kandidaat'
+
+    Kandidaat:
+      type: object
+      required: [connectorId, objectId, reason]
+      properties:
+        connectorId:
+          type: string
+        objectId:
+          type: string
+        reason:
+          type: string
+        metadata:
+          type: object
+          additionalProperties: true
+
+    VernietigRequest:
+      type: object
+      required: [batchNumber, objects, callbackUrl]
+      properties:
+        batchNumber:
+          type: integer
+        callbackUrl:
+          type: string
+          format: uri
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectRef'
+
+    VernietigStatus:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [IDLE, RUNNING, COMPLETED, PARTIAL, FAILED]
+        processedBatches:
+          type: integer
+        totalBatches:
+          type: integer
+        successCount:
+          type: integer
+        failureCount:
+          type: integer
+        lastUpdated:
+          type: string
+          format: date-time
+
+    VernietigCallback:
+      type: object
+      required: [batchNumber, results]
+      properties:
+        batchNumber:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectResult'
+
+    ObjectResult:
+      type: object
+      required: [connectorId, objectId, status]
+      properties:
+        connectorId:
+          type: string
+        objectId:
+          type: string
+        status:
+          type: string
+          enum: [SUCCESS, FAILED, SKIPPED, NOT_FOUND]
+        errorCode:
+          type: string
+        message:
+          type: string

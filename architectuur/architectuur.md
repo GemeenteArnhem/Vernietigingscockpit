@@ -59,7 +59,6 @@ De volgende principes **zijn leidend** voor alle onderdelen:
 - security en privacy by default
 - architectuur volgens Common Ground en NeRDS
 - open source en transparantie
-- toegankelijk
 - architectuur **schrijft verantwoordelijkheden voor**, maar **schrijft geen technische of organisatorische vorm af**
 
 Afwijkingen van deze principes **moeten** expliciet gemotiveerd en vastgelegd worden.

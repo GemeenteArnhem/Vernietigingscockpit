@@ -3,9 +3,6 @@
 Dit document bevat sequence diagrams van de belangrijkste processen binnen het Vernietigingscockpit ecosysteem.
 De diagrammen zijn bedoeld om interactie, verantwoordelijkheden en volgorde van stappen inzichtelijk te maken.
 
-De diagrams zijn logisch, niet technisch gedetailleerd.
-Ze gebruiken Mermaid en zijn direct renderbaar in GitHub.
-
 ---
 
 ## 1. Overzicht kernprocessen
@@ -17,8 +14,6 @@ De volgende kernprocessen worden beschreven:
 - starten van vernietiging
 - afronding en verklaring van vernietiging
 
----
-
 ## 2. Aanmaken en plannen van een vernietigingstaak
 
 Dit diagram beschrijft hoe een recordmanager een vernietigingstaak aanmaakt op basis van een sjabloon.
@@ -29,10 +24,12 @@ sequenceDiagram
     participant UI as Cockpit UI
     participant Task as Taak en Sjabloonbeheer
     participant WF as Workflow Engine
+    participant D as Dossierbeheer
 
     RM ->> UI: Maak nieuwe vernietigingstaak aan
     UI ->> Task: Selecteer sjabloon en parameters
     Task ->> WF: Initialiseer workflow
+    Task ->> D: Registreer taak en parameters
     WF -->> UI: Taak aangemaakt en gepland
 ```
 
@@ -41,14 +38,24 @@ Dit diagram beschrijft hoe de cockpit kandidaten ophaalt bij stekkers.
 
 ```mermaid
 sequenceDiagram
+    actor RM as Recordmanager
+    participant UI as Cockpit UI
     participant WF as Workflow Engine
-    participant Conn as Stekker Connectie
     participant Stekker
+    participant D as Dossierbeheer
 
-    WF ->> Conn: Start selectie
-    Conn ->> Stekker: GeefKandidaatVernietigingslijst
-    Stekker -->> Conn: Kandidatenlijst + metadata
-    Conn -->> WF: Gevalideerde kandidatenlijst
+    RM ->> UI: Start ophalen kandidaten
+    UI ->> WF: Activeer stap "selectie ophalen"
+
+    WF ->> D: Registreer selectiecontext (regels, peildatum)
+    WF ->> Stekker: GeefKandidaatVernietigingslijst
+
+    Stekker -->> WF: Kandidatenlijst + metadata
+    WF ->> D: Sla kandidatenlijst op
+
+    UI ->> D: Vraag kandidatenlijst op
+    D -->> UI: Kandidatenlijst + status
+    UI -->> RM: Toon kandidatenlijst
 ```
 
 Belangrijk:
@@ -63,11 +70,12 @@ Dit diagram toont de beoordeling van kandidaten door de recordmanager.
 sequenceDiagram
     actor RM as Recordmanager
     participant UI as Cockpit UI
-    participant D as Kandidaten en Dossierbeheer
+    participant D as Dossierbeheer
 
     RM ->> UI: Bekijk kandidatenlijst
     RM ->> UI: Sluit objecten uit + toelichting
-    UI ->> D: Sla uitsluitingen en toelichtingen op
+    UI ->> D: Leg uitsluitingen en toelichtingen vast
+    D ->> D: Update status per object
     D -->> UI: Dossier bijgewerkt
 ```
 
@@ -79,44 +87,91 @@ Belangrijk:
 ## 5. Accordering door proceseigenaar en archivaris
 Dit diagram beschrijft de twee staps accordering.
 
-```mermaid
-sequenceDiagram
-    actor PO as Proceseigenaar
-    actor AR as Archivaris
-    participant UI as Cockpit UI
-    participant WF as Workflow Engine
-    participant D as Dossierbeheer
-
-    PO ->> UI: Beoordeel taak
-    UI ->> WF: Registreer akkoord proceseigenaar
-    WF ->> D: Log accordering
-
-    AR ->> UI: Beoordeel taak
-    UI ->> WF: Registreer akkoord archivaris
-    WF ->> D: Log accordering
-```
-
 Belangrijk:
 - functiescheiding is verplicht
 - volgorde ligt vast in de workflow
 - accordering is onderdeel van het dossier
 
+### 5a. Accordering door proceseigenaar
 
-## 6. Starten van vernietiging
+```mermaid
+sequenceDiagram
+    actor PO as Proceseigenaar
+    participant UI as Cockpit UI
+    participant D as Dossierbeheer
+    participant WF as Workflow Engine
+
+    PO ->> UI: Bekijk kandidaten en toelichtingen
+    UI ->> D: Haal dossier + kandidaten op
+    D -->> UI: Kandidatenlijst + toelichtingen
+    UI -->> PO: Toon kandidaten
+
+    PO ->> UI: Voeg toelichting toe (optioneel)
+    UI ->> D: Sla toelichting op
+
+    alt Akkoord
+        PO ->> UI: Keur taak goed
+        UI ->> D: Leg accordering proceseigenaar vast
+        D ->> WF: Update workflowstatus (naar archivaris)
+    else Terugsturen
+        PO ->> UI: Stuur terug naar recordmanager
+        UI ->> D: Leg terugkoppeling vast (met toelichting)
+        D ->> WF: Update workflowstatus (terug naar RM)
+    end
+```
+
+### 5a. Accordering door gemeentarchivaris
+
+```mermaid
+sequenceDiagram
+    actor AR as Archivaris
+    participant UI as Cockpit UI
+    participant D as Dossierbeheer
+    participant WF as Workflow Engine
+
+    AR ->> UI: Bekijk kandidaten en toelichtingen
+    UI ->> D: Haal dossier + kandidaten op
+    D -->> UI: Kandidatenlijst + toelichtingen
+    UI -->> AR: Toon kandidaten
+
+    AR ->> UI: Voeg toelichting toe (optioneel)
+    UI ->> D: Sla toelichting op
+
+    alt Akkoord (finale accordering)
+        AR ->> UI: Keur taak definitief goed
+        UI ->> D: Leg accordering archivaris vast
+        D ->> WF: Update workflowstatus (gereed voor vernietiging)
+    else Terugsturen
+        AR ->> UI: Stuur terug naar recordmanager
+        UI ->> D: Leg terugkoppeling vast (met toelichting)
+        D ->> WF: Update workflowstatus (terug naar RM)
+    end
+```
+
+## 6. Uitvoeren van vernietiging
 Dit diagram beschrijft hoe de cockpit vernietiging vrijgeeft en start.
 
 ```mermaid
 sequenceDiagram
-    participant WF as Workflow Engine
-    participant Conn as Stekker Connectie
-    participant Stekker
+    actor RM as Recordmanager
+    participant UI as Cockpit UI
     participant D as Dossierbeheer
+    participant WF as Workflow Engine
+    participant Stekker
 
-    WF ->> Conn: Start vernietiging goedgekeurde objecten
-    Conn ->> Stekker: Vernietig(lijstMetObjectIds)
-    Stekker -->> Conn: Resultaten per object
-    Conn -->> WF: Uitvoeringsresultaat
-    WF ->> D: Sla uitvoeringsresultaten op
+    RM ->> UI: Geef opdracht tot vernietiging
+    UI ->> D: Leg vernietigingsbesluit vast
+    D ->> WF: Activeer uitvoeringsstap
+
+    WF ->> D: Haal goedgekeurde objecten op
+    WF ->> Stekker: Vernietig(lijstMetObjectIds)
+
+    Stekker -->> WF: Resultaten per object
+    WF ->> D: Registreer uitvoeringsresultaten
+
+    UI ->> D: Vraag uitvoeringsresultaten op
+    D -->> UI: Resultaten per object + status
+    UI -->> RM: Toon resultaten vernietiging
 ```
 
 Belangrijk:
@@ -131,13 +186,21 @@ Dit diagram laat een vereenvoudigd foutpad zien.
 sequenceDiagram
     participant Stekker
     participant Retry as Retry en Foutafhandeling
-    participant Conn as Stekker Connectie
+    participant WF as Workflow Engine
     participant D as Dossierbeheer
+    participant UI as Cockpit UI
+    actor RM as Recordmanager
 
     Stekker ->> Retry: Fout bij vernietiging
     Retry ->> Stekker: Retry actie
-    Retry -->> Conn: Definitieve status per object
-    Conn ->> D: Registreer failure of skip
+    Retry -->> Stekker: Definitieve status per object
+
+    Stekker -->> WF: Status update (incl. fouten)
+    WF ->> D: Registreer status per object
+
+    UI ->> D: Vraag status en fouten op
+    D -->> UI: Resultaten per object + foutstatus
+    UI -->> RM: Toon fouten en status
 ```
 
 Belangrijk:
@@ -150,18 +213,87 @@ Dit diagram beschrijft de afronding van het proces.
 
 ```mermaid
 sequenceDiagram
+    actor RM as Recordmanager
+    participant UI as Cockpit UI
     participant WF as Workflow Engine
     participant D as Dossierbeheer
     participant V as Verklaring en Archivering
-    participant Z as Zaaksysteem
+    participant Z as Archiefsysteem
 
-    WF ->> D: Controleer taak afgerond
+    RM ->> UI: Rond taak af / genereer verklaring
+    UI ->> WF: Activeer stap "afronding"
+
+    WF ->> D: Valideer dossier compleet
+    D -->> WF: Dossier compleet
+
     WF ->> V: Genereer vernietigingsverklaring
+    V ->> D: Registreer verklaring
+
     V ->> Z: Archiveer verklaring als zaak
     Z -->> V: Bevestiging archivering
+
+    UI ->> D: Vraag verklaring op
+    D -->> UI: Verklaring + metadata
+    UI -->> RM: Toon / download verklaring
 ```
-	
+
 Belangrijk:
 - verklaring bevat besluiten en uitvoering
 - archivering vormt juridisch bewijs
 - proces is hiermee formeel afgesloten
+
+## 9. Overzicht processen  – Functioneel beheerder
+- Beheer van stekkers (configuratie)
+- Gebruikers- en rollenbeheer
+- Monitoring en logging
+- Configuratiebeheer
+- Versie- en wijzigingsbeheer
+
+## 10. Configureren van een stekker
+Dit diagram beschrijft de configuratie van stekkers
+
+```mermaid
+sequenceDiagram
+    actor FB as Functioneel Beheerder
+    participant UI as Cockpit UI
+    participant C as Configuratiebeheer
+    participant D as Dossierbeheer
+
+    FB ->> UI: Configureer stekker (parameters, mapping)
+    UI ->> C: Sla configuratie op
+    C ->> D: Registreer configuratiewijziging (versie, tijd, actor)
+    C -->> UI: Bevestiging configuratie
+```
+
+## 10. Gebruikers en rollen beheren
+Dit diagram beschrijft de configuratie van gebruikers en rollen
+
+```mermaid
+sequenceDiagram
+    actor FB as Functioneel Beheerder
+    participant UI as Cockpit UI
+    participant IAM as Auth & Rollen
+
+    FB ->> UI: Beheer gebruikers en rollen
+    UI ->> IAM: Maak/wijzig gebruiker + roltoewijzing
+    IAM -->> UI: Bevestiging
+```
+
+## 10. Inzien logging en monitoring
+Dit diagram beschrijft de configuratie van gebruikers en rollen
+
+```mermaid
+sequenceDiagram
+    actor FB as Functioneel Beheerder
+    participant UI as Cockpit UI
+    participant D as Dossierbeheer
+    participant LOG as Logging/Monitoring
+
+    FB ->> UI: Bekijk logging / monitoring
+    UI ->> LOG: Vraag systeemlogs op
+    LOG -->> UI: Logs en events
+
+    UI ->> D: Vraag proces- en auditinformatie op
+    D -->> UI: Audittrail en status
+    UI -->> FB: Toon overzicht
+```

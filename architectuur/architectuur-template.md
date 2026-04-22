@@ -43,12 +43,12 @@ flowchart TD
 ## 5. Componentbeschrijvingen
 Beschrijf per logisch component de functie en verantwoordelijkheid.
 
-### 5.1 <componentnaam></componentnaam>
+### 5.1 ..componentnaam..
 Korte samenvatting van wat dit component doet.
 Welke verantwoordelijkheid het heeft.
 Welke input en output relevant zijn.
 
-### 5.2 <componentnaam></componentnaam>
+### 5.2 ..componentnaam..
 Idem voor volgende component.
 
 ## 6. Interactie en verantwoordelijkheden
@@ -56,7 +56,7 @@ Beschrijf hoe componenten met elkaar communiceren.
 Welke component neemt besluiten en welke voert uit.
 Waar vindt validatie, autorisatie en logging plaats.
 
-##7. Niet functionele aspecten
+## 7. Niet functionele aspecten
 Beschrijf de belangrijkste niet functionele eisen en eigenschappen.
 Bijvoorbeeld:
 
@@ -74,10 +74,3 @@ Beschrijf hoe wordt omgegaan met versiebeheer.
 ## 9. Aannames en openstaande keuzes
 Noteer aannames die dit ontwerp beïnvloeden.
 Beschrijf keuzes die nog niet vastliggen of later besluitvorming vragen.
-
-## 10. Relatie met andere architectuurdocumenten
-Link naar:
-
-- architectuur.md
-- architectuur-cockpit.md
-- architectuur-stekker.md

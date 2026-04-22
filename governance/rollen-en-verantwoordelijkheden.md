@@ -71,7 +71,7 @@ De recordmanager:
 
 De recordmanager:
 - **mag** kandidaten beoordelen
-- **mag** uitsluitingen registreren
+- **mag** uitsluitingen en toelichtingen registreren
 - **mag niet** accorderen namens andere rollen
 - **mag niet** vernietiging technisch starten
 
@@ -86,13 +86,14 @@ waarbinnen de informatie is ontstaan.
 
 De proceseigenaar:
 - **moet** de vernietigingslijst inhoudelijk beoordelen
+- **mag** bij de beoordeling annotaties maken
 - **moet** accorderen of afwijzen
 - **moet** uitzonderingen herkennen
 
 ### 5.3 Bevoegdheden en beperkingen
 
 De proceseigenaar:
-- **mag** kandidatenlijsten inzien
+- **mag** kandidatenlijsten inzien en annotaties maken
 - **mag** accorderen of afwijzen
 - **mag niet** kandidaten wijzigen
 - **mag niet** vernietiging starten
@@ -117,9 +118,9 @@ Zonder accordering door de archivaris
 ### 6.3 Bevoegdheden en beperkingen
 
 De archivaris:
-- **mag** dossiers volledig inzien
+- **mag** vernietigingsdossiers volledig inzien
 - **mag** vernietiging vrijgeven
-- **mag niet** dossiers inhoudelijk wijzigen
+- **mag niet** vernietigingsdossiers inhoudelijk wijzigen
 
 ## 7. Systeembeheerder
 
@@ -181,7 +182,7 @@ De leverancier of ontwikkelaar:
 ### 9.3 Bevoegdheden en beperkingen
 
 Leveranciers en ontwikkelaars:
-- **mogen geen** toegang hebben tot productiedossiers
+- **mogen geen** toegang hebben tot productie-vernietigingsdossiers
 - **mogen geen** vernietiging initiëren of accorderen
 
 ## 10. Functiescheiding en compliance
