@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: |
     API voor selectie van vernietigingskandidaten en uitvoering van vernietiging.
-    Ontworpen conform NLGov REST API Design Rules, Common Ground API design rules en Nerds-leidraad.
+    Ontworpen conform ADR, Common Ground en Nerds-leidraad.
 
 servers:
   - url: https://api.voorbeeld.nl
@@ -69,6 +69,13 @@ paths:
           schema:
             type: integer
             maximum: 500
+        - in: query
+          name: cursor
+          schema:
+            type: string
+          description: |
+            Optioneel alternatief voor offset-based paginering.
+            Cursor-based paginering kan in de toekomst worden ondersteund.
       responses:
         '200':
           description: Lijst met objecten
@@ -154,7 +161,7 @@ components:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: https://auth.example.com/oauth/token
+          tokenUrl: https://auth.voorbeeld.nl/oauth/token
           scopes:
             selectie.read: Lezen van selecties en objecten
             selectie.write: Starten van selecties
@@ -215,13 +222,6 @@ components:
       properties:
         batchNummer:
           type: integer
-        callbackUrl:
-          type: string
-          format: uri
-          description: |
-            Optionele callback URL. Indien opgegeven kan de server
-            batchresultaten pushen. Authenticatie moet worden afgestemd
-            (bijv. OAuth2 of HMAC).
         objecten:
           type: array
           items:

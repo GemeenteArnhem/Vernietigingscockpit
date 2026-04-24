@@ -165,53 +165,15 @@ De stekker:
 
 ---
 
-## 5. Resultaten en callbacks
+## 5. Resultaten via API
 
-### 5.1 Callback mechanisme (optioneel)
+### 5.1 Polling als primair mechanisme
 
-De stekker:
-
-- **kan per batch een callback uitvoeren** naar een opgegeven `callbackUrl`
-- callback bevat:
-  - `batchNummer`
-  - resultaten per object
+De API is polling-gebaseerd. Clients halen status en resultaten actief op via de API.
 
 ---
 
-### 5.2 Betrouwbaarheid callbacks
-
-De stekker:
-
-- **moet retries uitvoeren bij mislukte callbacks**
-- aanbevolen:
-  - minimaal 3 retries
-  - exponential backoff
-
----
-
-### 5.3 Idempotentie callbacks
-
-De cockpit:
-
-- **moet callbacks idempotent verwerken**
-- moet omgaan met:
-  - dubbele callbacks
-  - callbacks in willekeurige volgorde
-
----
-
-### 5.4 Beveiliging van callbacks
-
-Callbacks moeten beveiligd worden, bijvoorbeeld via:
-
-- OAuth2 client credentials flow, of
-- HMAC-signing van berichten
-
-De gekozen methode moet wederzijds worden afgestemd tussen cockpit en stekker.
-
----
-
-### 5.5 Resultaten via API (bron van waarheid)
+### 5.2 Resultaten (bron van waarheid)
 
 Resultaten zijn altijd opvraagbaar via de API:
 
@@ -303,13 +265,6 @@ Aanbevolen flow:
 
 ---
 
-### 10.3 Callback beveiliging
-
-- callback endpoints moeten beveiligd zijn
-- authenticatie en integriteit moeten gewaarborgd worden
-
----
-
 ## 11. Versies en compatibiliteit
 
 - uitbreidingen zijn additief  
@@ -322,10 +277,13 @@ Aanbevolen flow:
 
 De API exposeert standaard de **meest recente selectie en vernietiging** via `latest`.
 
-Het model is uitbreidbaar naar meerdere selecties en vernietigingen door:
+Het model is uitbreidbaar naar:
 
-- introductie van resource-identificatie (`/selecties/{id}`, `/vernietigingen/{id}`)
-- behoud van `/latest` als verwijzing naar de meest recente resource
+- resource-identificatie (`/selecties/{id}`, `/vernietigingen/{id}`)
+- cursor-based paginering
+- event notificaties (bijv. webhooks)
+
+Deze uitbreidingen kunnen worden toegevoegd zonder breaking changes.
 
 ---
 
