@@ -14,10 +14,15 @@ Accordering wordt vastgelegd en maakt deel uit van het vernietigingsdossier.
 
 ---
 
+## Logging
+Technische registratie van systeemgebeurtenissen ten behoeve van monitoring, foutanalyse en beheer.
+Logging is niet normatief, kan tijdelijk zijn en maakt geen onderdeel uit van het vernietigingsdossier.
+
+---
+
 ## Auditlog
-Een onveranderbare vastlegging van gebeurtenissen, beslissingen en acties.
-Auditlogs ondersteunen compliance, toezicht en verantwoording.
-De auditlog bevat zowel procesinformatie als context, zoals rollen en tijdstippen.
+Auditlog is de onveranderbare en juridisch relevante vastlegging van gebeurtenissen, besluiten en acties binnen het vernietigingsproces.
+De auditlog maakt onderdeel uit van het vernietigingsdossier en is leidend voor verantwoording.
 
 ---
 
@@ -66,14 +71,15 @@ Functiescheiding voorkomt belangenverstrengeling en is een essentieel compliance
 ---
 
 ## Idempotentie
-De eigenschap dat een actie meerdere keren kan worden aangeroepen zonder extra effect.
+De eigenschap dat een actie meerdere keren kan worden uitgevoerd zonder extra effect op de gegevens.
+Herhaalde aanroepen kunnen wel afzonderlijk worden vastgelegd in logging en audit.
 In de context van vernietiging betekent dit dat dubbele aanroepen niet leiden tot dubbele vernietiging.
 
 ---
 
 ## Kandidatenlijst
 Een operationele lijst van concrete informatieobjecten die in aanmerking komen voor vernietiging.
-De kandidatenlijst wordt bepaald door een stekker en beoordeeld in de cockpit.
+De kandidatenlijst wordt operationeel bepaald door de stekker, maar krijgt een normatieve en juridische betekenis zodra deze in de cockpit wordt vastgelegd als onderdeel van een taak.
 
 ---
 
@@ -168,3 +174,9 @@ De verklaring wordt gearchiveerd als juridisch bewijs.
 De vastgelegde volgorde van stappen in een vernietigingsproces.
 De workflow borgt functiescheiding en correcte besluitvorming.
 Workflows zijn configureerbaar en herhaalbaar.
+
+---
+
+## Afwijking tussen selectie en uitvoering
+Situatie waarin een object uit de kandidatenlijst niet (meer) vernietigbaar 
+is op het moment van uitvoering, bijvoorbeeld door wijziging of verwijdering in het bronsysteem.

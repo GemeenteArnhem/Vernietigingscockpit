@@ -29,7 +29,7 @@ Het ecosysteem **moet** toepasbaar zijn in een gefragmenteerd en voortdurend ver
 
 ## 3. Architectuurvisie
 
-De architectuur is gebaseerd op een ecosysteemgedachte, , waarin verantwoordelijkheden expliciet zijn gescheiden.
+De architectuur is gebaseerd op een ecosysteemgedachte, waarin verantwoordelijkheden expliciet zijn gescheiden.
 
 Daarbij gelden de volgende uitgangspunten:
 - de cockpit vervult de rol van regie en besluitvorming
@@ -166,6 +166,7 @@ De verantwoordelijkheden zijn strikt gescheiden:
 - gegevensbronnen **moeten** de daadwerkelijke vernietiging van gegevens uitvoeren
 
 De cockpit **mag niet** direct communiceren met gegevensbronnen. Alle communicatie **moet** verlopen via stekkers.
+De cockpit bewaart een onveranderbare representatie van de kandidatenlijst per taak. Deze representatie is leidend voor besluitvorming en audit, ook als de onderliggende brondata wijzigt.
 
 ## 9. Niet functionele kwaliteitsdoelen
 
@@ -176,6 +177,8 @@ Het ecosysteem **moet** voldoen aan de volgende kwaliteitsdoelen:
 - sterke beveiliging en functiescheiding
 - beheerbaarheid en configureerbaarheid
 - transparantie richting toezicht en controle
+
+Het ecosysteem maakt expliciet onderscheid tussen auditlogging (juridisch en onveranderbaar) en technische logging (operationeel en ondersteunend).
 
 Deze kwaliteitsdoelen **zijn richtinggevend** voor alle ontwerpkeuzes.
 

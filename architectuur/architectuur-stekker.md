@@ -27,7 +27,7 @@ De Stekker bevindt zich tussen de Vernietigingscockpit en een of meerdere gegeve
 Per applicatietype of applicatiefamilie **moet** in principe een Stekker bestaan.
 Tenant of instantie specifieke verschillen **moeten** via configuratie worden opgelost, niet via code varianten.
 
-De Stekker combineert normatieve context uit de cockpit met operationele uitvoering tegen de gegevensbron.
+De stekker gebruikt normatieve input (besluiten, parameters) als input voor operationele verwerking, zonder deze te interpreteren of te wijzigen.
 
 ### 2.1 Verschijningsvormen van de Stekker
 
@@ -49,23 +49,23 @@ Deze verschijningsvormen zijn architecturaal gelijkwaardig. In alle gevallen gel
 
 Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **bindend** voor de architectuur van de Stekker:
 
-- de stekker **scheidt strikt normatieve input van operationele verwerking en maakt deze scheiding expliciet in alle lagen**
-- de stekker **voert alle operationele beslissingen expliciet en uitlegbaar uit per informatieobject**
-- de stekker **garandeert dat selectie en vernietiging deterministisch en reproduceerbaar zijn binnen dezelfde context**
-- de stekker **legt de volledige operationele context vast bij elke selectie en uitvoering** (regels, parameters, peildatum, versie, bronstatus)
-- de stekker **waarborgt dat selectie en uitvoering altijd herleidbaar zijn tot een specifieke taakinstantie en besluit uit de cockpit**
-- de stekker **voert vernietiging uitsluitend uit op expliciet vrijgegeven en ongewijzigde kandidaten**
-- de stekker **detecteert en signaleert afwijkingen tussen selectie en uitvoering** (bijv. gewijzigde brondata)
-- de stekker **isoleert alle bron-specifieke variatie en inconsistentie van het uniforme procesmodel**
-- de stekker **maakt onzekerheden, ontbrekende data en interpretatieverschillen expliciet zichtbaar**
-- de stekker **garandeert dat geen gegevens verloren gaan zonder expliciete registratie van resultaat en reden**
-- de stekker **ondersteunt volledige herstartbaarheid zonder verlies van consistentie of auditinformatie**
-- de stekker **waarborgt consistente statusvoering per informatieobject over de volledige levenscyclus**
-- de stekker **is in staat om gedeeltelijke resultaten veilig en controleerbaar op te leveren**
-- de stekker **beperkt impact van fouten tot het kleinst mogelijke niveau (bij voorkeur per object)**
-- de stekker **maakt alle externe interacties met bronnen expliciet, traceerbaar en controleerbaar**
-- de stekker **waarborgt dat configuratiegedrag transparant, versieerbaar en reproduceerbaar is**
-- de stekker **voorkomt impliciete of verborgen logica buiten de gedefinieerde bouwblokken**
+- de stekker **scheidt** strikt normatieve input van operationele verwerking en maakt deze scheiding expliciet in alle lagen
+- de stekker **voert** alle operationele beslissingen expliciet en uitlegbaar uit per informatieobject
+- de stekker **garandeert** dat selectie en vernietiging deterministisch en reproduceerbaar zijn binnen dezelfde context
+- de stekker **legt** de volledige operationele context **vast** bij elke selectie en uitvoering** (regels, parameters, peildatum, versie, bronstatus)
+- de stekker **waarborgt** dat selectie en uitvoering altijd herleidbaar zijn tot een specifieke taakinstantie en besluit uit de cockpit
+- de stekker **voert** vernietiging uitsluitend **uit** op expliciet vrijgegeven en ongewijzigde kandidaten
+- de stekker **detecteert en signaleert** afwijkingen tussen selectie en uitvoering** (bijv. gewijzigde brondata)
+- de stekker **isoleert** alle bron-specifieke variatie en inconsistentie van het uniforme procesmodel
+- de stekker **maakt** onzekerheden, ontbrekende data en interpretatieverschillen expliciet zichtbaar
+- de stekker **garandeert** dat geen gegevens verloren gaan zonder expliciete registratie van resultaat en reden
+- de stekker **ondersteunt** volledige herstartbaarheid zonder verlies van consistentie of auditinformatie
+- de stekker **waarborgt** consistente statusvoering per informatieobject over de volledige levenscyclus
+- de stekker **is in staat** om gedeeltelijke resultaten veilig en controleerbaar op te leveren
+- de stekker **beperkt** impact van fouten tot het kleinst mogelijke niveau (bij voorkeur per object)
+- de stekker **maakt** alle externe interacties met bronnen expliciet, traceerbaar en controleerbaar
+- de stekker **waarborgt** dat configuratiegedrag transparant, versieerbaar en reproduceerbaar is
+- de stekker **voorkomt** impliciete of verborgen logica buiten de gedefinieerde bouwblokken
 
 Afwijkingen **moeten** expliciet gemotiveerd en vastgelegd worden.
 
@@ -143,6 +143,8 @@ De selectie:
 - **moet** vernietigingskandidaten bepalen op basis van regels en gegevensbronnen
 - **moet** herhaalbaar en controleerbaar zijn
 
+De door de stekker geleverde kandidatenlijst is een momentopname en kan na oplevering veranderen door wijzigingen in de gegevensbron.
+
 ### 5.6 Kandidatenlijst
 
 De kandidatenlijst:
@@ -168,7 +170,7 @@ De executor:
 
 Ondersteuning:
 - **moet** retries en foutafhandeling leveren
-- **moet** logging en audit ondersteunen
+- **moet** logging en audit ondersteunen (de stekker heeft technische logging voor monitoring en foutanalyse, geen eigen “auditlog”)
 - **moet** scheduling faciliteren
 
 ## 6. Interactie en verantwoordelijkheden
@@ -190,7 +192,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 
 ### Consistentie tussen selectie en uitvoering
 - de stekker **moet** waarborgen dat vernietiging plaatsvindt op dezelfde set als geselecteerd  
-- de stekker **moet** afwijkingen tussen selectie en uitvoering detecteren en rapporteren  
+- de stekker **moet** afwijkingen tussen selectie en uitvoering detecteren en rapporteren per object, inclusief reden (bijv. NOT_FOUND, GEWIJZIGD)
 - de stekker **mag niet** stilzwijgend objecten toevoegen of overslaan  
 
 ### Objectniveau traceerbaarheid
@@ -201,7 +203,10 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 ### Herstartbaarheid en idempotentie
 - de stekker **moet** processen veilig kunnen hervatten zonder inconsistentie  
 - de stekker **moet** dubbele uitvoering voorkomen of veilig afhandelen  
-- de stekker **moet** partiële verwerking ondersteunen zonder verlies van controle  
+- de stekker **moet** partiële verwerking ondersteunen zonder verlies van controle 
+
+Idempotentie geldt voor de uitvoering op gegevensniveau.
+De stekker moet herhaalde aanroepen en retries blijven registreren voor traceerbaarheid.
 
 ### Foutafhandeling en robuustheid
 - de stekker **moet** fouten expliciet maken en classificeren  

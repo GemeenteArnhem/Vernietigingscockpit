@@ -134,7 +134,7 @@ De stekker:
 
 De stekker:
 
-- **ondersteunt maximaal één actieve vernietiging tegelijk**
+- **ondersteunt maximaal één actieve vernietiging tegelijk** per stekkerinstantie
 - nieuwe batches horen bij de lopende vernietiging
 
 ---
@@ -155,6 +155,9 @@ De stekker:
 - **moet batches herkennen op basis van `batchNummer`**
 - **mag een batch nooit dubbel uitvoeren**
 - **moet bij dubbele aanlevering hetzelfde resultaat leveren of negeren**
+
+Herhaalde aanlevering van een batch met hetzelfde batchNummer leidt niet tot dubbele uitvoering,
+maar kan wel opnieuw worden geregistreerd en gerapporteerd in status en logging.
 
 ---
 
@@ -210,10 +213,12 @@ Resultaten zijn altijd opvraagbaar via de API:
 
 Per object wordt gerapporteerd:
 
-- `SUCCESS` → succesvol vernietigd  
-- `FAILED` → fout bij vernietiging  
-- `SKIPPED` → niet uitgevoerd  
-- `NOT_FOUND` → object niet gevonden  
+- `SUCCESS` = succesvol vernietigd  
+- `FAILED` = fout bij vernietiging  
+- `SKIPPED` = niet uitgevoerd  
+- `NOT_FOUND` = object niet gevonden  / fysiek vernietigd
+- `SKIPPED` = business/logische reden (bijv. niet meer vernietigbaar)
+- `CHANGED` = gewijzigd sinds selectie
 
 ---
 

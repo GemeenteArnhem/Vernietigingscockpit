@@ -33,24 +33,25 @@ De cockpit **bevat geen** gegevensbron specifieke of landelijke selectielijst in
 
 Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **bindend** voor de architectuur van de cockpit:
 
-- De cockpit **is gebruiksvriendelijk en toegankelijk, en voldoet hiervoor aan de WCAG normen**
-- de cockpit **is de enige plek waar normatieve besluitvorming plaatsvindt en wordt vastgelegd**
-- de cockpit **maakt alle besluiten expliciet, herleidbaar en onveranderbaar na vastlegging**
-- de cockpit **waarborgt dat elke actie terug te voeren is op een expliciet besluit en bevoegde actor**
-- de cockpit **scheidt strikt processturing van technische uitvoering en bewaakt deze scheiding actief**
-- de cockpit **dwingt volledige procesintegriteit af** (geen impliciete stappen, geen bypasses, geen verborgen paden)
-- de cockpit **waarborgt functiescheiding en rolzuiverheid in elke stap van het proces**
-- de cockpit **legt de volledige context van besluitvorming vast** (input, overwegingen, uitzonderingen, accorderingen)
-- de cockpit **beheert het vernietigingsdossier als primaire bron van waarheid voor verantwoording**
-- de cockpit **garandeert dat historische processen volledig reproduceerbaar en controleerbaar blijven**
-- de cockpit **maakt verschillen tussen besluit en uitvoering expliciet zichtbaar**
-- de cockpit **gaat expliciet om met onzekerheden, afwijkingen en uitzonderingen in het proces**
-- de cockpit **beperkt zich tot regie, vastlegging en verantwoording en vermijdt elke vorm van operationele interpretatie**
-- de cockpit **is onafhankelijk van bron- en stekkerspecifieke implementaties en abstraheert deze volledig**
-- de cockpit **ondersteunt transparantie richting toezicht, controle en audit zonder aanvullende interpretatie**
-- de cockpit **waarborgt dat geen vernietiging kan plaatsvinden zonder volledig en afgerond dossier**
-- de cockpit **maakt alle relevante proces- en besluitinformatie exporteerbaar en deelbaar binnen governancekaders**
-- de cockpit **voorkomt impliciete of niet-gelogde gebruikersinteracties die invloed hebben op besluitvorming**
+- De cockpit **is gebruiksvriendelijk en toegankelijk**, en voldoet hiervoor aan de WCAG normen
+- de cockpit **is de enige plek waar** normatieve besluitvorming plaatsvindt en wordt vastgelegd
+- de cockpit **maakt** alle besluiten expliciet, herleidbaar en onveranderbaar na vastlegging
+- de cockpit **maakt** onderscheid tussen pogingen (events) en effecten (resultaten)
+- de cockpit **waarborgt** dat elke actie terug te voeren is op een expliciet besluit en bevoegde actor
+- de cockpit **scheidt** strikt processturing van technische uitvoering en bewaakt deze scheiding actief
+- de cockpit **dwingt** volledige procesintegriteit af (geen impliciete stappen, geen bypasses, geen verborgen paden)
+- de cockpit **waarborgt** functiescheiding en rolzuiverheid in elke stap van het proces
+- de cockpit **legt** de volledige context van besluitvorming **vast** (input, overwegingen, uitzonderingen, accorderingen)
+- de cockpit **beheert** het vernietigingsdossier als primaire bron van waarheid voor verantwoording
+- de cockpit **garandeert** dat historische processen volledig reproduceerbaar en controleerbaar blijven
+- de cockpit **maakt** verschillen tussen besluit en uitvoering expliciet zichtbaar
+- de cockpit **gaat** expliciet om met onzekerheden, afwijkingen en uitzonderingen in het proces
+- de cockpit **beperkt** zich tot regie, vastlegging en verantwoording en vermijdt elke vorm van operationele interpretatie
+- de cockpit **is onafhankelijk** van bron- en stekkerspecifieke implementaties en abstraheert deze volledig
+- de cockpit **ondersteunt** transparantie richting toezicht, controle en audit zonder aanvullende interpretatie
+- de cockpit **waarborgt** dat geen vernietiging kan plaatsvinden zonder volledig en afgerond dossier
+- de cockpit **maakt** alle relevante proces- en besluitinformatie exporteerbaar en deelbaar binnen governancekaders
+- de cockpit **voorkomt** impliciete of niet-gelogde gebruikersinteracties die invloed hebben op besluitvorming
 
 Afwijkingen **moeten** expliciet gemotiveerd en vastgelegd worden.
 
@@ -149,6 +150,9 @@ Het:
 - **mag geen** inhoudelijke besluiten wijzigen
 
 Het vernietigingsdossier **vormt** het primaire audit en verantwoordingsbewijs.
+
+De cockpit beheert de auditlog als onderdeel van het vernietigingsdossier.
+Technische logging wordt gebruikt voor monitoring en beheer, maar maakt geen onderdeel uit van het dossier.
 
 ### 5.6 Stekker Connectie
 

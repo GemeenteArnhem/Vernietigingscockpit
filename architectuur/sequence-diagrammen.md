@@ -44,11 +44,11 @@ sequenceDiagram
     participant Stekker
     participant D as Dossierbeheer
 
-    RM ->> UI: Start ophalen kandidaten
+    RM ->> UI: Ophalen van selectie
     UI ->> WF: Activeer stap "selectie ophalen"
 
     WF ->> D: Registreer selectiecontext (regels, peildatum)
-    WF ->> Stekker: GeefKandidaatVernietigingslijst
+    WF ->> Stekker: GET kandidatenlijst
 
     Stekker -->> WF: Kandidatenlijst + metadata
     WF ->> D: Sla kandidatenlijst op
@@ -62,6 +62,9 @@ Belangrijk:
 - selectie is operationeel
 - landelijke selectielijst interpretatie vindt plaats in de stekker
 - cockpit slaat kandidaten op, maar bepaalt ze niet
+- kandidatenlijst is een momentopname
+- cockpit slaat deze op als dossier
+- latere wijzigingen in bron hebben geen invloed op deze snapshot
 
 ## 4. Beoordeling door recordmanager
 Dit diagram toont de beoordeling van kandidaten door de recordmanager.
@@ -120,7 +123,7 @@ sequenceDiagram
     end
 ```
 
-### 5a. Accordering door gemeentarchivaris
+### 5b. Accordering door gemeentarchivaris
 
 ```mermaid
 sequenceDiagram
@@ -164,10 +167,18 @@ sequenceDiagram
     D ->> WF: Activeer uitvoeringsstap
 
     WF ->> D: Haal goedgekeurde objecten op
-    WF ->> Stekker: Vernietig(lijstMetObjectIds)
+    WF ->> WF: Split in batches (batchNummer)
 
-    Stekker -->> WF: Resultaten per object
-    WF ->> D: Registreer uitvoeringsresultaten
+    loop Per batch
+        WF ->> Stekker: Vernietig(batchNummer, lijstMetObjectIds)
+        Stekker -->> WF: Ontvangstbevestiging (async gestart)
+    end
+
+    loop Polling resultaten
+        WF ->> Stekker: Vraag status/resultaten(batchNummer)
+        Stekker -->> WF: Resultaten per object (incl. afwijkingen)
+        WF ->> D: Registreer resultaten per object
+    end
 
     UI ->> D: Vraag uitvoeringsresultaten op
     D -->> UI: Resultaten per object + status
@@ -265,7 +276,7 @@ sequenceDiagram
     C -->> UI: Bevestiging configuratie
 ```
 
-## 10. Gebruikers en rollen beheren
+## 11 Gebruikers en rollen beheren
 Dit diagram beschrijft de configuratie van gebruikers en rollen
 
 ```mermaid
@@ -279,7 +290,7 @@ sequenceDiagram
     IAM -->> UI: Bevestiging
 ```
 
-## 10. Inzien logging en monitoring
+## 12 Inzien logging en monitoring
 Dit diagram beschrijft de configuratie van gebruikers en rollen
 
 ```mermaid
