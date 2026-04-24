@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: |
     API voor selectie van vernietigingskandidaten en uitvoering van vernietiging.
-    Ontworpen conform ADR, Common Ground en Nerds-leidraad.
+    Ontworpen conform API Design Rules (ADR), Common Ground en Nerds-leidraad.
 
 servers:
   - url: https://api.voorbeeld.nl
@@ -75,7 +75,6 @@ paths:
             type: string
           description: |
             Optioneel alternatief voor offset-based paginering.
-            Cursor-based paginering kan in de toekomst worden ondersteund.
       responses:
         '200':
           description: Lijst met objecten
@@ -86,7 +85,7 @@ paths:
 
   /vernietigingen:
     post:
-      summary: Start of vervolg een vernietiging
+      summary: Start of vervolg een vernietiging (batch)
       operationId: startVernietiging
       security:
         - oauth2: [vernietiging.write]
@@ -98,7 +97,7 @@ paths:
               $ref: '#/components/schemas/VernietigingBatch'
       responses:
         '202':
-          description: Batch ontvangen
+          description: Batch ontvangen en verwerking gestart of vervolgd
           content:
             application/json:
               schema:
@@ -106,7 +105,7 @@ paths:
 
   /vernietigingen/latest:
     get:
-      summary: Haal de status van de laatste vernietiging op
+      summary: Haal status van de laatste vernietiging op
       operationId: getLatestVernietiging
       security:
         - oauth2: [vernietiging.read]
@@ -126,7 +125,7 @@ paths:
         - oauth2: [vernietiging.read]
       responses:
         '200':
-          description: Lijst van batchresultaten
+          description: Lijst met batchresultaten
           content:
             application/json:
               schema:
@@ -136,7 +135,7 @@ paths:
 
   /vernietigingen/latest/batches/{batchNummer}:
     get:
-      summary: Haal resultaat van specifieke batch op
+      summary: Haal resultaat van een specifieke batch op
       operationId: getBatchResultaat
       security:
         - oauth2: [vernietiging.read]
@@ -148,7 +147,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Batchresultaat
+          description: Resultaat van batch
           content:
             application/json:
               schema:
@@ -165,7 +164,7 @@ components:
           scopes:
             selectie.read: Lezen van selecties en objecten
             selectie.write: Starten van selecties
-            vernietiging.read: Lezen van vernietigingsstatus en resultaten
+            vernietiging.read: Lezen van status en resultaten
             vernietiging.write: Starten van vernietiging
 
   schemas:
@@ -288,3 +287,4 @@ components:
         - FAILED
         - SKIPPED
         - NOT_FOUND
+        - CHANGED

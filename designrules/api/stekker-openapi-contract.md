@@ -4,7 +4,7 @@ Dit document beschrijft de normatieve afspraken en gedragsregels voor implementa
 Deze afspraken zijn **bindend** voor alle leveranciers en implementaties.  
 De API-specificatie en dit document vormen samen het contract.
 
-Dit contract is opgesteld conform gangbare API-ontwerpprincipes, waaronder de Nederlandse API Design Rules (ADR), Common Ground principes en de VNG Nerds-leidraad.  
+Dit contract is opgesteld conform gangbare API-ontwerpprincipes, waaronder de Nederlandse API Design Rules (ADR), Common Ground principes en de Nerds-leidraad.  
 Daarbij is gekozen voor een resource-georiënteerde, eenvoudige en domein-gedreven opzet.
 
 ---
