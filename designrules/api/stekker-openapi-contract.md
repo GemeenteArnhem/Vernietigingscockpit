@@ -1,8 +1,11 @@
 # Begeleidend contract – Stekker API Vernietigingscockpit
 
-Dit document beschrijft de normatieve afspraken en gedragsregels voor implementaties van de Stekker API.
-Deze afspraken zijn **bindend** voor alle leveranciers en implementaties.
+Dit document beschrijft de normatieve afspraken en gedragsregels voor implementaties van de Stekker API.  
+Deze afspraken zijn **bindend** voor alle leveranciers en implementaties.  
 De API-specificatie en dit document vormen samen het contract.
+
+Dit contract is opgesteld conform gangbare API-ontwerpprincipes, waaronder de Nederlandse API Design Rules (ADR), Common Ground principes en de VNG Nerds-leidraad.  
+Daarbij is gekozen voor een resource-georiënteerde, eenvoudige en domein-gedreven opzet.
 
 ---
 
@@ -10,8 +13,8 @@ De API-specificatie en dit document vormen samen het contract.
 
 De Stekker API faciliteert:
 
-- het leveren van een consistente lijst met vernietigingskandidaten (snapshot)
-- het uitvoeren van vernietiging op basis van door de cockpit goedgekeurde objecten
+- het leveren van een consistente selectie van vernietigingskandidaten (**selectie**)
+- het uitvoeren van vernietiging op basis van aangeleverde objecten (**vernietiging**)
 
 Daarbij geldt:
 
@@ -26,63 +29,86 @@ Daarbij geldt:
 
 ### 2.1 Scheiding van verantwoordelijkheden
 
-- de cockpit bepaalt **wat** moet gebeuren
-- de stekker bepaalt **hoe** dit technisch wordt uitgevoerd
+- de cockpit bepaalt **wat** moet gebeuren  
+- de stekker bepaalt **hoe** dit technisch wordt uitgevoerd  
 
 De stekker:
-- **mag geen** normatieve besluiten nemen
-- **moet** selectie en vernietiging operationeel uitvoeren
+
+- **mag geen** normatieve besluiten nemen  
+- **moet** selectie en vernietiging operationeel uitvoeren  
 
 ---
 
-### 2.2 Stateless API, state in gedrag
+### 2.2 Stateless API, state in resources
 
-De API is eenvoudig en bevat geen expliciete job-identificatie.
+De API is stateless, maar exposeert de actuele toestand via resources.
 
-De stekker:
-- **beheert impliciet state** voor:
-  - snapshot (kandidatenlijst)
-  - vernietigingsproces
+- de actuele selectie is beschikbaar via `/selecties/latest`
+- de actuele vernietiging is beschikbaar via `/vernietigingen/latest`
 
-De cockpit:
-- **is verantwoordelijk** voor procesregie, batching en herstartbaarheid
+De stekker beheert intern de state voor:
 
----
+- selectie (kandidatenlijst)
+- vernietigingsproces
 
-## 3. Snapshot gedrag (kandidatenlijst)
+De cockpit is verantwoordelijk voor:
 
-### 3.1 Snapshot definitie
-
-De kandidatenlijst is een **bevroren snapshot** van vernietigingskandidaten.
-
-- elke snapshot heeft een `selectieTimestamp`
-- alle resultaten binnen één snapshot zijn consistent
-- de snapshot verandert niet tijdens uitlezen
+- procesregie
+- batching
+- herstartbaarheid
 
 ---
 
-### 3.2 Genereren van snapshot
+### 2.3 Representatie van `latest`
 
-- `POST /kandidaten/genereer` start (of herstart) de generatie
-- een nieuwe generatie **overschrijft** de vorige snapshot
+De resource `latest` is een representatie van de meest recente selectie of vernietiging.
+
+- `latest` is geen persistente identificatie
+- de API kan uitgebreid worden met resource-identificaties (`/selecties/{id}`, `/vernietigingen/{id}`) zonder breaking changes
 
 ---
 
-### 3.3 Status
+## 3. Selectie (kandidatenlijst)
 
-`GET /kandidaten/status` geeft:
+### 3.1 Definitie
 
-- status van generatie (`IDLE`, `RUNNING`, `READY`, `FAILED`)
+Een selectie is een **bevroren momentopname** van vernietigingskandidaten.
+
+- elke selectie heeft een `selectionTimestamp`
+- alle resultaten binnen één selectie zijn consistent
+- de selectie verandert niet nadat deze gereed is (`READY`)
+
+---
+
+### 3.2 Starten van een selectie
+
+- `POST /selecties` start of herstart een selectie
+- een nieuwe selectie **overschrijft** de vorige selectie
+
+---
+
+### 3.3 Status van een selectie
+
+`GET /selecties/latest` retourneert:
+
+- `status` (`IDLE`, `RUNNING`, `READY`, `FAILED`)
 - `selectionTimestamp`
-- totaal aantal kandidaten (`totaalObjecten`)
+- `totaalObjecten`
 
 ---
 
-### 3.4 Ophalen kandidaten
+### 3.4 Ophalen van kandidaten
 
-- `GET /kandidaten` retourneert kandidaten uit de laatste succesvolle snapshot
-- ophalen gebeurt batchgewijs via `offset` en `limit`
+- `GET /selecties/latest/objecten`
+- standaard wordt paginering gedaan via `offset` en `limit`
 - maximale batchgrootte is 500
+
+#### Toekomstige uitbreiding
+
+De API is uitbreidbaar naar cursor-based paginering:
+
+- `cursor` kan als alternatief voor `offset` worden geïntroduceerd
+- deze uitbreiding is backward compatible
 
 ---
 
@@ -90,26 +116,26 @@ De kandidatenlijst is een **bevroren snapshot** van vernietigingskandidaten.
 
 De stekker:
 
-- **moet garanderen** dat alle batches uit dezelfde snapshot komen
-- **mag geen** dynamische wijzigingen toepassen tijdens uitlezen
+- **moet garanderen** dat alle batches uit dezelfde selectie komen  
+- **mag geen** wijzigingen toepassen tijdens uitlezen  
 
 ---
 
-## 4. Vernietigingsproces
+## 4. Vernietiging
 
 ### 4.1 Start van vernietiging
 
-- `POST /vernietig` start of vervolgt een vernietigingsproces
+- `POST /vernietigingen` start of vervolgt een vernietigingsproces
 - de eerste batch zet de status op `RUNNING`
 
 ---
 
-### 4.2 Eén actieve run
+### 4.2 Eén actieve vernietiging
 
 De stekker:
 
-- **ondersteunt maximaal één actieve vernietigingsrun tegelijk**
-- nieuwe batches horen bij de lopende run
+- **ondersteunt maximaal één actieve vernietiging tegelijk**
+- nieuwe batches horen bij de lopende vernietiging
 
 ---
 
@@ -135,24 +161,24 @@ De stekker:
 ### 4.5 Asynchrone verwerking
 
 - vernietiging wordt **asynchroon uitgevoerd**
-- de API-response van `/vernietig` bevat geen resultaten
+- de API-response bevat geen directe resultaten
 
 ---
 
-## 5. Callback gedrag
+## 5. Resultaten en callbacks
 
-### 5.1 Callback mechanisme
+### 5.1 Callback mechanisme (optioneel)
 
 De stekker:
 
-- **moet per batch een callback uitvoeren** naar `callbackUrl`
+- **kan per batch een callback uitvoeren** naar een opgegeven `callbackUrl`
 - callback bevat:
   - `batchNummer`
   - resultaten per object
 
 ---
 
-### 5.2 Betrouwbaarheid
+### 5.2 Betrouwbaarheid callbacks
 
 De stekker:
 
@@ -174,11 +200,32 @@ De cockpit:
 
 ---
 
+### 5.4 Beveiliging van callbacks
+
+Callbacks moeten beveiligd worden, bijvoorbeeld via:
+
+- OAuth2 client credentials flow, of
+- HMAC-signing van berichten
+
+De gekozen methode moet wederzijds worden afgestemd tussen cockpit en stekker.
+
+---
+
+### 5.5 Resultaten via API (bron van waarheid)
+
+Resultaten zijn altijd opvraagbaar via de API:
+
+- `GET /vernietigingen/latest`
+- `GET /vernietigingen/latest/batches`
+- `GET /vernietigingen/latest/batches/{batchNummer}`
+
+---
+
 ## 6. Status vernietiging
 
-`GET /vernietig/status` geeft:
+`GET /vernietigingen/latest` geeft:
 
-- status (`IDLE`, `RUNNING`, `COMPLETED`, `PARTIAL`, `FAILED`)
+- `status` (`IDLE`, `RUNNING`, `COMPLETED`, `PARTIAL`, `FAILED`)
 - aantal verwerkte batches
 - totaal aantal batches (indien bekend)
 - aantallen successen en fouten
@@ -201,10 +248,10 @@ De cockpit:
 
 Per object wordt gerapporteerd:
 
-- `SUCCESS` → succesvol vernietigd
-- `FAILED` → fout bij vernietiging
-- `SKIPPED` → niet uitgevoerd (bijv. al verwijderd)
-- `NOT_FOUND` → object niet gevonden
+- `SUCCESS` → succesvol vernietigd  
+- `FAILED` → fout bij vernietiging  
+- `SKIPPED` → niet uitgevoerd  
+- `NOT_FOUND` → object niet gevonden  
 
 ---
 
@@ -212,19 +259,17 @@ Per object wordt gerapporteerd:
 
 ### 8.1 Selectie
 
-- alleen succesvolle kandidaten worden geretourneerd
-- fouten in selectie:
-  - worden niet per object gerapporteerd
-  - moeten in logging zichtbaar zijn
+- alleen succesvolle kandidaten worden geretourneerd  
+- fouten worden gelogd, maar niet per object gerapporteerd  
 
 ---
 
 ### 8.2 Vernietiging
 
-- fouten worden per object gerapporteerd via callback
+- fouten worden per object gerapporteerd  
 - technische fouten:
-  - moeten gelogd worden
-  - mogen niet leiden tot inconsistent gedrag
+  - moeten gelogd worden  
+  - mogen niet leiden tot inconsistent gedrag  
 
 ---
 
@@ -238,25 +283,54 @@ De stekker:
 
 ---
 
-## 10. Security (minimaal)
+## 10. Security
+
+### 10.1 API beveiliging
 
 - communicatie moet beveiligd zijn (HTTPS)
-- callback endpoint moet beveiligd zijn
-- authenticatie/authorisatie moet toegepast worden
+- de API moet beveiligd worden met OAuth2
 
-(verdere invulling afhankelijk van implementatie)
+Aanbevolen flow:
+
+- Client Credentials flow voor systeem-naar-systeem communicatie
+
+---
+
+### 10.2 Autorisatie
+
+- toegang tot endpoints moet gebaseerd zijn op scopes of rollen
+- minimale rechten moeten worden toegepast (least privilege)
+
+---
+
+### 10.3 Callback beveiliging
+
+- callback endpoints moeten beveiligd zijn
+- authenticatie en integriteit moeten gewaarborgd worden
 
 ---
 
 ## 11. Versies en compatibiliteit
 
-- uitbreidingen zijn additief
-- bestaande contracten mogen niet breken
-- nieuwe velden moeten optioneel zijn
+- uitbreidingen zijn additief  
+- bestaande contracten mogen niet breken  
+- nieuwe velden moeten optioneel zijn  
 
 ---
 
-## 12. Samenvattend principe
+## 12. Toekomstige uitbreidbaarheid
 
-> De stekker levert een consistente snapshot en voert vernietiging uit,
-> de cockpit stuurt, controleert en verantwoordt het proces.
+De API exposeert standaard de **meest recente selectie en vernietiging** via `latest`.
+
+Het model is uitbreidbaar naar meerdere selecties en vernietigingen door:
+
+- introductie van resource-identificatie (`/selecties/{id}`, `/vernietigingen/{id}`)
+- behoud van `/latest` als verwijzing naar de meest recente resource
+
+---
+
+## 13. Samenvattend principe
+
+> De stekker levert een consistente selectie en voert vernietiging uit,  
+> de cockpit stuurt, controleert en verantwoordt het proces.  
+> De API blijft eenvoudig door alleen de actuele toestand te exposen.
