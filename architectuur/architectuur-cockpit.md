@@ -144,7 +144,7 @@ De workflow **moet minimaal bestaan uit**:
 
 Dit component **beheert het vernietigingsdossier**.
 Het:
-- **moet** kandidatenlijsten opslaan
+- **moet** vernietigingslijsten opslaan
 - **moet** uitsluitingen met toelichting vastleggen
 - **moet** versies en wijzigingen registreren
 - **mag geen** inhoudelijke besluiten wijzigen

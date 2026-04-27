@@ -34,7 +34,7 @@ sequenceDiagram
 ```
 
 ## 3. Ophalen van vernietigingskandidaten
-Dit diagram beschrijft hoe de cockpit kandidaten ophaalt bij stekkers.
+Dit diagram beschrijft hoe de cockpit vernietigingskandidaten ophaalt bij stekkers.
 
 ```mermaid
 sequenceDiagram
@@ -48,26 +48,26 @@ sequenceDiagram
     UI ->> WF: Activeer stap "selectie ophalen"
 
     WF ->> D: Registreer selectiecontext (regels, peildatum)
-    WF ->> Stekker: GET kandidatenlijst
+    WF ->> Stekker: GET selecties/latest
 
-    Stekker -->> WF: Kandidatenlijst + metadata
-    WF ->> D: Sla kandidatenlijst op
+    Stekker -->> WF: Vernietigingskandidaten
+    WF ->> D: Sla Vernietigingskandidaten op
 
-    UI ->> D: Vraag kandidatenlijst op
-    D -->> UI: Kandidatenlijst + status
-    UI -->> RM: Toon kandidatenlijst
+    UI ->> D: Vraag Vernietiginglijst (concept) op
+    D -->> UI: Vernietiginglijst (concept)
+    UI -->> RM: Toon vernietiginglijst (concept)
 ```
 
 Belangrijk:
 - selectie is operationeel
 - landelijke selectielijst interpretatie vindt plaats in de stekker
-- cockpit slaat kandidaten op, maar bepaalt ze niet
-- kandidatenlijst is een momentopname
+- cockpit slaat vernietigingskandidaten op als vernietigingslijst (concept), maar bepaalt ze niet
+- vernietingslijst is een momentopname
 - cockpit slaat deze op als dossier
 - latere wijzigingen in bron hebben geen invloed op deze snapshot
 
 ## 4. Beoordeling door recordmanager
-Dit diagram toont de beoordeling van kandidaten door de recordmanager.
+Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
 
 ```mermaid
 sequenceDiagram
@@ -75,7 +75,7 @@ sequenceDiagram
     participant UI as Cockpit UI
     participant D as Dossierbeheer
 
-    RM ->> UI: Bekijk kandidatenlijst
+    RM ->> UI: Bekijk vernietigingslijst (concept)
     RM ->> UI: Sluit objecten uit + toelichting
     UI ->> D: Leg uitsluitingen en toelichtingen vast
     D ->> D: Update status per object
@@ -104,10 +104,10 @@ sequenceDiagram
     participant D as Dossierbeheer
     participant WF as Workflow Engine
 
-    PO ->> UI: Bekijk kandidaten en toelichtingen
-    UI ->> D: Haal dossier + kandidaten op
-    D -->> UI: Kandidatenlijst + toelichtingen
-    UI -->> PO: Toon kandidaten
+    PO ->> UI: Bekijk vernietigingslijst (accordering) en toelichtingen
+    UI ->> D: Haal dossier + vernietigingskandidaten op
+    D -->> UI: Vernietigingslijst + toelichtingen
+    UI -->> PO: Toon vernietigingskandidaten
 
     PO ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op
@@ -132,10 +132,10 @@ sequenceDiagram
     participant D as Dossierbeheer
     participant WF as Workflow Engine
 
-    AR ->> UI: Bekijk kandidaten en toelichtingen
-    UI ->> D: Haal dossier + kandidaten op
-    D -->> UI: Kandidatenlijst + toelichtingen
-    UI -->> AR: Toon kandidaten
+    AR ->> UI: Bekijk vernietigingslijst (accorering) en toelichtingen
+    UI ->> D: Haal dossier + vernietigingskandidaten op
+    D -->> UI: Vernietigingslijst + toelichtingen
+    UI -->> AR: Toon vernietigingskandidaten
 
     AR ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op

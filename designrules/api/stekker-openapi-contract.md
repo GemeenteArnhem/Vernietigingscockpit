@@ -48,7 +48,7 @@ De API is stateless, maar exposeert de actuele toestand via resources.
 
 De stekker beheert intern de state voor:
 
-- selectie (kandidatenlijst)
+- selectie (concept vernietigingslijst voor deze gegevensbron)
 - vernietigingsproces
 
 De cockpit is verantwoordelijk voor:
@@ -68,7 +68,7 @@ De resource `latest` is een representatie van de meest recente selectie of verni
 
 ---
 
-## 3. Selectie (kandidatenlijst)
+## 3. Selectie (concept vernietigingslijst voor deze gegevensbron)
 
 ### 3.1 Definitie
 

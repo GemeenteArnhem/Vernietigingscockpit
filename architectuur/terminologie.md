@@ -24,6 +24,10 @@ Logging is niet normatief, kan tijdelijk zijn en maakt geen onderdeel uit van he
 Auditlog is de onveranderbare en juridisch relevante vastlegging van gebeurtenissen, besluiten en acties binnen het vernietigingsproces.
 De auditlog maakt onderdeel uit van het vernietigingsdossier en is leidend voor verantwoording.
 
+- audit log is altijd gekoppeld aan een taak
+- er is geen globale audit log in de UI
+- audit is zichtbaar binnen taak-detail
+
 ---
 
 ## Besluitvorming
@@ -48,7 +52,7 @@ Zie Vernietigingscockpit.
 ## Dossier
 Het samenhangende geheel van informatie dat een vernietigingsproces beschrijft.
 Het dossier bevat onder andere:
-- kandidatenlijsten
+- vernietigingslijsten
 - uitsluitingen en toelichtingen
 - accorderingen
 - uitvoeringsresultaten
@@ -77,15 +81,31 @@ In de context van vernietiging betekent dit dat dubbele aanroepen niet leiden to
 
 ---
 
-## Kandidatenlijst
-Een operationele lijst van concrete informatieobjecten die in aanmerking komen voor vernietiging.
-De kandidatenlijst wordt operationeel bepaald door de stekker, maar krijgt een normatieve en juridische betekenis zodra deze in de cockpit wordt vastgelegd als onderdeel van een taak.
+## Vernietigingslijst
+De centrale lijst van informatieobjecten die binnen een taak beoordeeld en vernietigd worden.
+
+De vernietigingslijst:
+- ontstaat uit een selectie via een stekker
+- wordt als snapshot vastgelegd binnen een taak
+- krijgt een normatieve en juridische betekenis in de cockpit
+- doorloopt de workflow van beoordeling tot uitvoering
+
+---
+
+## Vernietigingskandidaat
+Een individueel informatieobject binnen een vernietigingslijst.
+
+---
+
+## Selectie
+Het technische resultaat van een stekker-call (bijv. /selecties/latest).
+Een selectie heeft geen normatieve betekenis totdat deze wordt vastgelegd in een vernietigingslijst.
 
 ---
 
 ## Landelijke Selectielijst (LSL)
 De normatieve set van bewaartermijnen en selectiecriteria.
-LSL regels zijn abstract en normatief.
+LSL-regels zijn abstract en normatief.
 De operationele interpretatie van de LSL vindt plaats binnen de stekker.
 
 ---
@@ -112,7 +132,7 @@ De proceseigenaar levert een inhoudelijke controle en accordering als onderdeel 
 
 ## Recordmanager
 De primaire gebruiker van de Vernietigingscockpit.
-De recordmanager beheert taken, beoordeelt kandidaten en bewaakt het proces.
+De recordmanager beheert taken, beoordeelt vernietigingslijsten en bewaakt het proces.
 
 ---
 
@@ -125,17 +145,26 @@ Bijvoorbeeld het automatisch uitvoeren van een selectie op vaste momenten.
 ## Stekker
 Een generiek, herbruikbaar component dat fungeert als schakel tussen cockpit en bron.
 De stekker:
-- bepaalt vernietigingskandidaten
+- bepaalt vernietigingskandidaten (via selectie)
 - voert vernietiging technisch uit
-- bevat bron en domeinspecifieke logica
+- bevat bron- en domeinspecifieke logica
 - exposeert een uniform contract
 
 ---
 
 ## Taak
 Een gedefinieerde vernietigingscyclus binnen de cockpit.
-Een taak beschrijft scope, stekkers en planning.
-Taken zijn herhaalbaar en gebaseerd op sjablonen.
+Een taak beschrijft scope, stekkers en planning en bevat een vernietigingslijst.
+- vertegenwoordigt een domein of context (bijv. Zorgdomein)
+- kan meerdere stekkers (bronnen) bevatten
+- bevat één vernietigingslijst per cyclus
+
+Taken doorlopen de workflow:
+- beoordeling
+- accordering
+- uitvoering
+- resultaat
+- archief
 
 ---
 
@@ -155,9 +184,10 @@ Vernietiging vindt plaats in het bronsysteem.
 
 ## Vernietigingscockpit
 De centrale applicatie voor regie, besluitvorming en verantwoording van vernietiging.
+
 De cockpit:
 - ondersteunt workflows en accordering
-- beheert dossiers
+- beheert vernietigingslijsten en dossiers
 - communiceert uitsluitend met stekkers
 - voert zelf geen technische vernietiging uit
 
@@ -178,5 +208,4 @@ Workflows zijn configureerbaar en herhaalbaar.
 ---
 
 ## Afwijking tussen selectie en uitvoering
-Situatie waarin een object uit de kandidatenlijst niet (meer) vernietigbaar 
-is op het moment van uitvoering, bijvoorbeeld door wijziging of verwijdering in het bronsysteem.
+Situatie waarin een object uit de vernietigingslijst niet (meer) vernietigbaar is op het moment van uitvoering, bijvoorbeeld door wijziging of verwijdering in het bronsysteem.

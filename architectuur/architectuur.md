@@ -166,7 +166,7 @@ De verantwoordelijkheden zijn strikt gescheiden:
 - gegevensbronnen **moeten** de daadwerkelijke vernietiging van gegevens uitvoeren
 
 De cockpit **mag niet** direct communiceren met gegevensbronnen. Alle communicatie **moet** verlopen via stekkers.
-De cockpit bewaart een onveranderbare representatie van de kandidatenlijst per taak. Deze representatie is leidend voor besluitvorming en audit, ook als de onderliggende brondata wijzigt.
+De cockpit bewaart een onveranderbare representatie van de kandidaten, als vernietigingslijst (+status) per taak. Deze representatie is leidend voor besluitvorming en audit, ook als de onderliggende brondata wijzigt.
 
 ## 9. Niet functionele kwaliteitsdoelen
 

@@ -88,7 +88,7 @@ flowchart TD
         - Orchestratie
         - Business Rules
         - Selectie"]
-        E["Kandidatenlijst"]
+        E["Kandidaten"]
         F["MAPPING & MODEL"]
         G["UITVOERING
         - Executor"]
@@ -143,11 +143,11 @@ De selectie:
 - **moet** vernietigingskandidaten bepalen op basis van regels en gegevensbronnen
 - **moet** herhaalbaar en controleerbaar zijn
 
-De door de stekker geleverde kandidatenlijst is een momentopname en kan na oplevering veranderen door wijzigingen in de gegevensbron.
+De door de stekker geleverde concept vernietigingslijst is een momentopname en kan na oplevering veranderen door wijzigingen in de gegevensbron.
 
-### 5.6 Kandidatenlijst
+### 5.6 Vernietigingslijst (concept)
 
-De kandidatenlijst:
+De concept vernietigingslijst:
 - **moet** operationele vernietigingskandidaten bevatten
 - **moet** status per informatieobject ondersteunen
 - **moet** batch en herstarts ondersteunen

@@ -238,7 +238,7 @@ De UI moet reageren op interactie.
 
 # 12. Toegankelijkheid (WCAG)
 
-De UI moet minimaal voldoen aan WCAG 2.1 AA.
+De UI moet minimaal voldoen aan WCAG 2.2 AA.
 
 ## Verplicht
 
