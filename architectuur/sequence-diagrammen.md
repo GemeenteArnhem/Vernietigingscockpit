@@ -12,7 +12,7 @@ De volgende kernprocessen worden beschreven:
 - ophalen van vernietigingskandidaten
 - beoordeling en accordering
 - starten van vernietiging
-- afronding en verklaring van vernietiging
+- afronding, verklaring en archiveren van vernietiging
 
 ## 2. Aanmaken en plannen van een vernietigingstaak
 
@@ -105,15 +105,15 @@ sequenceDiagram
     participant WF as Workflow Engine
 
     PO ->> UI: Bekijk vernietigingslijst (accordering) en toelichtingen
-    UI ->> D: Haal dossier + vernietigingskandidaten op
-    D -->> UI: Vernietigingslijst + toelichtingen
-    UI -->> PO: Toon vernietigingskandidaten
+    UI ->> D: Haal vernietigingskandidaten + toelichting op
+    D -->> UI: vernietigingskandidaten + toelichtingen
+    UI -->> PO: Toon vernietigingslijst (accordering)
 
     PO ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op
 
     alt Akkoord
-        PO ->> UI: Keur taak goed
+        PO ->> UI: Keur vernietigingslijst (accordering) goed
         UI ->> D: Leg accordering proceseigenaar vast
         D ->> WF: Update workflowstatus (naar archivaris)
     else Terugsturen
@@ -132,16 +132,16 @@ sequenceDiagram
     participant D as Dossierbeheer
     participant WF as Workflow Engine
 
-    AR ->> UI: Bekijk vernietigingslijst (accorering) en toelichtingen
-    UI ->> D: Haal dossier + vernietigingskandidaten op
-    D -->> UI: Vernietigingslijst + toelichtingen
-    UI -->> AR: Toon vernietigingskandidaten
+    AR ->> UI: Bekijk vernietigingslijst (accordering) en toelichtingen
+    UI ->> D: Haal vernietigingskandidaten + toelichting op
+    D -->> UI: vernietigingskandidaten + toelichtingen
+    UI -->> AR: Toon vernietigingslijst (accordering)
 
     AR ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op
 
     alt Akkoord (finale accordering)
-        AR ->> UI: Keur taak definitief goed
+        AR ->> UI: Keur vernietigingslijst (accordering) goed
         UI ->> D: Leg accordering archivaris vast
         D ->> WF: Update workflowstatus (gereed voor vernietiging)
     else Terugsturen
@@ -166,29 +166,29 @@ sequenceDiagram
     UI ->> D: Leg vernietigingsbesluit vast
     D ->> WF: Activeer uitvoeringsstap
 
-    WF ->> D: Haal goedgekeurde objecten op
+    WF ->> D: Haal goedgekeurde vernietigingskandidaten op
     WF ->> WF: Split in batches (batchNummer)
 
     loop Per batch
-        WF ->> Stekker: Vernietig(batchNummer, lijstMetObjectIds)
+        WF ->> Stekker: Vernietig(batchNummer, lijstMetKandidaten)
         Stekker -->> WF: Ontvangstbevestiging (async gestart)
     end
 
     loop Polling resultaten
         WF ->> Stekker: Vraag status/resultaten(batchNummer)
-        Stekker -->> WF: Resultaten per object (incl. afwijkingen)
-        WF ->> D: Registreer resultaten per object
+        Stekker -->> WF: Resultaten per kandidaat (incl. afwijkingen)
+        WF ->> D: Registreer resultaten per kandidaten
     end
 
     UI ->> D: Vraag uitvoeringsresultaten op
-    D -->> UI: Resultaten per object + status
+    D -->> UI: Resultaten per kandidaat + status
     UI -->> RM: Toon resultaten vernietiging
 ```
 
 Belangrijk:
-- alleen expliciet goedgekeurde objecten worden vernietigd
+- alleen expliciet goedgekeurde vernietigingskandidaten worden vernietigd
 - vernietiging is idempotent
-- resultaten worden per object vastgelegd
+- resultaten worden per vernietigingskandidaat vastgelegd
 
 ## 7. Fouten en retries bij vernietiging
 Dit diagram laat een vereenvoudigd foutpad zien.
@@ -204,13 +204,13 @@ sequenceDiagram
 
     Stekker ->> Retry: Fout bij vernietiging
     Retry ->> Stekker: Retry actie
-    Retry -->> Stekker: Definitieve status per object
+    Retry -->> Stekker: Definitieve status per kandidaat
 
     Stekker -->> WF: Status update (incl. fouten)
-    WF ->> D: Registreer status per object
+    WF ->> D: Registreer status per kandidaat
 
     UI ->> D: Vraag status en fouten op
-    D -->> UI: Resultaten per object + foutstatus
+    D -->> UI: Resultaten per kandidaat + foutstatus
     UI -->> RM: Toon fouten en status
 ```
 
