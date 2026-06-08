@@ -1,4 +1,4 @@
-# State: Taken-overzicht
+# State: Taakdefinitie-overzicht
 
 ## Input Data (from API)
 
@@ -10,9 +10,6 @@ taakdefinities: TaakDefinitie[] = [
     proceseigenaar: {
       naam: string
       rol: string
-    }
-    archivaris: {
-      naam: string
     }
     stekkers: {
       aantal: number
@@ -50,9 +47,50 @@ bepaal_status(taakdef):
     return "idle"
 ```
 
-### Tabelrij-data
+### Voortgang berekenen
+```
+stap_gewicht = {
+  "selectie": 10,
+  "beoordeling": 30,
+  "accordering_po": 20,
+  "accordering_arch": 20,
+  "uitvoering": 15,
+  "resultaat": 5
+}
+
+bepaal_voortgang_procent(huidige_stap):
+  cumulative = sum(stap_gewicht[stap] for stap in stappen_tot_huidige)
+  return cumulative
+```
+
+### Vertraging bepalen
+```
+is_vertraagd:
+  - actieve_instantie != null
+  - AND (nu() - startdatum_stap) > 7 dagen
+  - AND huidige_stap in ["beoordeling", "accordering_po", "accordering_arch"]
+```
+
+### Urgentie volgende datum
+```
+urgentie_volgende_datum(volgende_startdatum):
+  dagen_tot = (volgende_startdatum - nu()).days
+  
+  if dagen_tot <= 2:
+    return "kritiek" // Rood/Oranje
+  else if dagen_tot <= 7:
+    return "binnenkort" // Geel
+  else:
+    return "normaal" // Grijs
+```
+
+---
+
+## Tabel Rendering State
+
+### Per rij in tabel:
 ```typescript
-rij = {
+row = {
   taakdefinitie_id: string
   taaknaam: string
   proceseigenaar_naam: string
@@ -64,10 +102,9 @@ rij = {
   voortgang_procent: number | null // null als geen actieve instantie
   voortgang_stap: string | null
   voortgang_tijd: string | null // "4d in stap"
-  voortgang_kleur: "primary" | "warning" | "success" | "grey"
+  voortgang_kleur: "primary" | "warning" | "error"
   status: "actief" | "gepland" | "idle" | "vertraagd"
-  is_kritiek: boolean // true als vertraagd
-  status_badge: string // "Actief", "Gepland", "Idle", "Vertraagd"
+  is_kritiek: boolean // Voor sortering
 }
 ```
 
@@ -75,7 +112,7 @@ rij = {
 
 ## Sortering
 
-```typescript
+```
 gesorteerde_rijen = sort(rijen, [
   // Primaire: Status
   (rij) => {
@@ -103,77 +140,72 @@ gesorteerde_rijen = sort(rijen, [
 
 ---
 
-## Filtering
+## Filtering State
 
-### User-driven filters
+### User-driven filtering
 ```typescript
 filterState = {
-  vertraagd: boolean // default true
   actief: boolean // default true
   gepland: boolean // default true
   idle: boolean // default true
-  mijn_taken: boolean // default false (nur for PO/Arch)
+  vertraagd: boolean // default true
 }
 ```
 
-### Role-based filtering
+### Role-based filtering (API-side)
 ```typescript
-// Afhankelijk van rol
+// Afhankelijk van huistische rol van user
 
-recordmanager:
+recordmanager_filter:
   // Ziet alles
-  gefilterde = taakdefinities
+  geen filtering
 
-proceseigenaar:
-  // Ziet alleen taakdefinities waar zij proceseigenaar zijn
-  gefilterde = taakdefinities.filter(taak =>
-    taak.proceseigenaar_id == current_user.id
+proceseigenaar_filter:
+  // Ziet alleen taken waar hij/zij proceseigenaar is
+  rijen = rijen.filter(rij =>
+    rij.proceseigenaar_id == current_user.id
+    AND rij.status == "actief"  // Standaard filter (kan override)
   )
 
-archivaris:
-  // Ziet alleen taakdefinities waar zij archivaris zijn
-  gefilterde = taakdefinities.filter(taak =>
-    taak.archivaris_id == current_user.id
+archivaris_filter:
+  // Ziet alleen taken waar hij/zij archivaris is
+  rijen = rijen.filter(rij =>
+    rij.archivaris_id == current_user.id
+    AND rij.status == "actief"  // Standaard filter (kan override)
   )
 ```
 
 ### Combined filtering
 ```typescript
-final_rijen = gefilterde
+gefilterde_rijen = rijen
   .filter(rij => apply_role_based_filter(rij, current_user))
   .filter(rij => apply_user_chosen_filter(rij, filterState))
-  .sort(by_priority)
 ```
 
 ---
 
-## Zoeken
+## Taakdefinitie vs. Taakinstantie Relationchip
 
-```typescript
-zoek(taakdefinities, query):
-  return taakdefinities.filter(taak =>
-    taak.naam.includes(query) OR
-    taak.proceseigenaar.naam.includes(query)
-  )
-```
+**Taakdefinitie** (dit scherm):
+- Master-record, terugkerend
+- Configuratie (frequentie, stekkers, rollen)
+
+**Taakinstantie** (volgende niveau):
+- Concrete uitvoering van taakdefinitie
+- Één per cyclus
+- Status: Gepland / Selectie / Beoordeling / Accordering / Uitvoering / Resultaat / Archief
+
+**Relatie in deze view:**
+- Kolom "Voortgangsbar" = voortgang van **huidige actieve instantie** van deze definitie
+- Volgende datum = start van **volgende geplande instantie**
 
 ---
 
-## Laden & Refresh
+## Refresh Strategy
 
-```
-initial_load():
-  GET /taakdefinities
-  
-auto_refresh():
-  every 30 seconds:
-    GET /taakdefinities
-    update UI (enkel voortgang kolom)
-
-manual_refresh():
-  user klik ⟳
-  GET /taakdefinities (full reload)
-```
+- **Initial load:** GET /taakdefinities
+- **Auto-refresh:** Elke 30 seconden (polls for updates)
+- **Manual refresh:** User kan ⟳ klikken
 
 ---
 
@@ -181,5 +213,5 @@ manual_refresh():
 
 - Max 50 taakdefinities per pagina
 - Indien > 50: Pagination of lazy-loading
-- Filtering client-side (alle data geladen)
-- Sortering client-side (API sorteert ook)
+- Filtering gebeurt client-side (alle data geladen)
+- Sortering gebeurt client-side (API sorteert ook)

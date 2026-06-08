@@ -1,153 +1,233 @@
-# Screen: Taken
+# Screen: Taken-overzicht
 
 ## Doel
-Overzicht van alle vernietigingstaken (vernietigingslijsten).
 
-De gebruiker kan:
-- taken bekijken
-- prioriteit zien
-- een taak openen
+**Hoofdoverzicht van alle vernietigingstaken (taakdefinities).**
+
+Dit is het startpunt waar gebruikers zien:
+- Welke terugkerende taken er ingesteld zijn
+- Status van huidge instanties (actief/gepland)
+- Wat de volgende run is
+
+Gebruikers kunnen van hier direct naar een taakdefinitie duiken om meer te zien.
 
 ---
 
 ## Belangrijk principe
 
-- lijst is gesorteerd op prioriteit (niet chronologisch)
-- taken die actie vereisen staan bovenaan
-- gebruiker hoeft niet te zoeken → systeem stuurt
+- **Enkel taakdefinities** (niet instanties)
+- **Sortering op prioriteit** — vertraagde taken bovenaan
+- **Een regel per terugkerende taak** — compact overzicht
+- **Klik → Detail** — daar zie je instanties
 
 ---
 
 ## Data source
 
-GET /taken
+```
+GET /taakdefinities
+```
 
 ---
 
 ## Layout
 
-### Lijstweergave
+**Tabel met taakdefinities** (identiek aan taakdefinitie-overzicht spec).
 
-Toont een lijst van TaskCards.
+### Kolommen
 
----
-
-## TaskCard
-
-### Toont
-
-- naam van de vernietigingslijst
-- status (workflow stap)
-- aantal objecten
-- aantal fouten (indien > 0)
-- startdatum
-- tijd in huidige stap
+| Kolom | Inhoud | Breedte |
+|-------|--------|---------|
+| **Taaknaam** | Naam + ID | 220px |
+| **Proceseigenaar** | Naam + rol | 180px |
+| **# Stekkers** | Getal + tooltip met namen | 80px |
+| **Frequentie** | Jaarlijks, Kwartaal, Ad-hoc + volgende datum | 120px |
+| **Volgende uitvoering** | Datum + afstand tot nu() | 120px |
+| **Voortgang actief** | Balk + % + stap + tijd | 240px |
+| **Status** | Badge (Actief/Gepland/Vertraagd/Idle) | 80px |
 
 ---
 
-## Status labels
+## Voortgang-kolom (Hoofdkenmerk)
 
-- Init
-- Beoordeling
-- Accordering
-- Uitvoering
-- Resultaat
-- Archief
+**Toont voortgang van huidge ACTIEVE instantie (indien die er is).**
 
----
+### Visueel
+```
+Beoordeling
+████░░░░░░ 40% (4d in stap)
+```
 
-## Visuele signalen
+### Kleuren
+- **Blauw** — normaal (≤7d in stap)
+- **Oranje** — vertraagd (>7d in stap)
+- **Groen** — afgerond
+- **Grijs** — geen actieve instantie (gepland/idle)
 
-### Actie vereist
-
-- taken met status:
-  - beoordeling
-  - accordering_po
-  - accordering_archivaris
-
-→ visueel benadrukt (bijv. accent kleur)
-
----
-
-### Fouten
-
-- aantal_fouten > 0
-→ visueel signaal (bijv. rood label of badge)
-
----
-
-### In uitvoering
-
-- status == uitvoering
-→ subtiele voortgangsindicatie
-
----
-
-### Afgerond
-
-- status == resultaat of archief
-→ minder prominent weergegeven
+### Tooltip (hover)
+- Huidge stap
+- Startdatum stap
+- Relevante rol (wie is aan zet)
 
 ---
 
 ## Sortering (vanuit API)
 
-Prioriteit:
+**Primaire volgorde:**
 
-1. actie vereist (beoordeling, accordering)
-2. taken met fouten
-3. uitvoering
-4. geplande taken
-5. afgeronde taken
+1. **Vertraagde taken** (rood badge, >7d in stap)
+   - Sortering binnen groep: tijd_in_stap (desc)
 
-Binnen groep:
+2. **Actieve taken** (groen badge, in workflow)
+   - Sortering binnen groep: tijd_in_stap (desc)
 
-- sorteer op tijd_in_stap (aflopend)
+3. **Geplande taken** (geel badge, volgende cyclus)
+   - Sortering binnen groep: volgende_startdatum (asc)
+
+4. **Idle taken** (grijs badge, geen instantie)
+   - Geen specifieke sortering
+
+---
+
+## Filtering & Zoeken
+
+**Balk boven tabel:**
+
+```
+🔍 Zoek naar naam...  [Filter: Alle ▼]
+
+Status: [Vertraagd] [Actief ✓] [Gepland ✓] [Idle ✓]
+Eigenaar: [Mijn taken] [Alle ✓]
+```
 
 ---
 
 ## Interactie
 
-### Klik op taak
+### Klik op taaknaam / hele rij
+- Opent **Taakdefinitie-detail** scherm
+- Doorgegeven: `taakdefinitie_id`
 
-- opent taak-detail scherm
+### Hover op taakrij
+- Subtiele achtergrond highlight
+- Cursor → pointer
 
----
-
-## Filtering (optioneel)
-
-- status
-- periode
-- zoek op naam
-
----
-
-## Gedrag
-
-- lijst wordt geladen bij openen scherm
-- geen client-side herordening
-- UI volgt volgorde van API
+### Hover op "# Stekkers"
+- Tooltip toont volledige stelkernamen
+- Bijv. "MySQL, SAP, SharePoint, FileShare"
 
 ---
 
-## Belangrijke regels
+## Taakdefinitie-detail (Volgende stap)
 
-- terminologie is consistent: "vernietigingslijst"
-- status bepaalt visuele prioriteit
-- geen dubbele informatie tonen
-- lijst is scanbaar (geen overvolle cards)
+Klik op taakdefinitie → Detail-scherm toont:
+
+```
+📋 Taakdefinitie: Zorgdomein jaarlijks
+
+Configuratie (read-only voor niet-RM)
+- Proceseigenaar
+- Archivaris
+- Stekkers
+- Frequentie
+
+📅 Volgende Geplande Instantie
+Zorgdomein 2027 | Gepland | 1 juli 2027 | 387 dagen
+Selectie niet gestart
+
+⚙️ Actieve Instantie (Huiding)
+Zorgdomein 2026 | Beoordeling | ████░ 40% | 4d in stap
+240 objecten | Start: 1 mei
+
+📚 Geschiedenis (Afgehandelde Instanties)
+Zorgdomein 2025 | Afgerond | 15 juli 2025 | ✓ Verklaring
+Zorgdomein 2024 | Archief | 15 juli 2024 | ✓ Verklaring
+```
+
+**Klik op instantie-rij → Taakinstantie-detail**
+
+---
+
+## Rollen & Zichtbaarheid
+
+### Recordmanager
+- **Ziet:** Alle taakdefinities
+- **Filter:** Geen standaard filter
+- **Acties:** Kan taakdefinitie bewerken, nieuwe instantie starten
+
+### Proceseigenaar
+- **Ziet:** Alleen taakdefinities waar ze proceseigenaar van zijn
+- **Filter:** Auto-gefilterd
+- **Acties:** Ziet instanties in hun accorderingsstap (in detail)
+
+### Archivaris
+- **Ziet:** Alleen taakdefinities waar ze archivaris van zijn
+- **Filter:** Auto-gefilterd
+- **Acties:** Ziet instanties in hun accorderingsstap (in detail)
+
+---
+
+## Laden & Refresh
+
+- **Initial load:** GET /taakdefinities
+- **Auto-refresh:** Elke 30 seconden
+- **Manual refresh:** ⟳ knop bovenaan
+
+---
+
+## Responsive
+
+### Desktop (>1200px)
+- Volledige tabel zichtbaar
+- Alle kolommen zichtbaar
+
+### Tablet (768-1200px)
+- Compactere tabel
+- Kolommen: Naam, Frequentie, Voortgang, Status
+- Proceseigenaar/Stekkers verborgen
+
+### Mobiel (<768px)
+- Kartweergave in plaats van tabel
+- Per taak: Naam, Frequentie, Status
+- Klik → Detail
+
+---
+
+## Visuele signalen
+
+### Status-badge kleuren
+- **Rood (Vertraagd):** >7 dagen in dezelfde stap
+- **Groen (Actief):** In werkflow
+- **Geel (Gepland):** Volgende cyclus
+- **Grijs (Idle):** Geen actieve/geplande instantie
+
+### Voortgang-balk kleuren
+- **Blauw:** Normaal tempo
+- **Oranje:** Vertraagd
+- **Groen:** Afgerond
 
 ---
 
 ## Relatie met andere schermen
 
-- klik → opent taak-detail
-- status bepaalt welk scherm daar zichtbaar is
-- lijst reflecteert realtime status van taken
+```
+Taken-overzicht (NIVEAU 1)
+  ↓ Klik taakdefinitie
+Taakdefinitie-detail (NIVEAU 2)
+  ├─ Configuratie
+  ├─ Volgende geplande instantie
+  ├─ Actieve instantie
+  └─ Geschiedenis
+      ↓ Klik instantie-rij
+      Taakinstantie-detail (NIVEAU 3)
+        ├─ Workflow bar
+        ├─ Views (Kandidaten/Beoordeling/Accordering/Uitvoering/Resultaat)
+        └─ Dossier-tab (NIVEAU 4, audit)
+```
 
 ---
 
 ## Audit
 
-- geen directe audit interactie
-- audit zichtbaar binnen taak-detail
+- Geen directe audit-interactie op dit niveau
+- Audit beschikbaar in Taakinstantie-detail > Dossier-tab
