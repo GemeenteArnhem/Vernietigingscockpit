@@ -12,7 +12,7 @@ De volgende kernprocessen worden beschreven:
 - ophalen van vernietigingskandidaten
 - beoordeling en accordering
 - starten van vernietiging
-- afronding en verklaring van vernietiging
+- afronding, verklaring en archiveren van vernietiging
 
 ## 2. Aanmaken en plannen van een vernietigingstaak
 
@@ -76,6 +76,7 @@ Belangrijk:
 
 ## 4. Beoordeling door recordmanager
 Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
+Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
 
 ```mermaid
 sequenceDiagram
@@ -121,7 +122,7 @@ sequenceDiagram
     UI ->> D: Sla toelichting op
 
     alt Akkoord
-        PO ->> UI: Keur taak goed
+        PO ->> UI: Keur vernietigingslijst (accordering) goed
         UI ->> D: Leg accordering proceseigenaar vast
         D ->> WF: Update workflowstatus (naar archivaris)
     else Terugsturen
@@ -149,7 +150,7 @@ sequenceDiagram
     UI ->> D: Sla toelichting op
 
     alt Akkoord (finale accordering)
-        AR ->> UI: Keur taak definitief goed
+        AR ->> UI: Keur vernietigingslijst (accordering) goed
         UI ->> D: Leg accordering archivaris vast
         D ->> WF: Update workflowstatus (gereed voor vernietiging)
     else Terugsturen

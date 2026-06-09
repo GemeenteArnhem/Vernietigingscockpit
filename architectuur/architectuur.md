@@ -184,6 +184,8 @@ Het ecosysteem **moet** voldoen aan de volgende kwaliteitsdoelen conform gemeent
 - beheerbaarheid en configureerbaarheid
 - transparantie richting toezicht en controle
 
+Het ecosysteem maakt expliciet onderscheid tussen auditlogging (juridisch en onveranderbaar) en technische logging (operationeel en ondersteunend).
+
 Deze kwaliteitsdoelen **zijn richtinggevend** voor alle ontwerpkeuzes.
 
 ## 10. Versies en evolutie

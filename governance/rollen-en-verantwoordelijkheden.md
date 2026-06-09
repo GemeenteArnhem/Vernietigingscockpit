@@ -63,14 +63,14 @@ Deze rol **initieert en begeleidt** vernietigingsprocessen.
 De recordmanager:
 - **moet** vernietigingstaken aanmaken en beheren
 - **moet** sjablonen en planning beheren
-- **moet** kandidatenlijsten beoordelen
+- **moet** vernietigingslijsten beoordelen
 - **moet** uitsluitingen vastleggen met toelichting
 - **moet** de voortgang van taken bewaken
 
 ### 4.3 Bevoegdheden en beperkingen
 
 De recordmanager:
-- **mag** kandidaten beoordelen
+- **mag** vernietigingskandidaten beoordelen
 - **mag** uitsluitingen en toelichtingen registreren
 - **mag niet** accorderen namens andere rollen
 - **mag niet** vernietiging technisch starten
@@ -93,9 +93,9 @@ De proceseigenaar:
 ### 5.3 Bevoegdheden en beperkingen
 
 De proceseigenaar:
-- **mag** kandidatenlijsten inzien en annotaties maken
+- **mag** vernietigingslijsten (accordering) inzien en annotaties maken
 - **mag** accorderen of afwijzen
-- **mag niet** kandidaten wijzigen
+- **mag niet** vernietingskandidaten wijzigen
 - **mag niet** vernietiging starten
 
 ## 6. Archivaris

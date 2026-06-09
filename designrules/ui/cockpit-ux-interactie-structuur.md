@@ -1,19 +1,19 @@
-# UI/UX Design Specification – Vernietigingscockpit
-Versie: 2.0 (Aangescherpt op basis van mockups)  
-Status: Normatief ontwerpdocument (bouwbaar)  
+# UI/UX Interactie & Structuur – Vernietigingscockpit (NLDS & React Compliant)
+Versie: 3.0  
+Status: Normatief ontwerpdocument (UX + interactie + implementatiegericht)  
 Doelgroep: Leveranciers, ontwerpers, ontwikkelaars
 
 ---
 
 # 1. Doel en positionering
 
-Dit document beschrijft de **bindende UI/UX ontwerpregels, interacties en schermstructuur** voor de Vernietigingscockpit.
+Dit document beschrijft de **bindende UX-structuur, interactieregels en schermopbouw** van de Vernietigingscockpit.
 
 Het document:
-- is **normerend en afdwingbaar**
-- beschrijft **gedrag, interactie en structuur**
-- is geschikt voor **implementatie én AI UI generatie**
-- borgt **besluitvorming, auditability en gebruiksvriendelijkheid**
+- is **leidend voor gedrag en structuur**
+- borgt **besluitvorming en auditability**
+- is geschikt voor **React implementatie**
+- is compatibel met **NL Design System (NLDS)**
 
 ---
 
@@ -24,13 +24,13 @@ De UI is een **besluitvormingsinstrument**.
 De UI moet:
 - expliciet maken wat de gebruiker moet doen
 - zichtbaar maken wie aan zet is
-- context geven vóór elke beslissing
+- context tonen vóór elke beslissing
 - alle stappen en keuzes vastleggen
 
 De UI mag niet:
-- impliciete acties bevatten
-- beslissingen verbergen
-- context verstoppen
+- impliciete stappen bevatten
+- context verbergen
+- gebruikers laten zoeken naar acties
 
 ---
 
@@ -41,11 +41,10 @@ De UI mag niet:
 | Recordmanager | Mag deze set kandidaten door naar accordering? |
 | Proceseigenaar | Is het verantwoord om deze set te vernietigen? |
 | Archivaris | Is deze vernietiging rechtmatig en aantoonbaar? |
-| Functioneel beheerder | Kan deze vernietiging technisch correct worden uitgevoerd? |
 
 ---
 
-# 4. Decision Model
+# 4. Decision Model (leidend voor UX)
 
 1. Beoordeling kandidaten  
 2. Accordering (inhoudelijk)  
@@ -53,21 +52,24 @@ De UI mag niet:
 4. Start vernietiging  
 5. Afronding  
 
-Elke stap bevat:
-- één kernbeslissing
-- één primaire actie
-- expliciete context
+Regels:
+- elke stap = 1 beslissing
+- elke stap = 1 primaire actie
+- elke stap heeft expliciete context
 
 ---
 
-# 5. Navigatie
+# 5. Navigatiestructuur
 
 ## 5.1 Hoofdnavigatie
+
 - Dashboard  
 - Vernietigingstaken  
 - Beheer  
 
-## 5.2 Binnen taak (workflow)
+---
+
+## 5.2 Binnen taak (workflow gestuurd)
 
 Workflow is **geen navigatie**, maar **sturing**:
 
@@ -75,8 +77,8 @@ Workflow is **geen navigatie**, maar **sturing**:
 
 Regels:
 - huidige stap is actief
-- toekomstige stappen zijn geblokkeerd
-- workflow bepaalt beschikbare acties
+- volgende stappen zijn geblokkeerd
+- gebruiker navigeert niet, maar wordt geleid
 
 ---
 
@@ -89,16 +91,22 @@ Regels:
 
 ---
 
-# 7. Taak (Dossier) – Structuur
+# 7. Taak (Dossier) – Hoofdscherm
+
+De taak is de **centrale UX-container**.
+
+Alle interacties vinden plaats binnen deze context.
+
+---
 
 ## 7.1 Header (altijd zichtbaar)
 
 Toont:
 - taaknaam
-- workflowstatus (stap)
+- workflowstatus (huidige stap)
 - actieve rol (wie is aan zet)
 - primaire actie (CTA)
-- aantal objecten (totaal / uitgesloten / fouten)
+- aantallen (totaal / uitgesloten / fouten)
 - startdatum
 - tijd in huidige stap
 - laatste activiteit
@@ -108,11 +116,14 @@ Toont:
 ## 7.2 Workflowbalk
 
 Toont:
-- stappen
+- alle stappen
 - huidige positie
-- voortgang
-- tijd in stap
-- vertraging (visueel gemarkeerd)
+- afgeronde stappen
+- toekomstige stappen
+
+Aanvullend:
+- tijd per stap
+- vertraging indicatie
 
 ---
 
@@ -120,62 +131,71 @@ Toont:
 
 Toont:
 - totaal aantal objecten
-- uitgesloten objecten
-- afwijkingen / onzekerheden
+- aantal uitgesloten
+- aantal afwijkingen
 - belangrijke signalen
+
+Doel:
+- snelle interpretatie vóór actie
 
 ---
 
-## 7.4 Hoofdvlak
+## 7.4 Hoofdvlak (View container)
 
-Bevat de actieve view (zie hoofdstuk 8)
+Toont de actieve view:
+
+- Kandidaten
+- Accordering
+- Uitvoering
+- Resultaat
+- Dossier
 
 ---
 
 ## 7.5 Actiegebied
 
 Bevat:
-- primaire actie (dominant)
-- secundaire acties (ondergeschikt)
+- één primaire actie
+- secundaire acties
 
 Regels:
-- altijd precies één primaire actie
+- primaire actie is altijd zichtbaar
 - actie correspondeert met kernbeslissing
 
 ---
 
-# 8. Views binnen Taak (Dossier)
+# 8. Views binnen Taak
 
 ---
 
 ## 8.1 Kandidaten (Recordmanager)
 
 ### Toont:
-- lijst van objecten
+- tabel met objecten (NLDS Data Table)
 - metadata per object
-- status per object (geselecteerd / uitgesloten)
+- status per object
 
 ### Interactie:
-- uitsluiten van objecten
-- toevoegen van toelichting
+- object uitsluiten
+- toelichting toevoegen
 - bulk selectie
 
 ### Filtering:
-- filtering per kolom (inline)
+- inline filters per kolom
 - combinatie van filters
 - realtime update
 
 ### Regels:
-- uitsluiting moet zichtbaar zijn
-- filtering verbergt geen context
+- filtering verliest context niet
 - bulkacties tonen impact vooraf
+- status zichtbaar per object
 
 ---
 
 ## 8.2 Accordering (Proceseigenaar)
 
 ### Toont:
-- samenvatting van dataset
+- samenvatting dataset
 - uitsluitingen
 - toelichtingen recordmanager
 
@@ -185,7 +205,7 @@ Regels:
 - uitzonderingen toevoegen
 
 ### Regels:
-- geen technische details zichtbaar
+- geen technische details
 - focus op begrijpelijkheid
 
 ---
@@ -210,13 +230,13 @@ Regels:
 ## 8.4 Uitvoering
 
 ### Toont:
-- lijst van stekkers
+- lijst stekkers
 - aantallen per bron
 - geplande acties
 
 ### Feedback:
 - status per stekker (bezig / geslaagd / fout)
-- visuele indicatoren (spinner, checkmark)
+- visuele feedback (spinner / checkmark)
 
 ### Acties:
 - starten vernietiging (met bevestiging)
@@ -236,15 +256,15 @@ Regels:
 - vernietigingsverklaring
 
 ### Acties:
-- bekijken resultaten
-- downloaden verklaring
+- bekijken
+- downloaden
 
 ---
 
 ## 8.6 Dossier / Audit
 
 ### Toont:
-- volledige historie
+- historie
 - accorderingen
 - wijzigingen
 - logging
@@ -258,12 +278,12 @@ De UI moet ondersteunen:
 
 - uitsluiten van objecten
 - toevoegen van toelichting per object
-- inzicht in objectstatus
+- inzicht in status
 
 Regels:
-- uitsluiting kan verplicht toelichting vereisen
-- status moet direct zichtbaar zijn
-- acties zijn direct toepasbaar
+- status direct zichtbaar
+- acties direct toepasbaar
+- consistent gedrag per object
 
 ---
 
@@ -275,9 +295,9 @@ De UI moet ondersteunen:
 - objectniveau aantekeningen
 
 Regels:
-- aantekeningen zijn onderdeel van audit
 - gekoppeld aan gebruiker en tijd
-- zichtbaar in alle vervolgstappen
+- zichtbaar in alle stappen
+- onderdeel van audit trail
 
 ---
 
@@ -285,7 +305,7 @@ Regels:
 
 De UI moet ondersteunen:
 
-- selectie van meerdere objecten
+- multi-select
 - bulk wijzigingen
 
 Regels:
@@ -314,11 +334,11 @@ De UI moet:
 Elke view bevat:
 
 - één primaire actie
-- optionele secundaire acties
+- secundaire acties
 
 Regels:
-- primaire actie is visueel dominant
-- primaire actie reflecteert kernbeslissing
+- primaire actie is dominant
+- reflecteert kernbeslissing
 - secundaire acties zijn ondergeschikt
 
 ---
@@ -327,9 +347,9 @@ Regels:
 
 De UI moet:
 
-- alle interacties binnen één taak houden
+- alle interacties binnen taak houden
 - context behouden tussen stappen
-- consistent header en workflow tonen
+- consistente header en workflow tonen
 
 ---
 
@@ -350,7 +370,7 @@ De UI moet:
 
 ---
 
-# 16. Beheer (apart scherm)
+# 16. Beheer (apart domein)
 
 Toont:
 - stekkers
@@ -364,26 +384,77 @@ Regels:
 
 ---
 
-# 17. UX Principes
+# 17. NL Design System integratie
 
-- explicietheid boven gemak  
-- besluitvorming centraal  
-- audit-first ontwerp  
-- taakgericht werken  
-- tijd zichtbaar maken  
-- gebruiker sturen naar actie  
-- scheiding inhoud vs techniek  
+## 17.1 Gebruik
+
+De UI gebruikt NLDS voor:
+- componenten (Button, Table, Input)
+- tokens (kleur, spacing, typografie)
+- toegankelijkheid
+
+## 17.2 Regels
+
+- gebruik standaard NLDS componenten
+- geen custom component zonder motivatie
+- gedrag uit dit document is leidend
 
 ---
 
-# 18. Implementatie en overdracht
+# 18. React Component Architectuur
+
+## 18.1 Hoofdstructuur
+
+```plaintext
+<App>
+  <Sidebar />
+  <MainLayout>
+    <Header />
+    <WorkflowBar />
+    <ContextPanel />
+    <ViewContainer />
+    <ActionPanel />
+  </MainLayout>
+</App>
+```
+
+## 18.2 Taak (Dossier)
+
+```plaintext
+<TaskPage>
+  <TaskHeader />
+  <WorkflowBar />
+  <ContextSummary />
+  <TaskView />
+  <ActionPanel />
+</TaskPage>
+```
+
+## 18.3 Kandidaten view
+
+```plaintext
+<CandidateTable>
+  <Table />
+  <Filters />
+  <BulkActions />
+</CandidateTable>
+```
+
+## 18.4 Regels
+
+- componenten zijn modulair
+- state centraal beheerd
+- UI reflecteert backend status
+
+---
+
+# 19. Implementatie en overdracht
 
 Dit document is leidend voor:
 
-- frontend ontwerp (React)
+- UX ontwerp
+- frontend implementatie
 - componentstructuur
-- UX gedrag
-- acceptatiecriteria
 - AI UI generatie
 
-Afwijkingen zijn alleen toegestaan met expliciete motivatie.
+Afwijkingen alleen met expliciete motivatie.
