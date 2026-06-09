@@ -25,15 +25,15 @@ De cockpit:
 - **mag niet** zelf vernietigen of selecteren
 
 De cockpit **communiceert uitsluitend** met stekkers.
-Directe communicatie met gegevensbronnen **is niet toegestaan**.
+Directe communicatie met bronsystemen **is niet toegestaan**.
 
-De cockpit **bevat geen** gegevensbron specifieke of landelijke selectielijst interpretatie logica.
+De cockpit **bevat geen** bronsysteem specifieke of landelijke selectielijst interpretatie logica.
 
 ## 3. Architectuurprincipes
 
 Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **bindend** voor de architectuur van de cockpit:
 
-- De cockpit **is gebruiksvriendelijk en toegankelijk, en voldoet hiervoor aan de WCAG normen**
+- De cockpit **is gebruiksvriendelijk en toegankelijk, en voldoet aan de geldende WCAG-norm**
 - de cockpit **is de enige plek waar normatieve besluitvorming plaatsvindt en wordt vastgelegd**
 - de cockpit **maakt alle besluiten expliciet, herleidbaar en onveranderbaar na vastlegging**
 - de cockpit **waarborgt dat elke actie terug te voeren is op een expliciet besluit en bevoegde actor**
@@ -41,12 +41,12 @@ Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **b
 - de cockpit **dwingt volledige procesintegriteit af** (geen impliciete stappen, geen bypasses, geen verborgen paden)
 - de cockpit **waarborgt functiescheiding en rolzuiverheid in elke stap van het proces**
 - de cockpit **legt de volledige context van besluitvorming vast** (input, overwegingen, uitzonderingen, accorderingen)
-- de cockpit **beheert het vernietigingsdossier als primaire bron van waarheid voor verantwoording**
+- de cockpit **beheert het vernietigingsdossier als primaire bronsysteem van waarheid voor verantwoording**
 - de cockpit **garandeert dat historische processen volledig reproduceerbaar en controleerbaar blijven**
 - de cockpit **maakt verschillen tussen besluit en uitvoering expliciet zichtbaar**
 - de cockpit **gaat expliciet om met onzekerheden, afwijkingen en uitzonderingen in het proces**
 - de cockpit **beperkt zich tot regie, vastlegging en verantwoording en vermijdt elke vorm van operationele interpretatie**
-- de cockpit **is onafhankelijk van bron- en stekkerspecifieke implementaties en abstraheert deze volledig**
+- de cockpit **is onafhankelijk van gegevensbron- en stekkerspecifieke implementaties en abstraheert deze via uniforme contracten**
 - de cockpit **ondersteunt transparantie richting toezicht, controle en audit zonder aanvullende interpretatie**
 - de cockpit **waarborgt dat geen vernietiging kan plaatsvinden zonder volledig en afgerond dossier**
 - de cockpit **maakt alle relevante proces- en besluitinformatie exporteerbaar en deelbaar binnen governancekaders**
@@ -94,12 +94,11 @@ Overlap tussen componenten is niet toegestaan.
 
 Dit component vormt de gebruikersinterface voor het definiëren, uitvoeren, analyseren en verantwoorden van vernietigingstaken binnen een gedefinieerde workflow.
 
-Dit component vormt de gebruikersinterface.
 Het component:
 - **moet** takengericht werken
 - **moet** taken, vernietigingskandidaten en status tonen
 - **moet** toelichtingen en uitsluitingen ondersteunen
-- **moet** het proces rondom besluitforming faciliteren
+- **moet** het proces rondom besluitvorming faciliteren
 - **moet** historie en voortgang inzichtelijk maken
 - **mag geen** selectie of vernietigingslogica bevatten
 
@@ -122,7 +121,7 @@ Het:
 - **moet** sjablonen ondersteunen
 - **moet** taken reproduceerbaar maken
 - **moet** frequentie en planning vastleggen
-- **mag geen** gegevensbron of stekkerlogica bevatten
+- **mag geen** bronsysteem of stekkerlogica bevatten
 
 Taken **zijn procesmatig** en niet technisch van aard.
 
@@ -139,30 +138,30 @@ De workflow **moet minimaal bestaan uit**:
 - accordering door proceseigenaar
 - finale accordering door archivaris
 
-### 5.5 Kandidaten en Dossierbeheer
+### 5.5 Vernietigingskandidaten en Dossierbeheer
 
 Dit component **beheert het vernietigingsdossier**.
 Het:
-- **moet** kandidatenlijsten opslaan
+- **moet** aangeleverde lijsten met vernietigingskandidaten vastleggen
 - **moet** uitsluitingen met toelichting vastleggen
 - **moet** versies en wijzigingen registreren
 - **mag geen** inhoudelijke besluiten wijzigen
 
 Het vernietigingsdossier **vormt** het primaire audit en verantwoordingsbewijs.
 
-### 5.6 Stekker Connectie
+### 5.6 Stekkerkoppeling
 
 Dit component **verzorgt** alle communicatie met stekkers.
 Het:
 - **moet** via uniforme contracten communiceren
-- **moet** resultaten per object verwerken
-- **mag geen** stekker of bron specifieke aannames bevatten
+- **moet** uitvoeringsresultaten per informatieobject verwerken
+- **mag geen** stekker- of bronsysteem specifieke aannames bevatten
 
 Afwijkingen per stekker **mogen niet** doorwerken in de cockpit.
 
 ### 5.7 Stekkers
 
-Stekkers zijn externe uitvoerende componenten.
+Stekkers zijn uitvoerende componenten waarmee de cockpit via uniforme contracten communiceert.
 De cockpit:
 - **mag geen** kennis hebben van interne stekkerlogica
 - **mag uitsluitend** via contract communiceren
@@ -183,7 +182,7 @@ Na afronding van een taak **moet** een verklaring van vernietiging worden gegene
 Deze verklaring:
 - **moet** alle accorderingen bevatten
 - **moet** uitvoeringsresultaten bevatten
-- **moet** worden gearchiveerd als zaak
+- **moet** worden gearchiveerd in een daarvoor aangewezen archief- of zaaksysteem
 - **moet** deelbaar zijn (download)
 
 Zonder verklaring **is het proces niet afgerond**.
@@ -196,8 +195,9 @@ De cockpit:
 - **moet** transparantie en controle bieden
 
 Stekkers:
-- **moeten** selecteren en vernietigen
-- **leveren** technische resultaten terug
+- **moeten** vernietigingskandidaten bepalen
+- **moeten** vernietiging technisch uitvoeren of laten uitvoeren via bronsystemen
+- **moeten** uitvoeringsresultaten per aangeboden informatieobject terugleveren
 
 Deze verantwoordelijkheden **mogen niet** overlappen.
 
@@ -211,7 +211,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 - de cockpit **moet** afdwingen dat alleen bevoegde rollen besluiten kunnen nemen  
 
 ### Dossierintegriteit en onveranderbaarheid
-- de cockpit **moet** het vernietigingsdossier volledig, consistent en onveranderbaar vastleggen  
+- de cockpit **moet** het vernietigingsdossier volledig, samenhangend en onveranderbaar vastleggen
 - de cockpit **moet** alle wijzigingen versioneren en historisch inzichtelijk maken  
 - de cockpit **mag geen** verlies van dossierinformatie toestaan  
 
@@ -226,7 +226,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 - de cockpit **mag geen** onverklaarbare discrepanties toestaan  
 
 ### Procescontrole en voortgang
-- de cockpit **moet** realtime inzicht geven in status, voortgang en blokkades  
+- de cockpit **moet** actueel inzicht geven in status, voortgang en blokkades  
 - de cockpit **moet** deterministische workflow-uitvoering waarborgen  
 - de cockpit **moet** herstel en herstart van processen ondersteunen zonder verlies van consistentie  
 
@@ -242,7 +242,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 
 ### Export en bewijsvoering
 - de cockpit **moet** alle relevante informatie exporteerbaar maken voor verantwoording en archivering  
-- de cockpit **moet** verklaringen en onderliggende data consistent en volledig genereren  
+- de cockpit **moet** verklaringen en onderliggende gegevens volledig en in samenhang genereren 
 - de cockpit **moet** waarborgen dat geëxporteerde informatie overeenkomt met het dossier  
 
 ### Configuratie en voorspelbaarheid
@@ -251,7 +251,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 - de cockpit **mag geen** verborgen of impliciete configuratie gebruiken  
 
 ### Onafhankelijkheid en robuustheid
-- de cockpit **moet** functioneren onafhankelijk van individuele stekkers of bronnen  
+- de cockpit **moet** functioneren onafhankelijk van individuele stekkers of bronsystemen  
 - de cockpit **moet** omgaan met gedeeltelijke beschikbaarheid van stekkers  
 - de cockpit **moet** fouten in externe componenten isoleren van besluitvorming en dossieropbouw  
 
@@ -260,6 +260,9 @@ Deze eisen **zijn bindend** voor elke implementatie.
 ## 8. Versies en compatibiliteit
 
 De cockpit **moet** meerdere stekkerversies parallel ondersteunen.
+
+Als uitgangspunt geldt ondersteuning van de actuele stekkerversie en maximaal twee eerdere ondersteunde versies, tenzij hierover andere beheerafspraken zijn vastgelegd.
+
 Wijzigingen:
 - **mogen niet** brekend zijn binnen een major versie
 - **moeten** additief zijn
@@ -272,7 +275,7 @@ Versieinformatie **moet** worden vastgelegd in vernietigingsdossiers.
 ### 9.1 Aannames
 
 - de cockpit bevat geen landelijke selectielijst logica
-- stekkers leveren uitvoeringsresultaten per informatieobject
+- stekkers leveren uitvoeringsresultaten per aangeboden informatieobject
 - archivering vindt plaats in een archiefsysteem, zoals een zaaksysteem
 
 Deze aannames **moeten** expliciet worden gevalideerd bij implementatie.

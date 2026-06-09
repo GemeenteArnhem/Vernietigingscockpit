@@ -34,7 +34,7 @@ sequenceDiagram
 ```
 
 ## 3. Ophalen van vernietigingskandidaten
-Dit diagram beschrijft hoe de cockpit kandidaten ophaalt bij stekkers.
+Dit diagram beschrijft hoe de cockpit een selectie start bij een stekker en de lijst met vernietigingskandidaten ophaalt.
 
 ```mermaid
 sequenceDiagram
@@ -44,27 +44,38 @@ sequenceDiagram
     participant Stekker
     participant D as Dossierbeheer
 
-    RM ->> UI: Start ophalen kandidaten
+    RM ->> UI: Start ophalen vernietigingskandidaten
     UI ->> WF: Activeer stap "selectie ophalen"
 
-    WF ->> D: Registreer selectiecontext (regels, peildatum)
-    WF ->> Stekker: GeefKandidaatVernietigingslijst
+    WF ->> D: Registreer selectiecontext (taak, scope, peildatum)
+    WF ->> Stekker: POST /selecties
+    Stekker -->> WF: selectieId + status
 
-    Stekker -->> WF: Kandidatenlijst + metadata
-    WF ->> D: Sla kandidatenlijst op
+    loop Tot selectie gereed is
+        WF ->> Stekker: GET /selecties/{selectieId}
+        Stekker -->> WF: Status selectie
+    end
 
-    UI ->> D: Vraag kandidatenlijst op
-    D -->> UI: Kandidatenlijst + status
-    UI -->> RM: Toon kandidatenlijst
+    loop Per pagina
+        WF ->> Stekker: GET /selecties/{selectieId}/objecten
+        Stekker -->> WF: Vernietigingskandidaten + metadata
+        WF ->> D: Sla vernietigingskandidaten op
+    end
+
+    UI ->> D: Vraag lijst met vernietigingskandidaten op
+    D -->> UI: Lijst met vernietigingskandidaten + status
+    UI -->> RM: Toon lijst met vernietigingskandidaten
 ```
 
 Belangrijk:
 - selectie is operationeel
-- landelijke selectielijst interpretatie vindt plaats in de stekker
-- cockpit slaat kandidaten op, maar bepaalt ze niet
+- landelijke selectielijstinterpretatie vindt plaats in de stekker
+- de stekker bepaalt vernietigingskandidaten
+- de cockpit legt vernietigingskandidaten vast, maar bepaalt ze niet.
+- de selectie is herleidbaar via `selectieId`
 
 ## 4. Beoordeling door recordmanager
-Dit diagram toont de beoordeling van kandidaten door de recordmanager.
+Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
 
 ```mermaid
 sequenceDiagram
@@ -72,10 +83,10 @@ sequenceDiagram
     participant UI as Cockpit UI
     participant D as Dossierbeheer
 
-    RM ->> UI: Bekijk kandidatenlijst
-    RM ->> UI: Sluit objecten uit + toelichting
+    RM ->> UI: Bekijk lijst met vernietigingskandidaten
+    RM ->> UI: Sluit informatieobjecten uit + toelichting
     UI ->> D: Leg uitsluitingen en toelichtingen vast
-    D ->> D: Update status per object
+    D ->> D: Update status per informatieobject
     D -->> UI: Dossier bijgewerkt
 ```
 
@@ -85,7 +96,7 @@ Belangrijk:
 - alles wordt vastgelegd in het dossier
 
 ## 5. Accordering door proceseigenaar en archivaris
-Dit diagram beschrijft de twee staps accordering.
+Dit diagram beschrijft de tweestapsaccordering.
 
 Belangrijk:
 - functiescheiding is verplicht
@@ -101,10 +112,10 @@ sequenceDiagram
     participant D as Dossierbeheer
     participant WF as Workflow Engine
 
-    PO ->> UI: Bekijk kandidaten en toelichtingen
-    UI ->> D: Haal dossier + kandidaten op
-    D -->> UI: Kandidatenlijst + toelichtingen
-    UI -->> PO: Toon kandidaten
+    PO ->> UI: Bekijk vernietigingskandidaten en toelichtingen
+    UI ->> D: Haal dossier + vernietigingskandidaten op
+    D -->> UI: Lijst met vernietigingskandidaten + toelichtingen
+    UI -->> PO: Toon vernietigingskandidaten
 
     PO ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op
@@ -120,7 +131,7 @@ sequenceDiagram
     end
 ```
 
-### 5a. Accordering door gemeentarchivaris
+### 5b. Accordering door gemeentearchivaris
 
 ```mermaid
 sequenceDiagram
@@ -129,10 +140,10 @@ sequenceDiagram
     participant D as Dossierbeheer
     participant WF as Workflow Engine
 
-    AR ->> UI: Bekijk kandidaten en toelichtingen
-    UI ->> D: Haal dossier + kandidaten op
-    D -->> UI: Kandidatenlijst + toelichtingen
-    UI -->> AR: Toon kandidaten
+    AR ->> UI: Bekijk vernietigingskandidaten en toelichtingen
+    UI ->> D: Haal dossier + vernietigingskandidaten op
+    D -->> UI: Lijst met vernietigingskandidaten + toelichtingen + toelichtingen
+    UI -->> AR: Toon vernietigingskandidaten
 
     AR ->> UI: Voeg toelichting toe (optioneel)
     UI ->> D: Sla toelichting op
@@ -149,7 +160,7 @@ sequenceDiagram
 ```
 
 ## 6. Uitvoeren van vernietiging
-Dit diagram beschrijft hoe de cockpit vernietiging vrijgeeft en start.
+Dit diagram beschrijft hoe de cockpit vernietiging vrijgeeft, een vernietiging start en batches aanbiedt aan de stekker.
 
 ```mermaid
 sequenceDiagram
@@ -163,24 +174,41 @@ sequenceDiagram
     UI ->> D: Leg vernietigingsbesluit vast
     D ->> WF: Activeer uitvoeringsstap
 
-    WF ->> D: Haal goedgekeurde objecten op
-    WF ->> Stekker: Vernietig(lijstMetObjectIds)
+    WF ->> D: Haal vrijgegeven informatieobjecten op
+    WF ->> Stekker: POST /vernietigingen
+    Stekker -->> WF: vernietigingId + status
 
-    Stekker -->> WF: Resultaten per object
-    WF ->> D: Registreer uitvoeringsresultaten
+    loop Per batch
+        WF ->> Stekker: POST /vernietigingen/{vernietigingId}/batches
+        Stekker -->> WF: Batch geaccepteerd
+    end
+
+    loop Tot vernietiging afgerond is
+        WF ->> Stekker: GET /vernietigingen/{vernietigingId}
+        Stekker -->> WF: Status vernietiging
+    end
+
+    loop Per batchresultaat
+        WF ->> Stekker: GET /vernietigingen/{vernietigingId}/batches/{batchNummer}
+        Stekker -->> WF: Uitvoeringsresultaten per aangeboden informatieobject
+        WF ->> D: Registreer uitvoeringsresultaten
+    end
 
     UI ->> D: Vraag uitvoeringsresultaten op
-    D -->> UI: Resultaten per object + status
+    D -->> UI: Uitvoeringsresultaten + status
     UI -->> RM: Toon resultaten vernietiging
 ```
 
 Belangrijk:
-- alleen expliciet goedgekeurde objecten worden vernietigd
-- vernietiging is idempotent
-- resultaten worden per object vastgelegd
+- alleen expliciet vrijgegeven informatieobjecten worden aangeboden voor vernietiging
+- vernietiging wordt asynchroon uitgevoerd
+- batches zijn technische verdelingen van de uitvoering
+- de POST op een batch bevestigt acceptatie, maar bevat nog geen definitieve uitvoeringsresultaten
+- resultaten worden per aangeboden informatieobject vastgelegd
+- de vernietiging is herleidbaar via `vernietigingId`
 
 ## 7. Fouten en retries bij vernietiging
-Dit diagram laat een vereenvoudigd foutpad zien.
+Dit diagram laat een vereenvoudigd foutpad zien bij batchverwerking.
 
 ```mermaid
 sequenceDiagram
@@ -191,21 +219,23 @@ sequenceDiagram
     participant UI as Cockpit UI
     actor RM as Recordmanager
 
-    Stekker ->> Retry: Fout bij vernietiging
-    Retry ->> Stekker: Retry actie
-    Retry -->> Stekker: Definitieve status per object
+    Stekker ->> Retry: Fout bij verwerking van batch of informatieobject
+    Retry ->> Stekker: Retry binnen dezelfde vernietigingId en batchNummer
+    Retry -->> Stekker: Definitieve status per aangeboden informatieobject
 
-    Stekker -->> WF: Status update (incl. fouten)
-    WF ->> D: Registreer status per object
+    WF ->> Stekker: GET /vernietigingen/{vernietigingId}/batches/{batchNummer}
+    Stekker -->> WF: Uitvoeringsresultaten inclusief fouten
+    WF ->> D: Registreer uitvoeringsresultaten per informatieobject
 
     UI ->> D: Vraag status en fouten op
-    D -->> UI: Resultaten per object + foutstatus
+    D -->> UI: Uitvoeringsresultaten + foutstatus
     UI -->> RM: Toon fouten en status
 ```
 
 Belangrijk:
 - retries vinden plaats in de stekker
-- cockpit registreert resultaten
+- retries blijven gekoppeld aan dezelfde `vernietigingId` en `batchNummer`
+- cockpit registreert definitieve uitvoeringsresultaten
 - handmatige opvolging is mogelijk
 
 ## 8. Genereren van verklaring van vernietiging
@@ -229,7 +259,7 @@ sequenceDiagram
     WF ->> V: Genereer vernietigingsverklaring
     V ->> D: Registreer verklaring
 
-    V ->> Z: Archiveer verklaring als zaak
+    V ->> Z: Archiveer verklaring
     Z -->> V: Bevestiging archivering
 
     UI ->> D: Vraag verklaring op
@@ -239,7 +269,7 @@ sequenceDiagram
 
 Belangrijk:
 - verklaring bevat besluiten en uitvoering
-- archivering vormt juridisch bewijs
+- archivering ondersteunt juridisch bewijs
 - proces is hiermee formeel afgesloten
 
 ## 9. Overzicht processen  – Functioneel beheerder
@@ -250,7 +280,7 @@ Belangrijk:
 - Versie- en wijzigingsbeheer
 
 ## 10. Configureren van een stekker
-Dit diagram beschrijft de configuratie van stekkers
+Dit diagram beschrijft de configuratie van stekkers.
 
 ```mermaid
 sequenceDiagram
@@ -259,14 +289,14 @@ sequenceDiagram
     participant C as Configuratiebeheer
     participant D as Dossierbeheer
 
-    FB ->> UI: Configureer stekker (parameters, mapping)
+    FB ->> UI: Configureer stekkerkoppeling (endpoint, autorisatie, versie, parameters)
     UI ->> C: Sla configuratie op
     C ->> D: Registreer configuratiewijziging (versie, tijd, actor)
     C -->> UI: Bevestiging configuratie
 ```
 
-## 10. Gebruikers en rollen beheren
-Dit diagram beschrijft de configuratie van gebruikers en rollen
+## 11. Gebruikers en rollen beheren
+Dit diagram beschrijft de configuratie van gebruikers en rollen.
 
 ```mermaid
 sequenceDiagram
@@ -279,8 +309,8 @@ sequenceDiagram
     IAM -->> UI: Bevestiging
 ```
 
-## 10. Inzien logging en monitoring
-Dit diagram beschrijft de configuratie van gebruikers en rollen
+## 12. Inzien logging en monitoring
+Dit diagram beschrijft het inzien van logging en monitoring.
 
 ```mermaid
 sequenceDiagram

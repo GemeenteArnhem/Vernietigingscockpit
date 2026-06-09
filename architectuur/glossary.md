@@ -71,9 +71,16 @@ In de context van vernietiging betekent dit dat dubbele aanroepen niet leiden to
 
 ---
 
-## Kandidatenlijst
+## Informatieobject
+Een eenheid van informatie die in een bronsysteem wordt beheerd en waarop selectie en vernietiging betrekking kunnen hebben.
+Een informatieobject kan bijvoorbeeld een dossier, zaak, record, bestand of andere afgebakende informatie-eenheid zijn, afhankelijk van het bronsysteem.
+In dit ecosysteem wordt de term informatieobject gebruikt als generieke term. Waar de context duidelijk is, mag dit worden afgekort tot object.
+
+---
+
+## Lijst met vernietigingskandidaten
 Een operationele lijst van concrete informatieobjecten die in aanmerking komen voor vernietiging.
-De kandidatenlijst wordt bepaald door een stekker en beoordeeld in de cockpit.
+De lijst met vernietigingskandidaten wordt bepaald door een stekker en beoordeeld in de cockpit. De cockpit kan informatieobjecten uitsluiten of accorderen als onderdeel van de workflow, maar bepaalt de operationele selectie niet zelf.
 
 ---
 
@@ -140,6 +147,13 @@ Ze zorgen voor standaardisatie en herhaalbaarheid.
 
 ---
 
+## Uitvoeringsresultaat
+Het resultaat dat een stekker terugkoppelt na technische verwerking van een aangeboden informatieobject.
+Een uitvoeringsresultaat geeft aan of een informatieobject succesvol is vernietigd, niet is gevonden, is gewijzigd, is overgeslagen of niet kon worden vernietigd.
+Uitvoeringsresultaten worden door de cockpit verwerkt in het vernietigingsdossier en gebruikt voor verantwoording en de vernietigingsverklaring.
+
+---
+
 ## Vernietiging
 Het onomkeerbaar verwijderen van informatieobjecten.
 Vernietiging is fysiek en onreconstrueerbaar.
@@ -154,6 +168,12 @@ De cockpit:
 - beheert dossiers
 - communiceert uitsluitend met stekkers
 - voert zelf geen technische vernietiging uit
+
+---
+
+## Vernietigingskandidaat
+Een informatieobject dat door een stekker is geselecteerd als mogelijk te vernietigen informatieobject.
+Een vernietigingskandidaat is nog niet automatisch vernietigd. De cockpit beoordeelt en accordeert de lijst met vernietigingskandidaten binnen de workflow voordat vernietiging wordt vrijgegeven.
 
 ---
 
