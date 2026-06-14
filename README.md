@@ -1,135 +1,250 @@
+# Vernietigingscockpit – Ontwikkeling, architectuur en governance
 
-# Vernietigingscockpit
+Deze repository is de **centrale entree** voor de ontwikkeling van de Vernietigingscockpit.
+Hier komen **agile werken**, **architectuur**, **security**, **compliance** en **governance** samen.
 
-De Vernietigingscockpit is een open source applicatie gericht op het gecontroleerd, transparant en aantoonbaar vernietigen van digitale informatie bij gemeenten.
-
-De cockpit ondersteunt informatiebeheerders, proceseigenaren en archivarissen bij het uitvoeren van vernietigingstaken conform Archiefwet, AVG en aanverwante regelgeving, binnen een steeds complexer wordend informatielandschap.
-
-Dit project wordt ontwikkeld als onderdeel van een bredere community aanpak, met nadruk op herbruikbaarheid, standaardisatie en open samenwerking.
-
----
-
-## Doel en scope
-
-Het doel van de Vernietigingscockpit is
-
-- centraal regie voeren op vernietiging van informatieobjecten over meerdere bronsystemen
-- het vernietigingsproces navolgbaar en controleerbaar maken
-- expliciete besluitvorming ondersteunen voorafgaand aan vernietiging
-- standaardisatie van vernietigingslogica en APIs mogelijk maken
-
-De cockpit is nadrukkelijk **geen archiefsysteem**, maar een sturings en controlelaag binnen een Common Ground landschap.
+De repository ondersteunt samenwerking tussen gemeenten, leveranciers en community,
+op een manier die **iteratief bouwen** combineert met **expliciete en normerende kaders**.
 
 ---
 
-## Ontwikkelprincipes en richtlijnen
+## 1. Doel van deze repository
 
-Dit project volgt de principes uit onder andere
+Deze repository heeft twee expliciet samenhangende doelen:
 
-- Common Ground
-- NeRDS leidraad
-- Standaard voor Publieke Code
-- Open source werken binnen de publieke sector
+### 1. Agile ontwikkeling ondersteunen
+- werken met epics, features en user stories
+- gezamenlijke backlog en prioritering
+- transparant voortgangsbeheer
+- iteratief opleveren en bijsturen
 
-Concreet betekent dit onder andere
+### 2. Architectuur en governance borgen
+- gedeelde architectuurprincipes
+- normatieve kaders en verantwoordelijkheden
+- security, privacy en compliance
+- aantoonbare besluitvorming
 
-- scheiding tussen ontwerp en implementatie
-- contract first denken bij APIs
-- expliciete besluitvorming vastgelegd in de repository
-- maximale transparantie richting gebruikers en hergebruikers
-
-Deze richtlijnen schrijven geen concrete Github inrichting voor, maar vragen wel om traceerbaarheid en herleidbaarheid. De inrichting van deze repository is daarop afgestemd.
-
----
-
-## Werkwijze in deze repository
-
-We werken met Github Issues als centrale plek voor
-
-- ontwerp en verkenning
-- besluitvorming
-- concrete ontwikkeling
-
-Daarbij hanteren we drie expliciete typen issues.
-
-### Design sprint issues
-
-Design sprint issues worden gebruikt voor ontwerpvragen en verkenning, bijvoorbeeld
-
-- UX flows en gebruikersinteractie
-- afbakening cockpit versus bron
-- API contractverkenning
-- MVP scope keuzes
-
-Deze issues hebben het label `design-sprint` en leiden altijd tot een expliciet resultaat, zoals een ontwerpkeuze of een besluit.
-
-### Decision issues
-
-Decision issues leggen expliciete besluiten vast, inclusief aanleiding en gevolgen.
-
-Besluiten worden niet impliciet genomen in code, maar vastgelegd in issues met het label `decision`. Dit maakt latere verantwoording en hergebruik mogelijk.
-
-### Dev issues
-
-Dev issues beschrijven concreet ontwikkelwerk, zoals
-
-- frontend implementatie
-- backend logica
-- API implementatie
-- bugfixes en technische verbeteringen
-
-Een dev issue verwijst altijd naar afgerond ontwerp of een genomen besluit.
+Agile werken en architectuur zijn hierin **bewust verbonden**:
+we bouwen iteratief, **binnen vastgestelde kaders**.
 
 ---
 
-## Labels en betekenis
+## 2. Agile werken in deze repository
 
-In deze repository gebruiken we vaste labels om consistentie en duidelijkheid te borgen.
+De ontwikkeling van de Vernietigingscockpit verloopt agile.
 
-Voor ontwerp en governance
+### 2.1 Werkvorm
 
-- `design-sprint` ontwerp en verkenning
-- `decision` expliciete besluitvorming
-- `ui` UX en UI scope
-- `api` API standaard en contractontwerp
-- `standardisation` herbruikbare afspraken
-- `mvp-boundary` bewust buiten MVP scope geplaatst
+Agile werken betekent:
+- epics voor grote samenhangende doelen
+- features en user stories voor concrete functionaliteit
+- prioritering op basis van waarde, risico en compliance
+- korte feedbackloops
 
-Voor ontwikkeling
+GitHub wordt hierbij gebruikt voor:
+- Issues, user stories en taken
+- Projects voor planning en voortgang
+- Pull requests voor wijzigingen en reviews
 
-- `dev` algemeen ontwikkelwerk
-- `frontend` frontend implementatie
-- `backend` backend implementatie
-- `api-implementation` implementatie van vastgesteld API contract
-- `bug` foutief gedrag
-- `tech-debt` technische schuld of verbetering
+### 2.2 Relatie met architectuur
 
-Ontwerp en ontwikkeling worden niet gemengd in één issue.
+Agile werken **vindt altijd plaats binnen de architectuurkaders**.
 
----
+Dat betekent:
+- architectuur is niet optioneel
+- functiescheiding mag niet worden doorbroken
+- normatief en operationeel blijven gescheiden
+- afwijkingen vereisen expliciete besluitvorming
 
-## Open source en community
-
-De Vernietigingscockpit is bedoeld als open source bouwsteen voor gemeenten en andere overheidsorganisaties.
-
-Bijdragen zijn welkom in de vorm van
-
-- issues
-- ontwerpinput
-- code
-- documentatie
-- gebruikservaringen
-
-Iedere bijdrage is openbaar en navolgbaar. Governance en richting worden bewaakt via expliciete besluitvorming in deze repository.
+Grote of structurele keuzes **worden vastgelegd als ADR**.
 
 ---
 
-## Status
+## 3. Wat is de Vernietigingscockpit
 
-Dit project bevindt zich in actieve ontwikkeling. Functionaliteit wordt gefaseerd gerealiseerd, beginnend met een werkbare MVP.
-Actuele voortgang is te volgen via Github Issues en Projects.
+De Vernietigingscockpit is een centrale voorziening voor
+gecontroleerde, herhaalbare en aantoonbare vernietiging
+van digitale informatie, conform wet en regelgeving.
+
+### Kernidee
+
+- de cockpit **beslist en verantwoordt**
+- stekkers **selecteren en voeren technisch uit**
+- bronsystemen **blijven systeem van record**
+
+De cockpit:
+- beheert vernietigingstaken en workflows
+- ondersteunt beoordeling en accordering
+- borgt functiescheiding
+- beheert dossiers en audittrail
+- genereert verklaringen van vernietiging
+
+De cockpit vernietigt zelf **geen** data.
 
 ---
 
-## Contact en context
-Dit project wordt geïnitieerd door gemeente Arnhem, gemeente Tilburg, Visma Circle, Ilionix, Centric en ontwikkeld in samenwerking met andere gemeenten en partners. Voor inhoudelijke vragen of deelname aan de community, gebruik bij voorkeur vernietigingscockpit.nl, Github Issues of Discussions.
+## 4. Architectuur in het kort
+
+Het ecosysteem bestaat uit drie hoofdonderdelen:
+- Vernietigingscockpit, regie en besluitvorming
+- Stekkers, selectie en technische uitvoering
+- Bronsystemen, fysieke dataopslag en verwijdering
+
+De onderdelen zijn los gekoppeld.
+Communicatie verloopt altijd via vaste contracten.
+Normatieve besluitvorming en operationele uitvoering zijn strikt gescheiden.
+
+---
+
+## 5. De Stekker als logisch architectuurpatroon
+
+De **Stekker** is een **logisch architectuurpatroon**.
+Het beschrijft verantwoordelijkheden en gedrag,
+**niet** de technische of organisatorische vorm.
+
+Een Stekker kan verschillende geldige verschijningsvormen hebben.
+
+### 5.1 Standalone Stekker
+
+Een Stekker kan zelfstandig worden geïmplementeerd:
+- als aparte component of service
+- werkend bovenop eenvoudige databronnen, zoals CSV‑bestanden, exports of databases
+- los beheerd van het bronsysteem
+
+Dit is passend bij:
+- legacy bronnen
+- eenvoudige of tijdelijke databronnen
+- overbruggingssituaties
+
+### 5.2 Geïntegreerde Stekker
+
+Een Stekker kan ook volledig geïntegreerd zijn in een taakapplicatie van een leverancier:
+- ontwikkeld en beheerd door die leverancier
+- zonder aparte deployment als zelfstandige component
+- als onderdeel van de applicatiearchitectuur
+
+### 5.3 Architecturale gelijkwaardigheid
+
+Deze verschijningsvormen zijn **architecturaal gelijkwaardig**.
+
+In alle gevallen geldt:
+- hetzelfde contract richting de Vernietigingscockpit
+- dezelfde scheiding tussen normatief en operationeel
+- dezelfde verantwoordelijkheden
+- de bron blijft systeem van record
+
+De architectuur schrijft **geen deployment‑ of eigenaarschapsmodel voor**,
+maar **wel verantwoordelijkheden en gedrag**.
+
+---
+
+## 6. Architectuur- en governance documentatie
+
+De architectuur en kaders zijn vastgelegd in afzonderlijke Markdown documenten.
+
+### 6.1 Architectuur
+
+- `architectuur/architectuur.md`  
+  Overkoepelend architectuurkader en principes
+
+- `architectuur/architectuur-cockpit.md`  
+  Architectuur van de Vernietigingscockpit
+
+- `architectuur/architectuur-stekker.md`  
+  Generiek stekkerpatroon en verantwoordelijkheden
+
+- `architectuur/sequence-diagrams.md`  
+  Procesverloop en interacties
+
+- `architectuur/terminologie.md`  
+  Normatieve begrippenlijst
+
+### 6.2 Security en compliance
+
+- `security/security-and-privacy.md`  
+  Security- en privacykaders
+
+- `security/compliance-mapping.md`  
+  Relatie met Common Ground, NeRDS, BIO, AVG, NIS2 en Archiefwet
+
+### 6.3 Governance en rollen
+
+- `governance/governance.md`  
+  Besturing, besluitvorming en kaders
+
+- `governance/roles-and-responsibilities.md`  
+  Rollen, bevoegdheden en functiescheiding
+
+### 6.4 Architectuurbesluiten
+
+- `adr/`  
+  Architecture Decision Records voor expliciete keuzes en afwijkingen
+
+---
+
+## 7. Normatief karakter
+
+De architectuur- en governancedocumentatie is **normerend bedoeld**.
+
+Dat betekent:
+- architectuurkaders zijn bindend
+- functiescheiding is verplicht
+- besluiten en uitvoering zijn gescheiden
+- afwijkingen moeten expliciet worden vastgelegd
+- alle stappen zijn traceerbaar
+
+Agile keuzes **mogen niet** strijdig zijn met deze kaders.
+
+---
+
+## 8. Relatie met implementaties
+
+Deze repository bevat **geen productiecode**.
+
+De documentatie vormt het kader voor:
+- meerdere implementaties
+- verschillende stekkers
+- verschillende hostingvormen
+
+Concrete implementaties:
+- kiezen zelf technische middelen
+- **moeten** aantoonbaar aansluiten op deze architectuur
+
+---
+
+## 9. Open source en samenwerking
+
+De Vernietigingscockpit is opgezet als open source ecosysteem.
+
+Deze repository ondersteunt:
+- transparantie
+- gezamenlijke doorontwikkeling
+- hergebruik door meerdere organisaties
+- bijdragen vanuit community en leveranciers
+
+Richtlijnen voor bijdragen zijn vastgelegd in `CONTRIBUTING.md`.
+
+---
+
+## 10. Leeswijzer
+
+Nieuw in het project:
+1. Lees deze README
+2. Ga naar `architectuur/architectuur.md`
+3. Verdiep je in cockpit en stekker architectuur
+4. Gebruik sequence diagrams en glossary ter verdieping
+
+Actief in ontwikkeling:
+- gebruik Issues en Projects voor agile werk
+- raadpleeg architectuur en governance bij twijfel
+- leg afwijkingen vast via ADR’s
+
+---
+
+## 11. Status en governance
+
+Deze repository en documentatie zijn in actieve ontwikkeling.
+Wijzigingen worden transparant verwerkt via issues, pull requests en besluitvorming.
+
+Governance en besluitvorming volgen de afspraken in:
+- `governance/governance.md`
