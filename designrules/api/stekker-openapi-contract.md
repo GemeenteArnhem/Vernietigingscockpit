@@ -91,6 +91,24 @@ Deze identificaties worden gebruikt voor:
 
 Een selectie of vernietiging mag na aanmaak niet stilzwijgend van betekenis veranderen. Nieuwe selectie- of vernietigingsruns krijgen een nieuwe identificatie.
 
+### 2.4 Correlatie met de Cockpit
+
+De stekker moet selectie, vernietiging, batches en uitvoeringsresultaten herleidbaar maken tot de procescontext van de Cockpit.
+
+Voor vernietigingsuitvoeringen gelden minimaal de volgende correlatievelden:
+
+- `selectieId`: de selectie waarop de vernietiging is gebaseerd
+- `vernietigingId`: de uitvoeringsresource bij de stekker
+- `cockpitTaakId`: de taak in de Cockpit waaruit de uitvoering voortkomt
+- `besluitReferentie`: het besluit of de vrijgave op basis waarvan de uitvoering is gestart
+- `vernietigingsdossierId`: optionele verwijzing naar het Cockpit-dossier
+- `batchNummer`: technische batch binnen een vernietiging
+- `vernietigingskandidaatId`: stabiele identificatie van de vernietigingskandidaat over selectie, beoordeling, vernietiging en resultaatverwerking
+- `bronId`: technische sleutel waarmee de Stekker het object in de bron kan terugvinden en vernietigen
+- `bronIdNaam`: gebruikersherkenbare naam of aanduiding van het object, zoals zaaknummer, dossiernummer of documentnaam
+
+Deze correlatiegegevens moeten in responses, resultaten en technische logging beschikbaar blijven zolang dat nodig is voor processturing, herstart, audit en dossieropbouw.
+
 ## 3. Selectie
 
 ### 3.1 Definitie
@@ -158,11 +176,11 @@ Wanneer brongegevens na het maken van de selectie wijzigen, wijzigt de bestaande
 
 ## 4. Vernietiging
 
-### 4.1 Start van vernietiging
+### 4.1 Aanmaken van een vernietigingsuitvoering
 
-`POST /vernietigingen` start een nieuwe vernietiging.
+`POST /vernietigingen` maakt een nieuwe vernietigingsuitvoering aan.
 
-Een vernietiging wordt gestart nadat de cockpit een selectie heeft beoordeeld, eventuele uitsluitingen heeft verwerkt en de vernietiging normatief is vrijgegeven.
+Een vernietigingsuitvoering wordt aangemaakt nadat de cockpit een selectie heeft beoordeeld, eventuele uitsluitingen heeft verwerkt en de vernietiging normatief is vrijgegeven.
 
 Bij het starten van een vernietiging maakt de stekker een nieuwe vernietiging-resource aan met een eigen `vernietigingId`.
 
@@ -170,9 +188,11 @@ De request bevat minimaal:
 
 - de `selectieId` waarop de vernietiging is gebaseerd
 - de scope van de vernietiging
-- de informatie die nodig is om de vernietiging herleidbaar te maken tot de cockpit-taak en het genomen besluit
+- het `cockpitTaakId` waarmee de vernietigingsuitvoering herleidbaar is tot de Cockpit-taak
+- de `besluitReferentie` waarmee de vernietigingsuitvoering herleidbaar is tot het genomen besluit of de vrijgave
+- optioneel het `vernietigingsdossierId` waarmee de uitvoering herleidbaar is tot het Cockpit-dossier
 
-De stekker zet de vernietiging na acceptatie op `IDLE` wanneer de vernietiging is aangemaakt maar nog niet gestart, of op `RUNNING` wanneer de verwerking is gestart of ingepland.
+De stekker zet de vernietiging na acceptatie op `IDLE`. In deze status mag de Cockpit batches aanleveren. De stekker mag nog niet technisch vernietigen.
 
 ### 4.2 Parallelle vernietiging
 
@@ -208,12 +228,39 @@ Iedere batch bevat minimaal:
 
 - `batchNummer`
 - een lijst met informatieobjecten
-- per informatieobject het `recordId`
+- per informatieobject het `vernietigingskandidaatId` uit de selectie
+- per informatieobject het `bronId` als technische sleutel voor de Stekker
 - eventueel aanvullende identificerende gegevens die nodig zijn voor uitvoering en controle
 
-Ieder `recordId` dat vernietigd moet worden, wordt expliciet door de cockpit in de `POST` meegestuurd. De stekker mag niet zelfstandig extra informatieobjecten toevoegen aan een vernietiging.
+Ieder `bronId` dat vernietigd moet worden, wordt expliciet door de cockpit in de `POST` meegestuurd. Ieder aangeboden informatieobject moet gekoppeld zijn aan een vrijgegeven `vernietigingskandidaatId` uit dezelfde selectie. De stekker mag niet zelfstandig extra informatieobjecten toevoegen aan een vernietiging.
 
-### 4.4 Idempotentie
+Het aanbieden van een batch is nog geen startsein voor technische vernietiging. De stekker verzamelt batches bij de vernietigingsuitvoering zolang de uitvoering `IDLE` is.
+
+### 4.4 Vrijgeven voor uitvoering
+
+Nadat de Cockpit alle batches heeft aangeleverd, geeft de Cockpit de vernietigingsuitvoering expliciet vrij via:
+
+`POST /vernietigingen/{vernietigingId}/vrijgeven`
+
+De request bevat minimaal:
+
+- `aantalBatches`: het aantal batches dat de Cockpit heeft aangeleverd
+- `aantalKandidaten`: het aantal vrijgegeven vernietigingskandidaten dat in de batches is aangeleverd
+
+De stekker controleert bij vrijgave minimaal:
+
+- of de vernietiging bestaat;
+- of de vernietiging nog `IDLE` is;
+- of het aantal ontvangen batches overeenkomt met `aantalBatches`;
+- of het aantal aangeboden kandidaten overeenkomt met `aantalKandidaten`;
+- of iedere aangeboden kandidaat herleidbaar is tot de onderliggende selectie;
+- of dezelfde `batchNummer` niet met afwijkende payload is aangeleverd.
+
+Wanneer de controle slaagt, zet de stekker de vernietiging op `RUNNING` en mag de technische vernietiging starten of worden ingepland.
+
+Wanneer de controle niet slaagt, retourneert de stekker `409 Conflict` of `400 Bad Request`, afhankelijk van de fout.
+
+### 4.5 Idempotentie
 
 De stekker moet batches idempotent verwerken.
 
@@ -227,11 +274,19 @@ Dit betekent:
 
 Idempotentie voorkomt dat een technische retry leidt tot dubbele vernietiging of onduidelijke resultaten.
 
-### 4.5 Asynchrone verwerking
+Voor de API gelden de volgende concrete idempotentieafspraken:
+
+- `POST /vernietigingen/{vernietigingId}/batches` is idempotent op de combinatie `vernietigingId` en `batchNummer`
+- wanneer dezelfde batch met identieke payload opnieuw wordt aangeboden, retourneert de stekker dezelfde acceptatie of hetzelfde beschikbare batchresultaat
+- wanneer dezelfde `batchNummer` binnen dezelfde `vernietigingId` opnieuw wordt aangeboden met een afwijkende payload, retourneert de stekker `409 Conflict`
+- een optionele `Idempotency-Key` header mag worden gebruikt voor client-side retry-correlatie, maar vervangt de idempotentie op `vernietigingId` en `batchNummer` niet
+- een retry mag nooit leiden tot een tweede technische vernietiging van hetzelfde informatieobject zonder dat dit expliciet en herleidbaar als veilig hergebruik of bestaand resultaat wordt verwerkt
+
+### 4.6 Asynchrone verwerking
 
 Vernietiging wordt asynchroon uitgevoerd.
 
-De `POST`-requests starten of vervolgen de verwerking, maar bevatten geen definitieve uitvoeringsresultaten. De cockpit haalt status en resultaten op via de daarvoor bedoelde `GET`-endpoints.
+De `POST`-requests voor batches leveren aan en bevatten geen definitieve uitvoeringsresultaten. De technische vernietiging start pas na `POST /vernietigingen/{vernietigingId}/vrijgeven`. De cockpit haalt status en resultaten op via de daarvoor bedoelde `GET`-endpoints.
 
 De requests worden getriggerd door de cockpit. De cockpit doet dit op basis van:
 
@@ -239,9 +294,10 @@ De requests worden getriggerd door de cockpit. De cockpit doet dit op basis van:
 - de vereiste accordering binnen de workflow
 - het vrijgeven van de vernietigingstaak
 - technische batching door de cockpit
+- het expliciet vrijgeven van de vernietigingsuitvoering via `/vrijgeven`
 - eventuele retries of herstarts
 
-De stekker voert vernietiging alleen uit voor informatieobjecten die expliciet door de cockpit zijn aangeboden binnen een batch.
+De stekker voert vernietiging alleen uit voor informatieobjecten die expliciet door de cockpit zijn aangeboden binnen een batch en pas nadat de vernietiging is vrijgegeven voor uitvoering.
 
 Resultaten worden opgevraagd via:
 
@@ -292,13 +348,38 @@ De response bevat minimaal:
 
 | Status | Betekenis |
 |---|---|
-| `IDLE` | De vernietiging is aangemaakt, maar verwerking is nog niet gestart. |
-| `RUNNING` | De vernietiging wordt verwerkt of staat gepland voor verwerking. |
+| `IDLE` | De vernietiging is aangemaakt en batches kunnen worden aangeleverd; technische vernietiging is nog niet vrijgegeven. |
+| `RUNNING` | De vernietiging is via `/vrijgeven` vrijgegeven en wordt verwerkt of staat gepland voor verwerking. |
 | `COMPLETED` | Alle aangeboden informatieobjecten zijn succesvol vernietigd (`SUCCESS`). |
 | `PARTIAL` | De vernietiging is afgerond, maar één of meer informatieobjecten hebben een ander eindresultaat dan `SUCCESS`, zoals `FAILED`, `SKIPPED`, `NOT_FOUND` of `CHANGED`. |
 | `FAILED` | De vernietiging als geheel is mislukt of kan niet betrouwbaar worden voortgezet. |
 
 De status heeft altijd betrekking op één `vernietigingId`. Parallelle vernietigingen hebben ieder hun eigen status.
+
+### 6.2 Statusovergangen
+
+Selecties kennen de volgende hoofdflow:
+
+```text
+IDLE -> RUNNING -> READY
+IDLE -> RUNNING -> FAILED
+```
+
+Een selectie met status `READY` is bevroren. De set vernietigingskandidaten mag daarna niet meer wijzigen.
+
+Vernietigingen kennen de volgende hoofdflow:
+
+```text
+IDLE -> RUNNING -> COMPLETED
+IDLE -> RUNNING -> PARTIAL
+IDLE -> RUNNING -> FAILED
+```
+
+Een vernietiging blijft `IDLE` zolang de Cockpit batches aanlevert. De overgang van `IDLE` naar `RUNNING` vindt uitsluitend plaats na een succesvolle `POST /vernietigingen/{vernietigingId}/vrijgeven`.
+
+`COMPLETED` betekent dat alle aangeboden informatieobjecten `SUCCESS` hebben. `PARTIAL` betekent dat de uitvoering is afgerond, maar ten minste één informatieobject een ander eindresultaat heeft dan `SUCCESS`. `FAILED` betekent dat de vernietiging als geheel niet betrouwbaar kan worden voortgezet of verantwoord.
+
+Een stekker mag statusovergangen niet gebruiken om objectresultaten te verbergen. Ook bij `PARTIAL` en waar mogelijk bij `FAILED` moeten beschikbare objectresultaten via de resultaten-endpoints opvraagbaar blijven.
 
 ## 7. Objectresultaten
 
@@ -333,11 +414,14 @@ In deze situaties mag de stekker het informatieobject niet stilzwijgend vernieti
 
 Een objectresultaat bevat minimaal:
 
-- `recordId`
+- `vernietigingskandidaatId`
+- `bronId`
 - `resultaat`
+- `batchNummer`, indien het resultaat buiten de batchcontext wordt ontsloten
 - eventueel een foutcode
 - eventueel een foutmelding of toelichting
-- eventueel een technisch correlatiekenmerk voor logging en herleidbaarheid
+- eventueel een `bronstatus`
+- eventueel een `logReference` of `correlatieId` voor logging en herleidbaarheid
 
 De stekker moet per aangeboden informatieobject precies één eindresultaat rapporteren.
 
@@ -348,6 +432,38 @@ Een fout of afwijking bij één informatieobject blokkeert niet automatisch de v
 De stekker verwerkt de overige informatieobjecten zoveel mogelijk door en rapporteert afwijkingen per informatieobject.
 
 ## 8. Fouten en logging
+
+### 8.0 Fouten via HTTP versus objectresultaten
+
+De API maakt onderscheid tussen fouten op request- of resourceniveau en uitvoeringsresultaten per informatieobject.
+
+HTTP-fouten worden gebruikt wanneer de request als geheel niet kan worden geaccepteerd of verwerkt. Objectresultaten worden gebruikt wanneer de request geldig is, maar de uitvoering voor een specifiek informatieobject niet succesvol is.
+
+De standaard foutpayload bevat minimaal:
+
+- `code`
+- `message`
+- optioneel `details`
+- optioneel `correlatieId`
+- optioneel `logReference`
+
+De volgende HTTP-statussen hebben een vaste betekenis:
+
+| Status | Betekenis |
+|---|---|
+| `400` | De request is syntactisch of inhoudelijk ongeldig. |
+| `401` | Authenticatie ontbreekt of is ongeldig. |
+| `403` | De client is geauthenticeerd, maar niet geautoriseerd voor deze actie. |
+| `404` | De gevraagde selectie, vernietiging of batch bestaat niet of is niet beschikbaar voor deze client. |
+| `409` | De request conflicteert met de actuele status of met een eerdere idempotente aanlevering. |
+| `500` | Onverwachte technische fout bij de stekker. |
+
+Voorbeelden:
+
+- een batch voor een onbekende `vernietigingId` levert `404` op
+- een batch met dezelfde `batchNummer` maar afwijkende payload levert `409` op
+- een geldig aangeboden informatieobject dat in de bron niet meer bestaat levert geen HTTP-fout op, maar een objectresultaat `NOT_FOUND`
+- een geldig aangeboden informatieobject dat sinds selectie is gewijzigd levert geen HTTP-fout op, maar een objectresultaat `CHANGED`
 
 ### 8.1 Selectie
 
@@ -378,7 +494,8 @@ Bij vernietiging rapporteert de stekker fouten per informatieobject.
 
 Een foutresultaat bevat minimaal:
 
-- `recordId`
+- `vernietigingskandidaatId`
+- `bronId`
 - `resultaat`
 - `foutcode`
 - `foutmelding` of toelichting
@@ -416,7 +533,8 @@ Logging bevat minimaal:
 - tijdstip van request of verwerking
 - `selectieId` of `vernietigingId`
 - `batchNummer`, indien van toepassing
-- `recordId`, indien van toepassing
+- `vernietigingskandidaatId`, indien van toepassing
+- `bronId`, indien van toepassing
 - resultaat of foutcode
 - technische foutdetails, indien van toepassing
 - correlatieId of `logReference`

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Node tooling caches and output
+.npm/
+.pnpm-store/
+.yarn/
+.vite/
+.turbo/
+.cache/
+dist/
+build/
+coverage/
+
+# Logs and diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Editor and OS files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PowerShell/editor local state
+*.ps1xml
+*.pssc
+*.psrc
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
