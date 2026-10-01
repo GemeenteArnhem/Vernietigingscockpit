@@ -74,7 +74,7 @@ Status: Beoordeling
 ## Voorbeelden labels (primary action)
 
 - "Selectie ophalen"
-- "Door naar accordering"
+- "Voorleggen"
 - "Goedkeuren"
 - "Vernietigen"
 - "Archiveren"

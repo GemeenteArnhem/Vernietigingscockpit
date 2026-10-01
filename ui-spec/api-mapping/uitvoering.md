@@ -2,12 +2,14 @@
 
 ## Start vernietiging
 
-POST /vernietigingen
+POST /taken/{id}/vernietigingsopdracht
 
-body:
-{
-  taakId
-}
+Gedrag:
+- valideert taak.status == vrijgegeven
+- valideert dat de gebruiker recordmanager is voor deze taak
+- controleert de lijst-hash van de archivarisvrijgave
+- zet de workflowstatus naar uitvoering
+- zet worker-jobs klaar voor technische vernietiging via de stekkers
 
 ---
 

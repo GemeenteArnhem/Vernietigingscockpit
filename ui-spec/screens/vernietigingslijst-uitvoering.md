@@ -153,6 +153,9 @@ Toont per bron_systeem:
 Beschikbaar indien:
 
 state.kan_vernietigen == true
+taak.status == vrijgegeven
+
+De actie wordt uitgevoerd door de recordmanager en zet de taak van `vrijgegeven` naar `uitvoering`.
 
 ---
 

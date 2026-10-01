@@ -135,7 +135,7 @@ body:
 
 ### Archivaris
 
-- kan accorderen in status accordering_archivaris
+- kan inhoudelijk vrijgeven in status accordering_archivaris
 
 ---
 
@@ -144,7 +144,12 @@ body:
 ### Goedkeuren
 
 - accordering_po → accordering_archivaris
-- accordering_archivaris → uitvoering
+- accordering_archivaris → vrijgegeven
+
+### Vernietigingsopdracht
+
+- vrijgegeven → uitvoering
+- wordt gestart door de recordmanager, niet door de archivaris
 
 ---
 

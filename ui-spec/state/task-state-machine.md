@@ -28,6 +28,7 @@ Dit is de enige bron van waarheid voor:
 - beoordeling
 - accordering_po
 - accordering_archivaris
+- vrijgegeven
 - uitvoering
 - resultaat
 - archief
@@ -69,8 +70,16 @@ Dit is de enige bron van waarheid voor:
 - vernietigingslijst is read-only
 - archivaris beoordeelt
 - kan:
-  - goedkeuren (definitief)
+  - inhoudelijk vrijgeven
   - terugsturen
+
+---
+
+### vrijgegeven
+
+- vernietigingslijst is inhoudelijk vrijgegeven door de archivaris
+- recordmanager kan de technische vernietigingsopdracht starten
+- de lijst is read-only en kan niet meer worden aangepast
 
 ---
 
@@ -108,7 +117,9 @@ beoordeling → accordering_po
 
 accordering_po → accordering_archivaris  
 
-accordering_archivaris → uitvoering  
+accordering_archivaris → vrijgegeven  
+
+vrijgegeven → uitvoering  
 
 uitvoering → resultaat  
 
@@ -129,11 +140,11 @@ accordering_archivaris → beoordeling
 | Actie | Van | Naar |
 |------|-----|------|
 | Selectie ophalen | init | beoordeling |
-| Door naar accordering | beoordeling | accordering_po |
+| Voorleggen | beoordeling | accordering_po |
 | Goedkeuren (PO) | accordering_po | accordering_archivaris |
-| Goedkeuren (archivaris) | accordering_archivaris | uitvoering |
+| Vrijgeven (archivaris) | accordering_archivaris | vrijgegeven |
 | Terugsturen | accordering_* | beoordeling |
-| Start vernietiging | uitvoering | uitvoering (start proces) |
+| Start vernietiging | vrijgegeven | uitvoering |
 | Voltooiing uitvoering | uitvoering | resultaat |
 | Archiveren | resultaat | archief |
 
@@ -172,6 +183,8 @@ Elke transition resulteert in events zoals:
 - SELECTION_COMPLETED
 - APPROVAL_GRANTED
 - APPROVAL_REJECTED
+- DESTRUCTION_APPROVED_BY_ARCHIVIST
+- DESTRUCTION_ORDERED_BY_RM
 - EXECUTION_STARTED
 - EXECUTION_COMPLETED
 - TASK_COMPLETED

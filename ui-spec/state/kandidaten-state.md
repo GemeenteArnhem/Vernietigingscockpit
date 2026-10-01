@@ -80,7 +80,7 @@ heeft_selectie == true
 
 ## Primary action (TaskHeader)
 
-### "Door naar accordering"
+### "Voorleggen"
 
 enabled als:
 

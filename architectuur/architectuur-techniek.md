@@ -475,7 +475,7 @@ De database ondersteunt:
 taak
 ├── dossier
 │ ├── vernietigingslijst
-│ │ └── vernietigingsobject
+│ │ └── vernietigingskandidaat
 │ ├── audit_event
 │ └── uitvoeringsresultaat
 └── archivering
@@ -532,20 +532,24 @@ Index:
 
 ---
 
-### 7.2.4 vernietigingsobject
+### 7.2.4 vernietigingskandidaat
 
-Object binnen lijst.
+Kandidaat binnen lijst.
 
 - id (UUID, PK)
 - lijst_id (FK → vernietigingslijst.id)
-- object_id (string, extern)
+- kandidaat_id (string, extern)
+- bron_id (string, extern)
+- aantal_objecten (int)
+- aantal_betrokkenen (int)
 - status (enum)
 - reden (string, nullable)
 - toelichting (text, nullable)
 
 Index:
 - lijst_id
-- object_id
+- kandidaat_id
+- bron_id
 
 ---
 
@@ -569,16 +573,16 @@ Index:
 
 ### 7.2.6 uitvoeringsresultaat
 
-Resultaat per object.
+Resultaat per vernietigingskandidaat.
 
 - id (UUID, PK)
-- object_id (FK → vernietigingsobject.id)
+- kandidaat_id (FK → vernietigingskandidaat.id)
 - status (enum)
 - timestamp (timestamp)
 - foutmelding (text, nullable)
 
 Index:
-- object_id
+- kandidaat_id
 
 ---
 
@@ -603,26 +607,23 @@ Index:
 
 Enum:
 
-- AANGEMAAKT
-- IN_BEOORDELING
-- WACHT_OP_PO
-- WACHT_OP_ARCHIVARIS
-- GOEDGEKEURD
-- IN_UITVOERING
-- AFGEROND
+- init
+- beoordeling
+- accordering_po
+- accordering_archivaris
+- vrijgegeven
+- uitvoering
+- resultaat
+- archief
 
 ---
 
-### vernietigingsobject.status
+### vernietigingskandidaat.status
 
 Enum:
 
-- SELECTED
-- EXCLUDED
-- APPROVED
-- IN_PROGRESS
-- DELETED
-- FAILED
+- opgenomen
+- uitgesloten
 
 ---
 
@@ -632,8 +633,9 @@ Enum:
 
 - SUCCESS
 - FAILED
+- SKIPPED
 - NOT_FOUND
-- GEWIJZIGD
+- CHANGED
 
 ---
 
@@ -661,11 +663,11 @@ Voorbeeld:
 
 ```json
 {
-  "type": "ObjectUitgesloten",
+  "type": "KandidaatUitgesloten",
   "taakId": "...",
   "userId": "...",
   "payload": {
-    "objectId": "123"
+    "kandidaatId": "123"
   }
 }
 ```
@@ -676,7 +678,7 @@ De volgende operaties gebeuren binnen één database transactie:
 
 - statuswijziging taak
 - schrijven audit_event
-- mutaties op vernietigingsobject
+- mutaties op vernietigingskandidaat
 
 Doel:
 - consistentie
@@ -699,7 +701,7 @@ Bij herhaalde verwerking (bijv. retries):
 Belangrijke maatregelen:
 
 - index op taak_id (audit_event)
-- index op object_id (vernietigingsobject)
+- index op kandidaat_id (vernietigingskandidaat)
 - gebruik van JSONB voor event payload
 - paginering bij grote datasets
 

@@ -213,7 +213,7 @@ Voorbeeld:
 
 ## Actie (via TaskHeader)
 
-- "Door naar accordering"
+- "Voorleggen"
 
 Voorwaarden:
 

@@ -25,6 +25,7 @@ Voorbeeld:
 - Beoordeling
 - Accordering (proceseigenaar)
 - Accordering (archivaris)
+- Vrijgegeven
 - Uitvoering
 - Resultaat
 
@@ -50,6 +51,7 @@ init → Selectie
 beoordeling → Beoordeling  
 accordering_po → Accordering (proceseigenaar)  
 accordering_archivaris → Accordering (archivaris)  
+vrijgegeven → Vrijgegeven  
 uitvoering → Uitvoering  
 resultaat → Resultaat  
 

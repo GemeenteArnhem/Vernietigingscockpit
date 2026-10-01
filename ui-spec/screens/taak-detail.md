@@ -46,6 +46,7 @@ Stappen:
 - beoordeling
 - accordering (proceseigenaar)
 - accordering (archivaris)
+- vrijgegeven
 - uitvoering
 - resultaat
 
@@ -105,6 +106,14 @@ state.actieve_view
 
 ---
 
+#### vrijgegeven → Vrijgegeven
+
+- vernietigingslijst is inhoudelijk vrijgegeven door de archivaris
+- recordmanager kan de vernietigingsopdracht starten
+- geen bewerkingen mogelijk
+
+---
+
 #### uitvoering → Uitvoering
 
 - voortgang per bron zichtbaar (StekkerStatus)
@@ -126,9 +135,9 @@ state.actieve_view
 Primary action afhankelijk van state:
 
 - init → "Selectie ophalen"
-- beoordeling → "Door naar accordering"
+- beoordeling → "Voorleggen"
 - accordering → "Goedkeuren"
-- uitvoering → "Start vernietiging"
+- vrijgegeven → "Start vernietiging"
 - resultaat → "Archiveren"
 
 Regels:

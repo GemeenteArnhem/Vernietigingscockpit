@@ -55,7 +55,7 @@ Gebruik exact:
 Gebruik exact:
 
 - "Selectie ophalen"
-- "Door naar accordering"
+- "Voorleggen"
 - "Goedkeuren"
 - "Start vernietiging"
 - "Archiveren"

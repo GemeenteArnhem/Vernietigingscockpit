@@ -105,7 +105,8 @@ Response:
     startdatum: date,
     einddatum: date,
 
-    omvang: integer,
+    aantalObjecten: integer,
+    aantalBetrokkenen: integer,
 
     selectielijst: integer,
     grondslag: string,
@@ -143,6 +144,18 @@ body:
 
 ---
 
+## Beoordeling voorleggen
+
+POST /taken/{id}/beoordeling/voorleggen
+
+Response:
+
+{
+  status: "accordering_po"
+}
+
+---
+
 # 3. Accordering
 
 POST /taken/{id}/accordering
@@ -162,13 +175,15 @@ body:
   status // nieuwe workflow status
 }
 
+Bij goedkeuren door de archivaris wordt de nieuwe status `vrijgegeven`.
+
 ---
 
 # 4. Uitvoering
 
 ## Start vernietiging
 
-POST /taken/{id}/uitvoering
+POST /taken/{id}/vernietigingsopdracht
 
 Response:
 
@@ -185,7 +200,7 @@ GET /taken/{id}/uitvoering
 Response:
 
 {
-  status: RUNNING | COMPLETED | FAILED,
+  status: RUNNING | COMPLETED | PARTIAL | FAILED,
   stekkers: [
     {
       bron_systeem,

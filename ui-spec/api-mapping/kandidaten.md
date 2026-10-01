@@ -1,21 +1,23 @@
 # API Mapping – Kandidaten
 
 ## Endpoint
-GET /selecties/latest/objecten
+GET /selecties/latest/kandidaten
 
 ## Response → UI
 
-response.objecten[] → tabel rijen
+response.kandidaten[] → tabel rijen
 
 Velden:
 - id → id
 - titel → titel
+- aantalObjecten → Aantal objecten
+- aantalBetrokkenen → Aantal betrokkenen
 - status → status badge
 - reden → reden
 
 ## UI acties → backend
 
-PATCH /objecten/{id}
+PATCH /kandidaten/{id}
 
 Body:
 - uitgesloten (boolean)
@@ -28,25 +30,25 @@ Body:
 ## Bulk updates
 
 Endpoint:
-PATCH /objecten/bulk
+PATCH /kandidaten/bulk
 
 Body:
 {
-  objectIds: string[],
+  kandidaatIds: string[],
   uitgesloten: boolean,
   toelichting: string (optioneel)
 }
 
 ## Gedrag
 
-- updates worden per object verwerkt
-- response bevat status per object
+- updates worden per kandidaat verwerkt
+- response bevat status per kandidaat
 
 ## Validatie
 
 - backend valideert:
   - toelichting verplicht bij uitgesloten = true
-- fouten worden per object geretourneerd
+- fouten worden per kandidaat geretourneerd
 
 ## Response mapping
 
@@ -55,4 +57,16 @@ response.results[]:
 - status (SUCCESS / FAILED)
 - foutmelding (optioneel)
 
-→ UI toont fouten per object
+→ UI toont fouten per kandidaat
+
+## Voorleggen
+
+Endpoint:
+POST /taken/{id}/beoordeling/voorleggen
+
+Gedrag:
+- valideert dat alle kandidaten beoordeeld zijn
+- valideert dat elke uitsluiting een reden en toelichting heeft
+- berekent de lijst-hash
+- voert de transition `beoordeling → accordering_po` uit
+- schrijft een audit-event
