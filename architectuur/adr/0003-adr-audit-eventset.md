@@ -50,6 +50,7 @@ De set uit `audit-event-model.md` blijft de basis. De namen hieronder zijn de vo
 | **ARCHIVING_REQUESTED** | gebruiker (RM) | taakinstantie | archivering van het dossier aangevraagd (CC-18) | (nieuw) |
 | **ARCHIVING_FAILED** | systeem | taakinstantie | archivering definitief mislukt; opnieuw archiveren kan | (nieuw) |
 | TASK_COMPLETED | systeem (na aanvraag door RM) | taakinstantie | dossier gearchiveerd: `resultaat → archief` | (nieuw in code) |
+| **TASK_DELETED** | gebruiker (functioneel beheerder) | taakinstantie | taakuitvoering logisch verwijderd (verdwijnt uit de lijsten; gegevens en auditketen blijven bewaard). Niet toegestaan vanaf de vernietiging tot en met de archivering, en niet tijdens een lopende selectie | (nieuw) |
 
 `TASK_STARTED` en `OBJECT_UPDATED` uit het model vervallen: het starten van een taak is `SELECTION_REQUESTED`, en een kandidaat verandert alleen via de events hierboven.
 
@@ -60,6 +61,12 @@ Configuratie-events (`configuratie_event`), in dezelfde stijl:
 | **MASTER_DATA_IMPORTED** | stamgegevens geïmporteerd | `STAMGEGEVENS_GEIMPORTEERD` |
 | **TASK_DEFINITION_CREATED** | taakdefinitie aangemaakt | `TAAKDEFINITIE_AANGEMAAKT` |
 | **USER_LINKED** | een gebruiker (OIDC `sub`) is eenmalig aan een medewerker gekoppeld (CC-12) | (nieuw) |
+| **CONNECTOR_CREATED** | stekker aangemaakt door de functioneel beheerder, met configuratieversie 1 (stekkerbeheer, bouwplan §7.1) | (nieuw) |
+| **CONNECTOR_UPDATED** | stekker gewijzigd: nieuwe configuratieversie (lopende selecties houden hun vastgepinde versie) | (nieuw) |
+| **CONNECTOR_DEACTIVATED** | stekker op inactief gezet: niet meer te kiezen, historie blijft | (nieuw) |
+| **CONNECTOR_ACTIVATED** | inactieve stekker weer actief gezet | (nieuw) |
+| **CONNECTOR_DELETED** | stekker verwijderd; alleen als hij nooit is gebruikt (geen taakdefinitie, geen selectie) | (nieuw) |
+| **TASK_DEFINITION_DELETED** | taakdefinitie verwijderd door de functioneel beheerder: echt als er nooit uitvoeringen waren, anders logisch (met alle uitvoeringen) | (nieuw) |
 
 Nieuwe acties komen er alleen via een wijziging van deze ADR.
 
