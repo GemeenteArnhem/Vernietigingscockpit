@@ -58,6 +58,7 @@ De volgende principes **zijn leidend** voor alle onderdelen:
 - backward compatibility is verplicht
 - security en privacy by default
 - architectuur volgens Common Ground en NeRDS
+- MDTO is leidend voor benaming, begrippen en informatiemodel (ADR-0005)
 - open source en transparantie
 - architectuur **schrijft verantwoordelijkheden voor**, maar **schrijft geen technische of organisatorische vorm af**
 
@@ -120,7 +121,8 @@ Stekkers:
 - **moeten** selectieregels operationeel interpreteren
 - **moeten** vernietigingskandidaten bepalen
 - **moeten** na vrijgave vernietiging technisch uitvoeren via het bronsysteem
-- **moeten** per aangeboden informatieobject een uitvoeringsresultaat retourneren
+- **moeten** per aangeboden vernietigingskandidaat (precies één MDTO-informatieobject, ADR-0001/ADR-0005) een uitvoeringsresultaat retourneren
+- **moeten** de MDTO-metagegevens van kandidaten leveren en vernietigingen specificeren in MDTO
 
 Stekkers **mogen** bronsysteem‑ en domeinspecifieke logica bevatten.
 Stekkers **mogen geen** normatieve besluitvorming uitvoeren.
@@ -214,7 +216,9 @@ Deze aannames **moeten** expliciet worden gemaakt bij implementatie.
 ### 11.2 Kaders
 
 Het ecosysteem **moet** aansluiten bij:
-- Archiefwet, BIO2, Cybersecuritywet, AVG en aanpalende regelgeving
+- Archiefwet en Archiefbesluit 1995 (in het bijzonder art. 8: inhoud van de verklaring van vernietiging) en de vastgestelde selectielijst(en)
+- MDTO (Metagegevens voor duurzaam toegankelijke overheidsinformatie, Nationaal Archief), MDTO 1.0 / MDTO-XML 1.0.1; leidend voor benaming, begrippen en informatiemodel (ADR-0005)
+- BIO2, Cybersecuritywet, AVG en aanpalende regelgeving
 - Common Ground architectuurprincipes
 - NeRDS-leidraad
 - Nederlandse API Design Rules (ADR)

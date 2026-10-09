@@ -47,6 +47,7 @@ Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **b
 - de cockpit **gaat expliciet om met onzekerheden, afwijkingen en uitzonderingen in het proces**
 - de cockpit **beperkt zich tot regie, vastlegging en verantwoording en vermijdt elke vorm van operationele interpretatie**
 - de cockpit **is onafhankelijk van gegevensbron- en stekkerspecifieke implementaties en abstraheert deze via uniforme contracten**
+- de cockpit **gebruikt MDTO als leidend kader voor benaming, begrippen en informatiemodel, en legt het vernietigingsdossier vast als MDTO-informatieobject** (ADR-0005)
 - de cockpit **ondersteunt transparantie richting toezicht, controle en audit zonder aanvullende interpretatie**
 - de cockpit **waarborgt dat geen vernietiging kan plaatsvinden zonder volledig en afgerond dossier**
 - de cockpit **maakt alle relevante proces- en besluitinformatie exporteerbaar en deelbaar binnen governancekaders**
@@ -142,19 +143,22 @@ De workflow **moet minimaal bestaan uit**:
 
 Dit component **beheert het vernietigingsdossier**.
 Het:
-- **moet** aangeleverde lijsten met vernietigingskandidaten vastleggen
-- **moet** uitsluitingen met toelichting vastleggen
+- **moet** aangeleverde lijsten met vernietigingskandidaten vastleggen, met hun MDTO-metagegevens
+- **moet** uitsluitingen met uitsluitreden (lijst Cockpit-uitsluitredenen) en toelichting vastleggen
+- **moet** kandidaten met een andere waardering dan V automatisch uitsluiten met reden *Waardering niet V* (ADR-0005, B-M1)
 - **moet** versies en wijzigingen registreren
 - **mag geen** inhoudelijke besluiten wijzigen
 
-Het vernietigingsdossier **vormt** het primaire audit en verantwoordingsbewijs.
+Het vernietigingsdossier **vormt** het primaire audit- en verantwoordingsbewijs. In MDTO-termen is het een informatieobject met aggregatieniveau *Dossier*, met als onderdelen de vernietigingslijst, de besluiten, de verklaring en het auditlog. Het heeft vast de waardering *B – Blijvend te bewaren* (ADR-0005, B-M5).
+
+Na archivering staat het blijvende exemplaar in het archiefsysteem. De cockpit houdt een werkkopie, die na een instelbare termijn automatisch wordt verwijderd; er blijft een grafsteen achter (ADR-0006).
 
 ### 5.6 Stekkerkoppeling
 
 Dit component **verzorgt** alle communicatie met stekkers.
 Het:
 - **moet** via uniforme contracten communiceren
-- **moet** uitvoeringsresultaten per informatieobject verwerken
+- **moet** uitvoeringsresultaten per vernietigingskandidaat verwerken, inclusief het MDTO-event *Vernietigen* en de MDTO-specificatie
 - **mag geen** stekker- of bronsysteem specifieke aannames bevatten
 
 Afwijkingen per stekker **mogen niet** doorwerken in de cockpit.
@@ -181,8 +185,9 @@ Alle normatieve handelingen **moeten** worden gelogd.
 Na afronding van een taak **moet** een verklaring van vernietiging worden gegenereerd.
 Deze verklaring:
 - **moet** alle accorderingen bevatten
-- **moet** uitvoeringsresultaten bevatten
-- **moet** worden gearchiveerd in een daarvoor aangewezen archief- of zaaksysteem
+- **moet** uitvoeringsresultaten bevatten, waarbij alleen `SUCCESS` als vernietigd geldt
+- **moet** voldoen aan art. 8 Archiefbesluit 1995: een specificatie van de vernietigde archiefbescheiden (inclusief de MDTO-specificaties van de stekkers), de wijze van vernietiging (vernietigingsmethode per stekker) en het tijdstip van vernietiging
+- **moet** met het vernietigingsdossier worden gearchiveerd in een daarvoor aangewezen archief- of zaaksysteem, als MDTO-XML-pakket
 - **moet** deelbaar zijn (download)
 
 Zonder verklaring **is het proces niet afgerond**.
@@ -197,7 +202,7 @@ De cockpit:
 Stekkers:
 - **moeten** vernietigingskandidaten bepalen
 - **moeten** vernietiging technisch uitvoeren of laten uitvoeren via bronsystemen
-- **moeten** uitvoeringsresultaten per aangeboden informatieobject terugleveren
+- **moeten** uitvoeringsresultaten per aangeboden vernietigingskandidaat terugleveren
 
 Deze verantwoordelijkheden **mogen niet** overlappen.
 
@@ -275,7 +280,7 @@ Versieinformatie **moet** worden vastgelegd in vernietigingsdossiers.
 ### 9.1 Aannames
 
 - de cockpit bevat geen landelijke selectielijst logica
-- stekkers leveren uitvoeringsresultaten per aangeboden informatieobject
+- stekkers leveren uitvoeringsresultaten per aangeboden vernietigingskandidaat, met MDTO-event en -specificatie
 - archivering vindt plaats in een archiefsysteem, zoals een zaaksysteem
 
 Deze aannames **moeten** expliciet worden gevalideerd bij implementatie.

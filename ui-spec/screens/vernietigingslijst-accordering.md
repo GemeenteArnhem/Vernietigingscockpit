@@ -55,10 +55,10 @@ Gebruikt dezelfde structuur als beoordeling, maar zonder edit-functionaliteit.
 
 ### Primaire kolommen
 
-- titel
+- naam
 - omvang
 - bewaartermijn
-- vernietigingsdatum
+- einddatum bewaartermijn
 - status (verwerkingsstatus)
 - reden
 - toelichting
@@ -187,5 +187,5 @@ Verschillen:
 
 Relevante events:
 
-- APPROVAL_GRANTED
-- APPROVAL_REJECTED
+- Accordering
+- Retour

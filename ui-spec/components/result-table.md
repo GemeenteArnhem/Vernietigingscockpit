@@ -38,17 +38,17 @@ GET /taken/{id}/resultaten
 
 ### Primaire kolommen (aligned met kandidaten)
 
-- titel
+- naam
 - omvang
 - bewaartermijn
-- vernietigingsdatum
+- einddatum bewaartermijn
 - status (verwerkingsstatus)
 - reden
 - foutmelding
 
 ## Kolomgedrag
 
-### titel
+### naam
 - identiek aan vernietigingskandidaat
 - primaire scan-kolom
 - GEEN subtitel of metadata onder de titel
@@ -68,7 +68,7 @@ GET /taken/{id}/resultaten
 
 ---
 
-### vernietigingsdatum
+### einddatum bewaartermijn
 - formaat: "MM-YYYY"
 
 ---
@@ -101,11 +101,11 @@ Visueel:
 Beschikbaar via expand:
 
 - id
-- bron_id
-- code
-- periode (startdatum - einddatum)
-- selectielijst
-- grondslag
+- identificatie (kenmerk + bron)
+- classificatie
+- dekking in tijd (begindatum – einddatum)
+- informatiecategorie (met selectielijst)
+- waardering
 - stekker_naam
 
 ---
@@ -129,7 +129,7 @@ Beschikbaar via expand:
 
 ### Standaard sortering
 
-- kolom: vernietigingsdatum
+- kolom: einddatum bewaartermijn
 - volgorde: oplopend (oud → nieuw)
 - formaat: YYYY-MM
 

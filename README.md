@@ -175,7 +175,17 @@ De architectuur en kaders zijn vastgelegd in afzonderlijke Markdown documenten.
 - `governance/roles-and-responsibilities.md`  
   Rollen, bevoegdheden en functiescheiding
 
-### 6.4 Architectuurbesluiten
+### 6.4 API en begrippen
+
+- `designrules/api/`
+  Stekker API v2: OpenAPI-specificatie, informatiemodel (MDTO-profiel), begeleidend contract, FAQ, implementatiechecklist en leveranciersinstructie
+
+- `designrules/begrippenlijsten/`
+  Eigen begrippenlijsten naast de MDTO-begrippenlijsten (eventtypen, uitsluitredenen, vernietigingsmethoden, termijntriggers, dekkingInTijdtypen)
+
+MDTO (Nationaal Archief) is leidend voor benaming, begrippen en informatiemodel (ADR-0005).
+
+### 6.5 Architectuurbesluiten
 
 - `adr/`  
   Architecture Decision Records voor expliciete keuzes en afwijkingen

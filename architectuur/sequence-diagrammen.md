@@ -1,22 +1,22 @@
 # Sequence diagrams – Vernietigingscockpit ecosysteem
 
-Dit document bevat sequence diagrams van de belangrijkste processen binnen het Vernietigingscockpit ecosysteem.
-De diagrammen zijn bedoeld om interactie, verantwoordelijkheden en volgorde van stappen inzichtelijk te maken.
+Dit document bevat sequence diagrams van de belangrijkste processen binnen het Vernietigingscockpit-ecosysteem.
+De diagrammen maken interactie, verantwoordelijkheden en de volgorde van stappen inzichtelijk.
+
+Stekker-endpoints staan onder `/v2` (Stekker API v2.0.0). Elke `POST` naar een stekker heeft een `Idempotency-Key` (ADR-0004). Events in het auditlog volgen de MDTO EventTypeLijst of de lijst Cockpit-eventtypen (ADR-0005); hieronder staan ze *cursief*.
 
 ---
 
 ## 1. Overzicht kernprocessen
 
-De volgende kernprocessen worden beschreven:
 - aanmaken en plannen van een vernietigingstaak
 - ophalen van vernietigingskandidaten
 - beoordeling en accordering
-- starten van vernietiging
-- afronding, verklaring en archiveren van vernietiging
+- uitvoeren van vernietiging
+- verklaring en archivering
+- verwijderen van de werkkopie
 
 ## 2. Aanmaken en plannen van een vernietigingstaak
-
-Dit diagram beschrijft hoe een recordmanager een vernietigingstaak aanmaakt op basis van een sjabloon.
 
 ```mermaid
 sequenceDiagram
@@ -27,14 +27,13 @@ sequenceDiagram
     participant D as Dossierbeheer
 
     RM ->> UI: Maak nieuwe vernietigingstaak aan
-    UI ->> Task: Selecteer sjabloon en parameters
-    Task ->> WF: Initialiseer workflow
-    Task ->> D: Registreer taak en parameters
+    UI ->> Task: Selecteer taakdefinitie (met archiefvormer) en parameters
+    Task ->> WF: Initialiseer workflow (status init)
+    Task ->> D: Registreer taak en parameters (event Creatie)
     WF -->> UI: Taak aangemaakt en gepland
 ```
 
 ## 3. Ophalen van vernietigingskandidaten
-Dit diagram beschrijft hoe de cockpit een selectie start bij een stekker en de lijst met vernietigingskandidaten ophaalt.
 
 ```mermaid
 sequenceDiagram
@@ -46,37 +45,36 @@ sequenceDiagram
 
     RM ->> UI: Start ophalen vernietigingskandidaten
     UI ->> WF: Activeer stap "selectie ophalen"
+    WF ->> D: Registreer selectiecontext (event Selectie aangevraagd)
 
-    WF ->> D: Registreer selectiecontext (taak, scope, peildatum)
-    WF ->> Stekker: POST /selecties
+    WF ->> Stekker: POST /v2/selecties (Idempotency-Key)
     Stekker -->> WF: selectieId + status
 
     loop Tot selectie gereed is
-        WF ->> Stekker: GET /selecties/{selectieId}
+        WF ->> Stekker: GET /v2/selecties/{selectieId}
         Stekker -->> WF: Status selectie
     end
 
     loop Per pagina
-        WF ->> Stekker: GET /selecties/{selectieId}/objecten
-        Stekker -->> WF: Vernietigingskandidaten + metadata
-        WF ->> D: Sla vernietigingskandidaten op
+        WF ->> Stekker: GET /v2/selecties/{selectieId}/vernietigingskandidaten
+        Stekker -->> WF: Kandidaten met MDTO-metagegevens
+        WF ->> D: Sla kandidaten op; waardering B/N automatisch uitsluiten
     end
 
-    UI ->> D: Vraag lijst met vernietigingskandidaten op
-    D -->> UI: Lijst met vernietigingskandidaten + status
+    WF ->> D: Alle selecties gereed (event Import), init → beoordeling
+    UI ->> D: Vraag kandidaten op
+    D -->> UI: Kandidaten + status
     UI -->> RM: Toon lijst met vernietigingskandidaten
 ```
 
 Belangrijk:
-- selectie is operationeel
-- landelijke selectielijstinterpretatie vindt plaats in de stekker
-- de stekker bepaalt vernietigingskandidaten
-- de cockpit legt vernietigingskandidaten vast, maar bepaalt ze niet.
-- de selectie is herleidbaar via `selectieId`
+- selectie is operationeel; de toepassing van de selectielijst vindt plaats in de stekker;
+- de stekker bepaalt de kandidaten en levert hun MDTO-metagegevens; de cockpit legt ze vast, maar bepaalt ze niet;
+- een kandidaat is precies één MDTO-informatieobject (Archief, Serie, Dossier of Archiefstuk);
+- kandidaten met een andere waardering dan V sluit de cockpit automatisch uit (*Kandidaat uitgesloten*, reden *Waardering niet V*);
+- de selectie is herleidbaar via `selectieId`.
 
 ## 4. Beoordeling door recordmanager
-Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
-Dit diagram toont de beoordeling van vernietigingskandidaten door de recordmanager.
 
 ```mermaid
 sequenceDiagram
@@ -85,24 +83,24 @@ sequenceDiagram
     participant D as Dossierbeheer
 
     RM ->> UI: Bekijk lijst met vernietigingskandidaten
-    RM ->> UI: Sluit informatieobjecten uit + toelichting
-    UI ->> D: Leg uitsluitingen en toelichtingen vast
-    D ->> D: Update status per informatieobject
+    RM ->> UI: Neem op, of sluit uit met uitsluitreden + toelichting
+    UI ->> D: Leg beoordeling vast (Kandidaat opgenomen / Kandidaat uitgesloten)
     D -->> UI: Dossier bijgewerkt
+    RM ->> UI: Leg voor aan proceseigenaar
+    UI ->> D: Voorgelegd, beoordeling → accordering_po
 ```
 
 Belangrijk:
-- uitsluitingen zijn normatief
-- elke uitsluiting heeft een toelichting
-- alles wordt vastgelegd in het dossier
+- uitsluitingen zijn normatief;
+- elke uitsluiting heeft een uitsluitreden (Cockpit-uitsluitredenen) en een toelichting; een lopend Woo- of AVG-verzoek, bezwaar of geschil leidt tot uitsluiting (*Lopend verzoek of procedure*);
+- alles wordt vastgelegd in het dossier.
 
 ## 5. Accordering door proceseigenaar en archivaris
-Dit diagram beschrijft de tweestapsaccordering.
 
 Belangrijk:
-- functiescheiding is verplicht
-- volgorde ligt vast in de workflow
-- accordering is onderdeel van het dossier
+- functiescheiding is verplicht;
+- de volgorde ligt vast in de workflow;
+- accordering is onderdeel van het dossier (*Accordering*, met de rol in het event).
 
 ### 5a. Accordering door proceseigenaar
 
@@ -114,21 +112,16 @@ sequenceDiagram
     participant WF as Workflow Engine
 
     PO ->> UI: Bekijk vernietigingskandidaten en toelichtingen
-    UI ->> D: Haal dossier + vernietigingskandidaten op
-    D -->> UI: Lijst met vernietigingskandidaten + toelichtingen
-    UI -->> PO: Toon vernietigingskandidaten
+    UI ->> D: Haal dossier + kandidaten op
+    D -->> UI: Kandidaten + toelichtingen
+    PO ->> UI: Per kandidaat Akkoord of Retour (met toelichting)
 
-    PO ->> UI: Voeg toelichting toe (optioneel)
-    UI ->> D: Sla toelichting op
-
-    alt Akkoord
-        PO ->> UI: Keur vernietigingslijst (accordering) goed
-        UI ->> D: Leg accordering proceseigenaar vast
-        D ->> WF: Update workflowstatus (naar archivaris)
-    else Terugsturen
-        PO ->> UI: Stuur terug naar recordmanager
-        UI ->> D: Leg terugkoppeling vast (met toelichting)
-        D ->> WF: Update workflowstatus (terug naar RM)
+    alt Alles akkoord
+        UI ->> D: Accordering (rol proceseigenaar)
+        D ->> WF: accordering_po → accordering_archivaris
+    else Minstens één retour
+        UI ->> D: Retour (met toelichting)
+        D ->> WF: accordering_po → beoordeling (nieuwe ronde)
     end
 ```
 
@@ -142,26 +135,21 @@ sequenceDiagram
     participant WF as Workflow Engine
 
     AR ->> UI: Bekijk vernietigingskandidaten en toelichtingen
-    UI ->> D: Haal dossier + vernietigingskandidaten op
-    D -->> UI: Lijst met vernietigingskandidaten + toelichtingen + toelichtingen
-    UI -->> AR: Toon vernietigingskandidaten
+    UI ->> D: Haal dossier + kandidaten op
+    D -->> UI: Kandidaten + toelichtingen
+    AR ->> UI: Per kandidaat Akkoord of Retour (met toelichting)
 
-    AR ->> UI: Voeg toelichting toe (optioneel)
-    UI ->> D: Sla toelichting op
-
-    alt Akkoord (finale accordering)
-        AR ->> UI: Keur vernietigingslijst (accordering) goed
-        UI ->> D: Leg accordering archivaris vast
-        D ->> WF: Update workflowstatus (gereed voor vernietiging)
-    else Terugsturen
-        AR ->> UI: Stuur terug naar recordmanager
-        UI ->> D: Leg terugkoppeling vast (met toelichting)
-        D ->> WF: Update workflowstatus (terug naar RM)
+    alt Alles akkoord (inhoudelijke vrijgave)
+        UI ->> D: Accordering (rol archivaris)
+        D ->> D: Bevriezing (lijsthash vastgelegd)
+        D ->> WF: accordering_archivaris → vrijgegeven
+    else Minstens één retour
+        UI ->> D: Retour (met toelichting)
+        D ->> WF: accordering_archivaris → beoordeling (nieuwe ronde)
     end
 ```
 
 ## 6. Uitvoeren van vernietiging
-Dit diagram beschrijft hoe de cockpit vernietiging vrijgeeft, een vernietiging start en batches aanbiedt aan de stekker.
 
 ```mermaid
 sequenceDiagram
@@ -172,132 +160,134 @@ sequenceDiagram
     participant Stekker
 
     RM ->> UI: Geef opdracht tot vernietiging
-    UI ->> D: Leg vernietigingsbesluit vast
-    D ->> WF: Activeer uitvoeringsstap
+    UI ->> D: Controleer lijsthash; Vernietigingsopdracht
+    D ->> WF: vrijgegeven → uitvoering
 
-    WF ->> D: Haal vrijgegeven informatieobjecten op
-    WF ->> Stekker: POST /vernietigingen
-    Stekker -->> WF: vernietigingId + status
+    WF ->> D: Haal vrijgegeven kandidaten op (per stekker)
+    WF ->> Stekker: POST /v2/vernietigingen (Idempotency-Key)
+    Stekker -->> WF: vernietigingId, status IDLE
+    WF ->> D: Uitvoering gestart
 
     loop Per batch
-        WF ->> Stekker: POST /vernietigingen/{vernietigingId}/batches
+        WF ->> Stekker: POST /v2/vernietigingen/{id}/batches (kandidaat + identificatie)
         Stekker -->> WF: Batch geaccepteerd
+        WF ->> D: Batch aangeboden
     end
 
+    WF ->> Stekker: POST /v2/vernietigingen/{id}/vrijgeven (aantalBatches, aantalKandidaten)
+    Stekker -->> WF: status RUNNING + vernietigingsmethode
+
     loop Tot vernietiging afgerond is
-        WF ->> Stekker: GET /vernietigingen/{vernietigingId}
-        Stekker -->> WF: Status vernietiging
+        WF ->> Stekker: GET /v2/vernietigingen/{id}
+        Stekker -->> WF: Status en tellingen
     end
 
     loop Per batchresultaat
-        WF ->> Stekker: GET /vernietigingen/{vernietigingId}/batches/{batchNummer}
-        Stekker -->> WF: Uitvoeringsresultaten per aangeboden informatieobject
-        WF ->> D: Registreer uitvoeringsresultaten
+        WF ->> Stekker: GET /v2/vernietigingen/{id}/batches/{batchNummer}
+        Stekker -->> WF: Resultaat per kandidaat (bij SUCCESS: event Vernietigen + tijdstip)
+        WF ->> D: Vernietigen / Niet vernietigd, Batch verwerkt
     end
 
+    loop Per kandidaat met SUCCESS
+        WF ->> Stekker: GET /v2/vernietigingen/{id}/specificaties/{kandidaatId}
+        Stekker -->> WF: MDTO-XML-specificatie
+        WF ->> D: Bewaar specificatie + checksum
+    end
+
+    WF ->> D: Uitvoering afgerond, uitvoering → resultaat
     UI ->> D: Vraag uitvoeringsresultaten op
-    D -->> UI: Uitvoeringsresultaten + status
+    D -->> UI: Resultaten + status
     UI -->> RM: Toon resultaten vernietiging
 ```
 
 Belangrijk:
-- alleen expliciet vrijgegeven informatieobjecten worden aangeboden voor vernietiging
-- vernietiging wordt asynchroon uitgevoerd
-- batches zijn technische verdelingen van de uitvoering
-- de POST op een batch bevestigt acceptatie, maar bevat nog geen definitieve uitvoeringsresultaten
-- resultaten worden per aangeboden informatieobject vastgelegd
-- de vernietiging is herleidbaar via `vernietigingId`
+- alleen expliciet vrijgegeven kandidaten worden aangeboden, met hun identificatie letterlijk zoals geselecteerd;
+- vernietiging wordt asynchroon uitgevoerd; batches zijn technische verdelingen;
+- een batch-POST bevestigt acceptatie, maar bevat nog geen resultaten;
+- alleen `SUCCESS` telt als vernietigd; `NOT_FOUND` is geen bewijs van vernietiging;
+- de vernietiging is herleidbaar via `vernietigingId`.
 
 ## 7. Fouten en retries bij vernietiging
-Dit diagram laat een vereenvoudigd foutpad zien bij batchverwerking.
 
 ```mermaid
 sequenceDiagram
+    participant WF as Worker (cockpit)
     participant Stekker
-    participant Retry as Retry en Foutafhandeling
-    participant WF as Workflow Engine
     participant D as Dossierbeheer
     participant UI as Cockpit UI
     actor RM as Recordmanager
 
-    Stekker ->> Retry: Fout bij verwerking van batch of informatieobject
-    Retry ->> Stekker: Retry binnen dezelfde vernietigingId en batchNummer
-    Retry -->> Stekker: Definitieve status per aangeboden informatieobject
+    WF ->> Stekker: POST …/batches (Idempotency-Key)
+    Stekker --x WF: Time-out / verloren antwoord
+    WF ->> Stekker: Herhaal met dezelfde Idempotency-Key
+    Stekker -->> WF: Zelfde antwoord, geen dubbele uitvoering
 
-    WF ->> Stekker: GET /vernietigingen/{vernietigingId}/batches/{batchNummer}
-    Stekker -->> WF: Uitvoeringsresultaten inclusief fouten
-    WF ->> D: Registreer uitvoeringsresultaten per informatieobject
+    WF ->> Stekker: GET /v2/vernietigingen/{id}/batches/{batchNummer}
+    Stekker -->> WF: Resultaten inclusief fouten (FAILED, CHANGED, …)
+    WF ->> D: Registreer resultaten per kandidaat
 
-    UI ->> D: Vraag status en fouten op
-    D -->> UI: Uitvoeringsresultaten + foutstatus
-    UI -->> RM: Toon fouten en status
+    alt Opdracht definitief mislukt
+        WF ->> D: Uitvoering mislukt
+        RM ->> UI: Opnieuw proberen
+        UI ->> D: Uitvoering opnieuw aangevraagd
+    end
 ```
 
 Belangrijk:
-- retries vinden plaats in de stekker
-- retries blijven gekoppeld aan dezelfde `vernietigingId` en `batchNummer`
-- cockpit registreert definitieve uitvoeringsresultaten
-- handmatige opvolging is mogelijk
+- retries blijven gekoppeld aan dezelfde `vernietigingId`, hetzelfde `batchNummer` en dezelfde `Idempotency-Key`;
+- de cockpit registreert de definitieve resultaten;
+- handmatige opvolging is mogelijk.
 
-## 8. Genereren van verklaring van vernietiging
-Dit diagram beschrijft de afronding van het proces.
+## 8. Verklaring en archivering
 
 ```mermaid
 sequenceDiagram
     actor RM as Recordmanager
-    participant UI as Cockpit UI
-    participant WF as Workflow Engine
+    participant WF as Worker (cockpit)
     participant D as Dossierbeheer
     participant V as Verklaring en Archivering
     participant Z as Archiefsysteem
 
-    RM ->> UI: Rond taak af / genereer verklaring
-    UI ->> WF: Activeer stap "afronding"
+    WF ->> V: Genereer verklaring (automatisch bij uitvoering → resultaat)
+    V ->> D: Verklaring (PDF/A-2b) + bijlage (Creatie)
 
-    WF ->> D: Valideer dossier compleet
-    D -->> WF: Dossier compleet
-
-    WF ->> V: Genereer vernietigingsverklaring
-    V ->> D: Registreer verklaring
-
-    V ->> Z: Archiveer verklaring
-    Z -->> V: Bevestiging archivering
-
-    UI ->> D: Vraag verklaring op
-    D -->> UI: Verklaring + metadata
-    UI -->> RM: Toon / download verklaring
+    RM ->> V: Archiveer dossier (Archivering aangevraagd)
+    V ->> D: Stel MDTO-pakket samen: dossier, lijst, besluiten, verklaring, auditlog, specificaties
+    V ->> Z: Zet pakket weg (archiefadapter)
+    Z -->> V: Referentie + dossier-hash
+    V ->> D: Export, resultaat → archief
 ```
 
 Belangrijk:
-- verklaring bevat besluiten en uitvoering
-- archivering ondersteunt juridisch bewijs
-- proces is hiermee formeel afgesloten
+- de verklaring bevat de specificatie van de vernietigde archiefbescheiden, de wijze en het tijdstip van vernietiging (art. 8 Archiefbesluit), en de accorderingen;
+- het dossier heeft vast de waardering *B – Blijvend te bewaren*;
+- archivering naar een archiefsysteem is *Export*, geen *Overbrenging*: het zorgdragerschap gaat niet over;
+- het proces is hiermee formeel afgesloten.
 
-## 9. Overzicht processen  – Functioneel beheerder
-- Beheer van stekkers (configuratie)
-- Gebruikers- en rollenbeheer
-- Monitoring en logging
-- Configuratiebeheer
-- Versie- en wijzigingsbeheer
+## 9. Overzicht processen – Functioneel beheerder
+
+- beheer van stekkers (configuratie)
+- gebruikers- en rollenbeheer
+- monitoring en logging
+- configuratiebeheer
+- versie- en wijzigingsbeheer
 
 ## 10. Configureren van een stekker
-Dit diagram beschrijft de configuratie van stekkers.
 
 ```mermaid
 sequenceDiagram
     actor FB as Functioneel Beheerder
     participant UI as Cockpit UI
     participant C as Configuratiebeheer
-    participant D as Dossierbeheer
+    participant D as Configuratielog
 
     FB ->> UI: Configureer stekkerkoppeling (endpoint, autorisatie, versie, parameters)
-    UI ->> C: Sla configuratie op
-    C ->> D: Registreer configuratiewijziging (versie, tijd, actor)
+    UI ->> C: Sla configuratie op (nieuwe configuratieversie)
+    C ->> D: Stekker aangemaakt / Stekker gewijzigd (versie, tijd, actor)
     C -->> UI: Bevestiging configuratie
 ```
 
 ## 11. Gebruikers en rollen beheren
-Dit diagram beschrijft de configuratie van gebruikers en rollen.
 
 ```mermaid
 sequenceDiagram
@@ -311,7 +301,6 @@ sequenceDiagram
 ```
 
 ## 12. Inzien logging en monitoring
-Dit diagram beschrijft het inzien van logging en monitoring.
 
 ```mermaid
 sequenceDiagram
@@ -323,8 +312,38 @@ sequenceDiagram
     FB ->> UI: Bekijk logging / monitoring
     UI ->> LOG: Vraag systeemlogs op
     LOG -->> UI: Logs en events
-
     UI ->> D: Vraag proces- en auditinformatie op
     D -->> UI: Audittrail en status
     UI -->> FB: Toon overzicht
 ```
+
+## 13. Verwijderen van de werkkopie (ADR-0006)
+
+```mermaid
+sequenceDiagram
+    participant J as Job opschoning (worker)
+    participant DB as Database (verwijder_werkkopie)
+    participant A as Archiefadapter
+    participant Z as Archiefsysteem
+
+    loop Dagelijks
+        J ->> DB: Zoek taken in archief, archivering SUCCESS, termijn verstreken, keten intact
+        loop Per taak
+            J ->> A: verifieer(locatie, dossier-hash)
+            A ->> Z: Lees dossier.mdto.xml en bestanden terug
+            Z -->> A: Inhoud
+            alt Checksums kloppen
+                J ->> DB: Grafsteen + configuratie-event Werkkopie verwijderd (één transactie)
+                J ->> DB: verwijder_werkkopie(taak, grafsteen)
+                DB ->> DB: Voorwaarden controleren, daarna rijen van de taak weg
+            else Afwijking
+                J ->> DB: Verificatie archief mislukt (niets verwijderd)
+            end
+        end
+    end
+```
+
+Belangrijk:
+- het blijvende exemplaar staat in het archiefsysteem; verwijderen van de werkkopie is géén *Vernietigen*;
+- de database dwingt de voorwaarden af; de app-rol kan zelf niets verwijderen;
+- de grafsteen houdt het gearchiveerde auditlog controleerbaar.

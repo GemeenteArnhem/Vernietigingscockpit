@@ -78,10 +78,10 @@ aantal_succes / totaal_aantal * 100
 
 ### Primaire kolommen
 
-- titel
+- naam
 - omvang
 - bewaartermijn
-- vernietigingsdatum
+- einddatum bewaartermijn
 - status (verwerkingsstatus)
 - foutmelding
 
@@ -91,10 +91,10 @@ aantal_succes / totaal_aantal * 100
 
 | Vernietigingslijst | Resultaat |
 |-------------------|----------|
-| titel | titel |
+| naam | naam |
 | omvang | omvang |
-| bewaartermijn | bewaartermijn |
-| vernietigingsdatum | vernietigingsdatum |
+| bewaartermijn | bewaartermijn.termijnLooptijd |
+| einddatum bewaartermijn | bewaartermijn.termijnEinddatum |
 | status | verwerkingsstatus |
 | toelichting | foutmelding |
 
@@ -103,11 +103,11 @@ aantal_succes / totaal_aantal * 100
 ## Secundaire metadata (via expand)
 
 - id
-- bron_id
-- code
-- periode (startdatum - einddatum)
-- selectielijst
-- grondslag
+- identificatie (kenmerk + bron)
+- classificatie
+- dekking in tijd (begindatum – einddatum)
+- informatiecategorie (met selectielijst)
+- waardering
 - bron_systeem
 
 ---
@@ -140,7 +140,7 @@ Toont:
   - recordmanager
   - proceseigenaar
   - archivaris
-- juridische grondslag (optioneel)
+- wijze van vernietiging (vernietigingsmethode per stekker) en tijdstip van vernietiging (art. 8 Archiefbesluit)
 
 ---
 
@@ -220,7 +220,7 @@ Audit log blijft altijd zichtbaar en bevat volledige historie.
 
 Belangrijke events:
 
-- EXECUTION_COMPLETED
-- OBJECT_FAILED
-- CERTIFICATE_GENERATED
-- TASK_COMPLETED
+- Uitvoering afgerond
+- Niet vernietigd
+- Creatie (verklaring)
+- Export

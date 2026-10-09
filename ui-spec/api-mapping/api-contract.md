@@ -96,27 +96,26 @@ Response:
 [
   {
     id,                       // technisch ID binnen vernietigingslijst
-    bron_id,                  // identificatie van informatieobject
-    bron_systeem,             // naam van bronsysteem
+    vernietigingskandidaatId, // ID van de stekker
+    stekker,                  // naam van de stekker
 
-    titel: string,
-    code: string,
-
-    startdatum: date,
-    einddatum: date,
+    // MDTO (ADR-0005; zie designrules/api/api-informatiemodel.md §5.2)
+    identificatie: [{ identificatieKenmerk, identificatieBron }],
+    naam: string,
+    aggregatieniveau: begripGegevens,
+    classificatie: begripGegevens[],
+    dekkingInTijd: dekkingInTijdGegevens[],
+    waardering: begripGegevens,          // B / V / N
+    bewaartermijn: termijnGegevens,      // trigger, startdatum, looptijd, einddatum
+    informatiecategorie: begripGegevens, // selectielijst als begrippenlijst
+    archiefvormer: verwijzingGegevens[],
 
     aantalObjecten: integer,
     aantalBetrokkenen: integer,
 
-    selectielijst: integer,
-    grondslag: string,
-
-    bewaartermijn: integer,
-    vernietigingsdatum: date,
-
     // beoordeling
     uitgesloten: boolean,
-    reden: string,
+    reden: string,            // uit Cockpit-uitsluitredenen
     toelichting: string,
 
     // verwerking

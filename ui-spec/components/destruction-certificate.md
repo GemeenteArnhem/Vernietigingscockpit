@@ -8,7 +8,7 @@ Toont formele vernietigingsverklaring.
 - verklaringstekst
 - datum van uitvoering
 - verantwoordelijke rollen
-- eventueel juridische grondslag
+- wijze en tijdstip van vernietiging, specificatie van de vernietigde informatieobjecten (art. 8 Archiefbesluit)
 
 ## Gedrag
 

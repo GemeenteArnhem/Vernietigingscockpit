@@ -177,17 +177,18 @@ accordering_archivaris → beoordeling
 
 ## Relatie met audit
 
-Elke transition resulteert in events zoals:
+Elke transition resulteert in events (eventtypen volgens ADR-0005; zie `audit-event-model.md`):
 
-- TASK_STARTED
-- SELECTION_COMPLETED
-- APPROVAL_GRANTED
-- APPROVAL_REJECTED
-- DESTRUCTION_APPROVED_BY_ARCHIVIST
-- DESTRUCTION_ORDERED_BY_RM
-- EXECUTION_STARTED
-- EXECUTION_COMPLETED
-- TASK_COMPLETED
+| Transition | Event(s) |
+|---|---|
+| init → beoordeling | Import |
+| beoordeling → accordering_po | Voorgelegd |
+| accordering_po → accordering_archivaris | Accordering (rol proceseigenaar) |
+| accordering_archivaris → vrijgegeven | Accordering (rol archivaris), Bevriezing |
+| accordering_* → beoordeling | Retour |
+| vrijgegeven → uitvoering | Vernietigingsopdracht |
+| uitvoering → resultaat | Uitvoering afgerond |
+| resultaat → archief | Export |
 
 ---
 

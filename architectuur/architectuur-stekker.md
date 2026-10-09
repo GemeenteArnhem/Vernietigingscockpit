@@ -66,6 +66,7 @@ Naast de algehele architectuurprincipes, zijn aanvullende volgende principes **b
 - de stekker **maakt** alle externe interacties met bronnen expliciet, traceerbaar en controleerbaar
 - de stekker **waarborgt** dat configuratiegedrag transparant, versieerbaar en reproduceerbaar is
 - de stekker **voorkomt** impliciete of verborgen logica buiten de gedefinieerde bouwblokken
+- de stekker **levert** de metagegevens van kandidaten volgens het MDTO-profiel van de Stekker API en **specificeert** elke vernietiging in MDTO (ADR-0005)
 
 Afwijkingen **moeten** expliciet gemotiveerd en vastgelegd worden.
 
@@ -155,16 +156,17 @@ De concept vernietigingslijst:
 ### 5.7 Mapping en Model
 
 Mapping en model:
-- **moeten** gegevensbronnen vertalen naar een uniform intern model
+- **moeten** gegevensbronnen vertalen naar het MDTO-profiel van de Stekker API (`api-informatiemodel.md`): identificatie, naam, aggregatieniveau, waardering, bewaartermijn, informatiecategorie en verder
 - **mogen** gegevensbronverschillen afdekken
 - **mogen geen** normatieve logica bevatten
 
 ### 5.8 Uitvoering (Executor)
 
 De executor:
-- **moet** vernietiging technisch uitvoeren
+- **moet** vernietiging technisch uitvoeren volgens de MDTO-definitie: blijvend ontoegankelijk maken, met alle onderdelen en bestanden
 - **moet** idempotent werken
-- **moet** per informatieobject resultaat retourneren
+- **moet** per vernietigingskandidaat een resultaat retourneren, met bij `SUCCESS` het MDTO-event *Vernietigen* (tijdstip) en een MDTO-specificatie
+- **moet** de vernietigingsmethode en de behandeling van restanten (back-ups, replica's, indexen) melden
 
 ### 5.9 Ondersteuning
 
@@ -248,4 +250,5 @@ De Stekker:
 
 ### 9.2 Openstaande keuzes
 - mate van asynchrone verwerking
-- detaillering van uitvoeringsbewijzen
+
+De detaillering van uitvoeringsbewijzen is besloten in ADR-0005: per kandidaat het event *Vernietigen* en een MDTO-XML-specificatie, en per uitvoering de vernietigingsmethode.

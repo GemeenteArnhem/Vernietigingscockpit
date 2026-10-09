@@ -117,11 +117,17 @@ Herbruik voor andere doelen **is niet toegestaan**.
 - Bewaartermijnen **moeten** expliciet zijn
 - Dossiervernietiging **maakt onderdeel uit** van het ontwerp
 
+Uitwerking:
+- het vernietigingsdossier is blijvend te bewaren en wordt in het archiefsysteem bewaard (ADR-0005, B-M5); de gebruiksbeperking voor persoonsgegevens wordt expliciet vastgelegd (`beperkingGebruik`)
+- de werkkopie in de cockpit wordt na archivering en een instelbare termijn (standaard 12 maanden) automatisch verwijderd; er blijft een grafsteen zonder persoonsgegevens (ADR-0006)
+- het beheer legt een maximale bewaartermijn voor back-ups van de cockpitdatabase vast, zodat verwijderde werkkopieën ook daaruit verdwijnen
+- de cockpit bewaart geen ruwe stekkerpayload, alleen de MDTO-gegevens uit de Stekker API
+
 ## 8. Logging en audit
 
 Alle normatieve handelingen:
-- **moeten** worden gelogd
-- **moeten** onveranderbaar zijn
+- **moeten** worden gelogd, met een eventtype uit de MDTO EventTypeLijst of de lijst Cockpit-eventtypen (ADR-0005)
+- **moeten** onveranderbaar zijn (hashketen, insert-only; ADR-0003)
 - **moeten** herleidbaar zijn tot rol en identiteit
 
 Auditlogs **vormen** een primair controlemiddel.

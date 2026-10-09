@@ -147,3 +147,10 @@ Deze state bepaalt:
 - wanneer een object correct beoordeeld is
 - wanneer de vernietigingslijst klaar is voor accordering
 - wanneer de gebruiker door mag naar de volgende stap
+
+---
+
+## MDTO en automatische uitsluiting (ADR-0005)
+
+- de reden komt uit de lijst Cockpit-uitsluitredenen; bij "Lopend verzoek of procedure" (Woo, AVG-verzoek, bezwaar, geschil) is de toelichting verplicht
+- kandidaten met een waardering anders dan "Tijdelijk te bewaren" (V) zijn bij binnenkomst al uitgesloten met reden "Waardering niet V"; ze gelden als beoordeeld en kunnen niet worden opgenomen

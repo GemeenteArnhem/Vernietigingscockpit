@@ -40,7 +40,7 @@ GET /taken/{id}/kandidaten
 
 Velden:
 
-- zoekveld (titel)
+- zoekveld (naam)
 - status filter
 - reden filter
 
@@ -56,10 +56,10 @@ Gedrag:
 ### Primaire kolommen (altijd zichtbaar)
 
 - selectie (checkbox)
-- titel
+- naam
 - omvang
 - bewaartermijn
-- vernietigingsdatum
+- einddatum bewaartermijn
 - status (verwerkingsstatus)
 - reden
 - toelichting
@@ -71,29 +71,29 @@ Gedrag:
 Velden:
 
 - id
-- bron_id
-- code
-- periode (startdatum - einddatum)
-- selectielijst
-- grondslag
+- identificatie (kenmerk + bron)
+- classificatie
+- dekking in tijd (begindatum – einddatum)
+- informatiecategorie (met selectielijst)
+- waardering
 - bron_systeem
 
 ---
 
 ## Kolomgedrag
 
-### titel
+### naam
 - primaire scan-kolom
 - eventueel met subtitel (onderwerp)
 
 ---
 
-### periode
+### dekking in tijd
 - formaat: "MM-YYYY — MM-YYYY"
 
 ---
 
-### vernietigingsdatum
+### einddatum bewaartermijn
 - formaat: "MM-YYYY"
 
 ---
@@ -226,8 +226,7 @@ Voorwaarden:
 
 Relevante events:
 
-- OBJECT_EXCLUDED
-- OBJECT_INCLUDED
-- OBJECT_UPDATED
+- Kandidaat uitgesloten
+- Kandidaat opgenomen
 
 Deze worden zichtbaar in audit log

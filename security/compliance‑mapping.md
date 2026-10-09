@@ -164,9 +164,11 @@ Binnen dit ecosysteem betekent dit:
 ### 7.3 Borging in het ecosysteem
 
 - cockpit verwerkt geen inhoudelijke gegevens
-- alleen noodzakelijke metadata wordt gebruikt
+- alleen noodzakelijke metadata wordt gebruikt: de MDTO-gegevens uit de Stekker API, zonder de ruwe stekkerpayload (ADR-0005)
 - volledige audittrail van besluiten
 - duidelijke rollen en verantwoordelijkheden
+- de werkkopie van een dossier wordt na archivering en een instelbare termijn automatisch verwijderd; er blijft een grafsteen zonder persoonsgegevens (ADR-0006)
+- het blijvend bewaarde dossier krijgt een expliciete gebruiksbeperking (`beperkingGebruik`) voor persoonsgegevens
 
 ### 7.4 Verwijzing naar documentatie
 
@@ -185,23 +187,50 @@ De Archiefwet vormt de grondslag voor selectie en vernietiging.
 ### 8.2 Architecturale interpretatie
 
 De architectuur **moet** ondersteunen:
-- normatieve besluitvorming
+- normatieve besluitvorming op basis van de vastgestelde selectielijst
 - gecontroleerde uitvoering
-- aantoonbare vernietiging
+- aantoonbare vernietiging, met een verklaring volgens art. 8 Archiefbesluit 1995: specificatie van de vernietigde archiefbescheiden, wijze en tijdstip van vernietiging
 - reproduceerbaarheid
+- duurzame toegankelijkheid van het vernietigingsdossier zelf
 
 ### 8.3 Borging in het ecosysteem
 
-- workflow met vaste accorderingsstappen
-- vernietigingsdossiers
-- verklaring van vernietiging
-- archivering van bewijslast
+- workflow met vaste accorderingsstappen (recordmanager, proceseigenaar, archivaris)
+- vernietigingsdossiers als MDTO-informatieobject, waardering *Blijvend te bewaren* (ADR-0005)
+- per kandidaat de informatiecategorie uit de vastgestelde selectielijst, de waardering en een controleerbare bewaartermijn (trigger, startdatum, looptijd, einddatum)
+- per vernietigde kandidaat het MDTO-event *Vernietigen* met tijdstip en een MDTO-specificatie, per uitvoering de vernietigingsmethode
+- verklaring van vernietiging (PDF/A-2b) met alle accorderingen
+- archivering van bewijslast als MDTO-XML-pakket in een aangewezen archief- of zaaksysteem
 
 ### 8.4 Verwijzing naar documentatie
 
 - architectuur-cockpit.md
-- sequence-diagrams.md
-- roles-and-responsibilities.md
+- sequence-diagrammen.md
+- rollen-en-verantwoordelijkheden.md
+- adr/0005-adr-mdto-leidend.md, adr/0006-adr-verwijderen-werkkopie-dossier.md
+
+## 8a. MDTO – Metagegevens voor duurzaam toegankelijke overheidsinformatie
+
+### 8a.1 Relevantie
+
+MDTO is de standaard van het Nationaal Archief voor het vastleggen en uitwisselen van metagegevens van informatieobjecten, en de opvolger van TMLO. Archief- en zaaksystemen en e-depots verwachten MDTO.
+
+### 8a.2 Architecturale interpretatie
+
+MDTO is leidend voor benaming, begrippen en informatiemodel in alle lagen: documentatie, Stekker API, datamodel, auditlog, verklaring, archiefpakket en UI-labels (ADR-0005).
+
+### 8a.3 Borging in het ecosysteem
+
+- de Stekker API v2 gebruikt MDTO-namen en -structuren (`api-informatiemodel.md`)
+- eigen begrippen staan in gepubliceerde, geversioneerde begrippenlijsten (`designrules/begrippenlijsten/`)
+- het vernietigingsdossier en zijn onderdelen worden als MDTO-XML 1.0.1 gearchiveerd
+- stekkerspecificaties worden gevalideerd tegen de MDTO-XSD
+
+### 8a.4 Verwijzing naar documentatie
+
+- adr/0005-adr-mdto-leidend.md
+- designrules/api/api-informatiemodel.md
+- designrules/begrippenlijsten/README.md
 
 ---
 

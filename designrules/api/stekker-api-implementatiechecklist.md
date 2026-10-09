@@ -1,140 +1,126 @@
-# Stekker API implementatiechecklist
+# Stekker API implementatiechecklist (v2)
 
-Deze checklist beschrijft wanneer een Stekker-implementatie voldoende aansluit op het Stekker API-contract om door de Vernietigingscockpit gebruikt te kunnen worden.
+Deze checklist beschrijft wanneer een Stekker-implementatie voldoende aansluit op het Stekker API-contract (v2.0.0) om door de Vernietigingscockpit gebruikt te kunnen worden.
 
 De checklist is aanvullend op:
 
-- `stekker-openapi-spec.yaml`
+- `stekker-openapi-spec.yaml` (bron van waarheid voor de verplichte velden)
 - `stekker-openapi-contract.md`
 - `api-informatiemodel.md`
+- `designrules/begrippenlijsten/`
 
 ## 1. Minimale endpoints
 
-Een implementatie ondersteunt minimaal:
+Alle paden onder `/v2`; `API-Version` in elke response.
 
 | Endpoint | Doel |
 |--------|--------|
 | `POST /selecties` | Starten van een nieuwe selectie |
-| `GET /selecties/{selectieId}` | Opvragen van selectie-status en selectie-metadata |
-| `GET /selecties/{selectieId}/objecten` | Pagineren door vernietigingskandidaten |
+| `GET /selecties/{selectieId}` | Opvragen van selectiestatus en -metagegevens |
+| `GET /selecties/{selectieId}/vernietigingskandidaten` | Pagineren door vernietigingskandidaten |
 | `POST /vernietigingen` | Starten van een vernietigingsuitvoering |
 | `GET /vernietigingen/{vernietigingId}` | Opvragen van vernietigingsstatus |
 | `POST /vernietigingen/{vernietigingId}/batches` | Aanbieden van een technische batch |
 | `POST /vernietigingen/{vernietigingId}/vrijgeven` | Vrijgeven van alle aangeleverde batches voor technische vernietiging |
 | `GET /vernietigingen/{vernietigingId}/batches` | Opvragen van batchresultaten |
-| `GET /vernietigingen/{vernietigingId}/batches/{batchNummer}` | Opvragen van een specifiek batchresultaat |
+| `GET /vernietigingen/{vernietigingId}/batches/{batchNummer}` | Opvragen van één batchresultaat |
+| `GET /vernietigingen/{vernietigingId}/specificaties/{vernietigingskandidaatId}` | MDTO-XML-specificatie van een vernietigde kandidaat |
 
-## 2. Verplichte identificaties
-
-De implementatie gebruikt stabiele identificaties voor:
+## 2. Identificaties
 
 | Identificatie | Vereist bij |
 |--------|--------|
 | `selectieId` | Selectie, kandidatenpagina, vernietiging |
-| `vernietigingskandidaatId` | Vernietigingskandidaat, batchobject, uitvoeringsresultaat |
-| `bronId` | Vernietigingskandidaat, batchobject en uitvoeringsresultaat |
-| `bronIdNaam` | Vernietigingskandidaat, voor herkenbaarheid in de Cockpit |
+| `vernietigingskandidaatId` | Vernietigingskandidaat, batch, uitvoeringsresultaat, specificatie |
+| `identificatie` (MDTO: `identificatieKenmerk` + `identificatieBron`) | Kandidaat, batch en resultaat. Minimaal de technische sleutel; bij voorkeur ook het voor mensen herkenbare kenmerk |
 | `vernietigingId` | Vernietigingsuitvoering en batchresources |
 | `batchNummer` | Batchaanlevering en batchresultaat |
-| `cockpitTaakId` | Start van vernietigingsuitvoering |
-| `besluitReferentie` | Start van vernietigingsuitvoering |
+| `cockpitTaakId`, `besluitReferentie` | Start van vernietigingsuitvoering |
 
-## 3. Selectie
+## 3. Selectie en MDTO-metagegevens
 
-Een correcte selectie voldoet aan:
-
-- de selectie krijgt een stabiele `selectieId`;
-- de selectie krijgt status `RUNNING`, `READY` of `FAILED`;
-- bij `READY` is de selectie bevroren;
-- elke pagina van `/selecties/{selectieId}/objecten` komt uit dezelfde bevroren selectie;
-- elke vernietigingskandidaat heeft minimaal `vernietigingskandidaatId`, `bronId` en `omschrijving`;
-- selectie-metadata bevat waar beschikbaar peildatum, selectietijdstip, stekkerversie, configuratieversie, apiVersie, aantallen, waarschuwingen en fouten.
+- de selectie krijgt een stabiele `selectieId` en status `RUNNING`, `READY` of `FAILED`;
+- bij `READY` is de selectie bevroren, en elke pagina komt uit dezelfde bevroren selectie;
+- elke kandidaat is precies één MDTO-informatieobject met `aggregatieniveau` Archief, Serie, Dossier of Archiefstuk; geen kunstmatige groeperingen;
+- elke kandidaat heeft de in de spec verplichte velden: `vernietigingskandidaatId`, `identificatie`, `naam`, `aggregatieniveau`, `waardering`, `bewaartermijn` (met `termijnEinddatum`) en `informatiecategorie`;
+- alleen kandidaten met waardering V (`Tijdelijk te bewaren`) en `termijnEinddatum` ≤ peildatum; twijfelgevallen tellen in `aantalWaarschuwingen`;
+- de bewaartermijn levert trigger (Cockpit-termijntriggers), startdatum en looptijd (ISO 8601-duur) zodra bekend, en einddatum = startdatum + looptijd;
+- `informatiecategorie` verwijst naar de vastgestelde selectielijst, met identificatie en versie;
+- elke begripwaarde verwijst via `begripBegrippenlijst` naar de lijst waaruit ze komt;
+- de selectie bevat waar beschikbaar peildatum, selectietijdstip, stekkerversie, configuratieversie, apiVersie, aantallen, waarschuwingen en fouten.
 
 ## 4. Vernietiging
 
-Een correcte vernietigingsuitvoering voldoet aan:
-
-- `POST /vernietigingen` accepteert minimaal `selectieId`, `cockpitTaakId` en `besluitReferentie`;
-- de stekker retourneert een stabiele `vernietigingId`;
-- de uitvoering verwijst naar exact een selectie;
-- de stekker vernietigt alleen informatieobjecten die expliciet in batches zijn aangeboden;
-- elk batchobject bevat minimaal `vernietigingskandidaatId` en `bronId`;
-- aangeboden batchobjecten moeten herleidbaar zijn tot vrijgegeven kandidaten uit de onderliggende selectie;
-- de stekker voegt niet zelfstandig extra informatieobjecten toe aan een vernietiging;
-- de stekker start technische vernietiging pas na `POST /vernietigingen/{vernietigingId}/vrijgeven`;
-- bij vrijgave controleert de stekker minimaal `aantalBatches` en `aantalKandidaten`.
+- `POST /vernietigingen` accepteert `selectieId`, `cockpitTaakId`, `besluitReferentie` en `vernietigingsdossierId`, en retourneert een stabiele `vernietigingId`;
+- de uitvoering verwijst naar precies één selectie;
+- de stekker vernietigt alleen kandidaten die expliciet in batches zijn aangeboden, en voegt niets zelfstandig toe;
+- elke batch bevat `vernietigingskandidaten` met `vernietigingskandidaatId` en `identificatie`; een afwijkende identificatie leidt tot `400`;
+- de stekker start technische vernietiging pas na `POST …/vrijgeven` en controleert daarbij `aantalBatches` en `aantalKandidaten`;
+- vanaf `RUNNING` meldt de uitvoering `vernietigingsmethode` (Cockpit-vernietigingsmethoden) en `vernietigingsmethodeToelichting`, met de behandeling van back-ups, replica's en indexen;
+- vernietiging voldoet aan de MDTO-definitie: blijvend ontoegankelijk, inclusief onderdelen en bestanden. Een soft delete of prullenbak telt niet.
 
 ## 5. Idempotentie en retries
 
-De implementatie voldoet aan:
-
-- `POST /vernietigingen/{vernietigingId}/batches` is idempotent op `vernietigingId + batchNummer`;
-- herhaalde aanlevering van dezelfde batch met identieke payload leidt niet tot dubbele technische vernietiging;
-- herhaalde aanlevering van dezelfde batch met afwijkende payload levert `409 Conflict` op;
-- gedeeltelijk verwerkte batches kunnen veilig worden hervat of leveren herleidbare resultaten op;
+- elke `POST` vereist `Idempotency-Key`; zonder sleutel volgt `400 IDEMPOTENCY_KEY_MISSING`;
+- zelfde sleutel en zelfde inhoud: niets opnieuw uitgevoerd, zelfde antwoord (ook voor `POST /selecties`);
+- zelfde sleutel met andere inhoud: `409 IDEMPOTENCY_KEY_REUSED`;
+- sleutels blijven minimaal 7 dagen geldig, ook na een herstart;
+- `POST …/batches` is daarnaast idempotent op `vernietigingId + batchNummer`; hetzelfde batchnummer met een afwijkende inhoud levert `409`;
+- gedeeltelijk verwerkte batches worden veilig hervat, en het event *Vernietigen* behoudt dan het oorspronkelijke tijdstip;
 - retries blijven zichtbaar in technische logging.
 
-## 6. Resultaten
+## 6. Resultaten en specificatie
 
-Een uitvoeringsresultaat voldoet aan:
-
-- per aangeboden combinatie van `vernietigingskandidaatId` en `bronId` komt precies een eindresultaat beschikbaar;
-- elk resultaat bevat minimaal `vernietigingskandidaatId`, `bronId` en `resultaat`;
-- toegestane resultaatwaarden zijn `SUCCESS`, `FAILED`, `SKIPPED`, `NOT_FOUND` en `CHANGED`;
-- `NOT_FOUND` en `CHANGED` zijn objectresultaten, geen HTTP-fouten;
-- foutresultaten bevatten waar mogelijk `foutcode`, `foutmelding`, `bronstatus`, `logReference` of `correlatieId`.
+- per aangeboden kandidaat precies één eindresultaat, met `vernietigingskandidaatId`, `identificatie` en `resultaat`;
+- toegestane resultaatwaarden: `SUCCESS`, `FAILED`, `SKIPPED`, `NOT_FOUND`, `CHANGED`; `NOT_FOUND` en `CHANGED` zijn resultaten, geen HTTP-fouten;
+- bij `SUCCESS` een `event` met `eventType` *Vernietigen* en `eventTijd`;
+- bij een ander resultaat waar mogelijk `foutcode`, `foutmelding`, `bronstatus`, `logReference` of `correlatieId`;
+- voor elke kandidaat met `SUCCESS` een specificatie in MDTO-XML die valideert tegen de MDTO-XSD 1.0.1, met `bevatOnderdeel` per direct onderliggend informatieobject bij Archief, Serie en Dossier; anders `409`.
 
 ## 7. Foutafhandeling
 
-De implementatie gebruikt HTTP-fouten voor request- en resourceniveau:
-
 | Status | Verwachting |
 |--------|--------|
-| `400` | Ongeldige of onvolledige request |
+| `400` | Ongeldige of onvolledige request, of een ontbrekende `Idempotency-Key` |
 | `401` | Authenticatie ontbreekt of is ongeldig |
 | `403` | Client is niet geautoriseerd |
-| `404` | Selectie, vernietiging of batch bestaat niet |
-| `409` | Ongeldige state transition of idempotentieconflict |
+| `404` | Selectie, vernietiging, batch of kandidaat bestaat niet |
+| `409` | Ongeldige statusovergang, idempotentieconflict, selectie niet gereed of specificatie niet beschikbaar |
 | `500` | Onverwachte technische fout |
 
-Elke foutresponse gebruikt het standaard foutmodel met minimaal `code` en `message`.
+Elke foutresponse gebruikt het standaard foutmodel met minimaal `code` en `message`, en de vaste foutcodes uit het contract (§8.0).
 
 ## 8. Security
 
-De implementatie voldoet minimaal aan:
-
 - HTTPS;
 - OAuth2 client credentials of een overeengekomen gelijkwaardig mechanisme;
-- scopes voor selectie lezen/schrijven en vernietiging lezen/schrijven;
+- scopes `selectie.read`, `selectie.write`, `vernietiging.read` en `vernietiging.write`;
 - autorisatiefouten worden gelogd;
 - tokens, credentials en secrets worden niet gelogd.
 
 ## 9. Observability
 
-De implementatie legt minimaal vast:
-
-- `selectieId`;
-- `vernietigingId`;
-- `batchNummer`;
-- `vernietigingskandidaatId`;
-- `bronId`;
-- resultaat of foutcode;
-- `correlatieId` of `logReference`;
-- tijdstip van request of verwerking.
+De implementatie legt minimaal vast: `selectieId`, `vernietigingId`, `batchNummer`, `vernietigingskandidaatId`, de technische sleutel uit de `identificatie`, het resultaat of de foutcode, `correlatieId` of `logReference`, en het tijdstip van request of verwerking.
 
 ## 10. Acceptatiescenario's
 
 Een Stekker is acceptabel voor integratie wanneer minimaal de volgende scenario's slagen:
 
 1. Selectie starten en status ophalen tot `READY`.
-2. Vernietigingskandidaten gepagineerd ophalen en dezelfde selectie stabiel terugkrijgen.
-3. Vernietiging starten met `selectieId`, `cockpitTaakId` en `besluitReferentie`.
-4. Batch met vrijgegeven kandidaten aanbieden en resultaten ophalen.
-5. Vernietiging vrijgeven met `aantalBatches` en `aantalKandidaten`, waarna status `RUNNING` wordt.
-6. Vrijgave met ontbrekende of afwijkende batches afwijzen met `409 Conflict`.
-7. Dezelfde batch opnieuw aanbieden met identieke payload zonder dubbele uitvoering.
-8. Dezelfde batch opnieuw aanbieden met afwijkende payload en `409 Conflict` ontvangen.
-9. Een niet-bestaande selectie, vernietiging of batch opvragen en `404` ontvangen.
-10. Een object dat niet meer in de bron bestaat terugkrijgen als objectresultaat `NOT_FOUND`.
-11. Een object dat sinds selectie gewijzigd is terugkrijgen als objectresultaat `CHANGED`.
-12. Autorisatie met ontbrekende of onjuiste scope afwijzen met `401` of `403`.
+2. Dezelfde selectiestart herhalen met dezelfde `Idempotency-Key` levert dezelfde `selectieId`; met andere inhoud volgt `409 IDEMPOTENCY_KEY_REUSED`.
+3. Een `POST` zonder `Idempotency-Key` wordt afgewezen met `400 IDEMPOTENCY_KEY_MISSING`.
+4. Vernietigingskandidaten gepagineerd ophalen en dezelfde selectie stabiel terugkrijgen; elke kandidaat voldoet aan het MDTO-profiel (verplichte velden, aggregatieniveau, waardering V, einddatum = startdatum + looptijd).
+5. Vernietiging starten met `selectieId`, `cockpitTaakId` en `besluitReferentie`.
+6. Een batch met vrijgegeven kandidaten aanbieden; een kandidaat met een afwijkende `identificatie` wordt afgewezen met `400`.
+7. Vernietiging vrijgeven met `aantalBatches` en `aantalKandidaten`, waarna status `RUNNING` wordt, met vernietigingsmethode en toelichting.
+8. Vrijgave met ontbrekende of afwijkende batches afwijzen met `409 Conflict`.
+9. Dezelfde batch opnieuw aanbieden met identieke inhoud, zonder dubbele uitvoering.
+10. Dezelfde batch opnieuw aanbieden met afwijkende inhoud en `409 Conflict` ontvangen.
+11. Een niet-bestaande selectie, vernietiging of batch opvragen en `404` ontvangen.
+12. Een object dat niet meer in de bron bestaat, terugkrijgen als `NOT_FOUND`.
+13. Een object dat sinds selectie gewijzigd is, terugkrijgen als `CHANGED`.
+14. Bij `SUCCESS` het event *Vernietigen* met tijdstip ontvangen, en een specificatie ophalen die valideert tegen de MDTO-XSD 1.0.1.
+15. Een specificatie opvragen voor een kandidaat zonder `SUCCESS` en `409` ontvangen.
+16. Autorisatie met een ontbrekende of onjuiste scope afwijzen met `401` of `403`.
+
+De teststekker (`Vernietigingscockpit-stekker-test`) dekt deze scenario's in zijn contract- en sequencetests en kan als referentie dienen.

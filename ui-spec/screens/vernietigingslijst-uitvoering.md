@@ -88,10 +88,10 @@ Toont per bron_systeem:
 
 ### Primaire kolommen
 
-- titel
+- naam
 - omvang
 - bewaartermijn
-- vernietigingsdatum
+- einddatum bewaartermijn
 - status (verwerkingsstatus)
 - foutmelding
 
@@ -101,10 +101,10 @@ Toont per bron_systeem:
 
 | Vernietigingslijst | Uitvoering |
 |-------------------|-----------|
-| titel | titel |
+| naam | naam |
 | omvang | omvang |
-| bewaartermijn | bewaartermijn |
-| vernietigingsdatum | vernietigingsdatum |
+| bewaartermijn | bewaartermijn.termijnLooptijd |
+| einddatum bewaartermijn | bewaartermijn.termijnEinddatum |
 | status | verwerkingsstatus |
 | toelichting | foutmelding |
 
@@ -113,11 +113,11 @@ Toont per bron_systeem:
 ## Secundaire metadata (via expand)
 
 - id
-- bron_id
-- code
-- periode (startdatum - einddatum)
-- selectielijst
-- grondslag
+- identificatie (kenmerk + bron)
+- classificatie
+- dekking in tijd (begindatum – einddatum)
+- informatiecategorie (met selectielijst)
+- waardering
 - bron_systeem
 
 ---
@@ -126,7 +126,7 @@ Toont per bron_systeem:
 
 - resultaten worden realtime toegevoegd
 - tabel groeit dynamisch
-- sortering blijft stabiel (bijv. op titel)
+- sortering blijft stabiel (bijv. op naam)
 - geen handmatige refresh nodig
 
 ---
@@ -215,9 +215,10 @@ Verschillen:
 
 De volgende events worden gelogd:
 
-- EXECUTION_STARTED
-- BATCH_STARTED
-- BATCH_COMPLETED
-- OBJECT_PROCESSED
-- OBJECT_FAILED
-- EXECUTION_COMPLETED
+- Vernietigingsopdracht
+- Uitvoering gestart
+- Batch aangeboden
+- Batch verwerkt
+- Vernietigen (MDTO-event, per vernietigde kandidaat)
+- Niet vernietigd
+- Uitvoering afgerond

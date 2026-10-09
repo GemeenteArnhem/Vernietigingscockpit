@@ -102,6 +102,45 @@ Gebruik exact:
 - FAILED
 - SKIPPED
 - NOT_FOUND
+- CHANGED
+
+---
+
+# 7a. MDTO-gegevens (ADR-0005)
+
+MDTO is leidend. Voor gegevens over informatieobjecten gebruikt de UI het MDTO-label (Nationaal Archief, MDTO 1.0). Een helptekst mag; het label zelf blijft het MDTO-label.
+
+| Veld (API/data) | Label in de UI |
+|---|---|
+| naam | Naam |
+| identificatie | Identificatie (Kenmerk, Bron) |
+| omschrijving | Omschrijving |
+| aggregatieniveau | Aggregatieniveau |
+| classificatie | Classificatie |
+| dekkingInTijd | Dekking in tijd (Begindatum, Einddatum) |
+| waardering | Waardering |
+| bewaartermijn | Bewaartermijn |
+| bewaartermijn.termijnTriggerStartLooptijd | Trigger start looptijd |
+| bewaartermijn.termijnStartdatumLooptijd | Startdatum looptijd |
+| bewaartermijn.termijnLooptijd | Looptijd |
+| bewaartermijn.termijnEinddatum | Einddatum bewaartermijn |
+| informatiecategorie | Informatiecategorie |
+| archiefvormer | Archiefvormer |
+| activiteit | Activiteit |
+| gerelateerdInformatieobject | Gerelateerd informatieobject |
+| beperkingGebruik | Beperking gebruik |
+| event | Event (Type, Tijd, Resultaat) |
+| aantalObjecten | Aantal objecten |
+| aantalBetrokkenen | Aantal betrokkenen |
+| event.eventTijd (Vernietigen) | Tijdstip vernietiging |
+| vernietigingsmethode | Vernietigingsmethode |
+
+Waarden van begrippen worden getoond met hun begripLabel, letterlijk uit de begrippenlijst:
+
+- Waardering: "Blijvend te bewaren", "Tijdelijk te bewaren", "Nader te bepalen"
+- Aggregatieniveau: "Archief", "Serie", "Dossier", "Archiefstuk"
+- Uitsluitreden: labels uit Cockpit-uitsluitredenen (o.a. "Waardering niet V", "Lopend verzoek of procedure")
+- Auditlog: eventtypen letterlijk zoals vastgelegd (o.a. "Accordering", "Bevriezing", "Vernietigen", "Kandidaat uitgesloten")
 
 ---
 

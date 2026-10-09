@@ -25,7 +25,7 @@ GET /taken/{id}
 Afhankelijk van status:
 
 - selectie/beoordeling:
-  → GET /selecties/latest/objecten
+  → GET /taken/{id}/kandidaten
 
 - accordering:
   → GET /dossier
