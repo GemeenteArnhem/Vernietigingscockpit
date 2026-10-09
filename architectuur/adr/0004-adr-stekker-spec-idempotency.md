@@ -3,6 +3,8 @@
 ## Status
 Voorgesteld (concept, nog vast te stellen)
 
+> Opgenomen in Stekker API v2.0.0 (ADR-0005) in plaats van v1.1.0. De foutcode bij een ontbrekende sleutel is `IDEMPOTENCY_KEY_MISSING`.
+
 ## Datum
 2026-10-03
 

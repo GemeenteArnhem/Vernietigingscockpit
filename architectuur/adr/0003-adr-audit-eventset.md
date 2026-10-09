@@ -3,6 +3,8 @@
 ## Status
 Voorgesteld (concept, nog vast te stellen)
 
+> §1 (eventset) is gewijzigd door ADR-0005 §5: eventtypen volgens de MDTO EventTypeLijst en de begrippenlijsten Cockpit-eventtypen en Cockpit-configuratie-eventtypen (`designrules/begrippenlijsten/`). §2 (keten) en §3 (databasebescherming) blijven gelden; §3 is aangevuld door ADR-0006 (gecontroleerd verwijderen van een werkkopie).
+
 ## Datum
 2026-10-02
 
