@@ -76,7 +76,7 @@ classDiagram
     gerelateerdInformatieobject : gerelateerdInformatieobjectGegevens [0..*]
     archiefvormer : verwijzingGegevens [0..*]
     activiteit : verwijzingGegevens [0..1]
-    aantalObjecten : Integer [0..1] «cockpituitbreiding»
+    aantalObjecten : Integer [0..1] «cockpituitbreiding» - direct onderliggend
     aantalBetrokkenen : Integer [0..1] «cockpituitbreiding»
     toelichting : CharacterString [0..1] «cockpituitbreiding»
   }
@@ -161,9 +161,9 @@ classDiagram
   Vernietigingskandidaat "1" *-- "0..1" InformatiecategorieAfwijking : informatiecategorieAfwijking
   Uitvoeringsresultaat "1" *-- "0..1" VernietigingsEvent : event
 
-  note for Uitvoeringsresultaat "Precies één per aangeboden kandidaat.\nBij resultaat SUCCESS: event [1] en Specificatie [1]."
+  note for Uitvoeringsresultaat "Precies één per aangeboden kandidaat.\nBij resultaat SUCCESS: event [1] en Specificatie [1].\nOnderdelen gewijzigd sinds selectie: CHANGED voor de hele kandidaat (DR-04)."
   note for Vernietigingsuitvoering "vernietigingsmethode en -Toelichting\nverplicht vanaf status RUNNING (B-M4)."
-  note for Vernietigingskandidaat "aggregatieniveau: Archief, Serie, Dossier of Archiefstuk (B-M2).\nwaardering B of N: cockpit sluit automatisch uit (B-M1)."
+  note for Vernietigingskandidaat "vernietigingskandidaatId: uniek binnen één selectie (ADR-0007 DR-02).\nObjectidentiteit = identificatie (DR-01).\naggregatieniveau: Archief, Serie, Dossier of Archiefstuk (B-M2, DR-03).\nwaardering B of N: cockpit sluit automatisch uit (B-M1)."
 ```
 
 Toelichting op de relatiesoorten:
@@ -177,7 +177,7 @@ Toelichting op de relatiesoorten:
 | levert | Vernietigingsuitvoering → Uitvoeringsresultaat | `BatchResultaat.resultaten` |
 | betreft | Uitvoeringsresultaat → Vernietigingskandidaat | Attribuut `vernietigingskandidaatId` |
 | heeftSpecificatie | Uitvoeringsresultaat → Specificatie | `GET /vernietigingen/{vernietigingId}/specificaties/{vernietigingskandidaatId}` |
-| isOnderdeelVan / bevatOnderdeel | Informatieobject → Informatieobject | `isOnderdeelVan` op de kandidaat; `bevatOnderdeel` alleen in de specificatie |
+| isOnderdeelVan / bevatOnderdeel | Informatieobject → Informatieobject | `isOnderdeelVan` op de kandidaat; `bevatOnderdeel` alleen in de specificatie, precies de onderdelen uit de momentopname (ADR-0007, DR-04) |
 
 ---
 

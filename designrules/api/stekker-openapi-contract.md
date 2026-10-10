@@ -93,7 +93,7 @@ De stekker moet selectie, vernietiging, batches en uitvoeringsresultaten herleid
 - `besluitReferentie`: het besluit of de vrijgave op basis waarvan de uitvoering is gestart;
 - `vernietigingsdossierId`: het Cockpit-dossier;
 - `batchNummer`: technische batch binnen een vernietiging;
-- `vernietigingskandidaatId`: stabiele identificatie van de kandidaat over selectie, beoordeling, vernietiging en resultaatverwerking;
+- `vernietigingskandidaatId`: identificatie van de kandidaat, uniek en stabiel binnen één selectie en in de vernietigingen en resultaten die daarop gebaseerd zijn. Hergebruik in een volgende selectie mag; de cockpit geeft daar geen betekenis aan. Hetzelfde informatieobject herken je aan `identificatie` (ADR-0007, DR-01 en DR-02);
 - `identificatie`: de MDTO-identificaties van het informatieobject (`identificatieKenmerk` + `identificatieBron`). Minimaal de technische sleutel waarmee de stekker het object in de bron terugvindt, en bij voorkeur het voor mensen herkenbare kenmerk, zoals een zaaknummer.
 
 Deze correlatiegegevens moeten in responses, resultaten en technische logging beschikbaar blijven zolang dat nodig is voor processturing, herstart, audit en dossieropbouw.
@@ -102,7 +102,7 @@ Deze correlatiegegevens moeten in responses, resultaten en technische logging be
 
 De stekker levert per kandidaat de MDTO-metagegevens volgens het profiel in `api-informatiemodel.md` §5.2. Daarbij geldt:
 
-- **aggregatieniveau**: uitsluitend Archief, Serie, Dossier of Archiefstuk; een kandidaat is nooit een kunstmatige groepering;
+- **aggregatieniveau**: uitsluitend Archief, Serie, Dossier of Archiefstuk; een kandidaat is nooit een kunstmatige groepering. Archief, Serie of Dossier mag alleen als de bron die eenheid zelf beheert en er een eigen kenmerk voor heeft; de `identificatieBron` is dan de bron, nooit de stekker (ADR-0007, DR-03);
 - **waardering**: uit de gesloten MDTO-lijst (B/V/N); in een vernietigingsselectie hoort alleen V;
 - **bewaartermijn**: `termijnEinddatum` is altijd gevuld. Trigger, startdatum en looptijd worden geleverd zodra bekend, zodat de einddatum controleerbaar is;
 - **informatiecategorie**: de categorie uit de vastgestelde selectielijst, met de selectielijst (naam, identificatie, versie) als begrippenlijst;
@@ -118,7 +118,8 @@ Een selectie is een bevroren momentopname van vernietigingskandidaten:
 - de selectie heeft een `selectieId` en een `selectietijdstip`;
 - de selectie bevat de kandidaten die op dat moment als vernietigingskandidaat zijn bepaald: waardering V en `bewaartermijn.termijnEinddatum` op of vóór de peildatum;
 - de selectie verandert niet meer nadat deze gereed is (`READY`);
-- dezelfde selectie levert bij herhaald opvragen dezelfde kandidaten op, met dezelfde metagegevens.
+- dezelfde selectie levert bij herhaald opvragen dezelfde kandidaten op, met dezelfde metagegevens;
+- de stekker legt per kandidaat vast welke direct onderliggende informatieobjecten bij selectie bij de aggregatie horen (ADR-0007, DR-04). Dat blijft binnen de stekker.
 
 ### 3.2 Starten van een selectie
 
@@ -267,7 +268,9 @@ Voor iedere kandidaat met resultaat `SUCCESS` levert de stekker via `GET /vernie
 
 - het vernietigde informatieobject met `identificatie`, `naam`, `aggregatieniveau`, `waardering`, `bewaartermijn`, `informatiecategorie`, `archiefvormer` en `beperkingGebruik`;
 - een `event` met `eventType` *Vernietigen*, de `eventTijd` en een `eventResultaat` met de vernietigingsmethode;
-- bij Archief, Serie en Dossier: een `bevatOnderdeel` (naam en identificatie) per direct onderliggend informatieobject.
+- bij Archief, Serie en Dossier: een `bevatOnderdeel` (naam en identificatie) per direct onderliggend informatieobject, precies de onderdelen uit de momentopname van de selectie (ADR-0007, DR-04).
+
+De specificatie eindigt bij het archiefstuk. Bestanden (`heeftRepresentatie`, `bestand`) neemt de stekker niet op; ze worden wel vernietigd met het informatieobject waartoe ze behoren.
 
 Het document moet valideren tegen de MDTO-XSD 1.0.1. Zonder `SUCCESS` volgt `409` (`SPECIFICATIE_NIET_BESCHIKBAAR`); voor een kandidaat die niet in de vernietiging is aangeboden `404`. De cockpit neemt het document op als bestand, met checksum, in het vernietigingsdossier.
 
@@ -330,7 +333,10 @@ Een soft delete, prullenbak, archiveringsvlag of andere herstelbare verwijdering
 
 - het informatieobject of zijn status na selectie inhoudelijk is gewijzigd;
 - de waardering, informatiecategorie of bewaartermijn opnieuw moet worden bepaald;
-- identificerende kenmerken niet meer overeenkomen met de vrijgegeven selectie.
+- identificerende kenmerken niet meer overeenkomen met de vrijgegeven selectie;
+- bij een archief, serie of dossier: er sinds de selectie onderdelen zijn bijgekomen of verdwenen.
+
+`CHANGED` geldt altijd voor de **hele kandidaat**. De stekker vernietigt dan niets van die kandidaat, ook niet de onderdelen die wel ongewijzigd zijn (ADR-0007, DR-04). Zo'n kandidaat kan alleen via een nieuwe selectie en een nieuwe beoordeling worden vernietigd.
 
 De stekker mag het object dan niet stilzwijgend vernietigen. Hij rapporteert `CHANGED`, zodat de cockpit het verschil tussen selectie, besluit en uitvoering zichtbaar maakt in het vernietigingsdossier.
 

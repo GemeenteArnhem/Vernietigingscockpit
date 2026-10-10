@@ -53,7 +53,7 @@ Cockpit-eigen gegevens, zoals taak, workflowstatus, beoordelingen, accorderingen
 
 Een vernietigingskandidaat is het primaire uitwisselobject tussen Cockpit en Stekker (ADR-0001).
 
-Een vernietigingskandidaat is **precies één MDTO-informatieobject** op aggregatieniveau **Archief**, **Serie**, **Dossier** of **Archiefstuk** (ADR-0005, B-M2). Kunstmatige groeperingen, zoals "alle meldingen van 2019 met categorie X" zonder dat dit een serie of dossier is, zijn niet toegestaan.
+Een vernietigingskandidaat is **precies één MDTO-informatieobject** op aggregatieniveau **Archief**, **Serie**, **Dossier** of **Archiefstuk** (ADR-0005, B-M2). Kunstmatige groeperingen, zoals "alle meldingen van 2019 met categorie X" zonder dat dit een serie of dossier is, zijn niet toegestaan. Een archief, serie of dossier is alleen toegestaan als de bron die eenheid zelf als eenheid beheert en er een eigen kenmerk voor heeft, zoals een zaak; een fysieke map is niet nodig (ADR-0007, DR-03).
 
 De kandidaat is de eenheid voor selectie, beoordeling, besluitvorming, vrijgave, uitvoering en resultaatterugkoppeling. De onderliggende informatieobjecten van een archief, serie of dossier worden niet afzonderlijk uitgewisseld. Na vernietiging specificeert de Stekker ze wel in de MDTO-specificatie (§5.5).
 
@@ -61,10 +61,12 @@ De kandidaat is de eenheid voor selectie, beoordeling, besluitvorming, vrijgave,
 
 Elke kandidaat heeft:
 
-- `vernietigingskandidaatId`: stabiele identificatie van de kandidaat binnen de Stekker, over het hele proces (eigen begrip);
+- `vernietigingskandidaatId`: identificatie van de kandidaat, uniek en stabiel binnen één selectie, en in de vernietigingen en resultaten die op die selectie gebaseerd zijn (eigen begrip). `selectieId` + `vernietigingskandidaatId` duidt de kandidaat in één momentopname aan;
 - `identificatie` (MDTO, 1..\*): één of meer paren `identificatieKenmerk` + `identificatieBron`, minimaal de **technische sleutel** waarmee de Stekker het object in de bron terugvindt, en bij voorkeur het **voor mensen herkenbare kenmerk**, zoals een zaaknummer of dossiernummer.
 
 De `identificatieBron` geeft de context waarbinnen het kenmerk uniek is, zoals de bronapplicatie of de nummering van de organisatie. Bedient een Stekker meerdere bronnen, dan onderscheidt de `identificatieBron` die.
+
+Alleen de `identificatie` zegt dat twee kandidaten hetzelfde informatieobject zijn, ook over selecties heen. Een stekker mag voor hetzelfde object in een volgende selectie hetzelfde `vernietigingskandidaatId` gebruiken, maar de Cockpit geeft daar geen betekenis aan (ADR-0007, DR-01 en DR-02).
 
 De Cockpit stuurt bij vernietiging de `identificatie` **letterlijk** terug zoals geselecteerd. In v1 heette de technische sleutel `bronId` en het herkenbare kenmerk `bronIdNaam`.
 
@@ -102,7 +104,7 @@ Een selectie is een bevroren momentopname van vernietigingskandidaten. Ze bevat 
 | selectietijdstip | Datum en tijd waarop de selectie is uitgevoerd |
 | status | `IDLE`, `RUNNING`, `READY`, `FAILED` |
 | totaalKandidaten | Aantal vernietigingskandidaten |
-| totaalObjecten | Totaal aantal onderliggende informatieobjecten |
+| totaalObjecten | Som van `aantalObjecten` van de kandidaten |
 | totaalBetrokkenen | Totaal aantal unieke betrokkenen |
 | stekkerNaam | Naam van de Stekker |
 | stekkerOmschrijving | Beschrijving van de ontsloten bronnen en applicaties |
@@ -116,7 +118,7 @@ Een selectie is een bevroren momentopname van vernietigingskandidaten. Ze bevat 
 
 | Veld | MDTO | Omschrijving |
 |--------|--------|--------|
-| vernietigingskandidaatId | – (eigen begrip) | Stabiele identificatie van de kandidaat |
+| vernietigingskandidaatId | – (eigen begrip) | Identificatie van de kandidaat, uniek en stabiel binnen één selectie (§3.2) |
 | identificatie | identificatie (`identificatieGegevens`, 1..\*) | Technische sleutel en herkenbaar kenmerk, elk met bron (§3.2) |
 | naam | naam | Betekenisvolle aanduiding, bijvoorbeeld de titel van het dossier |
 | omschrijving | omschrijving (0..\*) | Omschrijving van de inhoud |
@@ -131,7 +133,7 @@ Een selectie is een bevroren momentopname van vernietigingskandidaten. Ze bevat 
 | gerelateerdInformatieobject | gerelateerdInformatieobject (0..\*) | Relatie met een ander informatieobject; type uit de MDTO-lijst Relatietypen (informatieobject) |
 | archiefvormer | archiefvormer (`verwijzingGegevens`, 0..\*) | Alleen bij een afwijkende archiefvormer; anders geldt die van de taakuitvoering (profiel van de proceseigenaar, ADR-0005, B-M3) |
 | activiteit | activiteit (`verwijzingGegevens`) | Bedrijfsactiviteit, zoals het proces of zaaktype |
-| aantalObjecten | – (cockpituitbreiding) | Aantal onderliggende informatieobjecten |
+| aantalObjecten | – (cockpituitbreiding) | Aantal **direct** onderliggende informatieobjecten in de momentopname, gelijk aan het aantal `bevatOnderdeel` in de specificatie; archiefstuk 0. Bestanden tellen niet mee (ADR-0007, DR-04) |
 | aantalBetrokkenen | – (cockpituitbreiding) | Aantal unieke betrokkenen |
 | toelichting | – (cockpituitbreiding) | Toelichting van de Stekker op selectie of afwijkingen |
 
@@ -154,7 +156,7 @@ Een vernietigingsuitvoering is een concrete uitvoeringsactie op basis van één 
 | besluitReferentie | Besluit of vrijgave op basis waarvan de uitvoering is gestart |
 | status | `IDLE`, `RUNNING`, `COMPLETED`, `PARTIAL`, `FAILED` |
 | starttijd, eindtijd | Begin en einde van de uitvoering |
-| totaalKandidaten, totaalObjecten | Aangeboden kandidaten en onderliggende objecten |
+| totaalKandidaten, totaalObjecten | Aangeboden kandidaten en de som van hun `aantalObjecten` |
 | totaalBatches | Bij vrijgave aangekondigd aantal batches |
 | ontvangenBatches | Door de Stekker ontvangen batches |
 | verwerkteBatches | Verwerkte batches (in v1: `aantalBatches`) |
@@ -201,6 +203,10 @@ Precies één eindresultaat per aangeboden kandidaat.
 | `CHANGED` | Het object is gewijzigd sinds selectie en daarom niet vernietigd | Nee |
 
 **Specificatie.** Voor elke kandidaat met `SUCCESS` levert de Stekker een MDTO-XML-document (MDTO-XML 1.0.1). Daarin staan het vernietigde informatieobject (met identificatie, naam, aggregatieniveau, waardering, bewaartermijn, informatiecategorie, archiefvormer en beperkingGebruik), het event *Vernietigen* en, bij Archief, Serie en Dossier, een `bevatOnderdeel` per direct onderliggend informatieobject. Zo is de specificatie van de vernietigde archiefbescheiden (Archiefbesluit art. 8) ook bij aggregaties volledig.
+
+De specificatie eindigt bij het archiefstuk: bestanden (`heeftRepresentatie`) worden niet opgenomen (ADR-0007, DR-04).
+
+**Uitvoeringsscope.** De Stekker legt bij selectie per kandidaat vast welke direct onderliggende informatieobjecten erbij horen. Zijn er bij uitvoering onderdelen bijgekomen of verdwenen, dan is het resultaat voor de hele kandidaat `CHANGED` en wordt er niets van vernietigd. Bij `SUCCESS` bevat de specificatie precies de onderdelen uit de momentopname (ADR-0007, DR-04).
 
 ---
 

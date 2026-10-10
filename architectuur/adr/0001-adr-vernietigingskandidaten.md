@@ -5,6 +5,8 @@
 Voorgesteld
 
 > Aangescherpt door ADR-0005 (B-M2): een vernietigingskandidaat is precies één MDTO-informatieobject op aggregatieniveau Archief, Serie, Dossier of Archiefstuk. Kunstmatige groeperingen zijn niet toegestaan. Dit vervangt "één of meer informatieobjecten die dezelfde selectiekenmerken delen".
+>
+> Verder uitgewerkt in ADR-0007: identiteit van kandidaat en momentopname, wanneer een aggregatie een dossier is, en de uitvoeringsscope.
 
 ### Datum
 

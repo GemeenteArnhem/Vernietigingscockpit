@@ -41,7 +41,10 @@ Alle paden onder `/v2`; `API-Version` in elke response.
 
 - de selectie krijgt een stabiele `selectieId` en status `RUNNING`, `READY` of `FAILED`;
 - bij `READY` is de selectie bevroren, en elke pagina komt uit dezelfde bevroren selectie;
-- elke kandidaat is precies één MDTO-informatieobject met `aggregatieniveau` Archief, Serie, Dossier of Archiefstuk; geen kunstmatige groeperingen;
+- elke kandidaat is precies één MDTO-informatieobject met `aggregatieniveau` Archief, Serie, Dossier of Archiefstuk; geen kunstmatige groeperingen. Archief, Serie of Dossier alleen als de bron die eenheid zelf beheert met een eigen kenmerk; `identificatieBron` is de bron, nooit de stekker (ADR-0007, DR-03);
+- `vernietigingskandidaatId` is uniek binnen de selectie; hetzelfde object herken je over selecties heen aan `identificatie` (ADR-0007, DR-01 en DR-02);
+- per kandidaat legt de stekker bij selectie de direct onderliggende informatieobjecten vast (ADR-0007, DR-04);
+- `aantalObjecten` telt alleen de direct onderliggende informatieobjecten (archiefstuk: 0) en is gelijk aan het aantal `bevatOnderdeel` in de specificatie; `totaalObjecten` is de som daarvan;
 - elke kandidaat heeft de in de spec verplichte velden: `vernietigingskandidaatId`, `identificatie`, `naam`, `aggregatieniveau`, `waardering`, `bewaartermijn` (met `termijnEinddatum`) en `informatiecategorie`;
 - alleen kandidaten met waardering V (`Tijdelijk te bewaren`) en `termijnEinddatum` ≤ peildatum; twijfelgevallen tellen in `aantalWaarschuwingen`;
 - de bewaartermijn levert trigger (Cockpit-termijntriggers), startdatum en looptijd (ISO 8601-duur) zodra bekend, en einddatum = startdatum + looptijd;
@@ -57,7 +60,8 @@ Alle paden onder `/v2`; `API-Version` in elke response.
 - elke batch bevat `vernietigingskandidaten` met `vernietigingskandidaatId` en `identificatie`; een afwijkende identificatie leidt tot `400`;
 - de stekker start technische vernietiging pas na `POST …/vrijgeven` en controleert daarbij `aantalBatches` en `aantalKandidaten`;
 - vanaf `RUNNING` meldt de uitvoering `vernietigingsmethode` (Cockpit-vernietigingsmethoden) en `vernietigingsmethodeToelichting`, met de behandeling van back-ups, replica's en indexen;
-- vernietiging voldoet aan de MDTO-definitie: blijvend ontoegankelijk, inclusief onderdelen en bestanden. Een soft delete of prullenbak telt niet.
+- vernietiging voldoet aan de MDTO-definitie: blijvend ontoegankelijk, inclusief onderdelen en bestanden. Een soft delete of prullenbak telt niet;
+- zijn bij een archief, serie of dossier sinds de selectie onderdelen bijgekomen of verdwenen, dan `CHANGED` voor de hele kandidaat en wordt er niets van vernietigd (ADR-0007, DR-04).
 
 ## 5. Idempotentie en retries
 
@@ -75,7 +79,7 @@ Alle paden onder `/v2`; `API-Version` in elke response.
 - toegestane resultaatwaarden: `SUCCESS`, `FAILED`, `SKIPPED`, `NOT_FOUND`, `CHANGED`; `NOT_FOUND` en `CHANGED` zijn resultaten, geen HTTP-fouten;
 - bij `SUCCESS` een `event` met `eventType` *Vernietigen* en `eventTijd`;
 - bij een ander resultaat waar mogelijk `foutcode`, `foutmelding`, `bronstatus`, `logReference` of `correlatieId`;
-- voor elke kandidaat met `SUCCESS` een specificatie in MDTO-XML die valideert tegen de MDTO-XSD 1.0.1, met `bevatOnderdeel` per direct onderliggend informatieobject bij Archief, Serie en Dossier; anders `409`.
+- voor elke kandidaat met `SUCCESS` een specificatie in MDTO-XML die valideert tegen de MDTO-XSD 1.0.1, met `bevatOnderdeel` per direct onderliggend informatieobject bij Archief, Serie en Dossier, precies de onderdelen uit de momentopname; anders `409`.
 
 ## 7. Foutafhandeling
 
@@ -118,7 +122,7 @@ Een Stekker is acceptabel voor integratie wanneer minimaal de volgende scenario'
 10. Dezelfde batch opnieuw aanbieden met afwijkende inhoud en `409 Conflict` ontvangen.
 11. Een niet-bestaande selectie, vernietiging of batch opvragen en `404` ontvangen.
 12. Een object dat niet meer in de bron bestaat, terugkrijgen als `NOT_FOUND`.
-13. Een object dat sinds selectie gewijzigd is, terugkrijgen als `CHANGED`.
+13. Een object dat sinds selectie gewijzigd is, terugkrijgen als `CHANGED`. Ook een dossier waaraan sinds selectie een onderdeel is toegevoegd of waaruit er een is verdwenen; daarvan is niets vernietigd.
 14. Bij `SUCCESS` het event *Vernietigen* met tijdstip ontvangen, en een specificatie ophalen die valideert tegen de MDTO-XSD 1.0.1.
 15. Een specificatie opvragen voor een kandidaat zonder `SUCCESS` en `409` ontvangen.
 16. Autorisatie met een ontbrekende of onjuiste scope afwijzen met `401` of `403`.

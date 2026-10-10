@@ -450,7 +450,7 @@ components:
       required: true
       schema:
         type: string
-      description: Stabiele identificatie van de vernietigingskandidaat.
+      description: Identificatie van de vernietigingskandidaat, uniek binnen de selectie waarop de vernietiging is gebaseerd (ADR-0007).
 
     BatchNummer:
       in: path
@@ -716,6 +716,7 @@ components:
         totaalObjecten:
           type: integer
           minimum: 0
+          description: Som van `aantalObjecten` van de kandidaten in de selectie.
         totaalBetrokkenen:
           type: integer
           minimum: 0
@@ -768,7 +769,11 @@ components:
       properties:
         vernietigingskandidaatId:
           type: string
-          description: Stabiele identificatie van de vernietigingskandidaat over selectie, beoordeling, vernietiging en resultaatverwerking (eigen begrip).
+          description: |
+            Identificatie van de kandidaat (eigen begrip), uniek en stabiel binnen één selectie en in de
+            vernietigingen en resultaten die op die selectie gebaseerd zijn. Hergebruik voor hetzelfde object
+            in een volgende selectie mag, maar de cockpit geeft daar geen betekenis aan; hetzelfde object
+            herken je aan `identificatie` (ADR-0007, DR-01 en DR-02).
         identificatie:
           type: array
           minItems: 1
@@ -825,7 +830,10 @@ components:
         aantalObjecten:
           type: integer
           minimum: 0
-          description: Cockpituitbreiding. Aantal onderliggende informatieobjecten.
+          description: |
+            Cockpituitbreiding. Aantal direct onderliggende informatieobjecten in de momentopname,
+            gelijk aan het aantal `bevatOnderdeel` in de specificatie. Dieper liggende niveaus tellen
+            niet mee; een archiefstuk heeft 0 (ADR-0007, DR-04).
         aantalBetrokkenen:
           type: integer
           minimum: 0
@@ -991,6 +999,7 @@ components:
         totaalObjecten:
           type: integer
           minimum: 0
+          description: Som van `aantalObjecten` van de aangeboden kandidaten.
         totaalBatches:
           type: integer
           minimum: 0

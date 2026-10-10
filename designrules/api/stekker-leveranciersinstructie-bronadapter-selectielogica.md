@@ -113,7 +113,7 @@ Elke kandidaat bevat minimaal de velden die de OpenAPI-specificatie verplicht st
 - `bewaartermijn` (met `termijnEinddatum`; trigger, startdatum en looptijd zodra bekend)
 - `informatiecategorie`
 
-Aanvullende MDTO-gegevens worden geleverd wanneer beschikbaar, zoals classificatie, dekking in tijd, relaties, activiteit en de cockpituitbreidingen `aantalObjecten`, `aantalBetrokkenen` en `toelichting`.
+Aanvullende MDTO-gegevens worden geleverd wanneer beschikbaar, zoals classificatie, dekking in tijd, relaties, activiteit en de cockpituitbreidingen `aantalObjecten`, `aantalBetrokkenen` en `toelichting`. `aantalObjecten` telt alleen de **direct** onderliggende informatieobjecten, niet de dieper liggende niveaus; een archiefstuk heeft 0 (ADR-0007, DR-04).
 
 De selectie is bevroren zodra de status `READY` is. Dezelfde selectie levert bij herhaald ophalen dezelfde kandidaten op.
 

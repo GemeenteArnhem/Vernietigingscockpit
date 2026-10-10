@@ -193,7 +193,7 @@ De volgende eisen zijn aanvullend op de generieke niet-functionele eisen uit het
 - de stekker **moet** expliciet omgaan met peildata en tijdsafhankelijkheid  
 
 ### Consistentie tussen selectie en uitvoering
-- de stekker **moet** waarborgen dat vernietiging plaatsvindt op dezelfde set als geselecteerd  
+- de stekker **moet** waarborgen dat vernietiging plaatsvindt op dezelfde set als geselecteerd, per kandidaat inclusief de onderliggende informatieobjecten; wijken die af, dan `CHANGED` voor de hele kandidaat (ADR-0007, DR-04)  
 - de stekker **moet** afwijkingen tussen selectie en uitvoering detecteren en rapporteren per object, inclusief reden (bijv. NOT_FOUND, CHANGED)
 - de stekker **mag niet** stilzwijgend objecten toevoegen of overslaan  
 

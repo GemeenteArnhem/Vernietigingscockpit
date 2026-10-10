@@ -142,6 +142,10 @@ Waarden van begrippen worden getoond met hun begripLabel, letterlijk uit de begr
 - Uitsluitreden: labels uit Cockpit-uitsluitredenen (o.a. "Waardering niet V", "Lopend verzoek of procedure")
 - Auditlog: eventtypen letterlijk zoals vastgelegd (o.a. "Accordering", "Bevriezing", "Vernietigen", "Kandidaat uitgesloten")
 
+Tooltip bij "Aantal objecten" (kolomkop en detailpanelen), ADR-0007 DR-04:
+
+> Aantal direct onderliggende informatieobjecten: bij een dossier de archiefstukken, bij een serie de dossiers. Een archiefstuk heeft 0; bestanden tellen niet mee.
+
 ---
 
 # 8. Microcopy regels

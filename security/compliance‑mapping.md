@@ -207,7 +207,7 @@ De architectuur **moet** ondersteunen:
 - architectuur-cockpit.md
 - sequence-diagrammen.md
 - rollen-en-verantwoordelijkheden.md
-- adr/0005-adr-mdto-leidend.md, adr/0006-adr-verwijderen-werkkopie-dossier.md
+- adr/0005-adr-mdto-leidend.md, adr/0006-adr-verwijderen-werkkopie-dossier.md, adr/0007-adr-identiteit-snapshots-aggregaties.md
 
 ## 8a. MDTO – Metagegevens voor duurzaam toegankelijke overheidsinformatie
 
