@@ -139,7 +139,7 @@ Een informatieobject kan meerdere identificaties hebben, bijvoorbeeld de technis
 
 ## Informatiecategorie *(MDTO)*
 De informatiecategorie uit een vastgestelde selectielijst of hotspotlijst waar de bewaartermijn op gebaseerd is.
-MDTO beschouwt een selectielijst als begrippenlijst: de code van het begrip is de codering in de selectielijst, het label de titel. De verwijzing naar de selectielijst bevat de identificatie en versie van de lijst.
+MDTO beschouwt een selectielijst als begrippenlijst: de code van het begrip is de codering in de selectielijst, het label de titel. De verwijzing naar de selectielijst bevat de selectielijstcode (zie *Selectielijstcode*).
 
 ---
 
@@ -211,6 +211,11 @@ Bijvoorbeeld het automatisch klaarzetten van de volgende cyclus van een taak, of
 ## Selectie
 Een bevroren verzameling vernietigingskandidaten die een stekker op een peildatum heeft bepaald.
 Bij gereedmelding (`READY`) verandert de selectie niet meer. In de cockpit leidt het importeren tot het event *Import* en het bevriezen van de lijst bij vrijgave tot *Bevriezing*.
+
+---
+
+## Selectielijstcode
+Kort, uniek en permanent kenmerk van een vastgestelde selectielijst of BSD, in de vorm `CODE-YYYY` of `CODE-YYYY.VV`, bijvoorbeeld `GEM-2020`. Het Nationaal Archief kent geen eigen code per lijst. De codes worden uitgegeven in de begrippenlijst Cockpit-selectielijsten, die per code naar de vaststelling verwijst (beschikking, Staatscourant). De code is het `identificatieKenmerk` van de selectielijst in de informatiecategorie (ADR-0008).
 
 ---
 

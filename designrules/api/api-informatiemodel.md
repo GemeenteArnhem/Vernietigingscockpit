@@ -127,7 +127,7 @@ Een selectie is een bevroren momentopname van vernietigingskandidaten. Ze bevat 
 | dekkingInTijd | dekkingInTijd (`dekkingInTijdGegevens`, 0..\*) | Periode waarop de inhoud betrekking heeft; type uit Cockpit-dekkingInTijdtypen |
 | waardering | waardering (`begripGegevens`) | Uit de gesloten MDTO-lijst: B (Blijvend te bewaren), V (Tijdelijk te bewaren), N (Nader te bepalen) |
 | bewaartermijn | bewaartermijn (`termijnGegevens`) | `termijnTriggerStartLooptijd` (Cockpit-termijntriggers), `termijnStartdatumLooptijd`, `termijnLooptijd` (ISO 8601-duur) en `termijnEinddatum` (datum waarop vernietiging mag plaatsvinden) |
-| informatiecategorie | informatiecategorie (`begripGegevens`) | Categorie uit de vastgestelde selectielijst of hotspotlijst. `begripCode` = codering, `begripLabel` = titel, `begripBegrippenlijst` = de selectielijst met identificatie en versie |
+| informatiecategorie | informatiecategorie (`begripGegevens`) | Categorie uit de vastgestelde selectielijst. `begripCode` = codering, `begripLabel` = titel, `begripBegrippenlijst` = de selectielijst: `verwijzingNaam` = titel van de lijst, `verwijzingIdentificatie` (verplicht) = selectielijstcode (bijv. `GEM-2020`) met bron `Cockpit-selectielijsten` (ADR-0008) |
 | informatiecategorieAfwijking | – (cockpituitbreiding) | Toelichting en norm als categorie of termijn afwijkt van de standaardselectielijst |
 | isOnderdeelVan | isOnderdeelVan (`verwijzingGegevens`, 0..\*) | Direct bovenliggende aggregatie |
 | gerelateerdInformatieobject | gerelateerdInformatieobject (0..\*) | Relatie met een ander informatieobject; type uit de MDTO-lijst Relatietypen (informatieobject) |
@@ -229,7 +229,7 @@ Vernietigingsuitvoering [1] ── Uitvoeringsresultaat [0..*]   (precies één 
 | aggregatieniveau | MDTO Aggregatieniveaus (alleen Archief, Serie, Dossier, Archiefstuk) | Open, hier beperkt |
 | waardering | MDTO Waarderingen | Gesloten |
 | classificatie | Het classificatieschema van de bron | – |
-| informatiecategorie | De vastgestelde selectielijst of hotspotlijst | – |
+| informatiecategorie | De vastgestelde selectielijst; de lijst zelf wordt aangeduid met een code uit Cockpit-selectielijsten (ADR-0008) | Open (register) |
 | dekkingInTijd.dekkingInTijdType | Cockpit-dekkingInTijdtypen | Open |
 | bewaartermijn.termijnTriggerStartLooptijd | Cockpit-termijntriggers (ZGW-afleidingswijzen) | Open |
 | gerelateerdInformatieobjectTypeRelatie | MDTO Relatietypen (informatieobject) | Open |
@@ -251,7 +251,7 @@ Ontbrekende optionele velden mogen niet leiden tot een andere interpretatie van 
 | `bronId`, `bronIdNaam` | `identificatie[]` (kenmerk + bron) |
 | `omschrijving` (titel) | `naam`; `omschrijving` is de inhoudsbeschrijving |
 | `classificatieschema/-sleutel/-omschrijving` | `classificatie[]` (`begripGegevens`) |
-| `selectielijst`, `grondslag`, `resultaat` | `informatiecategorie` (`begripGegevens`, selectielijst als begrippenlijst) |
+| `selectielijst`, `grondslag`, `resultaat` | `informatiecategorie` (`begripGegevens`, selectielijst als begrippenlijst met selectielijstcode, ADR-0008) |
 | `grondslagAfwijkend` | `informatiecategorieAfwijking` |
 | `waardering` `BEWAREN`/`VERNIETIGEN` | `waardering` B/V/N (`begripGegevens`) |
 | `bewaartermijn` (string), `vernietigingsdatum` | `bewaartermijn` (`termijnGegevens`) |

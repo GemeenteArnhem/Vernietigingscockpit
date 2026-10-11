@@ -1,0 +1,4553 @@
+{
+  "naam": "Cockpit-selectielijsten",
+  "identificatie": "urn:vernietigingscockpit:begrippenlijst:cockpit-selectielijsten:1.0",
+  "versie": "1.0",
+  "status": "concept",
+  "bron": "Nationaal Archief, Overzicht vastgestelde BSD's en selectielijsten, bijgewerkt tot en met 5 oktober 2026",
+  "selectielijsten": [
+    {
+      "code": "VWHDTP-1994",
+      "titel": "HDTP/ Telecommunicatie en Post",
+      "zorgdrager": "V&W",
+      "beschikking": "02-11-94",
+      "staatscourant": "14-12-94/241",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-1995",
+      "titel": "Militair materieel",
+      "zorgdrager": "DEF",
+      "beschikking": "23-11-94 + 28-08-97",
+      "staatscourant": "28-03-95/62, 09-05-95/89",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSUNIVE-1995",
+      "titel": "Rijksuniversiteiten",
+      "zorgdrager": "OC&W, LNV",
+      "beschikking": "01-12-94",
+      "staatscourant": "06-01-95/5",
+      "opmerking": ""
+    },
+    {
+      "code": "ARK-1995",
+      "titel": "Algemene Rekenkamer",
+      "zorgdrager": "ARK",
+      "beschikking": "KB 03-02-95",
+      "staatscourant": "12-06-95/110",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-1995",
+      "titel": "Belastingen",
+      "zorgdrager": "FIN",
+      "beschikking": "19-01-95",
+      "staatscourant": "13-10-95/199",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-1996",
+      "titel": "Rijksbegroting",
+      "zorgdrager": "FIN",
+      "beschikking": "03-05-96",
+      "staatscourant": "22-05-96/96",
+      "opmerking": ""
+    },
+    {
+      "code": "VWDGSM-1994",
+      "titel": "DGSM 1994",
+      "zorgdrager": "V&W",
+      "beschikking": "04-06-96",
+      "staatscourant": "05-07-96/127",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "VWRLD-1996",
+      "titel": "Burgerluchtvaart/ RLD",
+      "zorgdrager": "V&W",
+      "beschikking": "01-08-96",
+      "staatscourant": "08-10-96/194",
+      "opmerking": ""
+    },
+    {
+      "code": "VWLVB-1996",
+      "titel": "Burgerluchtvaart/ LVB",
+      "zorgdrager": "V&W",
+      "beschikking": "15-09-96",
+      "staatscourant": "23-10-96/205",
+      "opmerking": ""
+    },
+    {
+      "code": "ZFR-1997",
+      "titel": "Ziekenfondsraad",
+      "zorgdrager": "ZFR",
+      "beschikking": "04-12-96",
+      "staatscourant": "31-01-97/22",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-1997",
+      "titel": "Arbeidsomstandigheden",
+      "zorgdrager": "SZW",
+      "beschikking": "04-12-96",
+      "staatscourant": "31-01-97/22",
+      "opmerking": ""
+    },
+    {
+      "code": "JUS-1997",
+      "titel": "Vreemdelingen (IND)",
+      "zorgdrager": "JUS",
+      "beschikking": "17-12-96",
+      "staatscourant": "31-01-97/22",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-1997",
+      "titel": "Domeinen",
+      "zorgdrager": "FIN",
+      "beschikking": "12-12-96",
+      "staatscourant": "31-01-97/22",
+      "opmerking": ""
+    },
+    {
+      "code": "HAVENSCHAPDZ-1997",
+      "titel": "Havenschap Delfzijl",
+      "zorgdrager": "Havenschap Delfzijl",
+      "beschikking": "12-12-96",
+      "staatscourant": "31-01-97/22",
+      "opmerking": ""
+    },
+    {
+      "code": "RVS-1997",
+      "titel": "Administratieve Rechtsbescherming",
+      "zorgdrager": "RvS",
+      "beschikking": "K.B. 21-02-97",
+      "staatscourant": "06-03-97/46",
+      "opmerking": ""
+    },
+    {
+      "code": "VW-1997",
+      "titel": "RDW",
+      "zorgdrager": "V&W",
+      "beschikking": "02-04-97",
+      "staatscourant": "11-04-97/70",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2000",
+      "titel": "Militair personeel",
+      "zorgdrager": "DEF",
+      "beschikking": "27-09-00",
+      "staatscourant": "13-12-00/242",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2002",
+      "titel": "Medische beroepen en Opleidingen",
+      "zorgdrager": "VWS",
+      "beschikking": "3-12-01",
+      "staatscourant": "22-1-02/15",
+      "opmerking": ""
+    },
+    {
+      "code": "BIZADGMP-1997",
+      "titel": "DGMP",
+      "zorgdrager": "BiZa",
+      "beschikking": "31-07-97",
+      "staatscourant": "18-08-97/156",
+      "opmerking": ""
+    },
+    {
+      "code": "BIZABVD-1997",
+      "titel": "Binnenlandse Veiligheidsdienst (BVD)",
+      "zorgdrager": "BiZa",
+      "beschikking": "---10-97",
+      "staatscourant": "11-11-97/217",
+      "opmerking": ""
+    },
+    {
+      "code": "BIZA-1998",
+      "titel": "Overzeese pensioenen",
+      "zorgdrager": "BiZa",
+      "beschikking": "---12-97",
+      "staatscourant": "16-02-98/31",
+      "opmerking": ""
+    },
+    {
+      "code": "VWPTT-1998",
+      "titel": "Staatsbedrijf PTT",
+      "zorgdrager": "V&W",
+      "beschikking": "09-02-98",
+      "staatscourant": "16-03-98/51",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVBOSBOUW-1998",
+      "titel": "Bosbouw",
+      "zorgdrager": "LNV",
+      "beschikking": "04-03-98",
+      "staatscourant": "16-03-98/51",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVGRONDPRIJ-1998",
+      "titel": "Grondprijsbeleid",
+      "zorgdrager": "LNV",
+      "beschikking": "04-03-98",
+      "staatscourant": "16-03-98/51",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVRELATIENO-1998",
+      "titel": "Relatienotabeleid",
+      "zorgdrager": "LNV",
+      "beschikking": "04-03-98",
+      "staatscourant": "30-03-98/61",
+      "opmerking": ""
+    },
+    {
+      "code": "VWKNMI-1998",
+      "titel": "KNMI",
+      "zorgdrager": "V&W",
+      "beschikking": "09-03-98",
+      "staatscourant": "30-03-98/61",
+      "opmerking": ""
+    },
+    {
+      "code": "IGZ-1998",
+      "titel": "Toezicht volksgezondheid",
+      "zorgdrager": "Inspectie Gezondheidszorg",
+      "beschikking": "03-03-98",
+      "staatscourant": "30-03-98/61",
+      "opmerking": ""
+    },
+    {
+      "code": "GR-1998",
+      "titel": "Advisering gezondheidszorg",
+      "zorgdrager": "Gezondheidsraad",
+      "beschikking": "03-03-98",
+      "staatscourant": "30-03-98/61",
+      "opmerking": ""
+    },
+    {
+      "code": "RIVM-1998",
+      "titel": "RIVM",
+      "zorgdrager": "RIVM",
+      "beschikking": "03-03-98",
+      "staatscourant": "30-03-98/61",
+      "opmerking": ""
+    },
+    {
+      "code": "KK-1999",
+      "titel": "Kabinet der Koningin",
+      "zorgdrager": "Kabinet der Koningin",
+      "beschikking": "KB 12-11-99",
+      "staatscourant": "9-12-99/238",
+      "opmerking": ""
+    },
+    {
+      "code": "KABNA-1999",
+      "titel": "KABNA",
+      "zorgdrager": "KABNA/BZK",
+      "beschikking": "20-11-98",
+      "staatscourant": "02-02-99/22",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSBEGRO-1998",
+      "titel": "Rijksbegroting",
+      "zorgdrager": "AZ, BuiZa, EZ, LNV,OCW,DEF, SZW, BiZa",
+      "beschikking": "08-01-98",
+      "staatscourant": "30-07-98/142",
+      "opmerking": ""
+    },
+    {
+      "code": "UNIVERSITE-1999",
+      "titel": "Universiteiten",
+      "zorgdrager": "Universiteiten",
+      "beschikking": "02-06-98",
+      "staatscourant": "02-02-99/22",
+      "opmerking": ""
+    },
+    {
+      "code": "AZ-2001",
+      "titel": "Voorlichting van de rijksoverheid",
+      "zorgdrager": "AZ",
+      "beschikking": "05-07-01",
+      "staatscourant": "14-08-01/155",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-1999",
+      "titel": "Inkomens- en arbeidsvoorwaardenbeleid",
+      "zorgdrager": "SZW",
+      "beschikking": "02-06-98",
+      "staatscourant": "04-03-99/44",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVAGRARISCH-1999",
+      "titel": "Agrarisch onderwijs",
+      "zorgdrager": "LNV",
+      "beschikking": "20-11-98",
+      "staatscourant": "02-02-99/22",
+      "opmerking": ""
+    },
+    {
+      "code": "STUDIEFINA-1999",
+      "titel": "Studiefinanciering",
+      "zorgdrager": "OCW/IBG",
+      "beschikking": "02-06-98 (OCW), 09-03-99 (IBG)",
+      "staatscourant": "07-04-99/66",
+      "opmerking": ""
+    },
+    {
+      "code": "FINSTAATSSCH-2002",
+      "titel": "Staatsschuld",
+      "zorgdrager": "FIN",
+      "beschikking": "3-12-01",
+      "staatscourant": "8-01-02/5",
+      "opmerking": ""
+    },
+    {
+      "code": "PLANORGANE-1999",
+      "titel": "Planorganen",
+      "zorgdrager": "SCP, CPB, WRR",
+      "beschikking": "02-06-98 (CPB, WRR), 29-07-98 (SCP)",
+      "staatscourant": "02-02-99/22",
+      "opmerking": ""
+    },
+    {
+      "code": "SPECIAAL-1999",
+      "titel": "Speciaal onderwijs",
+      "zorgdrager": "OCW/Onderwijsraad",
+      "beschikking": "09-03-99 (OCW, Ond.r)",
+      "staatscourant": "07-04-99/66",
+      "opmerking": ""
+    },
+    {
+      "code": "BEROEPSOND-1999",
+      "titel": "Beroepsonderwijs en volwassenen educ.",
+      "zorgdrager": "OCW/Onderwijsraad",
+      "beschikking": "09-03-99 ( OCW,Ond.r.)",
+      "staatscourant": "07-04-99/66",
+      "opmerking": ""
+    },
+    {
+      "code": "NOM-1999",
+      "titel": "Nationale Ombudsman",
+      "zorgdrager": "NOM",
+      "beschikking": "KB 12-11-99",
+      "staatscourant": "9-12-99/238",
+      "opmerking": ""
+    },
+    {
+      "code": "WAARBORG-2000",
+      "titel": "Waarborg gouden en zilveren werken",
+      "zorgdrager": "FIN/EZ",
+      "beschikking": "24-05-00 (FIN/EZ)",
+      "staatscourant": "27-6-00/121 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVFLORA-1999",
+      "titel": "Flora en fauna",
+      "zorgdrager": "LNV",
+      "beschikking": "03-08-99",
+      "staatscourant": "09-11-99/216",
+      "opmerking": ""
+    },
+    {
+      "code": "VW-1999",
+      "titel": "Waterstaat",
+      "zorgdrager": "V&W",
+      "beschikking": "11-02-99",
+      "staatscourant": "04-03-99/44",
+      "opmerking": ""
+    },
+    {
+      "code": "STAATSDEEL-2000",
+      "titel": "Staatsdeelnemingen",
+      "zorgdrager": "EZ/FIN",
+      "beschikking": "20-09-00",
+      "staatscourant": "26-10-00/208 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "VROM-2000",
+      "titel": "Bedrijfsvoering (verlenging)",
+      "zorgdrager": "VROM",
+      "beschikking": "20-12-99",
+      "staatscourant": "31-01-00/21",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSPARKET-2000",
+      "titel": "Parket Openbaar Ministerie (wijziging vernietigingslijst)",
+      "zorgdrager": "JUS",
+      "beschikking": "03-08-99",
+      "staatscourant": "07-02-00/26",
+      "opmerking": ""
+    },
+    {
+      "code": "OCW-1999",
+      "titel": "Wetenschappelijk onderwijs",
+      "zorgdrager": "OCW",
+      "beschikking": "23-07-99",
+      "staatscourant": "09-11-99/216",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVOPENLUCHT-1999",
+      "titel": "Openluchtrecreatie",
+      "zorgdrager": "LNV",
+      "beschikking": "03-08-99",
+      "staatscourant": "09-11-99/216",
+      "opmerking": ""
+    },
+    {
+      "code": "BRANDWEERZ-1999",
+      "titel": "Brandweerzorg, rampenbestrijding en crisisbeheersing",
+      "zorgdrager": "BiZa/NIBRA/LNV/EZ",
+      "beschikking": "03-08-99",
+      "staatscourant": "09-11-99/216",
+      "opmerking": ""
+    },
+    {
+      "code": "SER-1999",
+      "titel": "SER",
+      "zorgdrager": "SER",
+      "beschikking": "27-10-99",
+      "staatscourant": "09-11-99/216",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSWEERKORPS-2000",
+      "titel": "Weerkorpsen en particuliere beveiligingsorganisaties",
+      "zorgdrager": "JUS",
+      "beschikking": "24-05-00",
+      "staatscourant": "06-07-00/128 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "SZWSOCIALE-2001",
+      "titel": "Sociale voorzieningen",
+      "zorgdrager": "SZW",
+      "beschikking": "07-12-00",
+      "staatscourant": "23-02-01/39",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2000",
+      "titel": "Provincielijst",
+      "zorgdrager": "IPO",
+      "beschikking": "01-11-00",
+      "staatscourant": "24-11-00/229 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "OCWBASISONDE-2000",
+      "titel": "Basisonderwijs",
+      "zorgdrager": "OC&W",
+      "beschikking": "20-06-00",
+      "staatscourant": "13-07-00/133 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "OCWVOORTGEZE-2000",
+      "titel": "Voortgezet onderwijs",
+      "zorgdrager": "OC&W",
+      "beschikking": "20-06-00",
+      "staatscourant": "31-07-00/145 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "OCWHOGER-2000",
+      "titel": "Hoger Beroepsonderwijs",
+      "zorgdrager": "OC&W",
+      "beschikking": "20-06-00",
+      "staatscourant": "24-07-00/140 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-2000",
+      "titel": "Arbeidsomstandigheden (actualisatie)",
+      "zorgdrager": "SZW",
+      "beschikking": "27-09-00",
+      "staatscourant": "01-12-00/234 i..p.",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVNATUUR-2000",
+      "titel": "Natuur- en landschapsbeheer",
+      "zorgdrager": "LNV",
+      "beschikking": "27-09-00",
+      "staatscourant": "10-11-00/219 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "LNVAGRARISCH-2000",
+      "titel": "Agrarische handelspolitiek",
+      "zorgdrager": "LNV",
+      "beschikking": "27-09-00",
+      "staatscourant": "17-11-00/224 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "BZK-2000",
+      "titel": "KABNA (actualisatie)",
+      "zorgdrager": "BZK",
+      "beschikking": "20-06-00",
+      "staatscourant": "09-08-00/152 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSVOO-2000",
+      "titel": "Arbeidsvoorzieningsorganisatie",
+      "zorgdrager": "Arbeidsvoorzieningsorgan isatie",
+      "beschikking": "10-07-00",
+      "staatscourant": "14-8-00/155 i.p.",
+      "opmerking": ""
+    },
+    {
+      "code": "UNIV-2001",
+      "titel": "Universiteiten (actualisatie)",
+      "zorgdrager": "Universiteiten",
+      "beschikking": "03-04-01",
+      "staatscourant": "27-04-01/82",
+      "opmerking": ""
+    },
+    {
+      "code": "FINHEFFINGSW-2001",
+      "titel": "Heffingswetten Rijksbelastingen",
+      "zorgdrager": "FIN",
+      "beschikking": "10-07-01",
+      "staatscourant": "29-08-2001/166",
+      "opmerking": ""
+    },
+    {
+      "code": "FININVOERREC-2001",
+      "titel": "Invoerrechten en –accijnzen (1940-62)",
+      "zorgdrager": "FIN",
+      "beschikking": "07-12-00",
+      "staatscourant": "02-02-2001/24",
+      "opmerking": ""
+    },
+    {
+      "code": "VW-2001",
+      "titel": "Personenvervoer",
+      "zorgdrager": "V&W",
+      "beschikking": "14-08-01",
+      "staatscourant": "19-09-2001/181",
+      "opmerking": ""
+    },
+    {
+      "code": "SZWBEZITSVOR-2001",
+      "titel": "Bezitsvorming",
+      "zorgdrager": "SZW",
+      "beschikking": "26-03-01",
+      "staatscourant": "9-05-2001/89",
+      "opmerking": ""
+    },
+    {
+      "code": "FININVOERREC-2002",
+      "titel": "Invoerrechten en –accijnzen (1962-1995)",
+      "zorgdrager": "FIN",
+      "beschikking": "10-9-01",
+      "staatscourant": "21-1-02/14",
+      "opmerking": ""
+    },
+    {
+      "code": "VROM-2001",
+      "titel": "Rijkshuisvesting",
+      "zorgdrager": "VROM",
+      "beschikking": "14-08-01",
+      "staatscourant": "24-09-01/184",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSBEGRO-2001",
+      "titel": "Rijksbegroting",
+      "zorgdrager": "JUS/VROM/VWS",
+      "beschikking": "03-09-01",
+      "staatscourant": "8-10-01/194",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSVER-2001",
+      "titel": "Arbeidsverhoudingen",
+      "zorgdrager": "BZK/OCW/VWS/DEF/LNV/V&W/FIN/JUS/AZ/EZ/VROM/SZW",
+      "beschikking": "30-07-01",
+      "staatscourant": "16-10-01/200",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSVOO-2001",
+      "titel": "Arbeidsvoorwaarden",
+      "zorgdrager": "BZK/OCW/VWS/DEF/LNV/V&W/FIN/JUS/AZ/EZ/VROM/SZW",
+      "beschikking": "30-07-01",
+      "staatscourant": "16-10-01/200",
+      "opmerking": ""
+    },
+    {
+      "code": "FORMATIEBE-2001",
+      "titel": "Formatiebeleid e.a.",
+      "zorgdrager": "BZK/OCW/VWS/DEF/LNV/V&W/FIN/JUS/AZ/EZ/VROM/SZW",
+      "beschikking": "30-07-01",
+      "staatscourant": "16-10-01/200, 17-10-01/201",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSOMS-2001",
+      "titel": "Arbeidsomstandigheden bij de overheid",
+      "zorgdrager": "BZK/OCW/VWS/DEF/LNV/V&W/FIN/JUS/AZ/EZ/VROM/SZW",
+      "beschikking": "30-07-01",
+      "staatscourant": "16-10-01/200, 17-10-01/201",
+      "opmerking": ""
+    },
+    {
+      "code": "PERSONEELS-2001",
+      "titel": "Personeelsinformatie en – administratie",
+      "zorgdrager": "BZK/OCW/VWS/DEF/LNV/V&W/FIN/JUS/AZ/EZ/VROM/SZW",
+      "beschikking": "30-07-01",
+      "staatscourant": "16-10-01/200, 17-10-01/201",
+      "opmerking": ""
+    },
+    {
+      "code": "OCWKUNSTEN-2002",
+      "titel": "Kunsten",
+      "zorgdrager": "OCW",
+      "beschikking": "04-07-02",
+      "staatscourant": "23-07-02/138 rectificatie 16-6-03/112",
+      "opmerking": ""
+    },
+    {
+      "code": "MESTBELEID-2002",
+      "titel": "Mestbeleid",
+      "zorgdrager": "LNV/V&W/productschapp en Pluimvee en Eieren, Vee en Vlees, Zuivel",
+      "beschikking": "12-09-01",
+      "staatscourant": "17-1-02/12",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSKWALITEIT-2002",
+      "titel": "Kwaliteit wetgeving",
+      "zorgdrager": "JUS",
+      "beschikking": "4-12-01",
+      "staatscourant": "11-1-02/8",
+      "opmerking": ""
+    },
+    {
+      "code": "WRBG-2002",
+      "titel": "Waarborgen goud en zilver",
+      "zorgdrager": "WRBG",
+      "beschikking": "20-11-01",
+      "staatscourant": "8-04-2002/67",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-2002",
+      "titel": "Arbeidsverhoudingen",
+      "zorgdrager": "SZW",
+      "beschikking": "18-02-02",
+      "staatscourant": "11-04-02/70 25-02-03/39 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "SOCIALE-2002",
+      "titel": "Sociale verzekeringen",
+      "zorgdrager": "SZW/SVB/Lisv",
+      "beschikking": "18-02-02",
+      "staatscourant": "6 t/m 8-05-02/85-87 rectificatie: 27-5-03/101",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSVREEMDELI-2002",
+      "titel": "(Toelating) vreemdelingen",
+      "zorgdrager": "JUS",
+      "beschikking": "18-02-02",
+      "staatscourant": "23-05-02/95",
+      "opmerking": ""
+    },
+    {
+      "code": "NWO-2002",
+      "titel": "Wetenschapsbeleid",
+      "zorgdrager": "NWO",
+      "beschikking": "17-05-02",
+      "staatscourant": "04-06-02/103",
+      "opmerking": ""
+    },
+    {
+      "code": "DEFMILITAIRE-2002",
+      "titel": "Militaire operatien",
+      "zorgdrager": "DEF",
+      "beschikking": "26-04-02",
+      "staatscourant": "19-06-02/114",
+      "opmerking": ""
+    },
+    {
+      "code": "IGZ-2002",
+      "titel": "Staatstoezicht op de Volksgezondheid",
+      "zorgdrager": "IGZ",
+      "beschikking": "1-8-02",
+      "staatscourant": "8-8-02/149",
+      "opmerking": ""
+    },
+    {
+      "code": "DEFBURGERLUC-2002",
+      "titel": "Burgerluchtvaart",
+      "zorgdrager": "DEF",
+      "beschikking": "12-7-02",
+      "staatscourant": "19-9-02/180",
+      "opmerking": ""
+    },
+    {
+      "code": "DEFRIJKSHUIS-2002",
+      "titel": "Rijkshuisvesting",
+      "zorgdrager": "DEF",
+      "beschikking": "24-6-02",
+      "staatscourant": "19-9-02/180",
+      "opmerking": ""
+    },
+    {
+      "code": "WETENSCHAP-2002",
+      "titel": "Wetenschapsbeleid",
+      "zorgdrager": "DEF/FIN/OCW/SZW/VROM/VWS",
+      "beschikking": "17-5-02",
+      "staatscourant": "26-9-02/185",
+      "opmerking": ""
+    },
+    {
+      "code": "BIE-2002",
+      "titel": "Mededingingsbeleid",
+      "zorgdrager": "BIE",
+      "beschikking": "12-9-02",
+      "staatscourant": "30-9-02/187",
+      "opmerking": ""
+    },
+    {
+      "code": "DIENSTPLIC-2002",
+      "titel": "Dienstplicht",
+      "zorgdrager": "AZ/DEF/SZW",
+      "beschikking": "24-6-02",
+      "staatscourant": "17-10-02/200",
+      "opmerking": ""
+    },
+    {
+      "code": "MILITAIRE-2002",
+      "titel": "Militaire Operatien",
+      "zorgdrager": "BuiZa/JUS/V&W",
+      "beschikking": "14-6-02",
+      "staatscourant": "17-10-02/200",
+      "opmerking": ""
+    },
+    {
+      "code": "OCWMBO-2002",
+      "titel": "MBO/VAVO",
+      "zorgdrager": "OCW",
+      "beschikking": "10-10-02",
+      "staatscourant": "31-10-02/210",
+      "opmerking": ""
+    },
+    {
+      "code": "RUIMTELIJK-2002",
+      "titel": "Ruimtelijke Ordening",
+      "zorgdrager": "DEF/FIN/LNV/OCW/SZW/VROM/VWS",
+      "beschikking": "24-06-02",
+      "staatscourant": "7-11-02/215",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZABUITENLA-2002",
+      "titel": "Buitenland",
+      "zorgdrager": "BuZa",
+      "beschikking": "9-9-02",
+      "staatscourant": "14-11-02/220",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZAONTWIKKE-2002",
+      "titel": "Ontwikkelingssamenwerking",
+      "zorgdrager": "BuZa",
+      "beschikking": "9-9-02",
+      "staatscourant": "14-11-02/220",
+      "opmerking": ""
+    },
+    {
+      "code": "BGAPUBLIEKRE-2002",
+      "titel": "Publiekrechtelijke bedrijfsorganisaties",
+      "zorgdrager": "BGA",
+      "beschikking": "26-10-02",
+      "staatscourant": "15-11-02/221 rectificatie 16-6-03/112",
+      "opmerking": ""
+    },
+    {
+      "code": "BGAARBEIDSVE-2002",
+      "titel": "Arbeidsverhoudingen",
+      "zorgdrager": "BGA",
+      "beschikking": "26-10-02",
+      "staatscourant": "15-11-02/221",
+      "opmerking": ""
+    },
+    {
+      "code": "ADELSBELEI-2002",
+      "titel": "Adelsbeleid",
+      "zorgdrager": "DEF/EZ/FIN/LNV/OCW/SZW/VWS/VROM",
+      "beschikking": "17-5-02",
+      "staatscourant": "18-11-02/222",
+      "opmerking": ""
+    },
+    {
+      "code": "JUS-2003",
+      "titel": "Rechterlijke macht",
+      "zorgdrager": "JUS",
+      "beschikking": "11-11-02",
+      "staatscourant": "16-01-03/11 20-2-03/36 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "BC-2003",
+      "titel": "Arbeidsverhoudingen",
+      "zorgdrager": "BC",
+      "beschikking": "7-11-02",
+      "staatscourant": "25-2-03/39 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "LNV-2003",
+      "titel": "Sociale voorzieningen",
+      "zorgdrager": "LNV",
+      "beschikking": "5-8-02",
+      "staatscourant": "31-3-03/63",
+      "opmerking": ""
+    },
+    {
+      "code": "GEZONDHEID-2003",
+      "titel": "Gezondheid en welzijn dieren",
+      "zorgdrager": "DEF/JUS/LNV/OCW/PVE/PD",
+      "beschikking": "15-7-02",
+      "staatscourant": "31-3 en 1-4-03/63-64",
+      "opmerking": ""
+    },
+    {
+      "code": "OCW-2003",
+      "titel": "Monumentenzorg",
+      "zorgdrager": "OCW",
+      "beschikking": "12-3-03",
+      "staatscourant": "9-4-03/70",
+      "opmerking": ""
+    },
+    {
+      "code": "IND-2003",
+      "titel": "Nationaliteiten",
+      "zorgdrager": "JUS (IND)",
+      "beschikking": "17-3-03",
+      "staatscourant": "6-5-03/86 27-4-11/7152 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2003",
+      "titel": "Natuur- en landschapsbeheer",
+      "zorgdrager": "DEF",
+      "beschikking": "17-3-03",
+      "staatscourant": "15-5-03/93",
+      "opmerking": ""
+    },
+    {
+      "code": "KNOADELSBELA-2003",
+      "titel": "Adelsbeleid",
+      "zorgdrager": "KNO",
+      "beschikking": "12-5-03",
+      "staatscourant": "15-5-03/93",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "KNOADELSBELB-2003",
+      "titel": "Adelsbeleid/Kapittels",
+      "zorgdrager": "KNO",
+      "beschikking": "4-7-03",
+      "staatscourant": "15-7-03/133",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "SER-2003",
+      "titel": "Sociaal-Economische Raad (SER)",
+      "zorgdrager": "EZ/SZW",
+      "beschikking": "12-6-03",
+      "staatscourant": "23-7-03/139",
+      "opmerking": ""
+    },
+    {
+      "code": "VROM-2003",
+      "titel": "Milieubeheer",
+      "zorgdrager": "VROM",
+      "beschikking": "6-6-03",
+      "staatscourant": "14-16, 19-8-03/155-158",
+      "opmerking": ""
+    },
+    {
+      "code": "CONSTITUTI-2003",
+      "titel": "Constitutionele Zaken",
+      "zorgdrager": "BZK/DEF/FIN/LNV/SZW/VWS",
+      "beschikking": "12-6-03",
+      "staatscourant": "8-9-03/172",
+      "opmerking": ""
+    },
+    {
+      "code": "RVS-2003",
+      "titel": "Advisering wet- en regelgeving",
+      "zorgdrager": "RvS",
+      "beschikking": "12-9-03",
+      "staatscourant": "3-10-03/191",
+      "opmerking": ""
+    },
+    {
+      "code": "BZK-2003",
+      "titel": "Nationale Ombudsman",
+      "zorgdrager": "BZK",
+      "beschikking": "11-7-03",
+      "staatscourant": "9-10-03/195",
+      "opmerking": ""
+    },
+    {
+      "code": "OVERHEIDSI-2003",
+      "titel": "Overheidsinformatievoorziening",
+      "zorgdrager": "ARA/BZK/DEF/EZ/FIN/LNV/OCW/SZW/VenW/VROM/VWS",
+      "beschikking": "11-7-03",
+      "staatscourant": "20-10-03/202",
+      "opmerking": ""
+    },
+    {
+      "code": "UMC-2003",
+      "titel": "Academische Ziekenhuizen",
+      "zorgdrager": "AZUvA/AZL/AZG/AZM/AZR/AZU/MET AZG-RUG/CMELUMC",
+      "beschikking": "3-10-03",
+      "staatscourant": "28-10-03/208",
+      "opmerking": ""
+    },
+    {
+      "code": "EMANCIPATI-2003",
+      "titel": "Emancipatie en gelijke behandeling",
+      "zorgdrager": "DEF/FIN/LNV/OCW/SZW/VenW/VROM/VWS",
+      "beschikking": "29-7-03",
+      "staatscourant": "5-12-03/236",
+      "opmerking": ""
+    },
+    {
+      "code": "CFV-2004",
+      "titel": "Volkshuisvesting",
+      "zorgdrager": "CFV",
+      "beschikking": "16-1-04",
+      "staatscourant": "28-1-04/18",
+      "opmerking": ""
+    },
+    {
+      "code": "WELZIJNSBE-2004",
+      "titel": "Welzijnsbeleid",
+      "zorgdrager": "AZ/BZK/BuZa/DEF/EZ/FIN/LNV/OCW/SZW/VWS/VROM",
+      "beschikking": "25-11-03",
+      "staatscourant": "20-2-04/35",
+      "opmerking": ""
+    },
+    {
+      "code": "SSIOM-2004",
+      "titel": "Sociale Verzekeringen",
+      "zorgdrager": "SSIOM",
+      "beschikking": "29-3-04",
+      "staatscourant": "8-4-04/69",
+      "opmerking": ""
+    },
+    {
+      "code": "COORDINATI-2004",
+      "titel": "Coördinatie Integratie Minderheden",
+      "zorgdrager": "AZ/BZK/DEF/FIN/OCW/SVB/SZW/V&W/VROM/VWS",
+      "beschikking": "20-10-03",
+      "staatscourant": "8-4-04/69",
+      "opmerking": ""
+    },
+    {
+      "code": "OZZ-2004",
+      "titel": "Bekostiging en verzekering gezondheidszorg",
+      "zorgdrager": "OZZ",
+      "beschikking": "14-05-04",
+      "staatscourant": "03-06-04/103",
+      "opmerking": ""
+    },
+    {
+      "code": "AANSPRAKEL-2004",
+      "titel": "Aansprakelijkheidsverzekering motorrijtuigen",
+      "zorgdrager": "FIN/JUS/V&W/WAM",
+      "beschikking": "29-03-04",
+      "staatscourant": "04-06-04/104",
+      "opmerking": ""
+    },
+    {
+      "code": "STUDIEFINA-2004",
+      "titel": "Studiefinanciering",
+      "zorgdrager": "EUR/KUB/TUDelft/TUEin dhoven/UvA/UL/KUN/UM/UU/UT/VU/WU/UG",
+      "beschikking": "01-06-04",
+      "staatscourant": "15-06-04/111",
+      "opmerking": ""
+    },
+    {
+      "code": "GEOINFORMA-2004",
+      "titel": "Geo-informatie",
+      "zorgdrager": "Dienst voor het Kadaster en de Openbare registers/VROM/FIN",
+      "beschikking": "14-05-04",
+      "staatscourant": "24-06-04/118",
+      "opmerking": ""
+    },
+    {
+      "code": "NFF-2004",
+      "titel": "Kunsten",
+      "zorgdrager": "Stichting Nederlands Fonds voor de Film",
+      "beschikking": "28-05-04",
+      "staatscourant": "25-06-04/119",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSVOO-2004",
+      "titel": "Arbeidsvoorwaarden en beroepskwaliteit in de sector Onderwijs en Wetenschappen",
+      "zorgdrager": "OCW/FIN/LNV",
+      "beschikking": "04-05-04",
+      "staatscourant": "09-07-04/129",
+      "opmerking": ""
+    },
+    {
+      "code": "RECLASSERI-2004",
+      "titel": "Reclassering",
+      "zorgdrager": "JUS/Stichting Reclassering Nederland",
+      "beschikking": "17-03-03",
+      "staatscourant": "21-07-04/137",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSEMANCIPAT-2004",
+      "titel": "Emancipatie en gelijke behandeling",
+      "zorgdrager": "JUS",
+      "beschikking": "30-06-04",
+      "staatscourant": "28-07-04/142",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSOVERHEIDS-2004",
+      "titel": "Overheidsinformatievoorziening",
+      "zorgdrager": "JUS",
+      "beschikking": "30-06-04",
+      "staatscourant": "29-07-04/143",
+      "opmerking": ""
+    },
+    {
+      "code": "BZK-2004",
+      "titel": "Arbeidsvoorwaarden en beroepskwaliteit in de sector Onderwijs en Wetenschappen",
+      "zorgdrager": "BZK",
+      "beschikking": "04-05-04",
+      "staatscourant": "02-08-04/145",
+      "opmerking": ""
+    },
+    {
+      "code": "DEVIEZENBE-2004",
+      "titel": "Deviezenbeleid",
+      "zorgdrager": "FIN/LNV/OCW/BuiZ",
+      "beschikking": "21-06-04",
+      "staatscourant": "13-08-04/154",
+      "opmerking": ""
+    },
+    {
+      "code": "WATERSTAAT-2004",
+      "titel": "Waterstaat",
+      "zorgdrager": "SZW/LNV/FIN/V&W/OCW/VROM",
+      "beschikking": "29-03-04",
+      "staatscourant": "16-08-04/155",
+      "opmerking": ""
+    },
+    {
+      "code": "MILIEUBEHE-2004",
+      "titel": "Milieubeheer",
+      "zorgdrager": "DEF/V&W",
+      "beschikking": "21-06-04",
+      "staatscourant": "17-08-04/156",
+      "opmerking": ""
+    },
+    {
+      "code": "CULTUURBEH-2004",
+      "titel": "Cultuurbeheer",
+      "zorgdrager": "AZ/BZK/BuZa/DEF/EZ/FIN/LNV/OCW/SZW/V&W/VWS/VROM/JUS/EUR/TU Eindhoven/TUDelft/UG/UL/UM/UT/UU/UvA/WU/ICN/ARA/RAI/ICB",
+      "beschikking": "05-06-04",
+      "staatscourant": "28-10-04/208",
+      "opmerking": ""
+    },
+    {
+      "code": "PLANNING-2004",
+      "titel": "Planning van de voorzieningen in de gezondheidszorg",
+      "zorgdrager": "College Sanering Ziekenhuisvoorzieningen",
+      "beschikking": "05-10-04",
+      "staatscourant": "08-11-04/215",
+      "opmerking": ""
+    },
+    {
+      "code": "BUITENSECT-2004",
+      "titel": "Buitensectorale Arbeidsvoorwaarden",
+      "zorgdrager": "BZK/DEF/FIN/LNV/OCW/SZW/VenW/VROM",
+      "beschikking": "5-10-04",
+      "staatscourant": "13-12-04/240",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSVOO-2005",
+      "titel": "Arbeidsvoorzieningenbeleid",
+      "zorgdrager": "AZ/DEF/EZ/FIN/LNV/OCW/VenW/VROM/BZK/SZW",
+      "beschikking": "11-11-04",
+      "staatscourant": "13-01-05/9",
+      "opmerking": ""
+    },
+    {
+      "code": "PT-2005",
+      "titel": "Productschap Tuinbouw",
+      "zorgdrager": "PT",
+      "beschikking": "16-12-04",
+      "staatscourant": "13-01-05/9",
+      "opmerking": ""
+    },
+    {
+      "code": "COA-2005",
+      "titel": "Toelating vreemdelingen",
+      "zorgdrager": "COA",
+      "beschikking": "16-12-04",
+      "staatscourant": "21-02-05/36",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSBEGRO-2005",
+      "titel": "Rijksbegroting",
+      "zorgdrager": "AZ/BZK/BuZa/DEF/FIN/LNV/OCW/SZW/VenW/VROM/VWS",
+      "beschikking": "25-01-05",
+      "staatscourant": "31-03-05/62",
+      "opmerking": ""
+    },
+    {
+      "code": "BZKPOLITIE-2005",
+      "titel": "Politie 1994-",
+      "zorgdrager": "BZK",
+      "beschikking": "17-02-05",
+      "staatscourant": "31-03-05/62",
+      "opmerking": ""
+    },
+    {
+      "code": "DRINKWATER-2005",
+      "titel": "Drinkwatervoorziening (Rijksinstituut voor de Drinkwatervoorziening)",
+      "zorgdrager": "VenW/VWS",
+      "beschikking": "25-01-05",
+      "staatscourant": "25-04-05/79",
+      "opmerking": ""
+    },
+    {
+      "code": "BELASTINGH-2005",
+      "titel": "Belastingheffing",
+      "zorgdrager": "FIN/BZK/LNV/SZW/Ven W",
+      "beschikking": "08-03-05",
+      "staatscourant": "31-05-05/102",
+      "opmerking": ""
+    },
+    {
+      "code": "GEZONDHEID-2005",
+      "titel": "Gezondheid en welzijn van dieren",
+      "zorgdrager": "UU/WU",
+      "beschikking": "03-05-05",
+      "staatscourant": "31-05-05/102",
+      "opmerking": ""
+    },
+    {
+      "code": "DEFTOELATING-2005",
+      "titel": "Toelating van vreemdelingen",
+      "zorgdrager": "DEF",
+      "beschikking": "22-03-05",
+      "staatscourant": "13-06-05/111",
+      "opmerking": ""
+    },
+    {
+      "code": "STAATSSCHU-2005",
+      "titel": "Staatsschuld",
+      "zorgdrager": "FIN/BuZa/ABP",
+      "beschikking": "12-05-05",
+      "staatscourant": "13-06-05/111",
+      "opmerking": ""
+    },
+    {
+      "code": "PUBLIEKREC-2005",
+      "titel": "Publiekrechtelijke bedrijfsorganisaties",
+      "zorgdrager": "Akkerbouwproductschap pen",
+      "beschikking": "22-03-05",
+      "staatscourant": "14-06-05/112 4-07-05/126 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "BZKBRANDWEER-2005",
+      "titel": "Brandweerzorg, rampenbestrijding en crisisbeheersing",
+      "zorgdrager": "BZK",
+      "beschikking": "02-03-05",
+      "staatscourant": "14-06-05/112",
+      "opmerking": ""
+    },
+    {
+      "code": "MILITAIRE-2005",
+      "titel": "Militaire Operatiën",
+      "zorgdrager": "EZ/FIN/VWS/VW/DEF/Bu Za/Dienst Kadaster",
+      "beschikking": "03-05-05",
+      "staatscourant": "15-06-05/113 4-07-05/126 (rectificatie)",
+      "opmerking": ""
+    },
+    {
+      "code": "PO-2005",
+      "titel": "PO/VO/HBO/WO/BO/VE",
+      "zorgdrager": "Inspectie van het Onderwijs",
+      "beschikking": "07-02-05",
+      "staatscourant": "16-06-05/114",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSPLEG-2005",
+      "titel": "Rechtspleging en rechtshulp",
+      "zorgdrager": "AR NovA/RvT OvA",
+      "beschikking": "25-05-05",
+      "staatscourant": "16-06-05/114",
+      "opmerking": ""
+    },
+    {
+      "code": "VENW-2005",
+      "titel": "Rijksbegroting",
+      "zorgdrager": "VenW",
+      "beschikking": "08-06-05",
+      "staatscourant": "18-07-05/136",
+      "opmerking": ""
+    },
+    {
+      "code": "VROM-2005",
+      "titel": "Monumentenzorg",
+      "zorgdrager": "VROM",
+      "beschikking": "31-05-05",
+      "staatscourant": "29-07-05/145",
+      "opmerking": ""
+    },
+    {
+      "code": "VOLKSHUISV-2005",
+      "titel": "Volkshuisvesting",
+      "zorgdrager": "BZK/FIN/LNV/SZW/VROM/VWS",
+      "beschikking": "09-06-05",
+      "staatscourant": "04-08-05/149",
+      "opmerking": ""
+    },
+    {
+      "code": "COLO-2005",
+      "titel": "Volwasseneneducatie en beroepsonderwijs",
+      "zorgdrager": "COLO",
+      "beschikking": "27-07-05",
+      "staatscourant": "15-08-05/156",
+      "opmerking": ""
+    },
+    {
+      "code": "DEFDIENSTPLI-2005",
+      "titel": "Dienstplicht",
+      "zorgdrager": "DEF",
+      "beschikking": "14-06-05",
+      "staatscourant": "15-08-05/156",
+      "opmerking": ""
+    },
+    {
+      "code": "KOFS-2005",
+      "titel": "Volwasseneneducatie en beroepsonderwijs",
+      "zorgdrager": "KOFS",
+      "beschikking": "27-07-05",
+      "staatscourant": "19-08-05/160",
+      "opmerking": ""
+    },
+    {
+      "code": "HEFFING-2005",
+      "titel": "Heffing rijksbelastingen",
+      "zorgdrager": "BuZa/BZK/FIN/LNV/OCW/SZW/V&W/VROM",
+      "beschikking": "03-05-05",
+      "staatscourant": "30-08-05/167",
+      "opmerking": ""
+    },
+    {
+      "code": "KNB-2005",
+      "titel": "Notarissen",
+      "zorgdrager": "KNB",
+      "beschikking": "09-08-05",
+      "staatscourant": "01-11-05/212",
+      "opmerking": ""
+    },
+    {
+      "code": "WAPENS-2005",
+      "titel": "Wapens en munitie",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/SZW/V&W/VROM",
+      "beschikking": "15-09-05",
+      "staatscourant": "24-11-05/229",
+      "opmerking": ""
+    },
+    {
+      "code": "AUTEURSREC-2005",
+      "titel": "Auteursrecht",
+      "zorgdrager": "BuZa/BZK/EZ/DEF/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "15-09-05",
+      "staatscourant": "29-11-05/232",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2005",
+      "titel": "Openluchtrecreatie",
+      "zorgdrager": "VWS",
+      "beschikking": "14-09-05",
+      "staatscourant": "30-11-05/233",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSDIENS-2005",
+      "titel": "Rijksdienst voor het wegverkeer",
+      "zorgdrager": "V&W/RDW",
+      "beschikking": "07-10-05",
+      "staatscourant": "01-12-05/234",
+      "opmerking": ""
+    },
+    {
+      "code": "JUS-2005",
+      "titel": "Beleid Openbaar Ministerie",
+      "zorgdrager": "JUS",
+      "beschikking": "14-10-05",
+      "staatscourant": "02-12-05/235",
+      "opmerking": ""
+    },
+    {
+      "code": "ORGANISATI-2005",
+      "titel": "Organisatie van de rijksoverheid",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "05-07-05",
+      "staatscourant": "16-12-05/245",
+      "opmerking": ""
+    },
+    {
+      "code": "GEM-2005",
+      "titel": "Gemeentelijke organen",
+      "zorgdrager": "VNG",
+      "beschikking": "21-11-05",
+      "staatscourant": "20-12-05/247",
+      "opmerking": ""
+    },
+    {
+      "code": "ZONMWSOCIALE-2005",
+      "titel": "Sociale zekerheid",
+      "zorgdrager": "ZonMw",
+      "beschikking": "21-11-05",
+      "staatscourant": "29-12-05/253",
+      "opmerking": ""
+    },
+    {
+      "code": "ZONMWVOLKSGE-2005",
+      "titel": "Volksgezondheidssubsidies",
+      "zorgdrager": "ZonMw",
+      "beschikking": "21-11-05",
+      "staatscourant": "29-12-05/253",
+      "opmerking": ""
+    },
+    {
+      "code": "LANDINRICH-2006",
+      "titel": "Landinrichting",
+      "zorgdrager": "BZK/FIN/LNV/V&W/VROM",
+      "beschikking": "07-07-05",
+      "staatscourant": "10-01-06/7",
+      "opmerking": ""
+    },
+    {
+      "code": "JUS-2006",
+      "titel": "Sanctiebeleid (CJIB)",
+      "zorgdrager": "JUS",
+      "beschikking": "12-12-05",
+      "staatscourant": "10-01-06/7",
+      "opmerking": ""
+    },
+    {
+      "code": "SOCIALEA-2006",
+      "titel": "Sociale verzekeringen",
+      "zorgdrager": "BuZa/BZK/DEF/FIN/OCW/SZW/V&W/VROM/VWS/RWI/SVB/UWV",
+      "beschikking": "14-10-05",
+      "staatscourant": "12-01-06/9",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "ENERGIEBEL-2006",
+      "titel": "Energiebeleid",
+      "zorgdrager": "BZK/DEF/EZ/FIN/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "07-07-05",
+      "staatscourant": "13-01-06/10",
+      "opmerking": ""
+    },
+    {
+      "code": "ENERGIEDEL-2006",
+      "titel": "Energiedelfstoffen",
+      "zorgdrager": "BZK/DEF/EZ/FIN/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "07-07-05",
+      "staatscourant": "13-01-06/10",
+      "opmerking": ""
+    },
+    {
+      "code": "IV-2006",
+      "titel": "Academische zaak, deel IV (Wetenschappelijk onderwijs 1945-1986)",
+      "zorgdrager": "EUR/Radboud UN/RUG/TUDelft/TUEind hoven/UL/UM/UU/UT/Uv A/UvT/VU/WU",
+      "beschikking": "09-08-05",
+      "staatscourant": "24-02-06/40",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSTITIELE-2006",
+      "titel": "Justitiële Jeugdzorg",
+      "zorgdrager": "BZK/DEF/FIN/JUS/OCW/VWS",
+      "beschikking": "12-12-05",
+      "staatscourant": "27-02-06/41",
+      "opmerking": ""
+    },
+    {
+      "code": "LNV-2006",
+      "titel": "Relatienotabeleid",
+      "zorgdrager": "LNV",
+      "beschikking": "19-12-05",
+      "staatscourant": "28-02-06/42",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSPERS-2006",
+      "titel": "Rechtspersonen",
+      "zorgdrager": "BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/CBB/UWV",
+      "beschikking": "21-11-05",
+      "staatscourant": "01-03-06/43",
+      "opmerking": ""
+    },
+    {
+      "code": "MILITAIR-2006",
+      "titel": "Militair personeel",
+      "zorgdrager": "AZ/DEF/SZW/StZK",
+      "beschikking": "19-12-05",
+      "staatscourant": "06-03-06/46",
+      "opmerking": ""
+    },
+    {
+      "code": "BINNENVISS-2006",
+      "titel": "Binnenvisserij",
+      "zorgdrager": "FIN/JUS/LNV/V&W",
+      "beschikking": "23-01-06",
+      "staatscourant": "20-03-06/56",
+      "opmerking": ""
+    },
+    {
+      "code": "CENTRALE-2006",
+      "titel": "Centrale organisatie Werk en Inkomen",
+      "zorgdrager": "CWI/ARB",
+      "beschikking": "16-02-06",
+      "staatscourant": "20-03-06/56",
+      "opmerking": ""
+    },
+    {
+      "code": "POLITIE-2006",
+      "titel": "Politie vanaf 1994",
+      "zorgdrager": "25 Regionale politiekorpsen/KLPD",
+      "beschikking": "02-02-06",
+      "staatscourant": "03-04-06/66",
+      "opmerking": ""
+    },
+    {
+      "code": "KAMERS-2006",
+      "titel": "Kamers van Koophandel en Fabrieken",
+      "zorgdrager": "21 KvKs/VVK",
+      "beschikking": "16-02-06",
+      "staatscourant": "10-04-06/71",
+      "opmerking": ""
+    },
+    {
+      "code": "SOCIALEB-2006",
+      "titel": "Sociale voorzieningen",
+      "zorgdrager": "AZ/BZK/BuZa/DEF/EZ/FIN/JUS/LNV/OCW/SZW/VWS/V&W/UWV",
+      "beschikking": "17-01-06",
+      "staatscourant": "11-04-06/72",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "RVS-2006",
+      "titel": "Tijdelijke waarneming Koninklijk gezag",
+      "zorgdrager": "RvS",
+      "beschikking": "16-03-06 (Koninklijk Besluit)",
+      "staatscourant": "18-04-06/75",
+      "opmerking": ""
+    },
+    {
+      "code": "NOM-2006",
+      "titel": "Cultuurbeheer",
+      "zorgdrager": "NOM",
+      "beschikking": "16-03-06 (Koninklijk Besluit)",
+      "staatscourant": "18-04-06/75",
+      "opmerking": ""
+    },
+    {
+      "code": "HRVA-2006",
+      "titel": "Cultuurbeheer",
+      "zorgdrager": "HrvA",
+      "beschikking": "16-03-06 (Koninklijk Besluit)",
+      "staatscourant": "19-04-06/76",
+      "opmerking": ""
+    },
+    {
+      "code": "BEHEERA-2006",
+      "titel": "Beheer van de Rijksbegroting",
+      "zorgdrager": "NOM/KNO",
+      "beschikking": "16-03-06 (Koninklijk Besluiten)",
+      "staatscourant": "19-04-06/76",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "PUR-2006",
+      "titel": "Oorlogsgetroffenen",
+      "zorgdrager": "PUR",
+      "beschikking": "29-03-06",
+      "staatscourant": "19-04-06/76",
+      "opmerking": ""
+    },
+    {
+      "code": "STATENGENE-2006",
+      "titel": "Staten-Generaal",
+      "zorgdrager": "Eerste Kamer/Tweede Kamer/Verenigde Vergadering S-G",
+      "beschikking": "16-03-06 (Koninklijk Besluiten)",
+      "staatscourant": "20-04-06/77",
+      "opmerking": ""
+    },
+    {
+      "code": "CULTUURBEH-2006",
+      "titel": "Cultuurbeheer",
+      "zorgdrager": "Tweede Kamer",
+      "beschikking": "16-03-06 (Koninklijk Besluit)",
+      "staatscourant": "20-04-06/77",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2006",
+      "titel": "Provinciale organen",
+      "zorgdrager": "IPO",
+      "beschikking": "02-03-06",
+      "staatscourant": "08-05-06/89",
+      "opmerking": ""
+    },
+    {
+      "code": "INTERNATIO-2006",
+      "titel": "Internationale rechtshulp",
+      "zorgdrager": "BZK/BuZa/FIN/JUS",
+      "beschikking": "23-03-06",
+      "staatscourant": "22-05-06/99",
+      "opmerking": ""
+    },
+    {
+      "code": "CBP-2006",
+      "titel": "Persoonsregistraties",
+      "zorgdrager": "CBP",
+      "beschikking": "03-05-06",
+      "staatscourant": "22-05-06/99",
+      "opmerking": ""
+    },
+    {
+      "code": "ADELSBELEI-2006",
+      "titel": "Adelsbeleid en decoratiestelsel",
+      "zorgdrager": "BZK/DEF/EZ/FIN/LNV/OCW/SZW/VROM",
+      "beschikking": "06-02-06",
+      "staatscourant": "06-06-06/107",
+      "opmerking": ""
+    },
+    {
+      "code": "OVERKOEPEL-2006",
+      "titel": "Overkoepelend beleid verkeer en waterstaat",
+      "zorgdrager": "BuZa/DEF/FIN/VROM/V&W",
+      "beschikking": "27-03-06",
+      "staatscourant": "08-06-06/109",
+      "opmerking": ""
+    },
+    {
+      "code": "STUDIEFINA-2006",
+      "titel": "Studiefinanciering",
+      "zorgdrager": "OCW/AZ/BuZa/BZK/EZ/FIN/JUS/V&W/VWS/IBG",
+      "beschikking": "19-04-06",
+      "staatscourant": "04-07-06/127 31-07-06/146 (selectielijst en beschikking IBG)",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2006",
+      "titel": "Adelsbeleid, adelsrecht en decoratiestelsel",
+      "zorgdrager": "VWS",
+      "beschikking": "15-06-06",
+      "staatscourant": "17-07-06/136",
+      "opmerking": ""
+    },
+    {
+      "code": "WETENSCHAP-2006",
+      "titel": "Algemeen wetenschappelijke voorbereiding van het regeringsbeleid vanaf 1945",
+      "zorgdrager": "OCW/BZK/DEF/EZ/FIN/V&W/VROM/LNV/CBS",
+      "beschikking": "22-05-2006",
+      "staatscourant": "03-08-06/149",
+      "opmerking": ""
+    },
+    {
+      "code": "OPTA-2006",
+      "titel": "Telecommunicatie en post",
+      "zorgdrager": "OPTA",
+      "beschikking": "15-08-2006",
+      "staatscourant": "04-09-06/171",
+      "opmerking": ""
+    },
+    {
+      "code": "BEHEERB-2006",
+      "titel": "Beheer van de rijksbegroting",
+      "zorgdrager": "EZ/JUS",
+      "beschikking": "16-08-2006",
+      "staatscourant": "11-09-06/176",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "IN-2006",
+      "titel": "In- en uitvoerregelingen",
+      "zorgdrager": "AZ/BuZa/DEF/EZ/FIN/LNV/V&W/VWS",
+      "beschikking": "15-08-2006",
+      "staatscourant": "02-10-06/191",
+      "opmerking": ""
+    },
+    {
+      "code": "GENEESMIDD-2006",
+      "titel": "Geneesmiddelen en medische hulpmiddelen",
+      "zorgdrager": "BuZa/EZ/FIN/LNV/VWS",
+      "beschikking": "28-08-2006",
+      "staatscourant": "03-10-06/192",
+      "opmerking": ""
+    },
+    {
+      "code": "INDUSTRIE-2006",
+      "titel": "Industrie- en technologiebeleid",
+      "zorgdrager": "AZ/BuZA/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W",
+      "beschikking": "12-09-2006",
+      "staatscourant": "17-10-06/202",
+      "opmerking": ""
+    },
+    {
+      "code": "ORADVISERING-2006",
+      "titel": "Advisering Onderwijsraad",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORBASISONDER-2006",
+      "titel": "Basisonderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORHOGER-2006",
+      "titel": "Hoger Beroepsonderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORMIDDELBAAR-2006",
+      "titel": "Middelbaar beroepsonderwijs en Voortgezet Algemeen Volwassenenonderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORSPECIAAL-2006",
+      "titel": "Speciaal onderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORVOORTGEZET-2006",
+      "titel": "Voortgezet onderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "ORWETENSCHAP-2006",
+      "titel": "Wetenschappelijk onderwijs",
+      "zorgdrager": "OR",
+      "beschikking": "26-09-2006",
+      "staatscourant": "19-10-06/204",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2006",
+      "titel": "Politie vanaf 1994",
+      "zorgdrager": "DEF",
+      "beschikking": "20-10-2006",
+      "staatscourant": "21-11-06/227",
+      "opmerking": ""
+    },
+    {
+      "code": "BEKOSTIGIN-2006",
+      "titel": "Bekostiging en verzekering van de gezondheidszorg",
+      "zorgdrager": "BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/VWS/CAK-BZ/SUO",
+      "beschikking": "10-07-2006",
+      "staatscourant": "28-11-06/232",
+      "opmerking": ""
+    },
+    {
+      "code": "RELATIENOT-2006",
+      "titel": "Relatienotabeleid",
+      "zorgdrager": "FIN/VWS",
+      "beschikking": "07-11-2006",
+      "staatscourant": "1-12-2006/235",
+      "opmerking": ""
+    },
+    {
+      "code": "GRATIE-2006",
+      "titel": "Gratie",
+      "zorgdrager": "AZ/BuZa/FIN/JUS/OCW/SZW/VROM",
+      "beschikking": "15-08-2006",
+      "staatscourant": "5-12-2006/237",
+      "opmerking": ""
+    },
+    {
+      "code": "NATUUR-2006",
+      "titel": "Natuur- en landschapsbeheer",
+      "zorgdrager": "BuZa/OCW/VROM/VWS",
+      "beschikking": "07-11-2006",
+      "staatscourant": "7-12-2006/239",
+      "opmerking": ""
+    },
+    {
+      "code": "GEWASBESCH-2006",
+      "titel": "Gewasbescherming",
+      "zorgdrager": "FIN/JUS/LNV/SZW/V&W",
+      "beschikking": "04-07-2006",
+      "staatscourant": "11-12-2006/241",
+      "opmerking": ""
+    },
+    {
+      "code": "BOSBOUW-2006",
+      "titel": "Bosbouw",
+      "zorgdrager": "OCW/VWS",
+      "beschikking": "09-11-2006",
+      "staatscourant": "12-12-2006/242",
+      "opmerking": ""
+    },
+    {
+      "code": "VWSVOLKSGEZO-2007",
+      "titel": "Volksgezondheidssubsidies",
+      "zorgdrager": "VWS",
+      "beschikking": "20-11-2006",
+      "staatscourant": "05-01-2007/4",
+      "opmerking": ""
+    },
+    {
+      "code": "CM-2007",
+      "titel": "Ondersteunende taken Commissariaat voor de Media",
+      "zorgdrager": "CM",
+      "beschikking": "14-11-2006",
+      "staatscourant": "05-01-2007/4",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTERLIJ-2007",
+      "titel": "Rechterlijke macht",
+      "zorgdrager": "JUS/5 Gerechtshoven/19 Rechtbanken",
+      "beschikking": "12-12-2006",
+      "staatscourant": "08-01-2007/5",
+      "opmerking": ""
+    },
+    {
+      "code": "BESTUURLIJ-2007",
+      "titel": "Bestuurlijke en financiële organisatie lagere overheden",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "15-11-2006",
+      "staatscourant": "30-01-2007/21",
+      "opmerking": ""
+    },
+    {
+      "code": "LIJKBEZORG-2007",
+      "titel": "Lijkbezorging",
+      "zorgdrager": "BuZa/BZK/DEF/JUS/V&W/VROM/VWS",
+      "beschikking": "11-01-2007",
+      "staatscourant": "01-02-2007/23",
+      "opmerking": ""
+    },
+    {
+      "code": "ZONDAGSWET-2007",
+      "titel": "Zondagswet",
+      "zorgdrager": "BZK/JUS",
+      "beschikking": "22-01-2007",
+      "staatscourant": "12-2-2007/30 rectificatie BZK: 6-3-2007/46",
+      "opmerking": ""
+    },
+    {
+      "code": "KWALITEIT-2007",
+      "titel": "Kwaliteit Nederlandse wetgeving",
+      "zorgdrager": "AZ/BuZa/BZK/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VWS",
+      "beschikking": "21-12-2006",
+      "staatscourant": "14-2-2007/32",
+      "opmerking": ""
+    },
+    {
+      "code": "INKOMENS-2007",
+      "titel": "Inkomens- en arbeidsvoorwaardenbeleid",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "14-03-2006",
+      "staatscourant": "16-2-2007/34",
+      "opmerking": ""
+    },
+    {
+      "code": "UMC-2007",
+      "titel": "Openbare en bijzondere academische ziekenhuizen",
+      "zorgdrager": "AMC/EMC/AZM/UMC Utrecht/UMCG/LUMC",
+      "beschikking": "12-1-2007",
+      "staatscourant": "19-2-2007/35",
+      "opmerking": ""
+    },
+    {
+      "code": "FLORA-2007",
+      "titel": "Flora & fauna",
+      "zorgdrager": "FIN/JUS/OCW/VWS",
+      "beschikking": "25-1-2007",
+      "staatscourant": "21-2-2007/37 rectificatie JUS: 1-3-2007/43",
+      "opmerking": ""
+    },
+    {
+      "code": "VERSLAVING-2007",
+      "titel": "Verslavingsbeleid",
+      "zorgdrager": "EZ/JUS/VWS",
+      "beschikking": "22-1-2007",
+      "staatscourant": "26-2-2007/40",
+      "opmerking": ""
+    },
+    {
+      "code": "EZ-2007",
+      "titel": "Stimulering midden- en kleinbedrijf",
+      "zorgdrager": "EZ",
+      "beschikking": "25-1-2007",
+      "staatscourant": "27-2-2007/41",
+      "opmerking": ""
+    },
+    {
+      "code": "TOERISME-2007",
+      "titel": "Toerisme",
+      "zorgdrager": "BuZa/EZ/FIN/JUS/LNV/V&W/VWS/ANVR",
+      "beschikking": "8-12-2006",
+      "staatscourant": "28-2-2007/42",
+      "opmerking": ""
+    },
+    {
+      "code": "MILITAIRE-2007",
+      "titel": "Militaire operatiën",
+      "zorgdrager": "AZ/BZK/JUS/LNV/SZW",
+      "beschikking": "25-1-2007",
+      "staatscourant": "5-3-2007/45",
+      "opmerking": ""
+    },
+    {
+      "code": "VOEDING-2007",
+      "titel": "Voeding- en productveiligheid",
+      "zorgdrager": "AZ/DEF/EZ/FIN/JUS/LNV/SZW/V&W/VWS/PVE/COKZ",
+      "beschikking": "29-1-2007",
+      "staatscourant": "7-3-2007/47 rectificatie DEF: 13-3-2007/51",
+      "opmerking": ""
+    },
+    {
+      "code": "METROLOGIE-2007",
+      "titel": "Metrologie",
+      "zorgdrager": "EZ/FIN",
+      "beschikking": "13-3-2007",
+      "staatscourant": "2-4-2007/65",
+      "opmerking": ""
+    },
+    {
+      "code": "BEVOLKINGS-2007",
+      "titel": "Bevolkingsadministratie en reisdocumenten",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/FIN/JUS/SZW/VWS",
+      "beschikking": "13-3-2007",
+      "staatscourant": "5-4-2007/68",
+      "opmerking": ""
+    },
+    {
+      "code": "FRIESE-2007",
+      "titel": "Friese taal",
+      "zorgdrager": "BuZa/BZK/JUS/FIN/OCW/VWS",
+      "beschikking": "12-3-2007",
+      "staatscourant": "12-4-2007/71",
+      "opmerking": ""
+    },
+    {
+      "code": "BESCHERMIN-2007",
+      "titel": "Bescherming van persoonsgegevens",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "16-3-2007",
+      "staatscourant": "16-4-2007/73",
+      "opmerking": ""
+    },
+    {
+      "code": "INTERNATIOA-2007",
+      "titel": "Internationale monetaire en financiële zaken",
+      "zorgdrager": "AZ/BuZa/BZK/EZ/FIN/LNV",
+      "beschikking": "16-3-2007",
+      "staatscourant": "18-4-2007/75",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "MILITAIR-2007",
+      "titel": "Militair materieel",
+      "zorgdrager": "BuZa/BZK/DEF/EZ/FIN/JUS/V&W",
+      "beschikking": "29-1-2007",
+      "staatscourant": "24-4-2007/79",
+      "opmerking": ""
+    },
+    {
+      "code": "LANDBOUWKW-2007",
+      "titel": "Landbouwkwaliteit en voedselveiligheid en kwaliteit uitgangsmateriaal en biotechnologie",
+      "zorgdrager": "BuZa/BZK/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS/NAK/PVE/NVK",
+      "beschikking": "18-10-2006",
+      "staatscourant": "21-05-2007/95",
+      "opmerking": ""
+    },
+    {
+      "code": "OORLOGSGET-2007",
+      "titel": "Oorlogsgetroffenen",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VWS/Cogis/Gebaar/RS&R/SJHF/SAIP/SAMO",
+      "beschikking": "5-3-2007",
+      "staatscourant": "24-05-2007/98",
+      "opmerking": ""
+    },
+    {
+      "code": "PLANNING-2007",
+      "titel": "Planning voorzieningen gezondheidszorg",
+      "zorgdrager": "BZK/DEF/FIN/JUS/OCW/SZW/VWS",
+      "beschikking": "19-4-2007",
+      "staatscourant": "29-05-2007/100",
+      "opmerking": ""
+    },
+    {
+      "code": "GOEDERENVE-2007",
+      "titel": "Goederenvervoer",
+      "zorgdrager": "OCW/V&W/CBB",
+      "beschikking": "19-4-2007",
+      "staatscourant": "29-05-2007/100",
+      "opmerking": ""
+    },
+    {
+      "code": "KUNSTEN-2007",
+      "titel": "Kunsten",
+      "zorgdrager": "AZ/BuZa/EZ/FIN/JUS/VROM/VWS/FA/FBKVB/FP/FPM/MS/SvdA/FST",
+      "beschikking": "19-4-2007",
+      "staatscourant": "30-05-2007/101",
+      "opmerking": ""
+    },
+    {
+      "code": "GEZONDHEID-2007",
+      "titel": "Gezondheid en welzijn van dieren",
+      "zorgdrager": "LNV/SZW/V&W/VWS",
+      "beschikking": "8-5-2007",
+      "staatscourant": "05-06-2007/105",
+      "opmerking": ""
+    },
+    {
+      "code": "MONUMENTEN-2007",
+      "titel": "Monumentenzorg",
+      "zorgdrager": "BZK/LNV/VWS",
+      "beschikking": "3-5-2007",
+      "staatscourant": "11-06-2007/109",
+      "opmerking": ""
+    },
+    {
+      "code": "VOORLICHTI-2007",
+      "titel": "Voorlichting van de rijksoverheid",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/VROM/V&W/VWS",
+      "beschikking": "3-5-2007",
+      "staatscourant": "14-06-2007/112",
+      "opmerking": ""
+    },
+    {
+      "code": "INFECTIEBE-2007",
+      "titel": "Infectiebestrijding en preventieve gezondheidszorg",
+      "zorgdrager": "BZK/LNV/OCW/VWS",
+      "beschikking": "8-5-2007",
+      "staatscourant": "19-06-2007/114",
+      "opmerking": ""
+    },
+    {
+      "code": "CONSTITUTI-2007",
+      "titel": "Constitutionele Zaken",
+      "zorgdrager": "AZ/BuZa/BZK/JUS/OCW",
+      "beschikking": "8-5-2007",
+      "staatscourant": "21-06-2007/117",
+      "opmerking": ""
+    },
+    {
+      "code": "SBB-2007",
+      "titel": "Natuur- en landschapsbeheer",
+      "zorgdrager": "SBB",
+      "beschikking": "30-5-2007",
+      "staatscourant": "26-06-2007/120",
+      "opmerking": ""
+    },
+    {
+      "code": "HERVERZEKE-2007",
+      "titel": "Herverzekering van export- en importkredieten en investeringsgaranties",
+      "zorgdrager": "AZ/BuZa/BZK/EZ/FIN/JUS/LNV",
+      "beschikking": "12-06-2007",
+      "staatscourant": "12-07-2007/132",
+      "opmerking": ""
+    },
+    {
+      "code": "GRONDPRIJS-2007",
+      "titel": "Grondprijsbeleid",
+      "zorgdrager": "FIN/LNV",
+      "beschikking": "30-03-2007",
+      "staatscourant": "16-07-2007/134",
+      "opmerking": ""
+    },
+    {
+      "code": "WK-2007",
+      "titel": "Waardebepaling onroerende zaken d.m.v. belastingheffing door Rijk, gemeenten en waterschappen",
+      "zorgdrager": "WK",
+      "beschikking": "28-05-2007",
+      "staatscourant": "17-07-2007/135",
+      "opmerking": ""
+    },
+    {
+      "code": "KANSSPELEN-2007",
+      "titel": "Kansspelen",
+      "zorgdrager": "EZ/FIN/JUS/VWS",
+      "beschikking": "22-06-2007",
+      "staatscourant": "19-07-2007/137",
+      "opmerking": ""
+    },
+    {
+      "code": "CTB-2007",
+      "titel": "Gewasbescherming",
+      "zorgdrager": "CTB",
+      "beschikking": "4-07-2007",
+      "staatscourant": "24-07-2007/140",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSHUISV-2007",
+      "titel": "Rijkshuisvesting",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "12-03-2007",
+      "staatscourant": "26-07-2007/142",
+      "opmerking": ""
+    },
+    {
+      "code": "OVV-2007",
+      "titel": "Brandweerzorg, rampenbestrijding en crisisbeheersing",
+      "zorgdrager": "OvV",
+      "beschikking": "5-07-2007",
+      "staatscourant": "30-07-2007/144",
+      "opmerking": ""
+    },
+    {
+      "code": "VWSADVISERIN-2007",
+      "titel": "Advisering in de gezondheidszorg",
+      "zorgdrager": "VWS",
+      "beschikking": "25-06-2007",
+      "staatscourant": "31-07-2007/145",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSTITIELE-2007",
+      "titel": "Justitiële documentatie en verklaringen omtrent gedrag",
+      "zorgdrager": "BZK/JUS",
+      "beschikking": "9-07-2007",
+      "staatscourant": "01-08-2007/146",
+      "opmerking": ""
+    },
+    {
+      "code": "CONSUMENTE-2007",
+      "titel": "Consumentenbeleid",
+      "zorgdrager": "BZK/EZ/FIN/SZW/VWS",
+      "beschikking": "9-07-2007",
+      "staatscourant": "02-08-2007/147",
+      "opmerking": ""
+    },
+    {
+      "code": "PATIENTENB-2007",
+      "titel": "Patiëntenbeleid",
+      "zorgdrager": "AZ/BZK/DEF/JUS/VWS/NTS/StFPGO/CCMO",
+      "beschikking": "21-06-2007",
+      "staatscourant": "09-08-2007/152",
+      "opmerking": ""
+    },
+    {
+      "code": "ZEEEN-2007",
+      "titel": "Zee-en kustvisserij",
+      "zorgdrager": "FIN/LNV",
+      "beschikking": "9-07-2007",
+      "staatscourant": "24-09-2007/184",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZABUITENLA-2007",
+      "titel": "Nederlands buitenlands beleid",
+      "zorgdrager": "BuZa",
+      "beschikking": "8-08-2007",
+      "staatscourant": "02-10-2007/190",
+      "opmerking": ""
+    },
+    {
+      "code": "REGIONAAL-2007",
+      "titel": "Regionaal en ruimtelijk economisch beleid",
+      "zorgdrager": "BZK/DEF/EZ/FIN/JUS/LNV/SZW/V&W/VROM",
+      "beschikking": "21-08-2007",
+      "staatscourant": "05-10-2007/193",
+      "opmerking": ""
+    },
+    {
+      "code": "GELDVOORZI-2007",
+      "titel": "Geldvoorziening",
+      "zorgdrager": "BZK/FIN",
+      "beschikking": "13-08-2007",
+      "staatscourant": "08-10-2007/194",
+      "opmerking": ""
+    },
+    {
+      "code": "VOEDSELVOO-2007",
+      "titel": "Voedselvoorziening en agrarisch markt- en prijsbeleid",
+      "zorgdrager": "EZ/FIN/JUS/LNV/OCW/SZW",
+      "beschikking": "18-09-2007",
+      "staatscourant": "12-10-2007/198",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZAFORMATIE-2007",
+      "titel": "Formatiebeleid, arbeidsmarktbeleid en personeelsontwikkeling en mobiliteit",
+      "zorgdrager": "BuZa",
+      "beschikking": "11-09-2007",
+      "staatscourant": "12-10-2007/198",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSORGANISAT-2007",
+      "titel": "Organisatie rijksoverheid",
+      "zorgdrager": "JUS",
+      "beschikking": "11-09-2007",
+      "staatscourant": "15-10-2007/199",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZAARBEIDSA-2007",
+      "titel": "Arbeidsvoorwaarden rijkspersoneel",
+      "zorgdrager": "BuZa",
+      "beschikking": "11-09-2007",
+      "staatscourant": "15-10-2007/199",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "BUZAPERSONEE-2007",
+      "titel": "Personeelsinformatievoorzienin g en –administratie",
+      "zorgdrager": "BuZa",
+      "beschikking": "11-09-2007",
+      "staatscourant": "16-10-2007/200",
+      "opmerking": ""
+    },
+    {
+      "code": "BEROEPENKW-2007",
+      "titel": "Beroepenkwaliteit",
+      "zorgdrager": "EZ/FIN/JUS/LNV/OCW/CBB/OCN/NivRA/NovAA",
+      "beschikking": "20-09-2007",
+      "staatscourant": "18-10-2007/202",
+      "opmerking": ""
+    },
+    {
+      "code": "NATIONALE-2007",
+      "titel": "Nationale Ombudsman",
+      "zorgdrager": "BZK/BuZa/DEF/EZ/FIN//JUS/LNV/OCW/SZW/V&W/VWS/VROM",
+      "beschikking": "13-09-2007",
+      "staatscourant": "23-10-2007/204",
+      "opmerking": ""
+    },
+    {
+      "code": "PRIJSBELEI-2007",
+      "titel": "Prijsbeleid",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VROM/VWS",
+      "beschikking": "5-10-2007",
+      "staatscourant": "23-10-2007/205",
+      "opmerking": ""
+    },
+    {
+      "code": "GELDZUIVER-2007",
+      "titel": "Geldzuivering",
+      "zorgdrager": "V&W/LNV/JUS/FIN/BZK",
+      "beschikking": "14-09-2007",
+      "staatscourant": "25-10-2007/207",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZAARBEIDSB-2007",
+      "titel": "Arbeidsverhoudingen",
+      "zorgdrager": "BuZa",
+      "beschikking": "3-10-2007",
+      "staatscourant": "29-10-2007/209",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "BUITENSECT-2007",
+      "titel": "Buitensectorale Arbeidsvoorwaarden",
+      "zorgdrager": "EZ/AZ/JUS/BuZa/VWS",
+      "beschikking": "3-10-2007",
+      "staatscourant": "30-10-2007/210",
+      "opmerking": ""
+    },
+    {
+      "code": "INTERNATIOB-2007",
+      "titel": "Internationale Volksgezondheid",
+      "zorgdrager": "BuZa/OCW/VWS",
+      "beschikking": "14-09-2007",
+      "staatscourant": "05-11-2007/214",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "POLITIE-2007",
+      "titel": "Politie 1945-1993",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/EZ/FIN/JUS/LNV/OCW/V&W/VWS",
+      "beschikking": "8-10-2007",
+      "staatscourant": "6-11-2007/215",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSEMANCIPAT-2007",
+      "titel": "Emancipatie&gelijke behandeling",
+      "zorgdrager": "JUS",
+      "beschikking": "3-10-2007",
+      "staatscourant": "12-11-2007/219",
+      "opmerking": ""
+    },
+    {
+      "code": "NOTARISSEN-2007",
+      "titel": "Notarissen",
+      "zorgdrager": "JUS/FIN/EZ/KNB",
+      "beschikking": "11-10-2007",
+      "staatscourant": "13-11-2007/220",
+      "opmerking": ""
+    },
+    {
+      "code": "TARIEVEN-2007",
+      "titel": "Tarieven in de gezondheidszorg",
+      "zorgdrager": "CBB/OCW/JUS/FIN/DEF/SZW/EZ/VWS/NZA",
+      "beschikking": "9-10-2007",
+      "staatscourant": "15-11-2007/222",
+      "opmerking": ""
+    },
+    {
+      "code": "PDIREKTA-2007",
+      "titel": "P-Direkt/ personeelsdossier",
+      "zorgdrager": "VWS/VROM/V&W/SZW/OCW/LNV/JUS/FIN/EZ/B uZa/BZK/AZ",
+      "beschikking": "16-08-200718-10-2007",
+      "staatscourant": "20-11-2007/225 rectificatie: 18-12-2007/245",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "PDIREKTB-2007",
+      "titel": "P-Direkt/ personeelsdossier",
+      "zorgdrager": "RvS/NOM/KNO/KdK/AR",
+      "beschikking": "21-07-2007 (Koninklijke Besluiten)",
+      "staatscourant": "20-11-2007/225 rectificatie RvS: 18-12-2007/245",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "REGULERING-2007",
+      "titel": "Regulering Toezicht Bank&kredietwezen",
+      "zorgdrager": "BZK/BuZa/EZ/AZ/FIN/LNV/JUS",
+      "beschikking": "10-10-07",
+      "staatscourant": "26-11-2007/229",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZAARBEIDSO-2007",
+      "titel": "Arbeidsomstandigheden",
+      "zorgdrager": "BuZa",
+      "beschikking": "1-11-2007",
+      "staatscourant": "30-11-2007/233",
+      "opmerking": ""
+    },
+    {
+      "code": "ADELSBELEI-2007",
+      "titel": "Adelsbeleid, adelsrecht en decoratiestelsel",
+      "zorgdrager": "AZ/BuZa/JUS/V&W",
+      "beschikking": "1-11-2007",
+      "staatscourant": "05-12-2007/236",
+      "opmerking": ""
+    },
+    {
+      "code": "HBA-2008",
+      "titel": "Hoofdbedrijfschap Afbouw",
+      "zorgdrager": "HBA",
+      "beschikking": "17-12-2007",
+      "staatscourant": "04-01-2008/3",
+      "opmerking": ""
+    },
+    {
+      "code": "VW-2008",
+      "titel": "Meteorologie: KNMI",
+      "zorgdrager": "V&W",
+      "beschikking": "12-12-2007",
+      "staatscourant": "07-01-2008/4",
+      "opmerking": ""
+    },
+    {
+      "code": "BEDRIJFSVO-2008",
+      "titel": "Bedrijfsvoering rechterlijke macht na 2002",
+      "zorgdrager": "5 Gerechtshoven/19 Rechtbanken/CBB/CRvB/RvdR",
+      "beschikking": "17-12-2007",
+      "staatscourant": "08-01-2008/5",
+      "opmerking": ""
+    },
+    {
+      "code": "ECONOMISCH-2008",
+      "titel": "Economische mededinging en Industrieel eigendom",
+      "zorgdrager": "BZK/EZ/FIN/LNV/OCW/SZW/VWS",
+      "beschikking": "7-12-2007",
+      "staatscourant": "08-01-2008/5",
+      "opmerking": ""
+    },
+    {
+      "code": "OUDERENBEL-2008",
+      "titel": "Ouderenbeleid",
+      "zorgdrager": "BZK/EZ/FIN/OCW/SZW/V&W/VWS",
+      "beschikking": "13-12-2007",
+      "staatscourant": "04-02-2008/24",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2008",
+      "titel": "Nationale Ombudsman",
+      "zorgdrager": "VWS",
+      "beschikking": "15-01-2008",
+      "staatscourant": "11-02-2008/29",
+      "opmerking": ""
+    },
+    {
+      "code": "NATUURLIJK-2008",
+      "titel": "Natuurlijke personen",
+      "zorgdrager": "BuZa/BZK/DEF/JUS/OCW/SZW",
+      "beschikking": "15-01-2008",
+      "staatscourant": "13-02-2008/31",
+      "opmerking": ""
+    },
+    {
+      "code": "GEVANGENIS-2008",
+      "titel": "Gevangeniswezen en terbeschikkingstelling",
+      "zorgdrager": "BuZa/BZK/DEF/JUS/OCW",
+      "beschikking": "08-01-2008",
+      "staatscourant": "25-02-2008/39",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSGEFINANCI-2008",
+      "titel": "Gefinancierde rechtsbijstand",
+      "zorgdrager": "JUS",
+      "beschikking": "07-02-2008",
+      "staatscourant": "10-03-2008/49",
+      "opmerking": ""
+    },
+    {
+      "code": "GERECHTSDE-2008",
+      "titel": "Gerechtsdeurwaarders",
+      "zorgdrager": "EZ/JUS",
+      "beschikking": "13-02-2008",
+      "staatscourant": "10-03-2008/49",
+      "opmerking": ""
+    },
+    {
+      "code": "SFL-2008",
+      "titel": "Letteren",
+      "zorgdrager": "SFL",
+      "beschikking": "28-02-2008",
+      "staatscourant": "12-03-2008/51",
+      "opmerking": ""
+    },
+    {
+      "code": "JUSZORG-2008",
+      "titel": "Zorg voor de rechtspleging",
+      "zorgdrager": "JUS",
+      "beschikking": "28-02-2008",
+      "staatscourant": "17-03-2008/54",
+      "opmerking": ""
+    },
+    {
+      "code": "VERMOGENSR-2008",
+      "titel": "Vermogensrecht",
+      "zorgdrager": "DEF/JUS/OCW/V&W",
+      "beschikking": "06-03-2008",
+      "staatscourant": "25-03-2008/58",
+      "opmerking": ""
+    },
+    {
+      "code": "LANDBOUWST-2008",
+      "titel": "Landbouwstructuurbeleid",
+      "zorgdrager": "EZ/FIN/LNV/OCW/SZW/VROM/V&W/PVE/DLO/St ZHR",
+      "beschikking": "15-02-2008",
+      "staatscourant": "27-03-2008/60",
+      "opmerking": ""
+    },
+    {
+      "code": "MEDIA-2008",
+      "titel": "Media, Letteren, Bibliotheken",
+      "zorgdrager": "AZ/BZK/EZ/FIN/JUS/OCW/V&W/VWS/NLPVF/StER/RNW/CM/CTCBANR",
+      "beschikking": "26-01-2007",
+      "staatscourant": "28-03-2008/61",
+      "opmerking": ""
+    },
+    {
+      "code": "VERZEKERIN-2008",
+      "titel": "Toezicht verzekeringsbedrijf",
+      "zorgdrager": "AZ/BZK/BuZa/EZ/FIN/JUS/SZW/V&W/CBB",
+      "beschikking": "05-03-2008",
+      "staatscourant": "01-04-2008/63",
+      "opmerking": ""
+    },
+    {
+      "code": "ARBEIDSOMS-2008",
+      "titel": "Arbeidsomstandigheden",
+      "zorgdrager": "BZK/DEF/EZ/OCW/SZW/V&W/VWS",
+      "beschikking": "28-04-2008",
+      "staatscourant": "04-06-2008/105",
+      "opmerking": ""
+    },
+    {
+      "code": "ARK-2008",
+      "titel": "Algemene Rekenkamer",
+      "zorgdrager": "ARK",
+      "beschikking": "23-04-2008 (Koninklijk Besluit)",
+      "staatscourant": "09-06-2008/108",
+      "opmerking": ""
+    },
+    {
+      "code": "SCHEEPVAAR-2008",
+      "titel": "Scheepvaart en maritieme zaken",
+      "zorgdrager": "BuZa/BZK/DEF/EZ/FIN/JUS/SZW/V&W",
+      "beschikking": "16-06-2008",
+      "staatscourant": "07-07-2008/128",
+      "opmerking": ""
+    },
+    {
+      "code": "LNV-2008",
+      "titel": "Gezondheid en welzijn van dieren",
+      "zorgdrager": "LNV",
+      "beschikking": "18-06-2008",
+      "staatscourant": "07-07-2008/128",
+      "opmerking": ""
+    },
+    {
+      "code": "STAYBEHIND-2008",
+      "titel": "Stay-behind organisaties in de Koude Oorlog",
+      "zorgdrager": "AZ/DEF",
+      "beschikking": "18-06-2008",
+      "staatscourant": "08-07-2008/129",
+      "opmerking": ""
+    },
+    {
+      "code": "PACHTAANGE-2008",
+      "titel": "Pachtaangelegenheden",
+      "zorgdrager": "FIN/JUS/LNV",
+      "beschikking": "16-06-2008",
+      "staatscourant": "14-07-2008/133",
+      "opmerking": ""
+    },
+    {
+      "code": "BRANDWEERZ-2008",
+      "titel": "Brandweerzorg, rampenbestrijding en crisisbeheersing",
+      "zorgdrager": "AZ/BuZa/BZK/DEF/FIN/V&W/VWS",
+      "beschikking": "16-06-2008",
+      "staatscourant": "15-07-2008/134",
+      "opmerking": ""
+    },
+    {
+      "code": "IBG-2008",
+      "titel": "Informatie Beheer Groep",
+      "zorgdrager": "IBG",
+      "beschikking": "28-07-2008",
+      "staatscourant": "19-08-2008/159",
+      "opmerking": ""
+    },
+    {
+      "code": "BURGERLUCH-2008",
+      "titel": "Burgerluchtvaart",
+      "zorgdrager": "AZ/BuZa/DEF/FIN/JUS/LNV/OCW/V&W",
+      "beschikking": "28-07-2008",
+      "staatscourant": "02-09-2008/169",
+      "opmerking": ""
+    },
+    {
+      "code": "COORDINATIA-2008",
+      "titel": "Coördinatie, handhaving en crisisbeheersing",
+      "zorgdrager": "DLO/LNV",
+      "beschikking": "18-09-2008",
+      "staatscourant": "22-10-2008/205",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "VOEDING-2008",
+      "titel": "Voeding en productveiligheid",
+      "zorgdrager": "LNV/VWS (voor VWA)",
+      "beschikking": "30-09-2008",
+      "staatscourant": "31-10-2008/212 herplaatsing voor VWS (voor VWA) Stcrt. Nr. 219",
+      "opmerking": ""
+    },
+    {
+      "code": "VOORVWAVOEDA-2008",
+      "titel": "Voeding en productveiligheid",
+      "zorgdrager": "LNV (voor VWA)",
+      "beschikking": "C/S&A/08/2187",
+      "staatscourant": "31-10-2008/403",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "VOORVWAVOEDB-2008",
+      "titel": "Voeding en productveiligheid",
+      "zorgdrager": "VWS (voor VWA)",
+      "beschikking": "C/S&A/08/2188",
+      "staatscourant": "11-11-2008/415",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "COORDINATIB-2008",
+      "titel": "Coördinatie, handhaving en crisisbeheersing",
+      "zorgdrager": "Dienst Landbouwkundig Onderzoek",
+      "beschikking": "C/S&A/08/1970",
+      "staatscourant": "22-10-2008/265",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "GEZONDHEID-2009",
+      "titel": "Gezondheid en welzijn van dieren",
+      "zorgdrager": "SRGN/SEVHKB",
+      "beschikking": "18-12-2008",
+      "staatscourant": "13-01-2009/7",
+      "opmerking": ""
+    },
+    {
+      "code": "CFI-2009",
+      "titel": "Onderwijs",
+      "zorgdrager": "CFI",
+      "beschikking": "15-12-2008",
+      "staatscourant": "21-01-2009/13",
+      "opmerking": ""
+    },
+    {
+      "code": "EZ-2009",
+      "titel": "algemeen wetenschappelijke voorbereiding regeringsbeleid",
+      "zorgdrager": "Centraal Plan Bureau (EZ)",
+      "beschikking": "C/S&A/09/325",
+      "staatscourant": "12-03-2009/49",
+      "opmerking": ""
+    },
+    {
+      "code": "TELECOMMUN-2009",
+      "titel": "Telecommunicatie en Post",
+      "zorgdrager": "EZ/V&W/AZ/BZK/BuZa/DEF/JUS/OCW/VWS",
+      "beschikking": "C/S&A/09/201C/S&A/09/203 C/S&A/09/197 C/S&A/09/198 C/S&A/09/199 C/S&A/09/200 C/S&A/09/202 C/S&A/09/203 C/S&A/09/182",
+      "staatscourant": "11-03-2009/43, 48,68 08-05-2009",
+      "opmerking": ""
+    },
+    {
+      "code": "SIEV-2009",
+      "titel": "Goederenvervoer",
+      "zorgdrager": "Stichting Inschrijving Eigen Vervoer",
+      "beschikking": "C/S&A/09/152",
+      "staatscourant": "1 7-02-2009/32",
+      "opmerking": ""
+    },
+    {
+      "code": "MILIEUBEHE-2009",
+      "titel": "Milieubeheer Milieubeheer",
+      "zorgdrager": "VROM/AZ/BZK/BuZa/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VWS",
+      "beschikking": "C/S&A/09/817 C/S&A/09/818 C/S&A/09/819 C/S&A/09/815 C/S&A/09/820 C/S&A/09/821 C/S&A/09/822 C/S&A/09/824 C/S&A/09/825 C/S&A/09/816 C/S&A/09/814 C/S&A/09/826 C/S&A/09/823",
+      "staatscourant": "24-04-2009/78",
+      "opmerking": ""
+    },
+    {
+      "code": "BFT-2009",
+      "titel": "deelbeleidsterreinen Notariaat (over de periode vanaf 1999), de Gerechtsdeurwaarders (over de periode vanaf 2001)",
+      "zorgdrager": "Bureau Financieel Toezicht",
+      "beschikking": "C/S&A/09/329",
+      "staatscourant": "08-04-2009/68",
+      "opmerking": ""
+    },
+    {
+      "code": "COORDINATI-2009",
+      "titel": "Coordinatie Algemeen Regeringsbeleid",
+      "zorgdrager": "AZ/BZK/BuZa/DEF/EZ/FIN/JUS/LNV/OCW/SZW/V&W/VWS/VROM",
+      "beschikking": "NA/09/448 NA/09/449 NA/09/450 NA/09/451 NA/09/452 NA/09/453 NA/09/454 NA/09/455 NA/09/456 NA/09/547 NA/09/458 NA/09/459 NA/09/460",
+      "staatscourant": "20-03-2009/53",
+      "opmerking": ""
+    },
+    {
+      "code": "IGZ-2009",
+      "titel": "toezicht op de volksgezondheid en de gezondheidszorg in de periode 1945-heden",
+      "zorgdrager": "Inspectie Gezondheidszorg",
+      "beschikking": "",
+      "staatscourant": "2009/41",
+      "opmerking": ""
+    },
+    {
+      "code": "MEDISCHE-2009",
+      "titel": "Medische Beroepen en Opleidingen, 1945-",
+      "zorgdrager": "JUS/VWS",
+      "beschikking": "C/S&A/09/321 C/S&A/09/323 C/S&A/09/844",
+      "staatscourant": "19-03-2009/54 24-04-2009/78",
+      "opmerking": ""
+    },
+    {
+      "code": "PDIREKT-2009",
+      "titel": "P-direkt, deelbeleidsterrein Personeelsdossiers, 1945-",
+      "zorgdrager": "Tweede Kamer der Staten-Generaal",
+      "beschikking": "KB 16 april 2009, nr. 09.001007",
+      "staatscourant": "2009/105",
+      "opmerking": ""
+    },
+    {
+      "code": "NLPVF-2009",
+      "titel": "Stichting Nederlands Literair Productie en Vertalingenfonds, 1990-",
+      "zorgdrager": "Stichting Nederlands Literair Productie- en Vertalingenfonds",
+      "beschikking": "C/S&A/09/857",
+      "staatscourant": "2009/106",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSBIJS-2009",
+      "titel": "De raden voor rechtsbijstand periode 1974-",
+      "zorgdrager": "De raden voor rechtsbijstand",
+      "beschikking": "C/S&A/09/1500",
+      "staatscourant": "2009/106",
+      "opmerking": ""
+    },
+    {
+      "code": "BUITENLAND-2009",
+      "titel": "Het Nederlands Buitenlands Beleid in de periode 1990 –",
+      "zorgdrager": "BuZA/Ontwikkelingsamenwerki ng",
+      "beschikking": "NA/09/1695",
+      "staatscourant": "2009/10333",
+      "opmerking": ""
+    },
+    {
+      "code": "KNMG-2009",
+      "titel": "Koninklijke Nederlandsche Maatschappij ter bevordering der Geneeskunst (KNMG) over periode vanaf 1932",
+      "zorgdrager": "KNMG",
+      "beschikking": "NA/S&B/09/20245",
+      "staatscourant": "2009/11265",
+      "opmerking": ""
+    },
+    {
+      "code": "WATERSTAAT-2009",
+      "titel": "Waterstaat vanaf 2009-",
+      "zorgdrager": "V&W, VROM, OCW en SZW",
+      "beschikking": "NA/09/1198 NA/09/1999 NA/09/1997 NA/09/2000",
+      "staatscourant": "2009/11915-11917-11885-11911",
+      "opmerking": ""
+    },
+    {
+      "code": "UNIV-2009",
+      "titel": "Universiteiten vanaf 1985-",
+      "zorgdrager": "UvA/TUEindhoven/RUG/UM/UT/UU/WU/TUDelft/EUR/UL/Radboud UN/UT/VU",
+      "beschikking": "NA/09/2416 NA/09/2409 NA/09/2417 NA/09/2411 NA/09/2414 NA/09/2412 NA/09/2413 NA/09/2415 NA/09/2407 NA/09/2410 NA/09/2408 NA/09/2418 NA/09/2419",
+      "staatscourant": "26-8-2009/12639 12650 12649 12657 12661 12665 12669 12643 12646 12651 12656 12664 12670",
+      "opmerking": ""
+    },
+    {
+      "code": "ZON-2009",
+      "titel": "Zorgonderzoek Nederland 1995-2001",
+      "zorgdrager": "Zon",
+      "beschikking": "NA/09/2684",
+      "staatscourant": "6-10-2009/14999",
+      "opmerking": ""
+    },
+    {
+      "code": "ZONMW-2009",
+      "titel": "Zorgonderzoek Nederland Medische Wetenschappen 2001-",
+      "zorgdrager": "ZonMw",
+      "beschikking": "NA/09/15006",
+      "staatscourant": "6-10-2009/15006",
+      "opmerking": ""
+    },
+    {
+      "code": "MEDIAFONDS-2009",
+      "titel": "Stimuleringsfonds Nederlandse Culturele Mediaproducties vanaf 1988",
+      "zorgdrager": "Mediafonds",
+      "beschikking": "NA/09/2832",
+      "staatscourant": "19-10-2009/15599",
+      "opmerking": ""
+    },
+    {
+      "code": "STE-2009",
+      "titel": "Selectielijst van de Stichting Toezicht Effectenverkeer op het beleidsterrein Regulering & Toezicht bank- en kredietwezen over de periode 1992-2002",
+      "zorgdrager": "Stichting Toezicht Effectenverkeer",
+      "beschikking": "NA/09/2920",
+      "staatscourant": "27-10-2009/16072",
+      "opmerking": ""
+    },
+    {
+      "code": "JUS-2009",
+      "titel": "Selectielijst, ingediend door het ministerie van Justitie voor de neerslag van de handelingen van het Nederlands Forensisch Instituut over de periode vanaf 1945.",
+      "zorgdrager": "JUS",
+      "beschikking": "NA/09/3018",
+      "staatscourant": "16-11-2009/17122",
+      "opmerking": ""
+    },
+    {
+      "code": "OCW-2009",
+      "titel": "Selectielijst, ingediend door de minister van Onderwijs, Wetenschap en Cultuur voor de neerslag van handelingen van het Rijksmuseum over de periode 1946 – 1995",
+      "zorgdrager": "OCW",
+      "beschikking": "NA/09/3316",
+      "staatscourant": "7-12-2009/18637",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2009",
+      "titel": "Selectielijst, ingediend door Minister van Defensie en de onder zijn zorg ressorterende actoren op het beleidsterrein toelating vreemdelingen over de periode vanaf 1945 (actualisatie).",
+      "zorgdrager": "DEF",
+      "beschikking": "NA/09/2496",
+      "staatscourant": "20-11-2009/17682",
+      "opmerking": ""
+    },
+    {
+      "code": "SVP-2010",
+      "titel": "Selectielijst, ingediend door het Stimuleringsfonds voor de pers voor de neerslag van het Stimuleringsfonds voor de pers (voorheen het Bedrijfsfonds voor de pers) op het beleidsterrein Media, Letteren en Bibliotheken over de periode vanaf 1974",
+      "zorgdrager": "Stimuleringsfonds voor de Pers",
+      "beschikking": "NA/09/3561",
+      "staatscourant": "6-1-2010/60",
+      "opmerking": ""
+    },
+    {
+      "code": "EXIM-2010",
+      "titel": "Selectielijst, ingediend door de Nederlandse Bank voor de neerslag van de Nederlandse Bank en de onder haar zorg vallende actoren, de Rijkscommissie Export-, import- en investeringsgaranties en de Dagelijkse Commissie op het beleidsterrein: Herverzekering van export- en importkredieten en investeringsgaranties over de periode 1922-2008",
+      "zorgdrager": "DNB (EXIM)",
+      "beschikking": "NA/09/3562",
+      "staatscourant": "11-1-2010/129",
+      "opmerking": ""
+    },
+    {
+      "code": "PVK-2010",
+      "titel": "Selectielijst, ingediend door de Nederlandse Bank voor de neerslag van de (Stichting Pensioen en) Verzekeringskamer (PKV) over de periode 1923 – 2004",
+      "zorgdrager": "DNB (PVK)",
+      "beschikking": "NA/09/3563",
+      "staatscourant": "11-1-2010/130",
+      "opmerking": ""
+    },
+    {
+      "code": "KBVG-2010",
+      "titel": "Selectielijst, ingediend door de Koninklijke Beroepsorganisatie van Gerechtsdeurwaarders voor de neerslag van de KBvG over de periode vanaf 2001-",
+      "zorgdrager": "Koninklijke Beroepsorganisatie van Gerechtsdeurwaarders (KBvG)",
+      "beschikking": "NA/10/3671",
+      "staatscourant": "25-1-2010/1007",
+      "opmerking": ""
+    },
+    {
+      "code": "TOELATING-2010",
+      "titel": "Selectielijst, ingediend door de ministeries van Justitie, Binnenlandse Zaken en Koninkrijksrelaties, Buitenlandse Zaken, Economische Zaken, Onderwijs, Cultuur en Wetenschap, Volksgezondheid, Welzijn en Sport en Sociale Zaken en Werkgelegenheid voor de neerslag van de onder hen ressorterende actoren op het beleidsterrein toelating vreemdelingen over de periode vanaf 1945 (actualisatie).",
+      "zorgdrager": "JUS/BZK/BUZA/OCW/SZW/VWS/EZ",
+      "beschikking": "NA/09/3091 NA/09/3092 NA/09/3093 NA/09/3095 NA/09/3098 NA/09/3097 NA/09/3094",
+      "staatscourant": "9-2-2010/1754 9-2-2010/1759 9-2-2010/1751 9-2-2010/1738 9-2-2010/1750 9-2-2010/1736 9-2-2010/1756",
+      "opmerking": ""
+    },
+    {
+      "code": "VOLKSHUISV-2010",
+      "titel": "Selectielijst, ingediend door de ministers van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer en Landbouw, Natuurbeheer en Voedselkwaliteit voor de neerslag van de handelingen van de betrokken zorgdragers op het beleidterrein Volkshuisvesting over de periode vanaf 2009-",
+      "zorgdrager": "VROM/LNV",
+      "beschikking": "NA/09/3312 NA/09/3314",
+      "staatscourant": "9-2-2010/1864 9-2-2010/1813",
+      "opmerking": ""
+    },
+    {
+      "code": "BANK-2010",
+      "titel": "Selectielijst, ingediend door de Nederlandse Bank voor de neerslag van de Nederlandse Bank en de onder haar zorg vallende actoren, de Stichting Beleggerscompensatiefonds op de beleidsterreinen toezicht op het kredietwezen, het effectenverkeer, de regeling en het besluit particuliere participatiemaatschappijen en het bevorderen van de integriteit van het financiële stelsel over de periode vanaf 1952",
+      "zorgdrager": "DNB (Stichting Beleggerscompensatiefo nds",
+      "beschikking": "NA/10/4409",
+      "staatscourant": "19-4-2010/5874",
+      "opmerking": ""
+    },
+    {
+      "code": "LBIO-2010",
+      "titel": "Selectielijst, ingediend door het Landelijk Bureau Inning Onderhoudsbijdragen (LBIO) voor de neerslag van het LBIO over de periode vanaf 1993",
+      "zorgdrager": "LBIO",
+      "beschikking": "NA/10/4441",
+      "staatscourant": "19-4-2010/5876",
+      "opmerking": ""
+    },
+    {
+      "code": "AFM-2010",
+      "titel": "Selectielijst, ingediend door de Stichting Autoriteit Financiële Markten voor de neerslag van de Stichting Autoriteit Financiële Markten op het beleidsterrein regulering en toezicht bank- en kredietwezen voor de periode vanaf 2002",
+      "zorgdrager": "AFM",
+      "beschikking": "NA/10/4422",
+      "staatscourant": "19-4-2010/5877",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-2010",
+      "titel": "Selectielijst, ingediend door de minister van Financiën voor de Belastingdienst op het terrein Douane over de periode vanaf 1996",
+      "zorgdrager": "FIN",
+      "beschikking": "NA/10/4408",
+      "staatscourant": "3-5-2010/6684",
+      "opmerking": ""
+    },
+    {
+      "code": "KVKS-2010",
+      "titel": "Selectielijst, ingediend door de Kamers van Koophandel en Fabrieken Nederland in dezen optredend als gemandateerde van de Kamers van Koophandel en Fabrieken, voor de neerslag van de Kamers van Koophandel en Fabrieken over de periode vanaf 1945",
+      "zorgdrager": "KVKs",
+      "beschikking": "NA/10/6572",
+      "staatscourant": "21-12-2010/20483",
+      "opmerking": ""
+    },
+    {
+      "code": "FCP-2010",
+      "titel": "Selectielijst, ingediend door de Stichting Fonds voor Cultuurparticipatie voor de neerslag van de Stichting Fonds voor Cultuurparticipatie over de periode vanaf 2008",
+      "zorgdrager": "FCP",
+      "beschikking": "NA/10/6575",
+      "staatscourant": "21-12-2010/20486",
+      "opmerking": ""
+    },
+    {
+      "code": "NFPK-2010",
+      "titel": "Selectielijst, ingediend door het Nederlands Fonds voor de Podiumkunsten+ voor de neerslag van het Nederlandse Fonds voor de Podiumkunsten+ voor Cultuurparticipatie over de periode vanaf 2007",
+      "zorgdrager": "NFPK+",
+      "beschikking": "NA/10/6576",
+      "staatscourant": "21-12-2010/20485",
+      "opmerking": ""
+    },
+    {
+      "code": "OOG-2010",
+      "titel": "Selectielijst, ingediend door de Orde van Octrooigemachtigden voor de neerslag van de Orde van Octrooigemachtigden over de periode vanaf 1936",
+      "zorgdrager": "OOG",
+      "beschikking": "NA/10/6574",
+      "staatscourant": "21-12-2010/20489",
+      "opmerking": ""
+    },
+    {
+      "code": "NCDO-2011",
+      "titel": "Selectielijst, ingediend door de Nationale Commissie voor internationale samenwerking en duurzame ontwikkeling voor de neerslag van de Nationale Commissie voor internationale samenwerking en duurzame ontwikkeling op het beleidsterrein ontwikkelingssamenwerking over de periode vanaf 1996",
+      "zorgdrager": "NCDO",
+      "beschikking": "NA/10/6.357",
+      "staatscourant": "11-01-2011/339",
+      "opmerking": ""
+    },
+    {
+      "code": "NZA-2011",
+      "titel": "Selectielijst, ingediend door de Nederlandse Zorgautoriteit voor de neerslag van de Nederlandse Zorgautoriteit en haar rechtsvoorgangers op het beleidsterrein toezicht en regulering in de gezondheidszorg over de periode vanaf 1949.",
+      "zorgdrager": "Nza",
+      "beschikking": "NA/10/6723",
+      "staatscourant": "17-01-2011/659",
+      "opmerking": ""
+    },
+    {
+      "code": "CBZ-2011",
+      "titel": "Selectielijst, ingediend door het College Bouw Zorginstellingen voor de neerslag van het College Bouw Zorginstellingen over de periode 2000 tot en met 2010.",
+      "zorgdrager": "CBZ",
+      "beschikking": "NA/2011/7131",
+      "staatscourant": "09-03-2011/4090",
+      "opmerking": ""
+    },
+    {
+      "code": "NPO-2011",
+      "titel": "Selectielijst, ingediend door de Nederlandse Publieke Omroep voor de neerslag van de Nederlandse Publieke Omroep voor de periode vanaf 1969-",
+      "zorgdrager": "NPO",
+      "beschikking": "NA/2011/7541",
+      "staatscourant": "06-05-2011/7817",
+      "opmerking": ""
+    },
+    {
+      "code": "RWI-2011",
+      "titel": "Selectielijst, ingediend door de Raad voor Werk en Inkomen voor de neerslag van de Raad voor Werk en Inkomen Rijksgebouwendienst op het PIOFACH terrein voor de periode vanaf 2002-",
+      "zorgdrager": "RWI",
+      "beschikking": "NA/2011/7542",
+      "staatscourant": "06-05-2011/7818",
+      "opmerking": ""
+    },
+    {
+      "code": "KB-2011",
+      "titel": "Selectielijst, ingediend door de Koninklijke Bibliotheek voor de neerslag van de Koninklijke Bibliotheek voor de periode vanaf 1945-",
+      "zorgdrager": "KB",
+      "beschikking": "NA/2011/7762",
+      "staatscourant": "26-05-2011/8814",
+      "opmerking": ""
+    },
+    {
+      "code": "NIFV-2011",
+      "titel": "Selectielijst, ingediend door het Nederlands Instituut voor Fysieke Veiligheid voor de neerslag van het Nederlands Instituut voor Fysieke Veiligheid en taakvoorganger, voor de periode vanaf 1996-",
+      "zorgdrager": "NIFV",
+      "beschikking": "NA/2011/7763",
+      "staatscourant": "26-05-2011/8815",
+      "opmerking": ""
+    },
+    {
+      "code": "DLO-2011",
+      "titel": "Selectielijst, ingediend door de Stichting Dienst Landbouwkundig Onderzoek (middels de Wageningen Universiteit en Researchcentrum) voor de neerslag van de Stichting Dienst Landbouwkundig Onderzoek voor de periode vanaf 1999-",
+      "zorgdrager": "DLO",
+      "beschikking": "NA/2011/7776",
+      "staatscourant": "26-05-2011/9083",
+      "opmerking": ""
+    },
+    {
+      "code": "RGD-2011",
+      "titel": "Selectielijst, ingediend door het Ministerie van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer (VROM) voor de neerslag van de Rijksgebouwendienst op het beleidsterrein rijkshuisvesting voor de periode vanaf 2010-",
+      "zorgdrager": "RGD",
+      "beschikking": "NA/2011/7586",
+      "staatscourant": "15-06-2011/10300",
+      "opmerking": ""
+    },
+    {
+      "code": "SKAL-2011",
+      "titel": "Selectielijst, ingediend door de Stichting Skal voor de neerslag van de Stichting Skal en haar rechtsvoorgangers op het beleidsterrein Landbouwkwaliteit en voedselveiligheid en kwaliteit van het uitgangsmateriaal, voor de periode vanaf 1985-",
+      "zorgdrager": "Stichting Skal",
+      "beschikking": "NA/2011/7984",
+      "staatscourant": "07-07-2011/12146",
+      "opmerking": ""
+    },
+    {
+      "code": "OPTA-2011",
+      "titel": "Selectielijst, ingediend door de Onafhankelijke Post en Telecommunicatie Autoriteit voor de neerslag van de Onafhankelijke Post en Telecommunicatie Autoriteit voor de periode vanaf 1997 –",
+      "zorgdrager": "OPTA",
+      "beschikking": "NA/2011/7349",
+      "staatscourant": "11-07-2011/12333",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2011",
+      "titel": "Algemeen Wetenschappelijke Voorbereiding Regeringsbeleid",
+      "zorgdrager": "VWS",
+      "beschikking": "NA/11/8122",
+      "staatscourant": "19-08-2011/15086",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTERLIJ-2011",
+      "titel": "Rechterlijke macht",
+      "zorgdrager": "5 Gerechtshoven/19 Rechtbanken",
+      "beschikking": "NA/11/8044",
+      "staatscourant": "23-09-2011/17020",
+      "opmerking": ""
+    },
+    {
+      "code": "RVS-2011",
+      "titel": "Bestuursrechtspraak en algemene bedrijfsvoering",
+      "zorgdrager": "RvS",
+      "beschikking": "KB/14/11/2011 nr.11.002711",
+      "staatscourant": "1-12-2011/21590",
+      "opmerking": ""
+    },
+    {
+      "code": "WS-2011",
+      "titel": "Selectielijst, ingediend door de Unie van Waterschappen voor de neerslag van de Waterschappen voor de periode vanaf 2012 –",
+      "zorgdrager": "Unie van Waterschappen",
+      "beschikking": "NA/11/8858",
+      "staatscourant": "7-12-2011/22255",
+      "opmerking": ""
+    },
+    {
+      "code": "SAXION-2011",
+      "titel": "Selectielijst, ingediend door het College van Bestuur Stichting Saxion voor wat betreft de werkprocessen van Stichting Saxion en taakvoorganger Hogeschool Enschede over de periode vanaf 30 december 1988 –",
+      "zorgdrager": "Stichting Saxion",
+      "beschikking": "NA/11/8853",
+      "staatscourant": "9-12-2011/22231",
+      "opmerking": ""
+    },
+    {
+      "code": "VJ-2011",
+      "titel": "Selectielijst, ingediend door het Ministerie van Veiligheid en Justitie voor de administratieve neerslag van het handelen van het Centraal Justitieel Incasso Bureau (CJIB) over de periode vanaf 1990 –",
+      "zorgdrager": "V&J",
+      "beschikking": "NA/11/8808",
+      "staatscourant": "16-12-2011/22764",
+      "opmerking": ""
+    },
+    {
+      "code": "OCW-2012",
+      "titel": "Selectielijst, ingediend door het Ministerie van Onderwijs, Cultuur en Wetenschap voor de neerslag op het beleidsterrein Monumentenzorg, (actualisatie) over de periode vanaf 1945 –",
+      "zorgdrager": "OC&W",
+      "beschikking": "NA/2011/8861",
+      "staatscourant": "4-1-2012/117",
+      "opmerking": ""
+    },
+    {
+      "code": "RDW-2012",
+      "titel": "Selectielijst, ingediend door de Rijksdienst voor Wegverkeer (RDW) voor de neerslag van de handelingen de Rijksdienst voor Wegverkeer over de periode vanaf 1996 –",
+      "zorgdrager": "RDW",
+      "beschikking": "NA/2011/8957",
+      "staatscourant": "9-1-2012/150",
+      "opmerking": ""
+    },
+    {
+      "code": "PVIS-2012",
+      "titel": "Selectielijst, ingediend door de Productschap Vis voor de neerslag van de archiefbescheiden van het Productschap Vis over de periode vanaf 1956 –",
+      "zorgdrager": "Pvis",
+      "beschikking": "NA/2011/8959",
+      "staatscourant": "18-1-2012/924",
+      "opmerking": ""
+    },
+    {
+      "code": "HUURCOMMISSI-2012",
+      "titel": "Selectielijst, ingediend door het Ministerie van Binnenlandse Zaken en Koninkrijksrelaties voor de neerslag van de Huurcommissie op het beleidsterrein Wonen (Volkshuisvestiging) over de periode vanaf 2009 –",
+      "zorgdrager": "BZK (Huurcommissie)",
+      "beschikking": "NA/2012/8862",
+      "staatscourant": "25-1-2012/1326",
+      "opmerking": ""
+    },
+    {
+      "code": "BELASTING-2012",
+      "titel": "Selectielijst, ingediend door het Ministerie van Financiën, voor de administratieve neerslag voor wat betreft de werkprocessen van Belastingdienst, voor het onderdeel Belastingregio’s (fiscale processen), over de periode vanaf 2007 –",
+      "zorgdrager": "FIN (Belastingdienst)",
+      "beschikking": "NA/12/8962",
+      "staatscourant": "21-2-2012/3159",
+      "opmerking": ""
+    },
+    {
+      "code": "KCB-2012",
+      "titel": "Selectielijst, ingediend door het Kwaliteits Controle Bureau voor de neerslag van het Kwaliteits Controle Bureau over de periode vanaf 1977 –",
+      "zorgdrager": "KCB",
+      "beschikking": "NA/12/8998",
+      "staatscourant": "5-3-2012/4152",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZA-2012",
+      "titel": "Selectielijst voor de neerslag van organisatieonderdelen van het Ministerie van Buitenlandse Zaken die belast zijn met de bedrijfsvoering van het departement 1985 – 2010",
+      "zorgdrager": "BuZa",
+      "beschikking": "NA/12/8964",
+      "staatscourant": "8-3-2012/4381",
+      "opmerking": ""
+    },
+    {
+      "code": "KIWA-2012",
+      "titel": "Selectielijst, ingediend door Kiwa N.V., voor de neerslag van de handelingen per werkterrein, waarvoor Kiwa N.V. door de overheid is gemandateerd, over de periode vanaf 1996 –",
+      "zorgdrager": "KIWA",
+      "beschikking": "NA/2012/9320",
+      "staatscourant": "3-4-2012/6438",
+      "opmerking": ""
+    },
+    {
+      "code": "POLAC-2012",
+      "titel": "Selectielijst, ingediend door de Politieacademie voor de neerslag van de Politieacademie en rechtsvoorganger op het beleidsterrein Politie over de periode vanaf 1992 –",
+      "zorgdrager": "Politieacademie",
+      "beschikking": "NA/2012/9321",
+      "staatscourant": "3-4-2012/6440",
+      "opmerking": ""
+    },
+    {
+      "code": "NVAO-2012",
+      "titel": "Selectielijst, ingediend door de Nederlands-Vlaamse Accreditatieorganisatie voor de neerslag van de Nederlands-Vlaams Accreditatieorganisatie en diens taakvoorganger de Nederlandse Accreditatieorganisatie over de periode vanaf 2002 –",
+      "zorgdrager": "NVAO",
+      "beschikking": "NA/2012/9648",
+      "staatscourant": "23 april 2012/7827",
+      "opmerking": ""
+    },
+    {
+      "code": "GEM-2012",
+      "titel": "Gemeentelijke en intergemeentelijke organen",
+      "zorgdrager": "VNG",
+      "beschikking": "NA/2012/3900 (21-06-12)",
+      "staatscourant": "25-06-12/11906",
+      "opmerking": ""
+    },
+    {
+      "code": "PRORAIL-2012",
+      "titel": "ProRail",
+      "zorgdrager": "ProRail",
+      "beschikking": "NA/12/9546 (07-06-2012)",
+      "staatscourant": "21-06-12/12304",
+      "opmerking": ""
+    },
+    {
+      "code": "VJ-2012",
+      "titel": "Selectielijst, ingediend door het Ministerie van Veiligheid en Justitie, voor de neerslag van de handelingen van het Ministerie van Veiligheid en Justitie en diens taakvoorganger Ministerie van Justitie, op het beleidsterrein Toezicht Rechtspersonen, over de periode vanaf 1945-",
+      "zorgdrager": "V&J",
+      "beschikking": "NA/2012/9541",
+      "staatscourant": "02-07-12/13216",
+      "opmerking": ""
+    },
+    {
+      "code": "METCS-2012",
+      "titel": "BSD, voor de neerslag van de handelingen van Medisch Ethische Toetsingscommissies (METC’s) van algemene ziekenhuizen en zelfstandige stichtingen in Nederland en de Vrije Universiteit te Amsterdam, over de periode vanaf 1999",
+      "zorgdrager": "METC’s",
+      "beschikking": "NA/2012/10.505",
+      "staatscourant": "23-10-12/21758",
+      "opmerking": ""
+    },
+    {
+      "code": "NOVA-2012",
+      "titel": "Selectielijst (actualisatie), ingediend door de Nederlandse Orde van Advocaten namens de Algemene Raad van de Nederlandse Orde van Advocaten en de Raden van Toezicht van de 19 orde van Advocaten in de arrondissement, voor de archiefbescheiden van Algemene Raad van de Nederlandse orde van Advocaten en de Raden van de Orden van Advocaten in de Arrondissementen, over de periode vanaf 1952-",
+      "zorgdrager": "Nederlandse Orde van Advocaten",
+      "beschikking": "NA/2012/8813",
+      "staatscourant": "26-10-12/21783",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2012",
+      "titel": "Selectielijst, ingediend door de minister van Volksgezondheid, Welzijn en Sport, voor de neerslag van de handelingen van het Klantenloket EPD, zoals uitgevoerd door Nictiz (Stichting Nationaal ICT Instituut in de zorg), over de periode 2008-2011",
+      "zorgdrager": "VWS",
+      "beschikking": "NA/2012/10.509",
+      "staatscourant": "02-11-12/22256",
+      "opmerking": ""
+    },
+    {
+      "code": "NAKTUINBOUW-2012",
+      "titel": "Selectielijst, ingediend door de Nederlandse Algemene Kwaliteitsdienst Tuinbouw (Naktuinbouw), voor de neerslag van de handelingen van Naktuinbouw en haar rechtsvoorgangers (NAKG, NAKB, NAKS), over de periode vanaf (1941) 1966-",
+      "zorgdrager": "NAKtuinbouw",
+      "beschikking": "NA/2012/10.498",
+      "staatscourant": "07-11-12/22841",
+      "opmerking": ""
+    },
+    {
+      "code": "RHC-2012",
+      "titel": "Selectielijst, ingediend door de werkgroep Selectielijst Regionaal Historische Centra, voor archiefbescheiden van Regionaal Historisch Centra met de provincie als werkgebied, over de periode vanaf 1 mei 1998 –",
+      "zorgdrager": "RHC’s",
+      "beschikking": "NA/2012/8812",
+      "staatscourant": "09-11-12/22829",
+      "opmerking": ""
+    },
+    {
+      "code": "HOGERAAD-2012",
+      "titel": "Selectielijst, ingediend door de Hoge Raad der Nederlanden, voor de archiefbescheiden van de Hoge Raad op het beleidsterrein rechterlijke macht, over de periode vanaf 1945-",
+      "zorgdrager": "V&J (Hoge Raad)",
+      "beschikking": "NA/2012/10.355",
+      "staatscourant": "10-12-12/25306",
+      "opmerking": ""
+    },
+    {
+      "code": "BFT-2012",
+      "titel": "BSD, ingediend door het Bureau Financieel Toezicht (BFT) en de Commissie van deskundigen Gerechtsdeurwaarders en de Commissie van deskundigen Notarissen, voor de neerslag van de handelingen van het Bureau Financieel Toezicht (BFT) en de Commissie van Deskundigen op de deelbeleidsterreinen: a. Integraal toezicht op de notarissen, toegevoegd notarissen en kandidaat-notarissen (financieel toezicht over de periode vanaf 1999, kwaliteits- en integriteitstoezicht over de periode vanaf 2013), b. financieel toezicht op gerechtsdeurwaarders en kandidaat-gerechtsdeurwaarders over de periode vanaf 2001, en c. toezicht op notarissen, toegevoegd notarissen, kandidaat-notarissen, accountants, belastingadviseurs, bedrijfseconomische adviseurs en onafhankelijke juridische adviseurs ten aanzien van de naleving van de Wet ter voorkoming van witwassen en financieren van terrorisme over de periode vanaf 2003.",
+      "zorgdrager": "BFT",
+      "beschikking": "NA/2012/11057",
+      "staatscourant": "21-12-12/26590",
+      "opmerking": ""
+    },
+    {
+      "code": "BOSSCHAP-2013",
+      "titel": "Selectielijsten, ingediend door het Bosschap, voor de neerslag van de handelingen van het Bosschap, over de periode vanaf 2009-",
+      "zorgdrager": "Bosschap",
+      "beschikking": "NA/2012/11.270",
+      "staatscourant": "29-01-2013/1885",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2013",
+      "titel": "Selectielijst (actualisatie), ingediend door de minister van Volksgezondheid, Welzijn en Sport, voor de neerslag van de handelingen van het Ministerie van VWS op het beleidsterrein Planning van voorzieningen in de gezondheidszorg, over de periode vanaf 1945-",
+      "zorgdrager": "VWS",
+      "beschikking": "NA/2012/11.272",
+      "staatscourant": "11-02-2013/3105",
+      "opmerking": ""
+    },
+    {
+      "code": "CPE-2013",
+      "titel": "Selectielijst, ingediend door het Controlebureau voor Pluimvee, Eieren en Eiproducten (CPE), voor de neerslag van de handelingen van het CPE, over de periode 1988 – 1 juli 2012",
+      "zorgdrager": "CPE",
+      "beschikking": "NA/2012/11.281",
+      "staatscourant": "15-2-2013/3763",
+      "opmerking": ""
+    },
+    {
+      "code": "UMC-2013",
+      "titel": "Selectielijsten (actualisatie), voor de neerslag van de handelingen van de Openbare en Bijzondere Universitaire Medische Centra (UMC), alsmede de bij de UMC geplaatste Medisch-Ethische Toetsingscommissies (METC’s), over de periode vanaf 1985",
+      "zorgdrager": "UMC METC’s",
+      "beschikking": "NA/2012/11.274",
+      "staatscourant": "22-2-2013/4469",
+      "opmerking": ""
+    },
+    {
+      "code": "WRR-2013",
+      "titel": "Selectielijst, ingediend door de Wetenschappelijke Raad voor het Regeringsbeleid (WRR), voor de archiefbescheiden van de Wetenschappelijke Raad voor het Regeringsbeleid op het beleidsterrein algemene wetenschappelijke beleidsvoorbereiding, over de periode vanaf 2012",
+      "zorgdrager": "WRR",
+      "beschikking": "NA/2013/11.287",
+      "staatscourant": "10-4-2013/9246",
+      "opmerking": ""
+    },
+    {
+      "code": "PZ-2013",
+      "titel": "Selectielijst, ingediend door het Productschap Zuivel, voor de neerslag van de handelingen van het Productschap Zuivel, over de periode vanaf 2000",
+      "zorgdrager": "PZ",
+      "beschikking": "NA/2013/11.297",
+      "staatscourant": "18-4-2013/10326",
+      "opmerking": ""
+    },
+    {
+      "code": "HBO-2013",
+      "titel": "Selectielijst voor de administratieve neerslag van de openbaar gezagtaken van de bij de Vereniging van hogescholen aangesloten hogescholen: Amsterdamse Hogeschool voor de Kunsten, ArtEZ hogeschool voor de kunsten, Avans Hogeschool, Aeres Groep (CAH Vilentum en Stoas Vilentum), Christelijke Hogeschool Ede, Christelijke Hogeschool Windesheim, Codarts Rotterdam, De Haagse Hogeschool, Design Academy Eindhoven, Driestar Hogeschool, Fontys Hogescholen, Gereformeerde Hogeschool, Gerrit Rietveld Academie, Hanzehogeschool Groningen, HAS Den Bosch, Hogeschool van Arnhem en Nijmegen, Hogeschool de Kempel, Hogeschool der Kunsten Den Haag, Hogeschool Inholland, Hogeschool iPabo, Hogeschool Leiden (inclusief Hogeschool Helicon), Hogeschool Rotterdam, Hogeschool Utrecht, Hogeschool van Amsterdam, Hogeschool Van Hall Larenstein, Hogeschool voor de Kunsten Utrecht, Hotelschool Den Haag, HZ University of Applied Sciences, Iselinge Hogeschool, Katholieke Pabo Zwolle, Marnix Academie, NHL Hogeschool, NHTV internationaal hoger onderwijs Breda, Saxion (inclusief Hogeschool Edith Stein), Stenden Hogeschool, Zuyd Hogeschool, over de periode vanaf 8 oktober 1992.",
+      "zorgdrager": "Hogescholen",
+      "beschikking": "NA/2013/11.304",
+      "staatscourant": "27-5-2013/14186",
+      "opmerking": ""
+    },
+    {
+      "code": "SAB-2013",
+      "titel": "Selectielijst, ingediend door de Stichting Afvalstoffen & Vaardocumenten Binnenvaart, voor de administratieve neerslag van de Stichting Afvalstoffen & Vaardocumenten Binnenvaart, over de periode vanaf 1993",
+      "zorgdrager": "SAB",
+      "beschikking": "NA/2013/11.953",
+      "staatscourant": "20-8-2013/23204",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-2013",
+      "titel": "Selectielijst, ingediend door de Minister van Financiën, voor de administratieve neerslag van de primaire werkprocessen van Belastingdienst/FIOD, over de periode vanaf 1945",
+      "zorgdrager": "FIN",
+      "beschikking": "NA/2013/11.952",
+      "staatscourant": "15-10-2013/28448",
+      "opmerking": ""
+    },
+    {
+      "code": "BHC-2013",
+      "titel": "Selectielijst, ingediend door het Bedrijfschap Horeca en Catering, voor de neerslag van de handelingen van het Bedrijfschap Horeca en Catering, over de periode vanaf 1954",
+      "zorgdrager": "BHC",
+      "beschikking": "NA/2013/12.300",
+      "staatscourant": "13-12-2013/34874",
+      "opmerking": ""
+    },
+    {
+      "code": "EK-2013",
+      "titel": "Selectielijst voor de Eerste Kamer der Staten-Generaal op het deelbeleidsterrein van personeelszaken, t.w. het personeelsdossier, over de periode vanaf 1946",
+      "zorgdrager": "Eerste Kamer der Staten-Generaal",
+      "beschikking": "KB/27/11/2013 nr. 2013002424",
+      "staatscourant": "31-12-2013/36674",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZABUITENLA-2013",
+      "titel": "Selectielijst, ingediend door de minister van Buitenlandse Zaken, van de archiefbescheiden op het beleidsterrein Nederlands Buitenlands Beleid, over de periode vanaf 1990",
+      "zorgdrager": "BuZa",
+      "beschikking": "NA/2013/12.299",
+      "staatscourant": "31-12-2013/36667",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "BUZABUITENLB-2013",
+      "titel": "Selectielijst, ingediend door de minister van Buitenlandse Zaken, van de archiefbescheiden op het beleidsterrein Buitenland, over de periode 1945-1990",
+      "zorgdrager": "BuZa",
+      "beschikking": "NA/2013/13.044",
+      "staatscourant": "31-12-2013/36665",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "BUZAONTWIKKE-2013",
+      "titel": "Selectielijst, ingediend door de minister van Buitenlandse Zaken, van de archiefbescheiden op het beleidsterrein Ontwikkelingssamenwerking, over de periode 1965-1990",
+      "zorgdrager": "BuZa",
+      "beschikking": "NA/2013/13.045",
+      "staatscourant": "31-12-2013/36668",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2014",
+      "titel": "Selectielijst, ingediend door het bestuur van het Interprovinciaal Overleg (IPO), voor archiefbescheiden van de provinciale organen ontvangen of opgemaakt vanaf 1 januari 2014",
+      "zorgdrager": "Gedeputeerde Staten",
+      "beschikking": "NA/2013/13.088",
+      "staatscourant": "17-01-2014/1042",
+      "opmerking": ""
+    },
+    {
+      "code": "PROVCDK-2014",
+      "titel": "Selectielijst voor archiefbescheiden van de Commissaris van de Koning als rijksorgaan, ontvangen of opgemaakt vanaf 1 januari 2014",
+      "zorgdrager": "Commissaris van de Koning als rijksorgaan",
+      "beschikking": "NA/2013/13.089",
+      "staatscourant": "17-01-2014/1050",
+      "opmerking": ""
+    },
+    {
+      "code": "PARTICIPATIE-2014",
+      "titel": "Selectielijst voor de neerslag van de handelingen van de Stichting Participatiefonds voor het onderwijs, over de periode vanaf 1995",
+      "zorgdrager": "Participatiefonds",
+      "beschikking": "NA/2014/13.074",
+      "staatscourant": "14-02-2014/4026",
+      "opmerking": ""
+    },
+    {
+      "code": "VERVANGINGSF-2014",
+      "titel": "Selectielijst voor de neerslag van de handelingen van de Stichting Vervangingsfonds en Bedrijfsgezondheidszorg voor het Onderwijs, over de periode vanaf 1992",
+      "zorgdrager": "Vervangingsfonds",
+      "beschikking": "NA/2014/13.075",
+      "staatscourant": "14-02-2014/4027",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2014",
+      "titel": "Generieke selectielijst voor de archiefbescheiden van het ministerie van Defensie vanaf 1945",
+      "zorgdrager": "DEF",
+      "beschikking": "NA/2014/13082",
+      "staatscourant": "05-03-2014/5937",
+      "opmerking": ""
+    },
+    {
+      "code": "BKD-2014",
+      "titel": "Selectielijst voor de documentaire neerslag van de Bloembollenkeuringsdienst (BKD), vanaf 1979",
+      "zorgdrager": "BKD",
+      "beschikking": "NA/2014/13977",
+      "staatscourant": "29-07-2014/21353",
+      "opmerking": ""
+    },
+    {
+      "code": "RIJKSMUSEA-2014",
+      "titel": "BSD, i ngediend door de Vereniging van Rijksmusea (VRM), voor de neerslag van de handelingen van de Rijksmuseale instellingen, voor de periode 1946-1995",
+      "zorgdrager": "Rijksmuseale instellingen",
+      "beschikking": "NA/2014/14285",
+      "staatscourant": "30-07-2014/21516",
+      "opmerking": ""
+    },
+    {
+      "code": "JEUGDZORG-2014",
+      "titel": "BSD, ingediend door Jeugdzorg Nederland, voor de neerslag van de handelingen van de Bureaus Jeugdzorg, voor de periode vanaf 1995",
+      "zorgdrager": "Bureaus Jeugdzorg",
+      "beschikking": "NA/2014/14284",
+      "staatscourant": "30-07-2014/21517",
+      "opmerking": ""
+    },
+    {
+      "code": "COA-2014",
+      "titel": "Selectielijst voor de neerslag van het handelen (de processen) van het COA, periode vanaf (2011)2013 en BSD (actualisatie) voor de administratieve neerslag van het handelen van het COA in de periode 1994 – (2010)2012’",
+      "zorgdrager": "COA",
+      "beschikking": "NA/2014/14088",
+      "staatscourant": "15-08-2014/23119",
+      "opmerking": ""
+    },
+    {
+      "code": "DNB-2014",
+      "titel": "Selectielijst voor de neerslag van het handelen van De Nederlandsche Bank met betrekking tot de inrichting en organisatie als centrale bank vanaf 1992, de monetaire autoriteit van 1992 tot 1999, op het beleidsterrein betalingsverkeer vanaf 1992, ten aanzie n van wetenschappelijk onderzoek vanaf 1983 en statistiek vanaf 1992, en van het handelen van de Bankraad van (1948) 1992 tot 1999",
+      "zorgdrager": "DNB",
+      "beschikking": "NA/14/14102",
+      "staatscourant": "8-09-2014/25072",
+      "opmerking": ""
+    },
+    {
+      "code": "COKZ-2014",
+      "titel": "Selectielijst voor de neerslag van het handelen van het Centraal Orgaan voor Kwaliteitsaangelegenheden in de Zuivel (COKZ) en haar rechtsvoorgangers, over de periode vanaf het jaar (1901) 1975",
+      "zorgdrager": "COKZ",
+      "beschikking": "NA/2014/14100",
+      "staatscourant": "6-10-2014/27800",
+      "opmerking": ""
+    },
+    {
+      "code": "NFPK-2014",
+      "titel": "Selectielijst, ingediend door het Nederlands Fonds voor de Podiumkunsten+ voor de neerslag van het Nederlandse Fonds voor de Podiumkunsten+ voor Cultuurparticipatie over de periode vanaf 2007 (actualisatie)",
+      "zorgdrager": "NFPK+",
+      "beschikking": "NA/2014/14740",
+      "staatscourant": "30-10-2014/31583",
+      "opmerking": ""
+    },
+    {
+      "code": "FGZP-2014",
+      "titel": "Selectielijst voor de administratieve neerslag van de openbaar gezagtaken van de FGzP (Federatie van gezondheidszorgpsychologen) over de periode vanaf 27 februari 2002",
+      "zorgdrager": "FGzP",
+      "beschikking": "NA/2014/14967",
+      "staatscourant": "17-12-2014/36133",
+      "opmerking": ""
+    },
+    {
+      "code": "OU-2014",
+      "titel": "Selectielijst voor de neerslag van de handelingen van de Open Universiteit en de onder hem ressorterende actoren op het beleidsterrein Wetenschappelijk onderwijs over de periode vanaf 1985 (voor de selectielijst zie BSD Universiteiten vanaf 1985, 26-8-2009/12639 e.v.)",
+      "zorgdrager": "OU",
+      "beschikking": "NA/2014/14886",
+      "staatscourant": "19-12-2014/36532",
+      "opmerking": ""
+    },
+    {
+      "code": "NOM-2015",
+      "titel": "Selectielijst voor de neerslag van het handelen van de Nationale Ombudsman, vanaf 1998, en de Kinderombudsman, vanaf 2011",
+      "zorgdrager": "Nationale Ombudsman Kinderombudsman",
+      "beschikking": "KB 12/01/2015 Nr. 2015000006",
+      "staatscourant": "5-2-2015/3086",
+      "opmerking": ""
+    },
+    {
+      "code": "ZFR-2015",
+      "titel": "Selectielijst voor de neerslag van de PIOFACH-handelingen van de Ziekenfondsraad en de neerslag van haar commissies, over de periode 1949 –1999",
+      "zorgdrager": "ZFR",
+      "beschikking": "NA/2015/15260",
+      "staatscourant": "16-2-2015/4007",
+      "opmerking": ""
+    },
+    {
+      "code": "SACN-2015",
+      "titel": "Selectielijst voor de neerslag van het handelen van de Stichting Airport Coordination Netherlands (SACN), over de periode vanaf 01 november 1997",
+      "zorgdrager": "SACN",
+      "beschikking": "NA/2014/15051",
+      "staatscourant": "20-2-2015/4679",
+      "opmerking": ""
+    },
+    {
+      "code": "BUZA-2015",
+      "titel": "Selectielijst van het Ministerie van Buitenlandse Zaken voor de archieven gevormd vanaf de overgang naar digitale archivering in de periode (2009) 2012-2014",
+      "zorgdrager": "BuZa",
+      "beschikking": "NA/2015/15261",
+      "staatscourant": "3-3-2015/5623",
+      "opmerking": ""
+    },
+    {
+      "code": "EGI-2015",
+      "titel": "Selectielijst voor de neerslag van de handelingen van de Erfgoedinspectie en haar rechtstaakvoorgangers, voor de periode vanaf (1993) 2001",
+      "zorgdrager": "EGI",
+      "beschikking": "NA/2015/15414",
+      "staatscourant": "27-3-2015/8328",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-2015",
+      "titel": "Selectielijst van het Ministerie van Sociale Zaken en Werkgelegenheid voor de waardering en selectie van archiefbescheiden vanaf (2002) 2006",
+      "zorgdrager": "SZW",
+      "beschikking": "NA/2015/15083 Aanvulling: NA/2025/52730706",
+      "staatscourant": "27-3-2015/8231 Aanvulling: 25-09-2025/32240",
+      "opmerking": ""
+    },
+    {
+      "code": "STODEL-2015",
+      "titel": "Selectielijst voor de neerslag van de processen van de Nederlandse loodsencorporatie ( NLc), STODEL (Stichting Opleiding en Deskundigheidsbevordering Registerloodsen), de regionale loodsencorporaties (rlc’s) en het Nederlands Loodswezen BV (NLBV) voor de periode vanaf 1988",
+      "zorgdrager": "Loodswezen",
+      "beschikking": "NA/2015/15645",
+      "staatscourant": "18-5-2015/13105",
+      "opmerking": ""
+    },
+    {
+      "code": "ZIN-2015",
+      "titel": "Selectielijst voor de neerslag van het College voor Zorgverzekeringen (CVZ) voor de periode 1 juli 1999-1 april 2014 en van Zorginstituut Nederland (ZIN) voor de periode vanaf 1 april 2014",
+      "zorgdrager": "ZIN",
+      "beschikking": "NA/2015/15646",
+      "staatscourant": "18-5-2015/13106",
+      "opmerking": ""
+    },
+    {
+      "code": "KADASTER-2015",
+      "titel": "Selectielijst voor de neerslag van het handelen van de Dienst voor het Kadaster en de openbare registers over de periode vanaf 1945 (actualisatie 2015)",
+      "zorgdrager": "Kadaster",
+      "beschikking": "NA/2015/15420",
+      "staatscourant": "20-5-2015/13417",
+      "opmerking": ""
+    },
+    {
+      "code": "KNAW-2015",
+      "titel": "Selectielijst voor het organisatiearchief van de Koninklijke Nederlandse Akademie van Wetenschappen (KNAW), gevormd in de periode vanaf 1945",
+      "zorgdrager": "KNAW",
+      "beschikking": "NA/2015/15698",
+      "staatscourant": "26-9-2015/17424",
+      "opmerking": ""
+    },
+    {
+      "code": "GSP-2015",
+      "titel": "Selectielijst voor de archiefbescheiden van de overheids-NV Groningen Seaports en taakvoorgangers, voor de periode vanaf 1997",
+      "zorgdrager": "Groningen Seaports",
+      "beschikking": "NA/2015/15874",
+      "staatscourant": "21-7-2015/20714",
+      "opmerking": ""
+    },
+    {
+      "code": "CFV-2015",
+      "titel": "Selectielijst voor de neerslag van de handelingen van het Centraal Fonds Volkshuisvesting, voor de periode vanaf 1988",
+      "zorgdrager": "CFV",
+      "beschikking": "NA/2015/15873",
+      "staatscourant": "21-8-2015/25878",
+      "opmerking": ""
+    },
+    {
+      "code": "BELASTING-2015",
+      "titel": "Selectielijst, ingediend door het Ministerie van Financiën, voor de administratieve neerslag voor de werkprocessen van de Belastingdienst Toeslagen over de periode vanaf 2004",
+      "zorgdrager": "FIN (Belastingdienst)",
+      "beschikking": "NA/2015/16012",
+      "staatscourant": "25-9-2015/31399",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-2015",
+      "titel": "Selectielijst voor de archiefbescheiden van het kerndepartement van het ministerie van Financiën vanaf 1 januari 2010",
+      "zorgdrager": "FIN",
+      "beschikking": "NA/2015/16013",
+      "staatscourant": "25-9-2015/31395",
+      "opmerking": ""
+    },
+    {
+      "code": "CBR-2015",
+      "titel": "Selectielijst voor het CBR over de periode vanaf 1927",
+      "zorgdrager": "CBR",
+      "beschikking": "NA/2015/15818",
+      "staatscourant": "9-12-2015/44311",
+      "opmerking": ""
+    },
+    {
+      "code": "SGM-2015",
+      "titel": "Selectielijst voor het Schadefonds Geweldsmisdrijven over de periode vanaf 1976 (actualisatie 2014)",
+      "zorgdrager": "Schadefonds Geweldsmisdrijven",
+      "beschikking": "NA/2015/15817",
+      "staatscourant": "9-12-2015/44312",
+      "opmerking": ""
+    },
+    {
+      "code": "BZK-2016",
+      "titel": "Selectielijst voor de Algemene Inlichtingen- en Veiligheidsdienst (AIVD) en de nog niet overgedragen archiefbescheiden van zijn voorgangers de Centrale Veiligheidsdienst (CVD) en de Binnenlandse Veiligheidsdienst (BVD) vanaf 1946",
+      "zorgdrager": "BZK",
+      "beschikking": "NA/2016/16431",
+      "staatscourant": "25-4-2016/20699",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2016",
+      "titel": "Selectielijst voor de Militaire Inlichtingen- en Veiligheidsdienst (MIVD) en de nog niet overgedragen archiefbescheiden van zijn voorgangers de MID (Marine Inlichtingendienst (1941 – 1944), Marine Intelligentiedienst (1946-1947), Militaire Inlichtingendienst van de landmacht (1949 –1972), Militaire Inlichtingendienst (1987 –2003), Landmacht Inlichtingendienst (LAMID), Luchtmacht Inlichtingendienst (LUID) en Marine Inlichtingendienst (MARID) vanaf 1945",
+      "zorgdrager": "DEF",
+      "beschikking": "NA/2016/16432",
+      "staatscourant": "25-4-2016/20700",
+      "opmerking": ""
+    },
+    {
+      "code": "FINANCIENA-2016",
+      "titel": "Selectielijst, ingediend door de Minister van Financiën, voor de administratieve neerslag van de beleids- en ondersteunende processen van Belastingdienst, over de periode vanaf 2007",
+      "zorgdrager": "FIN",
+      "beschikking": "NA/2016/16438",
+      "staatscourant": "4-5-2016/22487",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "FINANCIENB-2016",
+      "titel": "Selectielijst, ingediend door de Minister van Financiën, voor de administratieve neerslag van de werkprocessen van de Belastingdienst/Centrale Administratie, over de periode vanaf 2007",
+      "zorgdrager": "FIN",
+      "beschikking": "NA/2016/16439",
+      "staatscourant": "4-5-2016/22488",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "KK-2016",
+      "titel": "Selectielijst voor de selectie van de administratieve neerslag van het handelen van het Kabinet van de Koning vanaf 30 april 2013",
+      "zorgdrager": "KK",
+      "beschikking": "KB 17/06/2016 Nr. 2016001047",
+      "staatscourant": "29-7-2016/39845",
+      "opmerking": ""
+    },
+    {
+      "code": "PDIREKTA-2016",
+      "titel": "P-Direkt/ personeelsdossier",
+      "zorgdrager": "AZ, BZK, BZ, EZ, FIN, I&M, OCW, SZW, VWS, V&J",
+      "beschikking": "NA/2016/1075020",
+      "staatscourant": "18-11-2016/61351",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "PDIREKTB-2016",
+      "titel": "P-Direkt/ personeelsdossier",
+      "zorgdrager": "ARK, KK, KNO, NOM",
+      "beschikking": "KB 24/10/2016 Nr. 2016001830",
+      "staatscourant": "18-11-2016/61358",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "UWV-2017",
+      "titel": "Selectielijst voor de administratieve neerslag van het Uitvoeringsinstituut werknemersverzekeringen (UWV) over de periode vanaf 2014",
+      "zorgdrager": "UWV",
+      "beschikking": "NA/2017/1143312",
+      "staatscourant": "20-02-2017/9044",
+      "opmerking": ""
+    },
+    {
+      "code": "TNO-2017",
+      "titel": "Selectielijst voor de administratieve neerslag van de handelingen van de Nederlandse Organisatie voor Toegepast Natuurwetenschappelijk Onderzoek (TNO) in de periode vanaf 1932",
+      "zorgdrager": "TNO",
+      "beschikking": "NA/2017/1157282",
+      "staatscourant": "24-03-2017/16383",
+      "opmerking": ""
+    },
+    {
+      "code": "IM-2017",
+      "titel": "Selectielijst van het ministerie van Infrastructuur en Milieu voor de waardering en selectie van archiefbescheiden over de periode vanaf 2010",
+      "zorgdrager": "I&M",
+      "beschikking": "NA/2017/1142828",
+      "staatscourant": "03-04-2017/18128",
+      "opmerking": ""
+    },
+    {
+      "code": "RIVM-2017",
+      "titel": "Selectielijst voor de administratieve neerslag van het Rijksinstituut voor Volksgezondheid en Milieu (RIVM) vanaf 1 januari 2004",
+      "zorgdrager": "VWS, I&M",
+      "beschikking": "NA/2017/1170706",
+      "staatscourant": "14-04-2017/20886",
+      "opmerking": ""
+    },
+    {
+      "code": "MBO-2017",
+      "titel": "Selectielijst voor de administratieve neerslag van de openbaar gezagtaken van de MBO-instellingen over de periode vanaf 1 augustus 2017",
+      "zorgdrager": "MBO-instellingen",
+      "beschikking": "NA/2017/1185648",
+      "staatscourant": "30-5-2017/29487",
+      "opmerking": ""
+    },
+    {
+      "code": "KVK-2017",
+      "titel": "Selectiedocument Kamer van Koophandel vanaf 2014",
+      "zorgdrager": "Kamer van Koophandel",
+      "beschikking": "NA/2017/1193457",
+      "staatscourant": "23-06-2017/34739",
+      "opmerking": ""
+    },
+    {
+      "code": "GEM-2017",
+      "titel": "Selectielijst voor de archiefbescheiden van gemeentelijke en intergemeentelijke organen opgemaakt of ontvangen over de periode vanaf 1 januari 2017",
+      "zorgdrager": "Gemeentelijke en intergemeentelijke organen",
+      "beschikking": "NA/2017/1217430",
+      "staatscourant": "06-07-2017/38013",
+      "opmerking": ""
+    },
+    {
+      "code": "CIZ-2017",
+      "titel": "Selectielijst CIZ vanaf 2005",
+      "zorgdrager": "Centrum Indicatiestelling Zorg",
+      "beschikking": "NA/2017/1208828",
+      "staatscourant": "24-07-2017/42011",
+      "opmerking": ""
+    },
+    {
+      "code": "KNO-2017",
+      "titel": "Selectielijst voor de Kanselarij der Nederlandse Orden, het Kapittel voor de Civiele Orden en het Kapittel der Militaire Willems-Orde vanaf 1945",
+      "zorgdrager": "Kanselarij der Nederlandse Orden",
+      "beschikking": "NA/2017/1230595",
+      "staatscourant": "25-09-2017/53621",
+      "opmerking": ""
+    },
+    {
+      "code": "RVA-2017",
+      "titel": "Selectielijst voor de neerslag van handelingen van de Raad voor Accreditatie Voor de periode vanaf 1995",
+      "zorgdrager": "Raad voor Accreditatie",
+      "beschikking": "NA/2017/1241217",
+      "staatscourant": "15-09-2017/51956",
+      "opmerking": ""
+    },
+    {
+      "code": "RDW-2017",
+      "titel": "Selectielijst RDW 2017 voor het selecteren van te vernietigen en permanent te bewaren informatie vanaf 1996",
+      "zorgdrager": "Dienst Wegverkeer",
+      "beschikking": "NA/2017/1240240",
+      "staatscourant": "03-10-2017/55377",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "CSZ-2017",
+      "titel": "Selectielijst College Sanering Zorginstellingen 1981 – (Actualisatie 2017)",
+      "zorgdrager": "College Sanering Zorginstellingen",
+      "beschikking": "NA/2017/1253288",
+      "staatscourant": "05-10-2017/56058",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2017",
+      "titel": "Selectielijst Centrale Commissie Behandeling Heroïneverslaafden 1996-2010",
+      "zorgdrager": "VWS",
+      "beschikking": "NA/2017/1241183",
+      "staatscourant": "13-10-2017/58005",
+      "opmerking": ""
+    },
+    {
+      "code": "NZA-2017",
+      "titel": "Selectielijst van de Stichting DBC-Onderhoud 2004-2017 en de Nederlandse Zorgautoriteit 2006-",
+      "zorgdrager": "Nza",
+      "beschikking": "NA/2017/1258835",
+      "staatscourant": "01-11-2017/61805",
+      "opmerking": ""
+    },
+    {
+      "code": "KNB-2017",
+      "titel": "Selectielijst voor de Koninklijke Notariële Beroepsorganisatie vanaf 2013",
+      "zorgdrager": "KNB",
+      "beschikking": "NA/2017/1263254",
+      "staatscourant": "01-11-2017/61800",
+      "opmerking": ""
+    },
+    {
+      "code": "CEA-2017",
+      "titel": "Selectielijst Commissie Eindtermen Accountants-opleiding (CEA) vanaf 2005",
+      "zorgdrager": "Fin",
+      "beschikking": "NA/2017/1252333",
+      "staatscourant": "16-11-2017/65364",
+      "opmerking": ""
+    },
+    {
+      "code": "CM-2017",
+      "titel": "Selectielijst voor archiefbescheiden van het Commissariaat voor de Media vanaf 1 januari 2017",
+      "zorgdrager": "CM",
+      "beschikking": "NA/2017/1279308",
+      "staatscourant": "24-11-2017/67168",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2017",
+      "titel": "Selectielijst voor archiefbescheiden van de provinciale organen ontvangen of opgemaakt vanaf 1 januari 2014",
+      "zorgdrager": "Gedeputeerde Staten",
+      "beschikking": "NA/2017/1286218",
+      "staatscourant": "14-12-2017/71583",
+      "opmerking": ""
+    },
+    {
+      "code": "PROVCDK-2017",
+      "titel": "Selectielijst voor archiefbescheiden van de Commissaris van de Koning als rijksorgaan, ontvangen of opgemaakt vanaf 1 januari 2014",
+      "zorgdrager": "Commissaris van de Koning als rijksorgaan",
+      "beschikking": "NA/2017/1286225",
+      "staatscourant": "14-12-2017/71588",
+      "opmerking": ""
+    },
+    {
+      "code": "IFV-2018",
+      "titel": "Selectielijst Instituut Fysieke Veiligheid van toepassing vanaf 1 januari 2013",
+      "zorgdrager": "Instituut Fysieke Veiligheid",
+      "beschikking": "NA/2017/1291723",
+      "staatscourant": "17-01-2018/2079",
+      "opmerking": ""
+    },
+    {
+      "code": "TUVQA-2018",
+      "titel": "Selectielijst voor de neerslag van het handelen per werkterrein waarvoor TÜV Nederland QA B.V. door de overheid gemandateerd is vanaf 2000",
+      "zorgdrager": "TÜV Nederland QA B.V.",
+      "beschikking": "NA/2018/1339883",
+      "staatscourant": "05-04-2018/18840",
+      "opmerking": ""
+    },
+    {
+      "code": "COGEM-2018",
+      "titel": "Selectielijst voor de administratieve neerslag van de Commissie Genetische Modificatie (COGEM) vanaf 1995",
+      "zorgdrager": "Commissie Genetische Modificatie",
+      "beschikking": "NA/2018/1349769",
+      "staatscourant": "04-05-2018/23772",
+      "opmerking": ""
+    },
+    {
+      "code": "LVNL-2018",
+      "titel": "Selectielijst voor de archiefbescheiden van LVNL vanaf 1993",
+      "zorgdrager": "LVNL",
+      "beschikking": "NA/2018/1363588",
+      "staatscourant": "31-05-2018/29651",
+      "opmerking": ""
+    },
+    {
+      "code": "SVWN-2018",
+      "titel": "Selectielijst voor de neerslag van handelingen van Stichting Visitatie Woningcorporaties Nederland voor de periode vanaf 2015",
+      "zorgdrager": "SVWN",
+      "beschikking": "NA/2018/1365742",
+      "staatscourant": "07-06-2018/31311",
+      "opmerking": ""
+    },
+    {
+      "code": "ACM-2018",
+      "titel": "Selectielijst Autoriteit Consument en Markt (ACM) en voorgangers van ACM vanaf 1997",
+      "zorgdrager": "ACM",
+      "beschikking": "NA/2018/1375133 NA/2026/66095104",
+      "staatscourant": "29-6-2018/36077 28-9-2026/33598",
+      "opmerking": ""
+    },
+    {
+      "code": "OCW-2018",
+      "titel": "Generieke selectielijst Onderwijs, Cultuur en Wetenschap (OCW) vanaf 2008",
+      "zorgdrager": "OCW",
+      "beschikking": "NA/2018/1370571",
+      "staatscourant": "03-07-2018/36531",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSPRAAK-2018",
+      "titel": "Bedrijfsvoering en Beleid van ‘deRechtspraak’, Selectielijst voor de waardering van alle niet-rechtszaak-gebonden stukken, ontvangen of opgemaakt vanaf 1 januari 2002",
+      "zorgdrager": "De Rechtspraak",
+      "beschikking": "NA/2018/1382594",
+      "staatscourant": "20-07-2018/40750",
+      "opmerking": ""
+    },
+    {
+      "code": "ECONOMISCH-2018",
+      "titel": "Selectielijst voor de archiefbescheiden van het Ministerie van Economische Zaken en Klimaat en het Ministerie van Landbouw, Natuur en Voedselkwaliteit en taakvoorgangers vanaf 2000",
+      "zorgdrager": "EZ/LNV",
+      "beschikking": "NA/2018/1368953",
+      "staatscourant": "09-08-2018/44941",
+      "opmerking": ""
+    },
+    {
+      "code": "CIBG-2018",
+      "titel": "Generieke Selectielijst voor de archiefbescheiden van het CIBG Dienst voor registers vanaf 1995-vallend onder het zorgdragerschap van het Ministerie van Volksgezondheid, Welzijn en Sport en Stichting Donorgegevens Kunstmatige Bevruchting vanaf 1995",
+      "zorgdrager": "VWS/Stichting Donorgegevens Kunstmatige Bevruchting",
+      "beschikking": "NA/2018/1392382",
+      "staatscourant": "27-08-2018/47836",
+      "opmerking": ""
+    },
+    {
+      "code": "KSA-2018",
+      "titel": "Selectielijst Kansspelautoriteit 2018 voor het selecteren van te vernietigen en permanent te bewaren archiefbescheiden vanaf 1 april 2012 –",
+      "zorgdrager": "Kansspelautoriteit",
+      "beschikking": "NA/2018/1411294",
+      "staatscourant": "26-9-2018/53738",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "CAK-2018",
+      "titel": "Selectielijst voor de archiefbescheiden betreffende de publiekrechtelijke taken van het CAK vanaf 2007 en zijn bedrijfsvoeringstaken vanaf 1968",
+      "zorgdrager": "CAK",
+      "beschikking": "NA/2018/1427322",
+      "staatscourant": "29-10-2018/60331",
+      "opmerking": ""
+    },
+    {
+      "code": "VVN-2019",
+      "titel": "Selectielijst van de beroepsvereniging Verpleegkundigen & Verzorgenden Nederland (V&VN) en rechtsvoorganger vanaf 2009",
+      "zorgdrager": "Beroepsvereniging Verpleegkundigen & Verzorgenden Nederland (V&VN)",
+      "beschikking": "NA/2019/7945725",
+      "staatscourant": "26-04-2019/22949",
+      "opmerking": ""
+    },
+    {
+      "code": "BZK-2019",
+      "titel": "Selectielijst van het ministerie van Binnenlandse zaken en Koninkrijksrelaties voor de waardering en selectie van archiefbescheiden vanaf 1 januari 2003",
+      "zorgdrager": "Ministerie van Binnenlandse zaken en Koninkrijkrelaties",
+      "beschikking": "NA/2019/8354318",
+      "staatscourant": "09-08-2019/44424",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2019",
+      "titel": "Generieke selectielijst van het Ministerie van Volksgezondheid, Welzijn en Sport-Organisatieonderdeel: Kerndepartement vanaf 18 maart 2013",
+      "zorgdrager": "Ministerie van Volksgezondheid, Welzijn en Sport",
+      "beschikking": "NA/2019/16427592",
+      "staatscourant": "13-09-2019/50340",
+      "opmerking": ""
+    },
+    {
+      "code": "AFM-2019",
+      "titel": "Selectielijst van de Stichting Autoriteit Financiële Markten vanaf 2002",
+      "zorgdrager": "Stichting Autoriteit Financiële Markten (AFM)",
+      "beschikking": "NA/2019/16608716",
+      "staatscourant": "24-09-2019/51978",
+      "opmerking": ""
+    },
+    {
+      "code": "DBC-2019",
+      "titel": "Selectielijst van de Stichting DBC-Onderhoud voor de periode vanaf 2004 en de Nederlandse Zorgautoriteit voor de periode vanaf oktober 2006",
+      "zorgdrager": "NZa en DBC-Onderhoud",
+      "beschikking": "NA/2019/16598933",
+      "staatscourant": "27-09-2019/52785",
+      "opmerking": ""
+    },
+    {
+      "code": "NTS-2019",
+      "titel": "Selectielijst van de Nederlandse Transplantatie Stichting vanaf 1 januari 2019",
+      "zorgdrager": "Nederlandse Transplantatie Stichting (NTS)",
+      "beschikking": "NA/2019/884262",
+      "staatscourant": "21-11-2019/63267",
+      "opmerking": ""
+    },
+    {
+      "code": "MFONDS-2020",
+      "titel": "Selectielijst van Stichting Mondriaan Fonds vanaf 1 januari 2012",
+      "zorgdrager": "Stichting Mondriaan Fonds",
+      "beschikking": "NA/2020/17993568",
+      "staatscourant": "29-01-2020/5150",
+      "opmerking": ""
+    },
+    {
+      "code": "WK-2020",
+      "titel": "Selectielijst van de Waarderingskamer vanaf 1 januari 2014",
+      "zorgdrager": "Waarderingskamer",
+      "beschikking": "NA/2020/17993351",
+      "staatscourant": "29-01-2020/5158",
+      "opmerking": ""
+    },
+    {
+      "code": "SVB-2020",
+      "titel": "Selectielijst voor de neerslag van handelingen van de Sociale Verzekeringsbank (SVB) periode (1956-) 2004-",
+      "zorgdrager": "Sociale Verzekeringsbank (SVB)",
+      "beschikking": "NA/2020/17993568",
+      "staatscourant": "29-01-2020/5153",
+      "opmerking": ""
+    },
+    {
+      "code": "NWO-2020",
+      "titel": "Selectielijst van de Nederlandse organisatie voor Wetenschappelijk Onderzoek en rechtsvoorganger vanaf 1 april 1950",
+      "zorgdrager": "Nederlandse organisatie voor Wetenschappelijk Onderzoek (NWO)",
+      "beschikking": "NA/2020/18000576",
+      "staatscourant": "29-01-2020/5152",
+      "opmerking": ""
+    },
+    {
+      "code": "SZVK-2020",
+      "titel": "Selectielijst van de Stichting Ziektenkostenverzekering Krijgsmacht (SZVK) vanaf 1995",
+      "zorgdrager": "Stichting Ziektenkostenverzekerin g Krijgsmacht (SZVK)",
+      "beschikking": "NA/2020/18000458",
+      "staatscourant": "29-01-2020/5154",
+      "opmerking": ""
+    },
+    {
+      "code": "ZIN-2020",
+      "titel": "Selectielijst van Zorginstituut Nederland vanaf (2014) 2017",
+      "zorgdrager": "Zorginstituut Nederland (ZiN)",
+      "beschikking": "NA/2020/17999481",
+      "staatscourant": "29-01-2020/5160",
+      "opmerking": ""
+    },
+    {
+      "code": "UNIV-2020",
+      "titel": "Selectielijst Universiteiten en Universitair Medische Centra 2020",
+      "zorgdrager": "Universiteiten en Universitair Medische Centra",
+      "beschikking": "NA/2020/18001001",
+      "staatscourant": "29-01-2020/5156",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "GEM-2020",
+      "titel": "Selectielijst gemeenten en intergemeentelijke organen 2020",
+      "zorgdrager": "Gemeenten en intergemeentelijke organen",
+      "beschikking": "NA/2020/21446242",
+      "staatscourant": "26-02-2020/11143",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "TK-2020",
+      "titel": "Selectielijst van de Tweede Kamer der Staten-Generaal vanaf 5 mei 1945",
+      "zorgdrager": "Tweede Kamer der Staten-Generaal",
+      "beschikking": "Koninklijk besluit van 11 februari 2020",
+      "staatscourant": "25-02-2020/10766",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2020",
+      "titel": "Concernbrede selectielijst van het Ministerie van Volksgezondheid, Welzijn en Sport",
+      "zorgdrager": "Ministerie van Volksgezondheid, Welzijn en Sport (VWS) en de Inspectie Gezondheidszorg en Jeugd (IGJ)",
+      "beschikking": "NA/2020/21664352",
+      "staatscourant": "10-03-2020/13588",
+      "opmerking": ""
+    },
+    {
+      "code": "AZ-2020",
+      "titel": "Selectielijst Ministerie van Algemene Zaken en daaronder ressorterende diensten, agentschappen, commissies en raden vanaf 2007",
+      "zorgdrager": "Ministerie van Algemene Zaken (AZ)",
+      "beschikking": "NA/2020/21450102",
+      "staatscourant": "10-03-2020/13567",
+      "opmerking": ""
+    },
+    {
+      "code": "MER-2020",
+      "titel": "Selectielijst van de Commissie voor de milieueffectrapportage (Commissie m.e.r.) vanaf 1 december 1981",
+      "zorgdrager": "Commissie voor de milieueffectrapportage",
+      "beschikking": "NA/2020/23911306",
+      "staatscourant": "17-02-2020/21668",
+      "opmerking": ""
+    },
+    {
+      "code": "SER-2020",
+      "titel": "Selectielijst Sociaal-Economische Raad Voor het selecteren van te vernietigen en permanent te bewaren archiefbescheiden over de periode (1956-2006) 2015-",
+      "zorgdrager": "Sociaal-Economische Raad (SER)",
+      "beschikking": "NA/2020/24131566",
+      "staatscourant": "13-05-2020/25708",
+      "opmerking": ""
+    },
+    {
+      "code": "POLITIE-2020",
+      "titel": "Generieke selectielijst voor de informatie van de politie, vanaf 1 januari 2013",
+      "zorgdrager": "Nationale Politie",
+      "beschikking": "NA/2020/24125123",
+      "staatscourant": "19-05-2020/26744",
+      "opmerking": ""
+    },
+    {
+      "code": "ZONMW-2020",
+      "titel": "Selectielijst van ZonMw vanaf 21 mei 2001",
+      "zorgdrager": "ZonMw",
+      "beschikking": "NA/2020/24478871",
+      "staatscourant": "29-5-2020/28630",
+      "opmerking": ""
+    },
+    {
+      "code": "KEURMERK-2020",
+      "titel": "Selectielijst van het Keurmerkinstituut vanaf [1997] 1998",
+      "zorgdrager": "Keurmerkinstituut",
+      "beschikking": "NA/2020/24820051",
+      "staatscourant": "08-07-2020/35902",
+      "opmerking": ""
+    },
+    {
+      "code": "CML-2020",
+      "titel": "Selectielijst van CML B.V. vanaf 3 mei 2018",
+      "zorgdrager": "CML B.V.",
+      "beschikking": "NA/2020/25006832",
+      "staatscourant": "28-07-2020/39932",
+      "opmerking": ""
+    },
+    {
+      "code": "PROVCDK-2020",
+      "titel": "Selectielijst voor archiefbescheiden van de commissaris van de Koning als rijksorgaan vanaf 1 januari 2020",
+      "zorgdrager": "Commissarissen van de Koning",
+      "beschikking": "NA/2020/25067715",
+      "staatscourant": "28-07-2020/39938",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2020",
+      "titel": "Selectielijst voor archiefbescheiden van de provinciale organen vanaf 1 januari 2020",
+      "zorgdrager": "Provinciale organen",
+      "beschikking": "NA/2020/25005743",
+      "staatscourant": "28-07-2020/39934",
+      "opmerking": ""
+    },
+    {
+      "code": "LIFTINSTITUU-2020",
+      "titel": "Selectielijst van Liftinstituut B.V. Voor de periode vanaf 1 januari 1956",
+      "zorgdrager": "Liftinstituut B.V.",
+      "beschikking": "NA/2020/25167810",
+      "staatscourant": "21-08-2020/43835",
+      "opmerking": ""
+    },
+    {
+      "code": "SVDJ-2020",
+      "titel": "Selectielijst van het Stimuleringsfond s voor de Journalistiek vanaf 2009",
+      "zorgdrager": "Stimuleringsfonds voor de Journalistiek (SvdJ)",
+      "beschikking": "NA/2020/25547769",
+      "staatscourant": "01-10-2020/50439",
+      "opmerking": ""
+    },
+    {
+      "code": "NIWO-2020",
+      "titel": "Selectielijst van de Nationale en Internationale Wegvervoerorganisatie (NIWO) vanaf 1 januari 2017 voor de primaire taken vanaf 1 januari 1946 – voor de bedrijfsvoeringstaken",
+      "zorgdrager": "Nationale en Internationale Wegvervoerorganisatie (NIWO)",
+      "beschikking": "NA/2020/25465405",
+      "staatscourant": "01-10-2020/50442",
+      "opmerking": ""
+    },
+    {
+      "code": "CGD-2020",
+      "titel": "Selectielijst van het College gerechtelijk deskundigen vanaf 1 januari 2010",
+      "zorgdrager": "College gerechtelijk deskundigen",
+      "beschikking": "NA/2020/25764072",
+      "staatscourant": "23-10-2020/54751",
+      "opmerking": ""
+    },
+    {
+      "code": "DEF-2020",
+      "titel": "Selectielijst Ministerie van Defensie vanaf (1945) 2021",
+      "zorgdrager": "Ministerie van Defensie",
+      "beschikking": "NA/2020/25468131",
+      "staatscourant": "18-11-2020/56944",
+      "opmerking": ""
+    },
+    {
+      "code": "CHEX-2020",
+      "titel": "Selectielijst Chex Liftkeuringen B.V. vanaf 1 januari 2006",
+      "zorgdrager": "Chex Liftkeuringen",
+      "beschikking": "NA/2020/26060131",
+      "staatscourant": "30-11-2020/62167",
+      "opmerking": ""
+    },
+    {
+      "code": "RVS-2020",
+      "titel": "Selectielijst Raad van State 2010-",
+      "zorgdrager": "Raad van State (RvS)",
+      "beschikking": "Koninklijk besluit van 12 november 2020",
+      "staatscourant": "1-12-2020/62212",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSPRAAK-2021",
+      "titel": "Primair proces van ‘de Rechtspraak’, selectielijst voor de waardering van alle rechtszaak gebonden stukken, ontvangen of opgemaakt vanaf (1985) 2005",
+      "zorgdrager": "de Rechtspraak",
+      "beschikking": "NA/2020/26449181",
+      "staatscourant": "6-1-2021/223",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2021",
+      "titel": "Concernbrede selectielijst van het Ministerie van Volksgezondheid, Welzijn en Sport",
+      "zorgdrager": "Ministerie van Volksgezondheid, Welzijn en Sport (VWS), Inspectie Gezondheids-zorg en Jeugd (IGJ), College ter beoordeling van geneesmiddelen (CBG) en Sociaal Planbureau (SCP)",
+      "beschikking": "NA/2020/26388753",
+      "staatscourant": "21-01-2021/2559",
+      "opmerking": ""
+    },
+    {
+      "code": "SKO-2021",
+      "titel": "Selectielijst Stichting Hobéon SKO Certificatie vanaf 1 maart 2008",
+      "zorgdrager": "Stichting Hobéon SKO Certificatie",
+      "beschikking": "NA/2021/2669771",
+      "staatscourant": "18-2-2021/7900",
+      "opmerking": ""
+    },
+    {
+      "code": "CEA-2021",
+      "titel": "Selectielijst van de Commissie Eindtermen Accountants-opleidingen (CEA) vanaf 2020",
+      "zorgdrager": "Commissie Eindtermen Accountantsopleidingen (CEA)",
+      "beschikking": "NA/2021/26674476",
+      "staatscourant": "24-02-2021/8980",
+      "opmerking": ""
+    },
+    {
+      "code": "GI-2021",
+      "titel": "Selectielijst van de Gecertificeerde Instellingen voor jeugdbescherming en jeugdreclassering en rechtsvoorgangers vanaf 1 november 1995",
+      "zorgdrager": "Gecertificeerde Instellingen voor jeugdbescherming en jeugdreclassering en rechtsvoorgangers",
+      "beschikking": "NA/2021/26549428",
+      "staatscourant": "24-02-2021/8963",
+      "opmerking": ""
+    },
+    {
+      "code": "NORMEC-2021",
+      "titel": "Selectielijst van Normec Certification BV vanaf 1 maart 2006",
+      "zorgdrager": "Normec Certification BV",
+      "beschikking": "NA/2021/27003488",
+      "staatscourant": "10-03-2021/11473",
+      "opmerking": ""
+    },
+    {
+      "code": "EK-2021",
+      "titel": "Selectielijst van de Eerste Kamer der Staten-Generaal vanaf 5 mei 1945",
+      "zorgdrager": "Eerste Kamer der Staten-Generaal",
+      "beschikking": "Koninklijk Besluit van 12 februari 2021",
+      "staatscourant": "22-3-2021/13826",
+      "opmerking": ""
+    },
+    {
+      "code": "VVSG-2021",
+      "titel": "Selectielijst van de Verenigde Vergadering der Staten-Generaal vanaf 5 mei 1945",
+      "zorgdrager": "Verenigde Vergadering der Staten-Generaal",
+      "beschikking": "Koninklijk Besluit van 12 februari 2021",
+      "staatscourant": "22-3-2021/13828",
+      "opmerking": ""
+    },
+    {
+      "code": "JENV-2021",
+      "titel": "Selectielijst van het Ministerie van Justitie en Veiligheid en rechtsvoorgangers vanaf 5 mei 1945",
+      "zorgdrager": "Ministerie van Justitie en Veiligheid (JenV)",
+      "beschikking": "NA/2021/27005737",
+      "staatscourant": "12-04-2021/17848",
+      "opmerking": ""
+    },
+    {
+      "code": "VETURO-2021",
+      "titel": "Selectielijst van Veturo B.V. vanaf 2001",
+      "zorgdrager": "Veturo B.V.",
+      "beschikking": "NA/2021/27794939",
+      "staatscourant": "07-05-2021/23055",
+      "opmerking": ""
+    },
+    {
+      "code": "NIDOS-2021",
+      "titel": "Selectielijst van Stichting Nidos en haar rechtsvoorganger vanaf 1 november 1995",
+      "zorgdrager": "Stichting Nidos en haar rechtsvoorganger",
+      "beschikking": "NA/2021/28170343",
+      "staatscourant": "11-06-2021/29211",
+      "opmerking": ""
+    },
+    {
+      "code": "DOPING-2021",
+      "titel": "Selectielijst Dopingautoriteit vanaf 2019",
+      "zorgdrager": "Dopingautoriteit",
+      "beschikking": "NA/2021/28170133",
+      "staatscourant": "11-6-2021/29214",
+      "opmerking": ""
+    },
+    {
+      "code": "CBS-2021",
+      "titel": "Selectielijst van het Centraal Bureau voor de Statistiek (CBS) vanaf 2004 en de Centrale Commissie voor de Statistiek (CCS) voor de periode 2004-2016",
+      "zorgdrager": "Centraal Bureau voor de Statistiek (CBS) en de Centrale Commissie voor de Statistiek (CCS)",
+      "beschikking": "NA/2021/28414907",
+      "staatscourant": "6-7-2021/34311",
+      "opmerking": ""
+    },
+    {
+      "code": "ARCHITECTEN-2021",
+      "titel": "Selectielijst van Bureau Architectenregister en rechtsvoorganger vanaf 1 oktober 1988",
+      "zorgdrager": "Bureau Architectenregister",
+      "beschikking": "NA/2021/28679708",
+      "staatscourant": "30-7-2021/36980",
+      "opmerking": ""
+    },
+    {
+      "code": "NIL-2021",
+      "titel": "Selectielijst van Stichting Nederlands Instituut voor Lastechniek (NIL)",
+      "zorgdrager": "Nederlands Instituut voor Lastechniek (NIL)",
+      "beschikking": "NA/2021/29033882",
+      "staatscourant": "10-9-2021/40519",
+      "opmerking": ""
+    },
+    {
+      "code": "HHC-2021",
+      "titel": "Selectielijst van HHC/DRS B.V. vanaf augustus 2004",
+      "zorgdrager": "HHC/DRS B.V.",
+      "beschikking": "NA/2021/29034414",
+      "staatscourant": "10-9-2021/40521",
+      "opmerking": ""
+    },
+    {
+      "code": "DARE-2021",
+      "titel": "Selectielijst van DARE!! Services B.V. vanaf 19 maart 1998",
+      "zorgdrager": "DARE!! Services B.V.",
+      "beschikking": "NA/2021/29028403",
+      "staatscourant": "10-9-2021/40523",
+      "opmerking": ""
+    },
+    {
+      "code": "SAIP-2021",
+      "titel": "Selectielijst van de Stichting Administratie Indonesische Pensioenen en van het Ministerie van Binnenlandse Zaken en Koninkrijksrelaties inzake overzeese pensioenen en uitkeringen vanaf 1951",
+      "zorgdrager": "Stichting Administratie Indonesische Pensioenen en het Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+      "beschikking": "NA/2021/28677205",
+      "staatscourant": "22-9-2021/41473",
+      "opmerking": ""
+    },
+    {
+      "code": "NFF-2021",
+      "titel": "Selectielijst van Stichting Nederlands Fonds voor de Film vanaf 1 januari 2013",
+      "zorgdrager": "Stichting Nederlands Fonds voor de Film",
+      "beschikking": "NA/2021/29947218",
+      "staatscourant": "18-11-2021/46676",
+      "opmerking": ""
+    },
+    {
+      "code": "SBB-2021",
+      "titel": "Selectielijst van de stichting Samenwerking Beroepsonderwijs Bedrijfsleven vanaf 1 augustus 2015",
+      "zorgdrager": "Stichting Samenwerking Beroepsonderwijs Bedrijfsleven (SBB)",
+      "beschikking": "NA/2021/30626941",
+      "staatscourant": "24-12-2021/50415",
+      "opmerking": ""
+    },
+    {
+      "code": "VERITAS-2022",
+      "titel": "Selectielijst van Bureau Veritas Inspection and Certification The Netherlands B.V. en rechtsvoorgangers vanaf 28 januari 1985",
+      "zorgdrager": "Bureau Veritas Inspection and Certification The Netherlands B.V.",
+      "beschikking": "NA/2022/3111966",
+      "staatscourant": "26-01-2022/1594",
+      "opmerking": ""
+    },
+    {
+      "code": "VINCOTTE-2022",
+      "titel": "Selectielijst van Vinçotte Nederland B.V. vanaf 11 september 1997",
+      "zorgdrager": "Vinçotte Nederland B.V.",
+      "beschikking": "NA/2022/31514560",
+      "staatscourant": "28-2-2022/5738",
+      "opmerking": ""
+    },
+    {
+      "code": "PROV-2022",
+      "titel": "Selectielijst voor archiefbescheiden van de provinciale organen ontvangen of opgemaakt vanaf 1 januari 2014 tot 1 januari 2020",
+      "zorgdrager": "Provinciale organen",
+      "beschikking": "NA/2022/31454164",
+      "staatscourant": "8-3-2022/6491",
+      "opmerking": ""
+    },
+    {
+      "code": "PROVCDK-2022",
+      "titel": "Selectielijst voor archiefbescheiden van de commissaris van de Koning als rijksorgaan ontvangen of opgemaakt vanaf 1 januari 2014 tot 1 januari 2020",
+      "zorgdrager": "Commissaris van de Koning als rijksorgaan",
+      "beschikking": "NA/2022/31455483",
+      "staatscourant": "8-3-2022/6492",
+      "opmerking": ""
+    },
+    {
+      "code": "KVK-2022",
+      "titel": "Selectielijst van de Kamer van Koophandel vanaf 2014",
+      "zorgdrager": "Kamer van Koophandel (KVK)",
+      "beschikking": "NA/2022/32048261",
+      "staatscourant": "19-4-2022/10526",
+      "opmerking": ""
+    },
+    {
+      "code": "TUVSUD-2022",
+      "titel": "Selectielijst van TÜV SÜD Nederland B.V. vanaf 25 juli 2000",
+      "zorgdrager": "TÜV SÜD Nederland B.V.",
+      "beschikking": "NA/2022/33170081",
+      "staatscourant": "29-7-2022/19838",
+      "opmerking": ""
+    },
+    {
+      "code": "SKH-2022",
+      "titel": "Selectielijst van SKH B.V. vanaf 26 augustus 1996",
+      "zorgdrager": "Selectielijst van SKH B.V. vanaf 26 augustus 1996",
+      "beschikking": "NA/2022/34873753",
+      "staatscourant": "14-12-2022/33651",
+      "opmerking": ""
+    },
+    {
+      "code": "KNAW-2022",
+      "titel": "Selectielijst van de Koninklijke Nederlandse Akademie van Wetenschappen (KNAW) vanaf 1 november 2020",
+      "zorgdrager": "Koninklijke Nederlandse Akademie van Wetenschappen (KNAW)",
+      "beschikking": "NA/2022/34895432",
+      "staatscourant": "14-12-2022/33648",
+      "opmerking": ""
+    },
+    {
+      "code": "IBKI-2023",
+      "titel": "Selectielijst van IBKI vanaf 1985",
+      "zorgdrager": "IBKI",
+      "beschikking": "NA/2023/35384205",
+      "staatscourant": "22-2-2023/5793",
+      "opmerking": ""
+    },
+    {
+      "code": "SDKB-2023",
+      "titel": "Selectielijst van de Stichting donorgegevens kunstmatige bevruchting (Sdkb) vanaf 23 juli 2003",
+      "zorgdrager": "Stichting donorgegevens kunstmatige bevruchting (Sdkb)",
+      "beschikking": "NA/2023/38741044",
+      "staatscourant": "14-6-2023/16461",
+      "opmerking": ""
+    },
+    {
+      "code": "COA-2023",
+      "titel": "Selectielijst van het Centraal Orgaan opvang asielzoekers vanaf 1 juli 1994",
+      "zorgdrager": "Centraal Orgaan opvang asielzoekers (COA)",
+      "beschikking": "NA/2023/38452627",
+      "staatscourant": "19-7-2023/20252",
+      "opmerking": ""
+    },
+    {
+      "code": "KB-2023",
+      "titel": "Selectielijst van de KB vanaf 1 januari 2015",
+      "zorgdrager": "KB",
+      "beschikking": "NA/2023/38929280",
+      "staatscourant": "21-7-2023/20456",
+      "opmerking": ""
+    },
+    {
+      "code": "GEMMAIL-2024",
+      "titel": "Selectielijst e-mailbewaring gemeentelijke en intergemeentelijke organen 2024",
+      "zorgdrager": "Vereniging van Nederlandse Gemeenten (VNG)",
+      "beschikking": "NA/2023/39803822",
+      "staatscourant": "26-7-2023/20927",
+      "opmerking": "Jaartal uit de titel."
+    },
+    {
+      "code": "DGDOUANE-2023",
+      "titel": "Selectielijst directoraat-generaal Douane vanaf (2013) 2023",
+      "zorgdrager": "Directoraat-generaal Douane (DG Douane)",
+      "beschikking": "NA/2023/41488384",
+      "staatscourant": "2-11-2023/29744",
+      "opmerking": ""
+    },
+    {
+      "code": "BZ-2023",
+      "titel": "Selectielijst van het ministerie van Buitenlandse Zaken vanaf 2015",
+      "zorgdrager": "Ministerie van Buitenlandse Zaken (BZ)",
+      "beschikking": "NA/2023/42505610",
+      "staatscourant": "14-12-2023/34115",
+      "opmerking": ""
+    },
+    {
+      "code": "VWS-2024",
+      "titel": "Concernbrede selectielijst van het Ministerie van Volksgezondheid, Welzijn en Sport",
+      "zorgdrager": "Ministerie van Volksgezondheid, Welzijn en Sport",
+      "beschikking": "NA/2024/43929309",
+      "staatscourant": "09-02-2024/3945",
+      "opmerking": ""
+    },
+    {
+      "code": "KNMG-2024",
+      "titel": "Selectielijst Koninklijke Nederlandsche Maatschappij tot bevordering der Geneeskunst vanaf 1998",
+      "zorgdrager": "Koninklijke Nederlandsche Maatschappij tot bevordering der Geneeskunst (KNMG)",
+      "beschikking": "NA/2024/45531327",
+      "staatscourant": "03-05-2024/14441",
+      "opmerking": ""
+    },
+    {
+      "code": "TK-2024",
+      "titel": "Selectielijst van de Tweede Kamer der Staten-Generaal vanaf 5 mei 1945",
+      "zorgdrager": "Tweede Kamer der Staten-Generaal",
+      "beschikking": "Koninklijk besluit van 14 juni 2024",
+      "staatscourant": "05-07-2024/20712",
+      "opmerking": ""
+    },
+    {
+      "code": "VERITAS-2024",
+      "titel": "Selectielijst van Bureau Veritas Inspection and Certification The Netherlands B.V. en rechtsvoorgangers vanaf 28 januari 1985",
+      "zorgdrager": "Bureau Veritas Inspection and Certification The Netherlands B.V.",
+      "beschikking": "NA/2024/49212286",
+      "staatscourant": "06-12-2024/39942",
+      "opmerking": ""
+    },
+    {
+      "code": "BFT-2024",
+      "titel": "Selectielijst van Bureau Financieel Toezicht en de Commissies van Deskundigen vanaf 1 januari 1999",
+      "zorgdrager": "Bureau Financieel Toezicht",
+      "beschikking": "NA/2024/49748107",
+      "staatscourant": "30-12-2024/42998",
+      "opmerking": ""
+    },
+    {
+      "code": "LVVN-2025",
+      "titel": "Selectielijst van het ministerie van Landbouw, Visserij, Voedselzekerheid en Natuur (Landbouw, Natuur en Voedselkwaliteit tot en met 1 juli 2024) vanaf 1 januari 2024",
+      "zorgdrager": "Ministerie van Landbouw, Visserij, Voedselzekerheid en Natuur (LVVN)",
+      "beschikking": "NA/2025/49685293",
+      "staatscourant": "11-02-2025/4992",
+      "opmerking": ""
+    },
+    {
+      "code": "ARK-2025",
+      "titel": "Selectielijst van de Algemene Rekenkamer vanaf 1 januari 1993",
+      "zorgdrager": "Algemene Rekenkamer",
+      "beschikking": "Koninklijk besluit van 24 januari 2025",
+      "staatscourant": "11-02-2025/5024",
+      "opmerking": ""
+    },
+    {
+      "code": "EZ-2025",
+      "titel": "Selectielijst van het ministerie van Economische Zaken (Ministerie van Economische Zaken en Klimaat tot en met 1 juli 2024) vanaf januari 2024 (2018)",
+      "zorgdrager": "Ministerie van Economische Zaken (EZ)",
+      "beschikking": "NA/2025/49685680",
+      "staatscourant": "11-02-2025/4991",
+      "opmerking": ""
+    },
+    {
+      "code": "SZW-2025",
+      "titel": "Selectielijst van het ministerie van Sociale Zaken en Werkgelegenheid (SZW) vanaf (2002) 1 mei 2024.",
+      "zorgdrager": "Ministerie van Sociale Zaken en Werkgelegenheid (SZW)",
+      "beschikking": "NA/2025/50001091",
+      "staatscourant": "21-02-2025/6425",
+      "opmerking": ""
+    },
+    {
+      "code": "FGZPT-2025",
+      "titel": "Selectielijst van de Federatie van gezondheidszorgpsychologen en psychotherapeuten (FGzPt) ten aanzien van de publiekrechtelijke taken van de Commissie Registratie en Toezicht (CRT) en rechtsvoorganger vanaf 2018",
+      "zorgdrager": "Federatie van gezondheidszorg-psychologen en psychotherapeuten (FGzPt)",
+      "beschikking": "NA/2025/50053779",
+      "staatscourant": "25-02-2025/6811",
+      "opmerking": ""
+    },
+    {
+      "code": "DNB-2025",
+      "titel": "Selectielijst van De Nederlandsche Bank N.V. voor haar publieke taken vanaf (2014) 2017",
+      "zorgdrager": "De Nederlandsche Bank",
+      "beschikking": "NA/2025/50054680",
+      "staatscourant": "25-02-2025/6808",
+      "opmerking": ""
+    },
+    {
+      "code": "SCI-2025",
+      "titel": "Selectielijst Stimuleringsfonds Creatieve Industrie vanaf 1 september 2012",
+      "zorgdrager": "Stimuleringsfonds Creatieve Industrie",
+      "beschikking": "NA/2025/52242335",
+      "staatscourant": "08-05-2025/15615",
+      "opmerking": ""
+    },
+    {
+      "code": "TUVNORD-2025",
+      "titel": "Selectielijst van TÜV NORD Nederland voor de periode vanaf 2000",
+      "zorgdrager": "TÜV NORD Nederland",
+      "beschikking": "NA/2025/52251599",
+      "staatscourant": "08-05-2025/15695",
+      "opmerking": ""
+    },
+    {
+      "code": "FIN-2025",
+      "titel": "Selectielijst van het beleidsdepartement Financiën en de generieke processen van de directoraten-generaal Belastingdienst, Dienst Toeslagen en Douane",
+      "zorgdrager": "Ministerie van Financiën",
+      "beschikking": "NA/2025/52931853",
+      "staatscourant": "16-09-2025/31394",
+      "opmerking": ""
+    },
+    {
+      "code": "TOESLAGEN-2025",
+      "titel": "Selectielijst van de primaire processen van Dienst Toeslagen vanaf 1 april 2020",
+      "zorgdrager": "Dienst Toeslagen",
+      "beschikking": "NA/2025/52930822",
+      "staatscourant": "16-09-2025/31395",
+      "opmerking": ""
+    },
+    {
+      "code": "BELASTING-2025",
+      "titel": "Selectielijst van de primaire processen van het Directoraat-Generaal Belastingdienst vanaf (2009) 2023",
+      "zorgdrager": "Directoraat-Generaal Belastingdienst",
+      "beschikking": "NA/2025/52934260",
+      "staatscourant": "16-09-2025/31382",
+      "opmerking": ""
+    },
+    {
+      "code": "TUVSUD-2025",
+      "titel": "Selectielijst TÜV SÜD NEDERLAND B.V. vanaf 25 juli 2000",
+      "zorgdrager": "TÜV SÜD NEDERLAND B.V.",
+      "beschikking": "NA/2025/54257733",
+      "staatscourant": "29-09-2025/32638",
+      "opmerking": ""
+    },
+    {
+      "code": "ACNL-2026",
+      "titel": "Selectielijst van Airport Coordination Netherlands (ACNL) vanaf 1 april 2020",
+      "zorgdrager": "Airport Coordination Netherlands (ACNL)",
+      "beschikking": "NA/2025/54611326",
+      "staatscourant": "15-01-2026/721",
+      "opmerking": ""
+    },
+    {
+      "code": "IENW-2026",
+      "titel": "Selectielijst van het ministerie van Infrastructuur en Waterstaat voor de periode vanaf 2026",
+      "zorgdrager": "Ministerie van Infrastructuur en Waterstaat",
+      "beschikking": "NA/2025/58639738",
+      "staatscourant": "09-02-2026/3587",
+      "opmerking": ""
+    },
+    {
+      "code": "LETTERENFOND-2026",
+      "titel": "Selectielijst Nederlands Letterenfonds vanaf 01-01-2010",
+      "zorgdrager": "Stichting Nederlands Letterenfonds",
+      "beschikking": "NA/2025/57494561",
+      "staatscourant": "16-02-2026/4223",
+      "opmerking": ""
+    },
+    {
+      "code": "NZA-2026",
+      "titel": "Selectielijst van de Stichting DBC-Onderhoud voor de periode 2004-2017 en de Nederlandse Zorgautoriteit voor de periode vanaf oktober 2006",
+      "zorgdrager": "Nederlands Zorgautoriteit (Nza)",
+      "beschikking": "NA/2025/57493842",
+      "staatscourant": "30-03-2026/11974",
+      "opmerking": ""
+    },
+    {
+      "code": "RVA-2026",
+      "titel": "Selectielijst Stichting Raad voor Accreditatie (RvA) voor de periode vanaf 1 januari 2010",
+      "zorgdrager": "Raad voor Accreditatie (RvA)",
+      "beschikking": "NA/2026/62575181",
+      "staatscourant": "30-03-2026/11961",
+      "opmerking": ""
+    },
+    {
+      "code": "RECHTSPRAAK-2026",
+      "titel": "Primair proces van de Rechtspraak selectielijst voor de waardering van alle rechtszaak gebonden stukken ontvangen of opgemaakt vanaf (1985) 1990",
+      "zorgdrager": "De Rechtspraak",
+      "beschikking": "NA/2026/61101201",
+      "staatscourant": "29-04-2026/15616",
+      "opmerking": ""
+    },
+    {
+      "code": "APPERSOONSRE-2026",
+      "titel": "Selectielijst voor de neerslag van de handelingen van het Ministerie van Justitie met betrekking tot de handelingen van het College Bescherming Persoonsgegevens en de Registratiekamer op het beleidsterrein Persoonsregistraties vanaf 1989",
+      "zorgdrager": "Autoriteit Persoonsgegevens",
+      "beschikking": "NA/2026/62934820",
+      "staatscourant": "26-05-2026/18542",
+      "opmerking": ""
+    },
+    {
+      "code": "RVR-2026",
+      "titel": "Selectielijst van de Raad voor Rechtsbijstand vanaf (2000) 14 juni 2010",
+      "zorgdrager": "Raad voor Rechtsbijstand",
+      "beschikking": "NA/2026/63321993",
+      "staatscourant": "07-08-2026/29777",
+      "opmerking": ""
+    },
+    {
+      "code": "APA-2026",
+      "titel": "Selectielijst voor de Personeelsdossiers van de Autoriteit Persoonsgegevens (AP) en rechtsvoorgangers vanaf 1 januari 2019",
+      "zorgdrager": "Autoriteit Persoonsgegevens",
+      "beschikking": "NA/2026/65053433",
+      "staatscourant": "31-08-2026/30541",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "APB-2026",
+      "titel": "Selectielijst van de Autoriteit Persoonsgegevens (AP) vanaf 1 januari 2019",
+      "zorgdrager": "Autoriteit Persoonsgegevens",
+      "beschikking": "NA/2026/65054091",
+      "staatscourant": "31-08-2026/30540",
+      "opmerking": "Volgletter: meerdere lijsten met hetzelfde toepassingsgebied in hetzelfde jaar."
+    },
+    {
+      "code": "BES-2026",
+      "titel": "Selectielijst van de openbare lichamen Bonaire, Sint Eustatius en Saba vanaf 10 oktober 2010",
+      "zorgdrager": "1. Openbaar Lichaam Bonaire 2. Openbaar Lichaam Sint Eustatius 3. Openbaar Lichaam Saba",
+      "beschikking": "NA/2026/66271339",
+      "staatscourant": "05-10-2026/34644",
+      "opmerking": ""
+    },
+    {
+      "code": "RDW-2026",
+      "titel": "Selectielijst van de RDW (Dienst Wegverkeer) over de periode vanaf 2018",
+      "zorgdrager": "Dienst Wegverkeer (RDW)",
+      "beschikking": "NA/2026/65744823",
+      "staatscourant": "05-10-2026/55377",
+      "opmerking": ""
+    }
+  ]
+}

@@ -19,6 +19,7 @@ MDTO is leidend voor benaming, begrippen en informatiemodel (ADR-0005). Waar een
 | Cockpit-uitsluitredenen | [cockpit-uitsluitredenen.md](cockpit-uitsluitredenen.md) | uitsluitreden van een vernietigingskandidaat |
 | Cockpit-termijntriggers | [cockpit-termijntriggers.md](cockpit-termijntriggers.md) | `bewaartermijn.termijnTriggerStartLooptijd` |
 | Cockpit-dekkingInTijdtypen | [cockpit-dekkingintijdtypen.md](cockpit-dekkingintijdtypen.md) | `dekkingInTijd.dekkingInTijdType` |
+| Cockpit-selectielijsten | [cockpit-selectielijsten.md](cockpit-selectielijsten.md) (+ [JSON](cockpit-selectielijsten.json)) | selectielijstcode in `informatiecategorie.begripBegrippenlijst.verwijzingIdentificatie` (ADR-0008) |
 
 ## Regels
 

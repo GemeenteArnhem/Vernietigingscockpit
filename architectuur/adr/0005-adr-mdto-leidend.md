@@ -90,7 +90,7 @@ De Stekker API gaat **direct** naar **v2.0.0**, met MDTO-namen en -structuren. E
 | `begindatum`, `einddatum` | `dekkingInTijd` (`dekkingInTijdType`, `dekkingInTijdBegindatum`, `dekkingInTijdEinddatum`) | 0..\* |
 | `waardering` (`BEWAREN`/`VERNIETIGEN`) | `waardering` (`begripGegevens`, gesloten MDTO-lijst `B`/`V`/`N`) | 1 |
 | `bewaartermijn`, `vernietigingsdatum` | `bewaartermijn` (`termijnTriggerStartLooptijd`, `termijnStartdatumLooptijd`, `termijnLooptijd`, `termijnEinddatum`) | 1 |
-| `selectielijst`, `grondslag`, `resultaat` | `informatiecategorie` (`begripGegevens`: code en titel van de categorie; `begripBegrippenlijst` = de selectielijst, met `verwijzingIdentificatie` voor identificatie en versie) | 1 |
+| `selectielijst`, `grondslag`, `resultaat` | `informatiecategorie` (`begripGegevens`: code en titel van de categorie; `begripBegrippenlijst` = de selectielijst, met `verwijzingIdentificatie` voor identificatie en versie; uitgewerkt in ADR-0008: verplichte selectielijstcode uit Cockpit-selectielijsten) | 1 |
 | `grondslagAfwijkend` | cockpituitbreiding `informatiecategorieAfwijking` (toelichting + verwijzing naar de afwijkende norm). De toegepaste categorie staat in `informatiecategorie`. | 0..1 |
 | `relatieType`, `relatieId` | `isOnderdeelVan` (`verwijzingGegevens`) en/of `gerelateerdInformatieobject` (`gerelateerdInformatieobjectVerwijzing` + `gerelateerdInformatieobjectTypeRelatie`) | 0..\* |
 | — | `archiefvormer` (`verwijzingGegevens`). Optioneel in de API; ontbreekt hij, dan geldt de archiefvormer die op de taakuitvoering is vastgepind (B-M3). | 0..\* |

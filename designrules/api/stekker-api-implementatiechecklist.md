@@ -48,7 +48,7 @@ Alle paden onder `/v2`; `API-Version` in elke response.
 - elke kandidaat heeft de in de spec verplichte velden: `vernietigingskandidaatId`, `identificatie`, `naam`, `aggregatieniveau`, `waardering`, `bewaartermijn` (met `termijnEinddatum`) en `informatiecategorie`;
 - alleen kandidaten met waardering V (`Tijdelijk te bewaren`) en `termijnEinddatum` ≤ peildatum; twijfelgevallen tellen in `aantalWaarschuwingen`;
 - de bewaartermijn levert trigger (Cockpit-termijntriggers), startdatum en looptijd (ISO 8601-duur) zodra bekend, en einddatum = startdatum + looptijd;
-- `informatiecategorie` verwijst naar de vastgestelde selectielijst, met identificatie en versie;
+- `informatiecategorie` verwijst naar de vastgestelde selectielijst met een selectielijstcode uit Cockpit-selectielijsten (`identificatieKenmerk` bijv. `GEM-2020`, `identificatieBron` = `Cockpit-selectielijsten`; ADR-0008); de code staat in het register;
 - elke begripwaarde verwijst via `begripBegrippenlijst` naar de lijst waaruit ze komt;
 - de selectie bevat waar beschikbaar peildatum, selectietijdstip, stekkerversie, configuratieversie, apiVersie, aantallen, waarschuwingen en fouten.
 

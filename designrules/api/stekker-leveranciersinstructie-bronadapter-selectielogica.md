@@ -87,7 +87,7 @@ De leverancier beschrijft hoe vernietigingskandidaten worden bepaald en hoe bron
 | `naam` / `omschrijving` | Welk bronveld de naam (titel) levert en welk de inhoudsbeschrijving. |
 | `classificatie` | Classificatieschema(s) (ZTC, BAC, ordeningsplan) en hoe code en label worden bepaald. |
 | `dekkingInTijd` | Welke bronvelden begin- en einddatum leveren, met type uit Cockpit-dekkingInTijdtypen. |
-| `informatiecategorie` | De toegepaste vastgestelde selectielijst (naam, identificatie, versie) en hoe de categorie (code en titel) wordt bepaald. Bij ZGW-bronnen: de selectielijstklasse van het resultaattype. |
+| `informatiecategorie` | De toegepaste vastgestelde selectielijst, met de selectielijstcode uit [Cockpit-selectielijsten](../begrippenlijsten/cockpit-selectielijsten.md) (ADR-0008), en hoe de categorie (code en titel) wordt bepaald. Bij ZGW-bronnen: de selectielijstklasse van het resultaattype; de code volgt uit het jaar van het procestype (`GEM-2017`, `GEM-2020`). |
 | `waardering` | Hoe de waardering (B/V/N) volgt uit de selectielijst. Alleen V wordt als kandidaat geleverd. |
 | `bewaartermijn` | De trigger (Cockpit-termijntriggers; bij ZGW de afleidingswijze), de startdatum (bij ZGW de brondatum), de looptijd en de berekening van de einddatum. |
 | `informatiecategorieAfwijking` | Wanneer en hoe een hotspot, specifieke wetgeving of afwijkende termijn wordt toegepast. |

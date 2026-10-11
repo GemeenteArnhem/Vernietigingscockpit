@@ -60,7 +60,10 @@ Elke kandidaat is één MDTO-informatieobject (Archief, Serie, Dossier of Archie
   "informatiecategorie": {
     "begripLabel": "Handhaving",
     "begripCode": "11.1.2",
-    "begripBegrippenlijst": { "verwijzingNaam": "Selectielijst gemeenten en intergemeentelijke organen 2020" }
+    "begripBegrippenlijst": {
+      "verwijzingNaam": "Selectielijst gemeenten en intergemeentelijke organen 2020",
+      "verwijzingIdentificatie": { "identificatieKenmerk": "GEM-2020", "identificatieBron": "Cockpit-selectielijsten" }
+    }
   }
 }
 ```

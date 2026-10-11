@@ -197,7 +197,7 @@ De architectuur **moet** ondersteunen:
 
 - workflow met vaste accorderingsstappen (recordmanager, proceseigenaar, archivaris)
 - vernietigingsdossiers als MDTO-informatieobject, waardering *Blijvend te bewaren* (ADR-0005)
-- per kandidaat de informatiecategorie uit de vastgestelde selectielijst, de waardering en een controleerbare bewaartermijn (trigger, startdatum, looptijd, einddatum)
+- per kandidaat de informatiecategorie uit de vastgestelde selectielijst, herleidbaar via een selectielijstcode naar de vaststelling (ADR-0008), de waardering en een controleerbare bewaartermijn (trigger, startdatum, looptijd, einddatum)
 - per vernietigde kandidaat het MDTO-event *Vernietigen* met tijdstip en een MDTO-specificatie, per uitvoering de vernietigingsmethode
 - verklaring van vernietiging (PDF/A-2b) met alle accorderingen
 - archivering van bewijslast als MDTO-XML-pakket in een aangewezen archief- of zaaksysteem
@@ -207,7 +207,7 @@ De architectuur **moet** ondersteunen:
 - architectuur-cockpit.md
 - sequence-diagrammen.md
 - rollen-en-verantwoordelijkheden.md
-- adr/0005-adr-mdto-leidend.md, adr/0006-adr-verwijderen-werkkopie-dossier.md, adr/0007-adr-identiteit-snapshots-aggregaties.md
+- adr/0005-adr-mdto-leidend.md, adr/0006-adr-verwijderen-werkkopie-dossier.md, adr/0007-adr-identiteit-snapshots-aggregaties.md, adr/0008-adr-selectielijstcodes.md
 
 ## 8a. MDTO – Metagegevens voor duurzaam toegankelijke overheidsinformatie
 

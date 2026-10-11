@@ -105,7 +105,7 @@ De stekker levert per kandidaat de MDTO-metagegevens volgens het profiel in `api
 - **aggregatieniveau**: uitsluitend Archief, Serie, Dossier of Archiefstuk; een kandidaat is nooit een kunstmatige groepering. Archief, Serie of Dossier mag alleen als de bron die eenheid zelf beheert en er een eigen kenmerk voor heeft; de `identificatieBron` is dan de bron, nooit de stekker (ADR-0007, DR-03);
 - **waardering**: uit de gesloten MDTO-lijst (B/V/N); in een vernietigingsselectie hoort alleen V;
 - **bewaartermijn**: `termijnEinddatum` is altijd gevuld. Trigger, startdatum en looptijd worden geleverd zodra bekend, zodat de einddatum controleerbaar is;
-- **informatiecategorie**: de categorie uit de vastgestelde selectielijst, met de selectielijst (naam, identificatie, versie) als begrippenlijst;
+- **informatiecategorie**: de categorie uit de vastgestelde selectielijst, met de selectielijst als begrippenlijst: `verwijzingNaam` = titel van de lijst, `verwijzingIdentificatie` (verplicht) = selectielijstcode uit Cockpit-selectielijsten, bijvoorbeeld `GEM-2020`, met bron `Cockpit-selectielijsten`. Een onbekende code levert in de cockpit een waarschuwing op; een afwijkende norm gaat via `informatiecategorieAfwijking` (ADR-0008);
 - **begrippen**: elke begripwaarde verwijst via `begripBegrippenlijst` naar de lijst waaruit ze komt;
 - **archiefvormer**: alleen meegeven als die afwijkt van de archiefvormer van de taak in de Cockpit, bijvoorbeeld bij een gemeenschappelijke regeling.
 

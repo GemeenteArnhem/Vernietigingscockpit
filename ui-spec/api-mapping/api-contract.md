@@ -107,7 +107,7 @@ Response:
     dekkingInTijd: dekkingInTijdGegevens[],
     waardering: begripGegevens,          // B / V / N
     bewaartermijn: termijnGegevens,      // trigger, startdatum, looptijd, einddatum
-    informatiecategorie: begripGegevens, // selectielijst als begrippenlijst
+    informatiecategorie: begripGegevens, // selectielijst als begrippenlijst; selectielijstcode (bijv. GEM-2020) in verwijzingIdentificatie (ADR-0008)
     archiefvormer: verwijzingGegevens[],
 
     aantalObjecten: integer,

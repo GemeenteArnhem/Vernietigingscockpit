@@ -146,6 +146,14 @@ Tooltip bij "Aantal objecten" (kolomkop en detailpanelen), ADR-0007 DR-04:
 
 > Aantal direct onderliggende informatieobjecten: bij een dossier de archiefstukken, bij een serie de dossiers. Een archiefstuk heeft 0; bestanden tellen niet mee.
 
+Selectielijst (`informatiecategorie.begripBegrippenlijst`, ADR-0008): kolom en filter **Selectielijst** tonen de selectielijstcode (bijv. `GEM-2020`). De tooltip op de code en het detailpaneel (onder de code) tonen de titel uit het register Cockpit-selectielijsten. Staat de code niet in het register, dan staat daar:
+
+> Onbekende selectielijstcode (niet in Cockpit-selectielijsten)
+
+Tooltip bij het label "Selectielijst":
+
+> Code van de vastgestelde selectielijst die van toepassing is, uit het register Cockpit-selectielijsten (bijv. GEM-2020 = Selectielijst gemeenten en intergemeentelijke organen 2020).
+
 ---
 
 # 8. Microcopy regels

@@ -343,7 +343,7 @@ classDiagram
 
   class Selectielijst {
     <<Codelijst>>
-    vastgestelde selectielijst of hotspotlijst
+    vastgestelde selectielijst, code uit Cockpit-selectielijsten
   }
 
   class Classificatieschema {
@@ -357,7 +357,7 @@ classDiagram
 | Vernietigingskandidaat.aggregatieniveau | Aggregatieniveaus MDTO (beperkt tot Archief, Serie, Dossier, Archiefstuk) | Open, hier beperkt |
 | Vernietigingskandidaat.waardering | Waarderingen MDTO | Gesloten |
 | Vernietigingskandidaat.classificatie | Classificatieschema van de bron | – |
-| Vernietigingskandidaat.informatiecategorie | Selectielijst of hotspotlijst | – |
+| Vernietigingskandidaat.informatiecategorie | Categorieën van de vastgestelde selectielijst; de lijst zelf via een code uit Cockpit-selectielijsten (ADR-0008) | Open (register) |
 | dekkingInTijdGegevens.dekkingInTijdType | Cockpit-dekkingInTijdtypen | Open |
 | Bewaartermijn.termijnTriggerStartLooptijd | Cockpit-termijntriggers | Open |
 | gerelateerdInformatieobjectGegevens.gerelateerdInformatieobjectTypeRelatie | Relatietypen (informatieobject) MDTO | Open |
