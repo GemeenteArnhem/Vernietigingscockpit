@@ -72,6 +72,7 @@ event:
 - Archivering aangevraagd
 - Archivering mislukt
 - Logisch verwijderd
+- Opmerking verwijderd
 
 Configuratie-events (globaal configuratielog, niet in de taak-audit): zie Cockpit-configuratie-eventtypen.
 

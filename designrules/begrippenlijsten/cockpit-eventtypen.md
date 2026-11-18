@@ -44,6 +44,7 @@ Deze komen uit de MDTO EventTypeLijst en staan hier **niet** opnieuw gedefinieer
 | Archivering aangevraagd | De recordmanager vraagt de archivering van het dossier aan. | gebruiker | taakinstantie | ARCHIVING_REQUESTED |
 | Archivering mislukt | De archivering is definitief mislukt; opnieuw archiveren kan. | systeem | taakinstantie | ARCHIVING_FAILED |
 | Logisch verwijderd | De functioneel beheerder heeft de taakuitvoering logisch verwijderd. Uitdrukkelijk **geen** MDTO *Vernietigen*. | gebruiker | taakinstantie | TASK_DELETED |
+| Opmerking verwijderd | De auteur (recordmanager, proceseigenaar of archivaris) heeft de eigen opmerking bij een kandidaat logisch verwijderd, in de eigen stap; `opmerkingId`, rol en ronde in de details. De tekst blijft in het event van de beoordeling of het besluit. | gebruiker | vernietigingskandidaat | — |
 
 ## Toewijzing ADR-0003 → ADR-0005
 
